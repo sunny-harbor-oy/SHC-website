@@ -1,0 +1,57 @@
+#homeWrapper > #main {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#homeWrapper > #main > #backgroundVideo {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    filter: sepia(100%) hue-rotate(0deg) saturate(1000%) brightness(50%) contrast(1.2);
+}
+
+#homeWrapper > #main > #content {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FFFFFF;
+    width: 33vw;
+    margin-top: 35vh;
+}
+
+#homeWrapper > #main > #content > h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 5vh;
+    text-align: center;
+    user-select: none;
+    cursor: default;
+}
+
+#homeWrapper > #main > #content > div > p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 3vh;
+    color: #FFFFFF;
+    text-align: center;
+    user-select: none;
+    cursor: default;
+}
+
+.underscore {
+    display:inline-block;
+    position:relative;
+    width: 1vw;
+    background-color: white;
+    height: 1vh;
+    top:-0.14em;
+    margin-left: 1vw;
+ }
