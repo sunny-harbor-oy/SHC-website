@@ -3,6 +3,15 @@
     height: 100vh;
     margin: 0;
     padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#navBarWrapper {
+    transition: all 0.3s ease-in-out;
+    height: 0;
 }
 
 #homeWrapper > #main > #backgroundVideo {
@@ -30,7 +39,7 @@
 #homeWrapper > #main > #content > h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 5vh;
+    font-size: 2vw;
     text-align: center;
     user-select: none;
     cursor: default;
@@ -39,7 +48,7 @@
 #homeWrapper > #main > #content > div > p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 3vh;
+    font-size: 1vw;
     color: #FFFFFF;
     text-align: center;
     user-select: none;
@@ -47,11 +56,65 @@
 }
 
 .underscore {
-    display:inline-block;
+    display: none;
     position:relative;
     width: 1vw;
     background-color: white;
     height: 1vh;
     top:-0.14em;
     margin-left: 1vw;
- }
+}
+
+#homePadding {
+    height: 0vh;
+    transition: all 0.3s ease-in-out;
+    margin-top: 100vh;
+}
+
+#homeWrapper > #content {
+    background-color: #F5F1F9;
+    margin: 0;
+    margin-top: 7vh;
+    padding-top: 3vh;
+}
+
+#content > #about {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+#content > #about > #story {
+    background-color: #445A9C;
+    width: 40vw;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding-top: 0.1vh;
+    padding-bottom: 2vh;
+}
+
+#content > #about > div > h1 {
+    font-family: 'Roboto Condensed';
+    font-weight: 200;
+    font-size: 2vw;
+    text-align: center;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    user-select: none;
+    cursor: default;
+    color: #F5F1F9;
+}
+
+#content > #about > div > div > p {
+    text-align: justify;
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    color: #F5F1F9;
+    font-size: 1vw;
+}

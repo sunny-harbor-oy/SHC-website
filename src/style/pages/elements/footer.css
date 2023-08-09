@@ -38,3 +38,13 @@
     font-weight: 400;
     font-size: 1.5vh;
 }
+
+#footerWrapper > h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.7vw;
+    color: white;
+    text-align: center;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+}

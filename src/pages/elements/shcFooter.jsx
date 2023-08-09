@@ -1,4 +1,4 @@
-import React from 'react';
+import '../../style/pages/elements/footer.css'
 
 export default function SHCFooter() {
     return (
@@ -12,7 +12,7 @@ export default function SHCFooter() {
                     <h1>Linkit<hr></hr></h1>
                     <h2>Tietoa meistä</h2>
                     <h2>Kumppanit</h2>
-                    <h2>Tiimit</h2>
+                    <h2>Tiimi</h2>
                     <h2>Lorem Ipsum</h2>
                 </div>
                 <div>
@@ -23,6 +23,7 @@ export default function SHCFooter() {
                     <h2>Y-Tunnus: 0000000-0</h2>
                 </div>
             </div>
+            <h2>© 2023 Sunny Harbor Consulting</h2>
         </div>
     );
 }
