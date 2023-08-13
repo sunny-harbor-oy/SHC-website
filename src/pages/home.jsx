@@ -33,19 +33,47 @@ export default function HomePage(language = "fi") {
             <div id='homePadding'></div>
             <div id='content'>
                 <div id='about'>
-                    <div id='story'>
-                        <h1>Tietoa meistä</h1>
+                    <div id='perustajat'>
+                        <h1>Perustajat</h1>
                         <div>
-                            <p> 
-                                Sunny Harbor Consulting is a company that specializes in software and hardware development.
-                                We are a small company that is based in Finland, but we are able to work with clients from all over the world.
-                                We have a wide range of skills and we are able to work on many different types of projects.
-                                We are able to work on projects of all sizes, from small websites to large software projects.
-                            </p>
+                            <div id='perustaja'>
+                                <img src='./src/assets/founders/sisu.png'></img>
+                                <h2>Sisu</h2>
+                                <p>Frontend kehitäjä ja markkinointi</p>
+                            </div>
+                            <div id='perustaja'>
+                                <img src='./src/assets/founders/leon.png'></img>
+                                <h2>Leon</h2>
+                                <p>Frontend kehittäjä ja suunnittelija</p>
+                            </div>
+                            <div id='perustaja'>
+                                <img src='./src/assets/founders/victor.jpeg'></img>
+                                <h2>Victor</h2>
+                                <p>Backend kehittäjä</p>
+                            </div>
                         </div>
                     </div>
-                    <div id='founders'>
-                        <img src='../'></img>
+                    <div>
+                        <div id='story'>
+                            <h1>Tietoa meistä</h1>
+                            <div>
+                                <p> 
+                                    Sunny Harbor Consulting is a company that specializes in software and hardware development.
+                                    We are a small company that is based in Finland, but we are able to work with clients from all over the world.
+                                    We have a wide range of skills and we are able to work on many different types of projects.
+                                    We are able to work on projects of all sizes, from small websites to large software projects.
+                                </p>
+                            </div>
+                        </div>
+                        <
+                        <div id='kumppanit'>
+                            <div>
+
+                            </div>
+                            <div>
+                                <h1>Kumppanit</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,6 +85,8 @@ export default function HomePage(language = "fi") {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+window.scrollTo(0, 0);
 
 setTimeout(() => {
     // Animation for the background video
