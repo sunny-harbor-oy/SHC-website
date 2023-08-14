@@ -29,9 +29,11 @@
 }
 
 #navBarWrapper > #links > h2 > a {
+    transition: all 0.2s ease-in-out;
     all: unset;
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 200;
     font-size: 2vh;
     margin-left: 1vw;
@@ -41,4 +43,5 @@
 
 #navBarWrapper > #links > h2 > a:hover {
     cursor: pointer;
+    color: #FFCC33;
 }

@@ -53,7 +53,28 @@ export default function HomePage(language = "fi") {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div id='kumppanitCarusell'>
+                        <h1>Asiakkaat</h1>
+                        <div id='carusell'>
+                            <p></p>
+                            <div id='content'>
+                                <div id='item'>
+                                    <h2>Korjausvelkalaskuri</h2>
+                                    <h3>"Minä rakastan Sunny Harbor Consultingia!"</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores esse a consequatur voluptates, eum iste fuga, est repellat dolorum autem quam, nemo alias? Sapiente, illum reprehenderit in minima amet ad.</p>
+                                    <img src='https://korjausvelkalaskuri.fi/wp-content/uploads/2023/01/korjausvelkalaskuri-207x60px.png.webp'></img>
+                                </div>
+                                <div id='item'>
+                                    <h2>Syke Kotipalvelut</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores esse a consequatur voluptates, eum iste fuga, est repellat dolorum autem quam, nemo alias? Sapiente, illum reprehenderit in minima amet ad.</p>
+                                    <h3>"Minä rakastan Sunny Harbor Consultingia!"</h3>
+                                    <img src='https://www.sykekotipalvelut.fi/wp-content/uploads/2020/11/SYKE_UUSI-LOGO-02.png'></img>
+                                </div>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div id="storyDiv">
                         <div id='story'>
                             <h1>Tietoa meistä</h1>
                             <div>
@@ -65,13 +86,13 @@ export default function HomePage(language = "fi") {
                                 </p>
                             </div>
                         </div>
-                        <
                         <div id='kumppanit'>
+                            <h1>Projektit</h1>
                             <div>
-
+                                <img src='https://korjausvelkalaskuri.fi/wp-content/uploads/2023/01/korjausvelkalaskuri-207x60px.png.webp'></img>
                             </div>
                             <div>
-                                <h1>Kumppanit</h1>
+                                <img src='https://www.sykekotipalvelut.fi/wp-content/uploads/2020/11/SYKE_UUSI-LOGO-02.png'></img>
                             </div>
                         </div>
                     </div>
@@ -86,9 +107,9 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-window.scrollTo(0, 0);
 
 setTimeout(() => {
+    window.scrollTo(0, 0);
     // Animation for the background video
     const video = document.getElementById('backgroundVideo');
     video.playbackRate = 0.7;
@@ -147,4 +168,4 @@ setTimeout(() => {
             }   
         }
     });
-  }, 1000);
+  }, 10);
