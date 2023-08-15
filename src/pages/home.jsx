@@ -33,31 +33,6 @@ export default function HomePage(language = "fi") {
             <div id='homePadding'></div>
             <div id='content'>
                 <div id='about'>
-                    <div id='perustajat'>
-                        <h1>Tiimimme</h1>
-                        <div>
-                            <div id='perustaja'>
-                                <img src='./src/assets/founders/sisu.png'></img>
-                                <h2>Sisu</h2>
-                                <p>Frontend kehitäjä ja markkinointi</p>
-                            </div>
-                            <div id='perustaja'>
-                                <img src='./src/assets/founders/leon.png'></img>
-                                <h2>Leon</h2>
-                                <p>Frontend kehittäjä ja suunnittelija</p>
-                            </div>
-                            <div id='perustaja'>
-                                <img src='./src/assets/founders/victor.jpeg'></img>
-                                <h2>Victor</h2>
-                                <p>Full stack kehittäjä</p>
-                            </div>
-                            <div id='perustaja'>
-                                <img src='./src/assets/team/alex.png'></img>
-                                <h2>Marc</h2>
-                                <p>Full stack kehittäjä</p>
-                            </div>
-                        </div>
-                    </div>
                     <div id='kumppanitCarusell'>
                         <h1>Projektit</h1>
                         <div id='carusell'>
@@ -65,8 +40,8 @@ export default function HomePage(language = "fi") {
                             <div id='content'>
                                 <div id='item'>
                                     <h2>Korjausvelkalaskuri</h2>
-                                    <h3>"Minä rakastan Sunny Harbor Consultingia!"</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores esse a consequatur voluptates, eum iste fuga, est repellat dolorum autem quam, nemo alias? Sapiente, illum reprehenderit in minima amet ad.</p>
+                                    <h3>"Minä rakastan Sunny Harbor Consultingia!"</h3>
                                     <img src='https://korjausvelkalaskuri.fi/wp-content/uploads/2023/01/korjausvelkalaskuri-207x60px.png.webp'></img>
                                 </div>
                                 <div id='item'>
@@ -98,6 +73,31 @@ export default function HomePage(language = "fi") {
                             </div>
                             <div>
                                 <img src='https://www.sykekotipalvelut.fi/wp-content/uploads/2020/11/SYKE_UUSI-LOGO-02.png'></img>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='perustajat'>
+                        <h1>Tiimimme</h1>
+                        <div>
+                            <div id='perustaja'>
+                                <img src='./src/assets/founders/sisu.png'></img>
+                                <h2>Sisu</h2>
+                                <p>Frontend kehitäjä ja markkinointi</p>
+                            </div>
+                            <div id='perustaja'>
+                                <img src='./src/assets/founders/leon.png'></img>
+                                <h2>Leon</h2>
+                                <p>Frontend kehittäjä ja suunnittelija</p>
+                            </div>
+                            <div id='perustaja'>
+                                <img src='./src/assets/founders/victor.jpeg'></img>
+                                <h2>Victor</h2>
+                                <p>Full stack kehittäjä</p>
+                            </div>
+                            <div id='perustaja'>
+                                <img src='./src/assets/team/alex.png'></img>
+                                <h2>Marc</h2>
+                                <p>Full stack kehittäjä</p>
                             </div>
                         </div>
                     </div>
@@ -173,4 +173,10 @@ setTimeout(() => {
             }   
         }
     });
+
+    // Kumppanit carusell
+    const carusell = document.getElementById('carusell');
+    const carusellContent = carusell.children[1];
+
+    let carusellIndex = 0;
   }, 100);
