@@ -34,7 +34,7 @@ export default function HomePage(language = "fi") {
             <div id='content'>
                 <div id='about'>
                     <div id='perustajat'>
-                        <h1>Perustajat</h1>
+                        <h1>Tiimimme</h1>
                         <div>
                             <div id='perustaja'>
                                 <img src='./src/assets/founders/sisu.png'></img>
@@ -49,12 +49,17 @@ export default function HomePage(language = "fi") {
                             <div id='perustaja'>
                                 <img src='./src/assets/founders/victor.jpeg'></img>
                                 <h2>Victor</h2>
-                                <p>Backend kehittäjä</p>
+                                <p>Full stack kehittäjä</p>
+                            </div>
+                            <div id='perustaja'>
+                                <img src='./src/assets/team/alex.png'></img>
+                                <h2>Marc</h2>
+                                <p>Full stack kehittäjä</p>
                             </div>
                         </div>
                     </div>
                     <div id='kumppanitCarusell'>
-                        <h1>Asiakkaat</h1>
+                        <h1>Projektit</h1>
                         <div id='carusell'>
                             <p></p>
                             <div id='content'>
@@ -168,4 +173,4 @@ setTimeout(() => {
             }   
         }
     });
-  }, 10);
+  }, 100);
