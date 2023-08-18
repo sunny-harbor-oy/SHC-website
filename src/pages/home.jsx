@@ -59,10 +59,7 @@ export default function HomePage(language = "fi") {
                             <h1>Tietoa meistä</h1>
                             <div>
                                 <p> 
-                                    Sunny Harbor Consulting is a company that specializes in software and hardware development.
-                                    We are a small company that is based in Finland, but we are able to work with clients from all over the world.
-                                    We have a wide range of skills and we are able to work on many different types of projects.
-                                    We are able to work on projects of all sizes, from small websites to large software projects.
+                                    Asiakkaista ja yhteistöistä hyvät tekijät tunnetaan. Olemme jo nyt kehittämässä kolmen yhteistyökumppanin kanssa eri ohjelmistoratkaisuja. Joissain projekteissa, kuten Korjausvelkalaskurissa olemme aloittaneet aluksi työntekijöinä. Lopulta kuitenkin ymmärsimme, kuinka hyvin yhteistyömme onnistuu toistemme kanssa työntekijöinä, joten päätimme aloittaa Sunny Harbor Consultingin.
                                 </p>
                             </div>
                         </div>
@@ -79,26 +76,34 @@ export default function HomePage(language = "fi") {
                     <div id='perustajat'>
                         <h1>Tiimimme</h1>
                         <div>
-                            <div id='perustaja'>
-                                <img src='./src/assets/founders/sisu.png'></img>
-                                <h2>Sisu</h2>
-                                <p>Frontend kehitäjä ja markkinointi</p>
-                            </div>
-                            <div id='perustaja'>
-                                <img src='./src/assets/founders/leon.png'></img>
-                                <h2>Leon</h2>
-                                <p>Frontend kehittäjä ja suunnittelija</p>
-                            </div>
-                            <div id='perustaja'>
-                                <img src='./src/assets/founders/victor.jpeg'></img>
-                                <h2>Victor</h2>
-                                <p>Full stack kehittäjä</p>
-                            </div>
-                            <div id='perustaja'>
-                                <img src='./src/assets/team/alex.png'></img>
-                                <h2>Marc</h2>
-                                <p>Full stack kehittäjä</p>
-                            </div>
+                            <a target="_blank" href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
+                                <div id='perustaja'>
+                                    <img src='./src/assets/founders/sisu.png'></img>
+                                    <h2>Sisu</h2>
+                                    <p>Frontend kehitäjä ja markkinointi</p>
+                                </div>
+                            </a>
+                            <a target="_blank" href='https://www.linkedin.com/in/leon-g-732b31204/'>
+                                <div id='perustaja'>
+                                    <img src='./src/assets/founders/leon.png'></img>
+                                    <h2>Leon</h2>
+                                    <p>Frontend kehittäjä ja suunnittelija</p>
+                                </div>
+                            </a>
+                            <a target="_blank" href='https://www.linkedin.com/in/victor-ocampo-a609b3250/'>
+                                <div id='perustaja'>
+                                    <img src='./src/assets/founders/victor.jpeg'></img>
+                                    <h2>Victor</h2>
+                                    <p>Full stack kehittäjä</p>
+                                </div>
+                            </a>
+                            <a target="_blank" href='https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/'>
+                                <div id='perustaja'>
+                                    <img src='./src/assets/team/alex.png'></img>
+                                    <h2>Marc</h2>
+                                    <p>Full stack kehittäjä</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
