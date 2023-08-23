@@ -38,7 +38,13 @@ export default function HomePage(language = "fi") {
                             <h1>Tietoa meistä</h1>
                             <div>
                                 <p> 
-                                    Asiakkaista ja yhteistöistä hyvät tekijät tunnetaan. Olemme jo nyt kehittämässä kolmen yhteistyökumppanin kanssa eri ohjelmistoratkaisuja. Joissain projekteissa, kuten Korjausvelkalaskurissa olemme aloittaneet aluksi työntekijöinä. Lopulta kuitenkin ymmärsimme, kuinka hyvin yhteistyömme onnistuu toistemme kanssa työntekijöinä, joten päätimme aloittaa Sunny Harbor Consultingin.
+                                Sunny Harbor Consulting on nuori ja taitava ohjelmistoyritys, joka erikoistuu web- ja mobiilisovelluksiin. Vahvaa teknistä osaamista yhdistää innovatiivinen lähestymistapamme.
+
+Olemme jatkuvasti ajan hermoilla, oppien uutta teknologiaa ja kehittyen, jotta voimme tarjota parasta palvelua asiakkaillemme.
+
+Avoimen viestinnän ja tiiviin yhteistyön periaatteemme mahdollistavat syvällisen ymmärryksen asiakkaidemme tarpeista, jotta voimme räätälöidä juuri heille sopivia ohjelmistoratkaisuja. Toteutamme projektit sovitussa aikataulussa ja budjetissa.
+
+Olemme ylpeitä nuoresta, taitavasta tiimistämme ja kyvystämme luoda ainutlaatuisia ohjelmistoratkaisuja. Missiomme on auttaa asiakkaitamme menestymään modernin teknologian avulla.
                                 </p>
                             </div>
                         </div>
