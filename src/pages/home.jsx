@@ -1,7 +1,7 @@
 import SHCFooter from "../pages/elements/shcFooter.jsx";
 import NavBar from "../pages/elements/navBar.jsx";
 import { useEffect } from "react";
-import blackRock from "../assets/black-stone.png"
+import blackRock from "../assets/planet.png";
 
 const motto = [
   "Developing technology beyond the horizon.",
@@ -86,22 +86,19 @@ export default function HomePage(language = "fi") {
         <div id="about" className="w-full m-0 p-0 block h-auto">
           <div
             id="storyDiv"
-            className="grid grid-cols-1 text-h2 md:grid-cols-2 p-2 md:p-32 w-full m-auto"
+            className="relative grid grid-cols-2 text-h2 p-5 pt-10 md:p-32 w-full m-auto"
           >
-            <div id="story" className="w-full">
-              <div>
-                <h1 className="w-3/5 text-h1 text-7xl absolute font-mono">
-                  Sunny Harbor Consulting on nuori ja taitava ohjelmistoyritys,
-                  joka erikoistuu innovatiivisiin web- ja mobiilisovelluksiin.
-                  Avoimen viestinnän ja tiiviin yhteistyön avulla tarjoamme
-                  räätälöityjä ohjelmistoratkaisuja, jotka tukevat asiakkaidemme
-                  menestystä.
-                </h1>
-              </div>
+            <div className="flex items-center">
+              <h1 className="w-3/5 text-h1 text-xs sm:text-2xl md:text-5xl 2xl:text-6xl absolute font-mono">
+                Sunny Harbor Consulting on nuori ja taitava ohjelmistoyritys,
+                joka erikoistuu innovatiivisiin web- ja mobiilisovelluksiin.
+                Avoimen viestinnän ja tiiviin yhteistyön avulla tarjoamme
+                räätälöityjä ohjelmistoratkaisuja, jotka tukevat asiakkaidemme
+                menestystä.
+              </h1>
             </div>
-            <img src={blackRock}/>
+            <img src={blackRock} className="w-full" />
           </div>
-          <br />
           <div id="perustajat" className="w-90 mx-auto pb-10vh">
             <h1 className="font-medium text-2xl text-center select-none cursor-default text-h1">
               Tiimimme
