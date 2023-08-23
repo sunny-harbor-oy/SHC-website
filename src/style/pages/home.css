@@ -25,7 +25,7 @@
     top: 0;
     margin: 0;
     padding: 0;
-    filter: sepia(100%) hue-rotate(0deg) saturate(1000%) brightness(50%) contrast(1.2);
+    filter: sepia(100%) hue-rotate(210deg) saturate(1000%) brightness(50%) contrast(1.2);
 }
 
 #homeWrapper > #main > #content {
@@ -169,28 +169,6 @@
     padding: 0;
     aspect-ratio: 1/1;
     object-fit: cover;
-}
-
-#content > #about > #kumppanitCarusell {
-    width: 60vw;
-    height: 50vh;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-}
-
-#content > #about > #kumppanitCarusell > h1 {
-    font-family: 'Roboto Condensed';
-    font-weight: 200;
-    font-size: 2vw;
-    text-align: center;
-    user-select: none;
-    cursor: default;
-    color: #445A9C;
-    margin-bottom: 4vh;
-}
-
-#content > #about > #kumppanitCarusell > #carusell {
 }
 
 #carusell > #content {

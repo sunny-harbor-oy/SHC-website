@@ -10,8 +10,8 @@ export default function SHCFooter() {
                 </div>
                 <div>
                     <h1>Linkit<hr></hr></h1>
-                    <h2>Tietoa meistä</h2>
-                    <h2>Kumppanit</h2>
+                    <a href='./about'><h2>Tietoa meistä</h2></a>
+                    <a href='./partners'><h2>Kumppanit</h2></a>
                     <h2>Tiimi</h2>
                     <h2>Lorem Ipsum</h2>
                 </div>

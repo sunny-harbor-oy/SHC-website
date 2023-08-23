@@ -38,10 +38,15 @@
     width: 100%;
 }
 
-#footerWrapper > div > div > h2 {
+#footerWrapper > div > div  h2 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     font-size: 1.5vh;
+}
+
+#footerWrapper > div > div  h2:hover {
+    cursor: pointer;
+    color: #FFCC33;
 }
 
 #footerWrapper > h2 {

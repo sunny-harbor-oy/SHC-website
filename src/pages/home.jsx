@@ -1,5 +1,6 @@
 import SHCFooter from '../pages/elements/shcFooter.jsx'
 import NavBar from '../pages/elements/navBar.jsx'
+import { useEffect } from 'react';
 
 import '../style/pages/home.css';
 
@@ -14,6 +15,62 @@ const motto = [
 ]
 
 export default function HomePage(language = "fi") {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        // Animation for the background video
+        const video = document.getElementById('backgroundVideo');
+        video.playbackRate = 0.7;
+        let deg = 0;
+    
+        /*setInterval(() => {
+            video.style.filter = `sepia(100%) hue-rotate(${deg}deg) saturate(1000%) brightness(50%) contrast(1.2)`
+            deg++;
+        }, 1000);*/
+    
+        // Animation for the title description
+        const titleDesc = document.getElementById('titleDesc');
+        let current = 0;
+        let currentChar = 0;
+        let charLimit = motto[current].length;
+        let waiting = 0;
+    
+        setInterval( () => {
+            if (waiting == 0) {
+                if (currentChar == 0) titleDesc.innerHTML = "";
+                if (currentChar < charLimit) {
+                    titleDesc.innerHTML = motto[current].concat(" ").substring(0, currentChar + 1);
+                    currentChar++;
+                } else {
+                    currentChar = 0;
+                    current++;
+                    waiting = current == motto.length ? 100 : 40;
+                    if (current >= motto.length) {
+                        current = 0;
+                    }
+                    charLimit = motto[current].length;
+                }
+            } else {
+                waiting--;
+            }
+        }, 60);
+    
+        // Animation for navbar
+        const padding = document.getElementById('homePadding');
+        const navBar = document.getElementById('navBarWrapper');
+    
+        window.addEventListener('wheel', (x) => {
+            if (window.scrollY == 0) {
+                if (x.deltaY > 0) {
+                    padding.style.marginTop = "80vh";
+                    navBar.style.height = "7vh";
+                } else {
+                    padding.style.marginTop = "100vh";
+                    navBar.style.height = "0";
+                }   
+            }
+        });
+    }, [])
     return (
         <div id="homeWrapper">
             <NavBar/>
@@ -48,7 +105,7 @@ Olemme ylpeitä nuoresta, taitavasta tiimistämme ja kyvystämme luoda ainutlaat
                                 </p>
                             </div>
                         </div>
-                        <div id='kumppanit'>
+                        <div id='kumppanit' onC>
                             <h1>Projektit</h1>
                             <div>
                                 <img src='https://korjausvelkalaskuri.fi/wp-content/uploads/2023/01/korjausvelkalaskuri-207x60px.png.webp'></img>
@@ -97,71 +154,3 @@ Olemme ylpeitä nuoresta, taitavasta tiimistämme ja kyvystämme luoda ainutlaat
         </div>
     )
 }
-
-setTimeout(() => {
-    window.scrollTo(0, 0);
-    // Animation for the background video
-    const video = document.getElementById('backgroundVideo');
-    video.playbackRate = 0.7;
-    let deg = 0;
-
-    setInterval(() => {
-        video.style.filter = `sepia(100%) hue-rotate(${deg}deg) saturate(1000%) brightness(50%) contrast(1.2)`
-        deg++;
-    }, 1000);
-
-    // Animation for the title description
-    const titleDesc = document.getElementById('titleDesc');
-    let current = 0;
-    let currentChar = 0;
-    let charLimit = motto[current].length;
-    let waiting = 0;
-
-    setInterval( () => {
-        if (waiting == 0) {
-            if (currentChar == 0) titleDesc.innerHTML = "";
-            if (currentChar < charLimit) {
-                titleDesc.innerHTML += motto[current][currentChar];
-                currentChar++;
-            } else {
-                currentChar = 0;
-                current++;
-                waiting = current == motto.length ? 100 : 40;
-                if (current >= motto.length) {
-                    current = 0;
-                }
-                charLimit = motto[current].length;
-            }
-        } else {
-            waiting--;
-        }
-    }, 60);
-
-    const underscore = document.getElementsByClassName('underscore')[0];
-    setInterval(() => {
-        //console.log(underscore.style.display);
-        //underscore.style.display = underscore.style.display == "none" ? "block" : "none";
-    }, 500);
-
-    // Animation for magnetic scrolling
-    const padding = document.getElementById('homePadding');
-    const navBar = document.getElementById('navBarWrapper');
-
-    window.addEventListener('wheel', (x) => {
-        if (window.scrollY == 0) {
-            if (x.deltaY > 0) {
-                padding.style.marginTop = "80vh";
-                navBar.style.height = "7vh";
-            } else {
-                padding.style.marginTop = "100vh";
-                navBar.style.height = "0";
-            }   
-        }
-    });
-
-    // Kumppanit carusell
-    const carusell = document.getElementById('carusell');
-    const carusellContent = carusell.children[1];
-
-    let carusellIndex = 0;
-  }, 100);

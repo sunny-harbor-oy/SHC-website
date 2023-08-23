@@ -8,13 +8,18 @@
     display: flex;
     overflow: hidden;
     z-index: 10000;
+    height: 7vh;
 }
 
-#navBarWrapper > #shcLogo {
+#navBarWrapper > a > #shcLogo {
     height: 7vh;
     margin-left: 1.5vw;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+#navBarWrapper > a > #shcLogo:hover {
+    cursor: pointer;
 }
 
 #navBarWrapper > #padding {
