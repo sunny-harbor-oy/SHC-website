@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.bgVideoFilter {
+    filter: sepia(100%) hue-rotate(210deg) saturate(1000%) brightness(50%) contrast(1.2);
+}
