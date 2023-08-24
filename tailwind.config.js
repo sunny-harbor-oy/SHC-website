@@ -9,6 +9,8 @@ export default {
         h2: "#ffffff",
         p: "#ffffff",
         elemBackground: "#000000",
+        footerTitle: "#ededed",
+        footerElements: "#c9c9c9"
       },
       fontFamily: {
         "primary": ["Crimson Pro"]
