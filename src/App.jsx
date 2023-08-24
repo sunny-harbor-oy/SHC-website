@@ -5,8 +5,8 @@ import "./style/global.css";
 import HomePage from "./pages/home.jsx";
 import AboutPage from "./pages/about.jsx";
 import PartnersPage from "./pages/partners.jsx";
-import NavBar from "./pages/elements/navBar";
-import SHCFooter from "./pages/elements/shcFooter";
+import NavBar from "./elements/navBar";
+import SHCFooter from "./elements/shcFooter";
 
 function App() {
   return (

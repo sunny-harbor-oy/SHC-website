@@ -1,5 +1,5 @@
-import SHCFooter from './elements/shcFooter.jsx'
-import NavBar from './elements/navBar.jsx'
+import SHCFooter from '../elements/shcFooter.jsx'
+import NavBar from '../elements/navBar.jsx'
 
 import '../style/pages/about.css';
 

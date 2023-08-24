@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .bgVideoFilter {
-    filter: sepia(100%) hue-rotate(210deg) saturate(1000%) brightness(50%) contrast(1.2);
+  filter: sepia(100%) hue-rotate(210deg) saturate(1000%) brightness(50%)
+    contrast(1.2);
 }

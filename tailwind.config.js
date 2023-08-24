@@ -10,6 +10,9 @@ export default {
         p: "#ffffff",
         elemBackground: "#000000",
       },
+      fontFamily: {
+        "primary": ["Crimson Pro"]
+      }
     },
   },
   plugins: [],

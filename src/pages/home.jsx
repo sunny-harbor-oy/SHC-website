@@ -1,5 +1,3 @@
-import SHCFooter from "../pages/elements/shcFooter.jsx";
-import NavBar from "../pages/elements/navBar.jsx";
 import { useEffect } from "react";
 import blackRock from "../assets/planet.png";
 
@@ -64,9 +62,11 @@ export default function HomePage(language = "fi") {
           muted
           loop
           id="backgroundVideo"
-          className="w-full object-cover z-0 top-0 m-0 p-0 bgVideoFilter"
+          /* className="w-full object-cover z-0 top-0 m-0 p-0 bgVideoFilter" */
+          className="w-full object-cover z-0 top-0 m-0 p-0"
         >
-          <source src="./src/assets/HomePageBackground.mp4" type="video/mp4" />
+          {/* <source src="./src/assets/HomePageBackground.mp4" type="video/mp4" /> */}
+          <source src="./src/assets/earth.mp4" type="video/mp4" />
         </video>
         <div
           id="content"
