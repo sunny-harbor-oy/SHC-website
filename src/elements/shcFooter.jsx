@@ -1,30 +1,48 @@
-
 export default function SHCFooter() {
   return (
     <div id="footerWrapper" className="bg-main">
-      <div className="bg-main py-6 justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7x1 px-4 sm:px-6 lg:px-8 text-white">
+      <div className="justify-center hidden bg-main md:block">
+        <div className="grid grid-cols-1 px-4 text-white md:grid-cols-3 max-w-7x1 sm:px-6 lg:px-8">
           <div className="flex justify-center">
-            <div>
-              <h1 className="font-medium text-lg mb-4">
-                Sunny Harbor Consulting
-              </h1>
-              <p className="text-p">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Deserunt consequuntur excepturi et sapiente cum quasi labore
-                maxime officia iusto. Officiis nemo ab repellendus ipsam
-                consectetur debitis quis officia reiciendis neque.
-              </p>
+            <div className="flex justify-center">
+              <div className="w-2/3">
+                <h1 className="mb-4 text-lg font-medium text-footerTitle">
+                  Sunny Harbor Consulting
+                </h1>
+                <p className="italic font-light text-footerElements">
+                  Sunny Harbor Consulting on nuori ja taitava ohjelmistoyritys,
+                  joka erikoistuu innovatiivisiin web- ja mobiilisovelluksiin.
+                  Avoimen viestinnän ja tiiviin yhteistyön avulla tarjoamme
+                  räätälöityjä ohjelmistoratkaisuja, jotka tukevat asiakkaidemme
+                  menestystä.
+                </p>
+              </div>
             </div>
           </div>
-          <div>
+          <div className="flex justify-center">
+            <div>
+              <h1 className="mb-4 text-lg font-medium text-footerTitle">
+                Sosiaaliset mediat
+              </h1>
+              <div className="flex flex-col italic font-light text-footerElements">
+                <a className="mb-2" href="www.instagram.com">
+                  Instagram
+                </a>
+                <a className="mb-2" href="www.linkedin.com">
+                  Linkedin
+                </a>
+                <a className="mb-2" href="www.facebook.com">
+                  Facebook
+                </a>
+              </div>
+            </div>
           </div>
           <div className="flex justify-center">
             <div>
-              <h1 className="font-medium text-h1 text-lg mb-4">
+              <h1 className="mb-4 text-lg font-medium text-footerTitle">
                 Yhteystiedot
               </h1>
-              <div className="text-neutral-200">
+              <div className="italic font-light text-footerElements">
                 <p className="mb-2">Aurinkoinenkatu 4B, 00990 HELSINKI</p>
                 <p className="mb-2">sunnyharborconsulting@gmail.com</p>
                 <p className="mb-2">+358 000000000</p>
@@ -34,7 +52,7 @@ export default function SHCFooter() {
           </div>
         </div>
       </div>
-      <h2 class="font-medium text-h2 text-sm text-center mt-6">
+      <h2 class="font-normal text-footerElements text-sm text-center py-6">
         © 2023 Sunny Harbor Consulting
       </h2>
     </div>
