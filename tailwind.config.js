@@ -13,7 +13,9 @@ export default {
         footerElements: "#c9c9c9"
       },
       fontFamily: {
-        "primary": ["Crimson Pro"]
+        "primary": ["Crimson Pro"],
+        "raleway": ["Raleway"],
+        "lora": ["Lora"],
       }
     },
   },

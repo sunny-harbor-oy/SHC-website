@@ -110,7 +110,7 @@ export default function NavBar() {
                   className={`cursor-pointer text-h2`}
                   onClick={() => setClickedButton("tiimi")}
                 >
-                  Tiimi
+                  Palvelumme
                 </Link>
               </li>
               <li>

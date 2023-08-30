@@ -1,6 +1,6 @@
 export default function SHCFooter() {
   return (
-    <div id="footerWrapper" className="bg-main">
+    <div id="footerWrapper" className="bg-main pt-10">
       <div className="justify-center hidden bg-main md:block">
         <div className="grid grid-cols-1 px-4 text-white md:grid-cols-3 max-w-7x1 sm:px-6 lg:px-8">
           <div className="flex justify-center">
