@@ -13,10 +13,6 @@ export default function NavBar() {
       const currentScrollPos = window.scrollY;
       const scrollingDown = currentScrollPos > prevScrollPos;
 
-      if (window.innerWidth > 768) {
-        setNavbar(!scrollingDown || currentScrollPos < 100);
-      }
-
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -86,41 +82,17 @@ export default function NavBar() {
             className={`text-white flex-1 justify-self-center pb-3 md:block md:pb-0 md:mt-0 ${listClassName}`}
           >
             <ul className="items-center justify-center font-body space-y-8 md:flex md:space-x-12 md:space-y-0 ">
-              <li>
-                <Link
-                  to="/about"
-                  className={`cursor-pointer text-h2`}
-                  onClick={() => setClickedButton("tietoa-meistä")}
-                >
-                  Tietoa meistä
-                </Link>
+              <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('storyDiv').scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })}>
+                Tietoa meistä
               </li>
-              <li>
-                <Link
-                  to="/partners"
-                  className={`cursor-pointer text-h2`}
-                  onClick={() => setClickedButton("sisalto")}
-                >
-                  Kumppanit
-                </Link>
+              <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('aboutUsWrapper').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })}>
+                Tiimi
               </li>
-              <li>
-                <Link
-                  to="/team"
-                  className={`cursor-pointer text-h2`}
-                  onClick={() => setClickedButton("tiimi")}
-                >
-                  Palvelumme
-                </Link>
+              <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('Partners').scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })}>
+                Kumppanit
               </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className={`cursor-pointer text-h2`}
-                  onClick={() => setClickedButton("tiimi")}
-                >
-                  Ota yhteyttä
-                </Link>
+              <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('contactWrapper').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })}>
+                Ota yhteyttä
               </li>
             </ul>
           </div>

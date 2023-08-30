@@ -8,50 +8,47 @@ export default function AboutPage(language = "fi") {
     console.log("aboutus");
     return (
         <div className='bg-main' id="aboutUsWrapper">
-            <div id="main" className=''>
-                <div className='mt-10 h-[80vh]' id='firstSection'>
-                    <h1 className='text-h1 font-raleway text-6xl text-center pt-[10vh]'>Ketä olemme?</h1>
-                    <div>
-                        <p className='text-p font-mono text-3xl w-3/5'>
-                        Sunny Harbor Consulting on nuori ja taitava ohjelmistoyritys, joka erikoistuu web- ja mobiilisovelluksiin. Vahvaa teknistä osaamista yhdistää innovatiivinen lähestymistapamme.</p>
+            <div>
+                <a target="_blank" className='bg-white flex flex-col lg:flex-row lg:h-[90vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
+                    <div className='w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
+                        <h1 className='text-black font-lora md:text-7xl lg:text-8xl text-4xl'>Sisu Eriksson</h1>
+                        <h2 className='text-black font-raleway font-bold md:text-2xl'>Front end kehitäjä ja markkinointi</h2>
+                        <p className='text-black font-lora text-1xl md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <a target="_blank" className='bg-white flex h-[90vh]' href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
-                            <div>
-                                <h1 className='text-black font-lora text-8xl ml-32 mt-20'>Sisu Eriksson</h1>
-                                <h2 className='text-black font-raleway font-bold text-2xl ml-32'>Frontend kehitäjä ja markkinointi</h2>
-                                <p className='text-black font-lora mt-10 ml-20 text-8xl w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
-                            </div>
-                            <img className='aspect-1:4 h-[80vh] mt-20 right-[10vw] object-cover grayscale absolute' src='./src/assets/founders/transparent_sisu.png'></img>
-                        </a>
-                        <a target="_blank" className='bg-black flex h-[90vh]' href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
-                            <div>
-                                <h1 className='text-white font-lora text-8xl ml-32 mt-20'>Leon Gustafsson</h1>
-                                <h2 className='text-white font-raleway font-bold text-2xl ml-32'>Frontend kehitäjä ja suunnittelija</h2>
-                                <p className='text-white font-lora mt-10 ml-20 text-8xl w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
-                            </div>
-                            <img className='aspect-1:4 h-[80vh] mt-20 right-[10vw] object-cover grayscale absolute' src='./src/assets/founders/transparent_leon.png'></img>
-                        </a>
-                        <a target="_blank" className='bg-white flex h-[90vh]' href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
-                            <div>
-                                <h1 className='text-black font-lora text-8xl ml-32 mt-20'>Victor Ocampo</h1>
-                                <h2 className='text-black font-raleway font-bold text-2xl ml-32'>Full stack kehittäjä</h2>
-                                <p className='text-black font-lora mt-10 ml-20 text-8xl w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
-                            </div>
-                            <img className='aspect-1:4 h-[80vh] mt-20 right-[10vw] object-cover grayscale absolute' src='./src/assets/founders/transparent_victor.png'></img>
-                        </a>
-                        <a target="_blank" className='bg-black flex h-[90vh]' href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
-                            <div>
-                                <h1 className='text-white font-lora text-8xl ml-32 mt-20'>Marc Smeds</h1>
-                                <h2 className='text-white font-raleway font-bold text-2xl ml-32'>Full stack kehittäjä</h2>
-                                <p className='text-white font-lora mt-10 ml-20 text-8xl w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
-                            </div>
-                            <img className='aspect-1:4 h-[80vh] mt-20 right-[10vw] object-cover grayscale absolute' src='./src/assets/team/transparent_alex.png'></img>
-                        </a>
+                    <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 mt-[-80px]'>
+                        <img className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_sisu.png'></img>
                     </div>
-                </div>
+                </a>
+                <a target="_blank" className='bg-black flex flex-col lg:flex-row lg:h-[90vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/leon-g-732b31204/'>
+                    <div className='w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
+                        <h1 className='text-white font-lora md:text-7xl lg:text-8xl text-4xl'>Leon Gustafsson</h1>
+                        <h2 className='text-white font-raleway font-bold md:text-2xl'>Front end kehittäjä ja suunnittelija</h2>
+                        <p className='text-white font-lora text-1xl md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
+                    </div>
+                    <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 mt-[-80px]'>
+                        <img className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_leon.png'></img>
+                    </div>
+                </a>
+                <a target="_blank" className='bg-white flex flex-col lg:flex-row lg:h-[90vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/victor-ocampo-a609b3250/'>
+                    <div className='w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
+                        <h1 className='text-black font-lora md:text-7xl lg:text-8xl text-4xl'>Victor Ocampo</h1>
+                        <h2 className='text-black font-raleway font-bold md:text-2xl'>Full stack kehittäjä</h2>
+                        <p className='text-black font-lora text-1xl md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
+                    </div>
+                    <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 mt-[-80px]'>
+                        <img className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_victor2.png'></img>
+                    </div>
+                </a>
+                <a target="_blank" className='bg-black flex flex-col lg:flex-row lg:h-[90vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/'>
+                    <div className='w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
+                        <h1 className='text-white font-lora md:text-7xl lg:text-8xl text-4xl'>Marc Smeds</h1>
+                        <h2 className='text-white font-raleway font-bold md:text-2xl'>Full stack kehittäjä</h2>
+                        <p className='text-white font-lora text-1xl md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
+                    </div>
+                    <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 mt-[-80px]'>
+                        <img className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/team/transparent_alex.png'></img>
+                    </div>
+                </a>
             </div>
         </div>
     );
