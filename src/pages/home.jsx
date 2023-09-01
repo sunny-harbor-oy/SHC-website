@@ -110,6 +110,7 @@ export default function HomePage(language = "fi") {
   }, []);
   return (
     <div id="homeWrapper" className="bg-main">
+      <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"></meta>
       <div id="main" className="h-[50vh] flex justify-center mt-0 md:h-screen">
         <video
           autoPlay
@@ -156,7 +157,7 @@ export default function HomePage(language = "fi") {
             >
               <div className="relative overflow-hidden w-full z-[10]">
               <h1 className="xl:text-7xl text-4xl font-raleway">Sunny Harbor Consulting</h1>
-              <h2 className="lg:w-2/3 md:w-2/3 w-full text-h1 text-xs sm:text-2xl lg:text-5xl 2xl:text-5xl font-mono mt-7 relative">
+              <h2 className="lg:w-2/3 md:w-2/3 w-full text-h1 text-base sm:text-2xl lg:text-5xl 2xl:text-5xl font-mono mt-7 relative">
                   Sunny Harbor Consulting eli SHC on nuori ja taitava ohjelmistoyritys,
                   joka erikoistuu innovatiivisiin web- ja mobiilisovelluksiin.
 <br/><br/>
@@ -175,7 +176,7 @@ export default function HomePage(language = "fi") {
             >
               <div className="inline-block align-middle overflow-hidden w-full z-[10]">
                 <h1 className="xl:text-7xl text-4xl font-raleway">Nuori mutta kokenut</h1>
-                <h2 className="lg:w-2/3 md:w-2/3 w-full text-h1 text-xs sm:text-2xl lg:text-5xl 2xl:text-5xl font-mono mt-7 relative">
+                <h2 className="lg:w-2/3 md:w-2/3 w-full text-h1 text-base sm:text-2xl lg:text-5xl 2xl:text-5xl font-mono mt-7 relative">
                 Meillä on kokemusta seuraavien ohjelmointikielien kanssa työskentelystä: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo, Assembly (x86, ARM ja Z80) ja muilla.
                 </h2>
               </div>

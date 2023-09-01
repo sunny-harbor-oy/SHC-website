@@ -29,9 +29,9 @@ export default function NavBar() {
   return (
     <nav
       id="navBarWrapper"
-      className={`w-full absolute top-0 z-50 bg-main shadow ${
+      className={`w-full fixed top-0 z-50 bg-main shadow ${
         navbar ? "md:translate-y-0" : "md:-translate-y-full"
-      } md:transition-transform md:duration-300 md:ease-in-out md:fixed md:z-50`}
+      } md:transition-transform md:duration-300 md:ease-in-out md:fixed md:z-60`}
     >
       <div className="justify-between bg-transparent px-4 mx-auto lg:max-w-screen-2xl md:items-center md:flex md:px-0 md:bg-transparent ">
         <div>
