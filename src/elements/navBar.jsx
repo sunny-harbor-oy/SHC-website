@@ -28,6 +28,7 @@ export default function NavBar() {
 
   return (
     <nav
+      id="navBarWrapper"
       className={`w-full absolute top-0 z-50 bg-main shadow ${
         navbar ? "md:translate-y-0" : "md:-translate-y-full"
       } md:transition-transform md:duration-300 md:ease-in-out md:fixed md:z-50`}
