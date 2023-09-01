@@ -5,6 +5,7 @@ import capsuleImg from "../assets/capsule.png";
 import AboutPage from "../pages/about.jsx";
 import ContactPage from "../pages/contact.jsx";
 import PartnersPage from "../pages/partners.jsx";
+import SHCFooter from "../elements/shcFooter";
 
 const motto = [
   "Developing technology beyond the horizon.",
@@ -154,7 +155,7 @@ export default function HomePage(language = "fi") {
               className="relative bg-black grid grid-cols-1 text-h2 p-5 pt-5 lg:p-32 w-full m-auto xl:h-screen h-full"
             >
               <div className="relative overflow-hidden w-full z-[10]">
-              <h1 className="2xl:text-7xl text-4xl font-raleway">Sunny Harbor Consulting</h1>
+              <h1 className="xl:text-7xl text-4xl font-raleway">Sunny Harbor Consulting</h1>
               <h2 className="lg:w-2/3 md:w-2/3 w-full text-h1 text-xs sm:text-2xl lg:text-5xl 2xl:text-5xl font-mono mt-7 relative">
                   Sunny Harbor Consulting eli SHC on nuori ja taitava ohjelmistoyritys,
                   joka erikoistuu innovatiivisiin web- ja mobiilisovelluksiin.
@@ -173,7 +174,7 @@ export default function HomePage(language = "fi") {
               className="relative bg-black grid grid-cols-1 text-h2 p-5 pt-5 lg:p-32 w-full m-auto h-screen"
             >
               <div className="inline-block align-middle overflow-hidden w-full z-[10]">
-                <h1 className="2xl:text-7xl text-4xl font-raleway">Nuori mutta kokenut</h1>
+                <h1 className="xl:text-7xl text-4xl font-raleway">Nuori mutta kokenut</h1>
                 <h2 className="lg:w-2/3 md:w-2/3 w-full text-h1 text-xs sm:text-2xl lg:text-5xl 2xl:text-5xl font-mono mt-7 relative">
                 Meillä on kokemusta seuraavien ohjelmointikielien kanssa työskentelystä: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo, Assembly (x86, ARM ja Z80) ja muilla.
                 </h2>
@@ -211,6 +212,7 @@ export default function HomePage(language = "fi") {
             </div>
           </div>
           <ContactPage />
+          <SHCFooter />
         </div>
       </div>
     </div>
