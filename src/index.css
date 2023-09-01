@@ -10,3 +10,9 @@
   filter: sepia(100%) hue-rotate(210deg) saturate(1000%) brightness(50%)
     contrast(1.2);
 }
+
+    @media screen and (orientation: landscape) {
+      html {
+        visibility: hidden;
+      }
+    }
