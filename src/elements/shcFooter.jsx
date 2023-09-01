@@ -52,7 +52,7 @@ export default function SHCFooter() {
           </div>
         </div>
       </div>
-      <h2 class="font-normal text-footerElements text-sm text-center py-6">
+      <h2 className="font-normal text-footerElements text-sm text-center py-6">
         © 2023 Sunny Harbor Consulting
       </h2>
     </div>

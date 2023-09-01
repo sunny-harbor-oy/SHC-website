@@ -1,22 +1,53 @@
 import SHCFooter from '../elements/shcFooter.jsx'
 import NavBar from '../elements/navBar.jsx'
 import logo from "../assets/shc_logo.png";
+import { useEffect, useRef } from "react";
 
 //import '../style/pages/about.css';
 
+function getTitleElems(grandfatherDiv) {
+    let tempArr = [];
+    console.log(grandfatherDiv.length);
+    for (let i = 0; i < grandfatherDiv.length; i++) {
+        let title = grandfatherDiv[i].children[0].children[0];
+        tempArr.push({elem: title, ogPos: title.getBoundingClientRect(), parentDiv: title.parentElement.parentElement});
+    }
+    
+    return tempArr;
+}
+
 export default function AboutPage(language = "fi") {
+    const aboutUsWrapper = useRef(null);
+
+    useEffect(() => {
+        console.log(aboutUsWrapper.current.children[0].children.length);
+        const titles = getTitleElems(aboutUsWrapper.current.children[0].children);
+
+        document.addEventListener("scroll", () => {
+            for (let i = 0; i < titles.length; i++) {
+                let elemObj = titles[i];
+                if (elemObj.ogPos.top < window.scrollY + window.innerHeight && elemObj.ogPos.bottom > window.scrollY) {
+                    elemObj.elem.style.color = 'red';
+                    //console.log(elemObj.parentDiv);
+                } else {
+                    elemObj.elem.style.color = 'black';
+                }
+            }
+        });
+    }, []);
+
     console.log("aboutus");
     return (
-        <div className='bg-main' id="aboutUsWrapper">
+        <div className='bg-main' ref={aboutUsWrapper} id='aboutUsWrapper'>
             <div>
                 <a target="_blank" className='bg-white flex flex-col lg:flex-row lg:h-[90vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
                     <div className='w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
-                        <h1 className='text-black font-lora md:text-7xl lg:text-8xl text-4xl'>Sisu Eriksson</h1>
+                        <h1 className='text-black font-lora md:text-7xl lg:text-8xl text-4xl z-50'>Sisu Eriksson</h1>
                         <h2 className='text-black font-raleway font-bold md:text-2xl'>Front end kehitäjä ja markkinointi</h2>
                         <p className='text-black font-lora text-1xl md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
                     </div>
                     <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 mt-[-80px]'>
-                        <img className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_sisu.png'></img>
+                        <img alt='A handsome man' className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_sisu.png'></img>
                     </div>
                 </a>
                 <a target="_blank" className='bg-black flex flex-col lg:flex-row lg:h-[90vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/leon-g-732b31204/'>
@@ -26,7 +57,7 @@ export default function AboutPage(language = "fi") {
                         <p className='text-white font-lora text-1xl md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
                     </div>
                     <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 mt-[-80px]'>
-                        <img className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_leon.png'></img>
+                        <img alt='A handsome man' className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_leon.png'></img>
                     </div>
                 </a>
                 <a target="_blank" className='bg-white flex flex-col lg:flex-row lg:h-[90vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/victor-ocampo-a609b3250/'>
@@ -36,7 +67,7 @@ export default function AboutPage(language = "fi") {
                         <p className='text-black font-lora text-1xl md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
                     </div>
                     <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 mt-[-80px]'>
-                        <img className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_victor2.png'></img>
+                        <img alt='A handsome man' className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_victor2.png'></img>
                     </div>
                 </a>
                 <a target="_blank" className='bg-black flex flex-col lg:flex-row lg:h-[90vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/'>
@@ -46,7 +77,7 @@ export default function AboutPage(language = "fi") {
                         <p className='text-white font-lora text-1xl md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-2/3'>Minä rakastan Sunny Harbor Consultingia!</p>
                     </div>
                     <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 mt-[-80px]'>
-                        <img className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/team/transparent_alex.png'></img>
+                        <img alt='A handsome man' className='aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/team/transparent_alex.png'></img>
                     </div>
                 </a>
             </div>
