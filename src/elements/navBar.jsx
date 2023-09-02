@@ -92,6 +92,12 @@ export default function NavBar() {
               <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('Partners').scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })}>
                 Kumppanit
               </li>
+              <Link
+                to={"/getAJob"}
+                className={`cursor-pointer text-h2`}
+              >
+                  Töihin
+              </Link>
               <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('contactWrapper').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })}>
                 Ota yhteyttä
               </li>

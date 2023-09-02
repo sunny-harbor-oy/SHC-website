@@ -23,7 +23,7 @@ let oneRect = null;
 let secondRect = null;
 let navBarY = null;
 let done = false;
-let isMobile = window.innerWidth < 768;
+let isMobile = window.innerWidth < 821;
 
 window.addEventListener("scroll", () => {
   if (sectionOne && sectionSecond && !isMobile) {
@@ -33,7 +33,7 @@ window.addEventListener("scroll", () => {
       done = false;
       sectionOne.current.style.position = "relative";
     }
-    else if (scrollPos > oneRect.y && (scrollPos < secondRect.bottom) && !done) {
+    else if (scrollPos > oneRect.y && (scrollPos < secondRect.bottom-navBarY) && !done) {
       sectionOne.current.style.position = "fixed";
       sectionOne.current.style.top = `${0}px`;
 

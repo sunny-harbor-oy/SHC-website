@@ -16,6 +16,7 @@ export default {
         "primary": ["Crimson Pro"],
         "raleway": ["Raleway"],
         "lora": ["Lora"],
+        "oxanium": ["Oxanium"],
       }
     },
   },
