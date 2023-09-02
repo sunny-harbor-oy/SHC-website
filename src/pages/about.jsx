@@ -16,7 +16,7 @@ export default function AboutPage(language = "fi") {
                         <h1 className='text-black font-lora md:text-7xl lg:text-8xl text-4xl'>Sisu Eriksson</h1>
                         <h2 className='text-black font-raleway font-bold md:text-2xl md:w-full w-5/6'>Frontend kehitäjä ja markkinointi</h2>
                         <p className='text-black font-lora text-lg md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-[70vw]'>Suunnitellaan rauhassa, toteutetaan kunnialla ja digimaailma on meidän!</p>
-                        <p className='text-black font-raleway lg:text-4xl lg:mt-10 lg:visible hidden' >
+                        <p className='text-black font-raleway lg:text-4xl lg:mt-10 lg:block hidden' >
                         Lukuisissa johtajuushommissa toiminut Sisu on oppinut paljon kiinteistövälitysalalla ja nyt ohjelmointialalla. Hän osaa organisoida omia ja muiden työtehtäviä sekä saattaa niiden toteutus loppuun. Nykyään hän toimii toimitusjohtajana, suunnitelee käyttöliittymää ja ohjelmoi frontend puolella.
                         </p>
                     </div>
@@ -29,7 +29,7 @@ export default function AboutPage(language = "fi") {
                         <h1 className='text-white font-lora md:text-7xl lg:text-8xl text-4xl'>Leon Gustafsson</h1>
                         <h2 className='text-white font-raleway font-bold md:text-2xl md:w-full w-5/6'>Frontend kehittäjä ja suunnittelija</h2>
                         <p className='text-white font-lora text-lg md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-[64vw]'>Päämääränä on käyttäjälle huomattava helpotus arjessa.</p>
-                        <p className='text-white font-raleway text-4xl mt-10 lg:visible hidden'>
+                        <p className='text-white font-raleway text-4xl mt-10 lg:block hidden'>
                         Leon on tehnyt pitkään suunnittelua ja editointia sekä viime vuosina aloittanut ohjelmoinnin. Hän erikoistuu mobiilisovelluksissa sekä nettisivujen sovittamisessa puhelinnäkymään. Hän johtaa mobiilikehitystä ja suunnittelee yhdessä ammattisuunnittelijoiden kanssa käyttöliittymät.
                         </p>
                     </div>
@@ -42,7 +42,7 @@ export default function AboutPage(language = "fi") {
                         <h1 className='text-black font-lora md:text-7xl lg:text-8xl text-4xl'>Victor Ocampo</h1>
                         <h2 className='text-black font-raleway font-bold md:text-2xl md:w-full w-5/6'>Full stack kehittäjä</h2>
                         <p className='text-black font-lora text-lg md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-[64vw]'>Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan teknologian, kaikki on mahdollista.</p>
-                        <p className='text-black font-raleway text-4xl mt-10 lg:visible hidden' >
+                        <p className='text-black font-raleway text-4xl mt-10 lg:block hidden' >
                         Vaikka Victor on johdon nuorin jäsen hän on kuitenkin tehnyt pitkään teknologia hommia. Hän on ollut mukana lukuisissa ohjelmointiprojekteissa, tehnyt kovaa työtä kiinteistö-alalla ohjelmointi puolella ja nykyään johtaa tiimimme ohjelmointi puolta. Hän lisäksi johtaa SHC:n kansainvälistymistä.
                         </p>
                     </div>
@@ -55,7 +55,7 @@ export default function AboutPage(language = "fi") {
                         <h1 className='text-white font-lora md:text-7xl lg:text-8xl text-4xl'>Marc Smeds</h1>
                         <h2 className='text-white font-raleway font-bold md:text-2xl md:w-full w-5/6'>Full stack kehittäjä</h2>
                         <p className='text-white font-lora text-lg md:text-5xl lg:text-6xl md:mt-5 lg:w-full md:w-4/7 w-[75vw]'>Teknologia ja digitalisaatio on menestyksen kulmakivi.</p>
-                        <p className='text-white font-raleway text-4xl mt-10 lg:visible hidden' >
+                        <p className='text-white font-raleway text-4xl mt-10 lg:block hidden' >
                         Marc on nettimaailmassa kunniakas veteraani. Hän on toiminut sekä frontendin että backendin puolella nettimaailmassa ja sovellusmaailmassa. Hän nykyään toimii pääosin palvelimen puolen ohjelmoijana sekä on vastuussa Android sovelluksien toteutuksesta.
                         </p>
                     </div>
