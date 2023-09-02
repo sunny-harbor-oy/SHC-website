@@ -37,7 +37,7 @@ export default function NavBar() {
         <div>
           <div className="flex items-center justify-between py-2 md:block">
             <a href="/">
-              <img className="w-1/6 font-bold" src={logo} alt="SHC" />
+              <img className="h-16 font-bold" src={logo} alt="SHC" />
               {/* <h1 className="text-3xl text-white font-extrabold italic">Sunny Harbor Consulting</h1> */}
             </a>
             <div className="md:hidden">

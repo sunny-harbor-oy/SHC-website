@@ -3,15 +3,15 @@ import missionControl from '../assets/missionControl.jpg';
 export default function GetAJobPage() {
     return (
         <div id="employmentForm">
-            <div className='h-[60vh] mt-0 flex flex-col justify-center'>
-                <h1 className='font-lora text-6xl text-white text-center mb-10'>Hae töihin</h1>
-                <p className='w-1/2 font-raleway mx-auto text-white text-center text-3xl'>
+            <div className='h-[48vh] mt-0 flex flex-col justify-center'>
+                <h1 className='font-lora lg:text-6xl text-4xl text-white text-center'>Hae töihin</h1>
+                <p className='lg:w-1/2 w-4/5 lg:mt-10 mt-4 font-raleway mx-auto text-white text-center lg:text-3xl text-base'>
                     Sunny Harbor Consulting tarjoaa mahtavan mahdollisuuden päästä kehittämään omaa osaamistaan ja työskentelemään mielenkiintoisten projektien parissa.
                 </p>
-                <img src={missionControl} className='absolute top-0 z-[-1] h-[60vh] w-full object-cover brightness-50'></img>
+                <img src={missionControl} className='absolute top-0 z-[-1] h-[48vh] w-full object-cover brightness-50'></img>
             </div>
-            <div className="flex mt-10 pb-20">
-                <p className='font-raleway text-3xl px-20 w-1/2'>
+            <div className="flex lg:mt-10 lg:pb-20">
+                <p className='font-raleway lg:text-3xl lg:px-20 lg:w-1/2'>
                 Tarvitsemme seuraavaa osaamista tällä hetkellä:<br/>
                 - Backend ohjelmointi (Golang, NodeJS)<br/>
                 - Frotend ohjelmointi (TypeScript, JavaScript, HTML/CSS)<br/>
