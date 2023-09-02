@@ -9,6 +9,7 @@ export default function NavBar() {
   const [clickedButton, setClickedButton] = useState("");
 
   useEffect(() => {
+
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       const scrollingDown = currentScrollPos > prevScrollPos;
@@ -82,23 +83,37 @@ export default function NavBar() {
           <div
             className={`text-white flex-1 justify-self-center pb-3 md:block md:pb-0 md:mt-0 ${listClassName}`}
           >
-            <ul className="items-center justify-center font-body space-y-8 md:flex md:space-x-12 md:space-y-0 ">
-              <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('storyDiv').scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })}>
+            <ul className="items-center justify-center font-poppins space-y-8 md:flex md:space-x-12 md:space-y-0 ">
+              <li className={`cursor-pointer text-h2`} onClick={() => {
+                if (window.location.pathname !== "/") window.location.href = '/#aboutUsWrapper';
+                else document.getElementById('about').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              }}>
                 Tietoa meistä
               </li>
-              <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('aboutUsWrapper').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })}>
+              <li className={`cursor-pointer text-h2`} onClick={() => {
+                if (window.location.pathname !== "/") window.location.href = '/#Partners';
+                else document.getElementById('aboutUsWrapper').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                }}>
                 Tiimi
               </li>
-              <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('Partners').scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })}>
+              <li className={`cursor-pointer text-h2`} onClick={() => {
+                if (window.location.pathname !== "/") window.location.href = '/#contactWrapper';
+                else document.getElementById('Partners').scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" }) 
+                }}>
                 Kumppanit
               </li>
-              <Link
-                to={"/getAJob"}
-                className={`cursor-pointer text-h2`}
-              >
-                  Töihin
-              </Link>
-              <li className={`cursor-pointer text-h2`} onClick={() => document.getElementById('contactWrapper').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })}>
+              <li>
+                <Link
+                  to={"/getAJob"}
+                  className={`cursor-pointer text-h2`}
+                >
+                    Töihin
+                </Link>
+              </li>
+              <li className={`cursor-pointer text-h2`} onClick={() => {
+                if (window.location.pathname !== "/") window.location.href = '/#contactWrapper';
+                else document.getElementById('contactWrapper').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                }}>
                 Ota yhteyttä
               </li>
             </ul>

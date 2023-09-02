@@ -17,6 +17,7 @@ export default {
         "raleway": ["Raleway"],
         "lora": ["Lora"],
         "oxanium": ["Oxanium"],
+        "poppins": ["Poppins"]
       }
     },
   },
