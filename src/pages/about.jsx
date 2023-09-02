@@ -8,7 +8,7 @@ export default function AboutPage(language = "fi") {
     return (
         <div className='bg-main relative z-[10]' ref={aboutUsWrapper} id='aboutUsWrapper'>
             <div>
-                <a target="_blank" className='bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
+                <a target="_blank" className='bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[43vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
                     <div className='w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
                         <h1 className='text-black font-lora md:text-7xl lg:text-8xl text-4xl'>Sisu Eriksson</h1>
                         <h2 className='text-black font-raleway font-bold md:text-2xl md:w-full w-5/6'>Frontend kehitäjä ja markkinointi</h2>
@@ -21,7 +21,7 @@ export default function AboutPage(language = "fi") {
                         <img alt='A handsome man' className='object-contain w-1/2 aspect-1:4 grayscale lg:w-full md:w-3/7' src='./src/assets/founders/transparent_sisu.webp'></img>
                     </div>
                 </a>
-                <a target="_blank" className='bg-black m-0 p-0 flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/leon-g-732b31204/'>
+                <a target="_blank" className='bg-black m-0 p-0 flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[43vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/leon-g-732b31204/'>
                     <div className='w-full h-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
                         <h1 className='text-white font-lora md:text-7xl lg:text-8xl text-4xl'>Leon Gustafsson</h1>
                         <h2 className='text-white font-raleway font-bold md:text-2xl md:w-full w-5/6'>Frontend kehittäjä ja suunnittelija</h2>
@@ -34,7 +34,7 @@ export default function AboutPage(language = "fi") {
                         <img alt='A handsome man' className='-scale-y-100 -rotate-180 aspect-1:4 object-contain grayscale lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_leon.webp'></img>
                     </div>
                 </a>
-                <a target="_blank" className='bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/victor-ocampo-a609b3250/'>
+                <a target="_blank" className='bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[43vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/victor-ocampo-a609b3250/'>
                     <div className='w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10'>
                         <h1 className='text-4xl text-black font-lora md:text-7xl lg:text-8xl'>Victor Ocampo</h1>
                         <h2 className='w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full'>Full stack kehittäjä</h2>
@@ -47,7 +47,7 @@ export default function AboutPage(language = "fi") {
                         <img alt='A handsome man' className='object-contain w-1/2 aspect-1:4 grayscale lg:w-full md:w-3/7' src='./src/assets/founders/transparent_victor2.png'></img>
                     </div>
                 </a>
-                <a target="_blank" className='bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/'>
+                <a target="_blank" className='bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[43vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/'>
                     <div className='w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
                         <h1 className='text-white font-lora md:text-7xl lg:text-8xl text-4xl'>Marc Smeds</h1>
                         <h2 className='text-white font-raleway font-bold md:text-2xl md:w-full w-5/6'>Full stack kehittäjä</h2>
