@@ -4,6 +4,7 @@ import capsuleImg from "../assets/capsule.png";
 import earthImg from "../assets/earth.webp";
 import AboutPage from "../pages/about.jsx";
 import ContactPage from "../pages/contact.jsx";
+import PartnersPage from "../pages/partners.jsx";
 import SHCFooter from "../elements/shcFooter";
 
 const motto = [
@@ -28,11 +29,11 @@ window.addEventListener("scroll", () => {
   if (sectionOne && sectionSecond && !isMobile) {
     const scrollPos = window.scrollY;
 
-    if (scrollPos < oneRect.y) {
+    if (scrollPos + navBarY < oneRect.y) {
       done = false;
       sectionOne.current.style.position = "relative";
     }
-    else if (scrollPos > oneRect.y && (scrollPos < secondRect.bottom-navBarY) && !done) {
+    else if (scrollPos + navBarY > oneRect.y && (scrollPos < secondRect.bottom-navBarY) && !done) {
       sectionOne.current.style.position = "fixed";
       sectionOne.current.style.top = `${0}px`;
 
@@ -126,7 +127,7 @@ export default function HomePage(language = "fi") {
           id="content"
           className="absolute flex flex-col justify-center items-center text-white h-[50vh] md:h-screen"
         >
-          <h1 className="text-3xl font-poppins font-bold text-center cursor-default select-none lg:text-6xl text-h1">
+          <h1 className="text-2xl md:text-3xl font-poppins font-bold text-center cursor-default select-none lg:text-6xl text-h1">
             Sunny Harbor Consulting
           </h1>
           <p
@@ -156,7 +157,7 @@ export default function HomePage(language = "fi") {
             >
               <div className="relative overflow-hidden w-full z-[10]">
               <h1 className="text-4xl xl:text-7xl font-poppins font-bold italic">Sunny Harbor Consulting</h1>
-              <h2 className="relative w-full font-poppins font-extralight text-base lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl lg:text-5xl 2xl:text-5xl mt-7">
+              <h2 className="relative w-full font-poppins font-extralight text-base lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-7">
                   Sunny Harbor Consulting eli SHC on nuori ja taitava ohjelmistoyritys,
                   joka erikoistuu innovatiivisiin web- ja mobiilisovelluksiin.
                 <br/><br/>
@@ -175,7 +176,7 @@ export default function HomePage(language = "fi") {
             >
               <div className="inline-block align-middle overflow-hidden w-full z-[10]">
                 <h1 className="text-4xl xl:text-7xl font-poppins">Nuori mutta kokenut</h1>
-                <h2 className="relative w-full font-poppins font-extralight text-base lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl lg:text-5xl 2xl:text-5xl mt-7">
+                <h2 className="relative w-full font-poppins font-extralight text-base lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-7">
                 Meillä on kokemusta seuraavien ohjelmointikielien kanssa työskentelystä: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo, Assembly (x86, ARM ja Z80) ja muilla.
                 </h2>
               </div>
@@ -183,34 +184,7 @@ export default function HomePage(language = "fi") {
             </div>
           </div>
           <AboutPage />
-          <div className="pt-10 pb-10 md:py-32">
-            {" "}
-            <h1 className="pb-5 text-4xl text-center text-black bg-white md:pb-10 font-lora md:text-7xl">
-              Yhteistyökumppanit
-            </h1>
-            <div
-              id="Partners"
-              className="flex justify-around ml-auto mr-auto bg-white md:justify-between md:w-1/2"
-            >
-              <Link to="/partners/sykekotipalvelut" className="w-1/3 md:w-2/5">
-                <img
-                  className="object-contain w-full hover:cursor-pointer"
-                  alt="Partner Image"
-                  src="https://www.sykekotipalvelut.fi/wp-content/uploads/2020/11/SYKE_UUSI-LOGO-02.png"
-                ></img>
-              </Link>
-              <Link
-                to="/partners/korjausvelkalaskuri"
-                className="w-1/3 md:w-2/5"
-              >
-                <img
-                  className="object-contain w-full hover:cursor-pointer"
-                  alt="Partner Image"
-                  src="https://korjausvelkalaskuri.fi/wp-content/uploads/2023/01/korjausvelkalaskuri-207x60px.png.webp"
-                ></img>
-              </Link>
-            </div>
-          </div>
+          <PartnersPage />
           <ContactPage />
           <SHCFooter />
         </div>

@@ -3,66 +3,150 @@ import { useRef } from "react";
 //import '../style/pages/about.css';
 
 export default function AboutPage(language = "fi") {
-    const aboutUsWrapper = useRef(null);
+  const aboutUsWrapper = useRef(null);
 
-    return (
-        <div className='bg-main relative z-[10]' ref={aboutUsWrapper} id='aboutUsWrapper'>
-            <div>
-                <a target="_blank" className='bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[67.5vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/sisu-eriksson-b69475231/'>
-                    <div className='w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
-                        <h1 className='text-black font-poppins font-extrabold italic md:text-7xl lg:text-8xl text-4xl'>Sisu Eriksson</h1>
-                        <h2 className='text-black font-raleway font-bold md:text-2xl md:w-full w-5/6'>Frontend kehitäjä ja markkinointi</h2>
-                        <p className='text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[64vw]'>"Suunnitellaan rauhassa, toteutetaan kunnialla ja digimaailma on meidän."</p>
-                        <p className='text-black font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden' >
-                        Lukuisissa johtajuushommissa toiminut Sisu on oppinut paljon kiinteistövälitysalalla ja nyt ohjelmointialalla. Hän osaa organisoida omia ja muiden työtehtäviä sekä saattaa niiden toteutus loppuun. Nykyään hän toimii toimitusjohtajana, suunnitelee käyttöliittymää ja ohjelmoi frontend puolella.
-                        </p>
-                    </div>
-                    <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]'>
-                        <img alt='A handsome man' className='object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7' src='./src/assets/founders/transparent_sisu.webp'></img>
-                    </div>
-                </a>
-                <a target="_blank" className='bg-black m-0 p-0 flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[67.5vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/leon-g-732b31204/'>
-                    <div className='w-full h-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
-                        <h1 className='text-white font-poppins font-extrabold italic md:text-7xl lg:text-8xl text-4xl'>Leon Gustafsson</h1>
-                        <h2 className='text-white font-raleway font-bold md:text-2xl md:w-full w-5/6'>Frontend kehittäjä ja suunnittelija</h2>
-                        <p className='text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]'>"Päämääränä on käyttäjälle huomattava helpotus arjessa."</p>
-                        <p className='text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden'>
-                        Leon on tehnyt pitkään suunnittelua ja editointia sekä viime vuosina aloittanut ohjelmoinnin. Hän erikoistuu mobiilisovelluksissa sekä nettisivujen sovittamisessa puhelinnäkymään. Hän johtaa mobiilikehitystä ja suunnittelee yhdessä ammattisuunnittelijoiden kanssa käyttöliittymät.
-                        </p>    
-                    </div>
-                    <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]'>
-                        <img alt='A handsome man' className='-scale-y-100 -rotate-180 aspect-1:4 object-contain  lg:w-full md:w-3/7 w-1/2' src='./src/assets/founders/transparent_leon.webp'></img>
-                    </div>
-                </a>
-                <a target="_blank" className='bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[67.5vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/victor-ocampo-a609b3250/'>
-                    <div className='w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10'>
-                        <h1 className='text-black font-poppins font-extrabold italic md:text-7xl lg:text-8xl text-4xl'>Victor Ocampo</h1>
-                        <h2 className='text-black font-raleway font-bold md:text-2xl md:w-full w-5/6'>Full stack kehittäjä</h2>
-                        <p className='text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]'>"Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan teknologian, kaikki on mahdollista."</p>
-                        <p className='text-black font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden' >
-                        Vaikka Victor on johdon nuorin jäsen hän on kuitenkin tehnyt pitkään teknologia hommia. Hän on ollut mukana lukuisissa ohjelmointiprojekteissa, tehnyt kovaa työtä kiinteistö-alalla ohjelmointi puolella ja nykyään johtaa tiimimme ohjelmointi puolta. Hän lisäksi johtaa SHC:n kansainvälistymistä.
-                        </p>
-                    </div>
-                    <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]'>
-                        <img alt='A handsome man' className='object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7' src='./src/assets/founders/transparent_victor2.png'></img>
-                    </div>
-                </a>
-                <a target="_blank" className='bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] min-h-[67.5vh] lg:justify-between grid-cols-1 md:grid-cols-2' href='https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/'>
-                    <div className='w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5'>
-                        <h1 className='text-white font-poppins font-extrabold italic md:text-7xl lg:text-8xl text-4xl'>Marc Smeds</h1>
-                        <h2 className='text-white font-raleway font-bold md:text-2xl md:w-full w-5/6'>Full stack kehittäjä</h2>
-                        <p className='text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]'>"Teknologia ja digitalisaatio on menestyksen kulmakivi."</p>
-                        <p className='text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden' >
-                        Marc on nettimaailmassa kunniakas veteraani. Hän on toiminut sekä frontendin että backendin puolella nettimaailmassa ja sovellusmaailmassa. Hän nykyään toimii pääosin palvelimen puolen ohjelmoijana sekä on vastuussa Android sovelluksien toteutuksesta.
-                        </p>
-                    </div>
-                    <div className='flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]'>
-                        <img alt='A handsome man' className='object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7' src='./src/assets/team/transparent_alex.webp'></img>
-                    </div>
-                </a>
-            </div>
-        </div>
-    );
+  return (
+    <div
+      className="bg-main relative z-[10]"
+      ref={aboutUsWrapper}
+      id="aboutUsWrapper"
+    >
+      <div>
+        <a
+          target="_blank"
+          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2"
+          href="https://www.linkedin.com/in/sisu-eriksson-b69475231/"
+        >
+          <div className="w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5">
+            <h1 className="text-black font-poppins font-extrabold italic md:text-7xl lg:text-7xl text-4xl">
+              Sisu Eriksson
+            </h1>
+            <h2 className="text-black font-raleway font-bold md:text-2xl md:w-full w-5/6">
+              Frontend kehitäjä ja markkinointi
+            </h2>
+            <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[64vw]">
+              "Hyvin suunniteltu on jo puoliksi tehty"
+            </p>
+            <p className="text-black font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden">
+              Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
+              frontend developerina että markkinoinnin ja toimitusjohtajuuden
+              tehtävissä. Hänellä on vankka tekninen osaaminen
+              frontend-kehityksessä ja laaja kokemus markkinoinnista. Sisu
+              pyrkii luomaan vaikuttavia digitaalisia kokemuksia ja edistämään
+              yrityksen menestystä monipuolisesti.
+            </p>
+          </div>
+          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
+            <img
+              alt="A handsome man"
+              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7"
+              src="./src/assets/founders/transparent_sisu.webp"
+            ></img>
+          </div>
+        </a>
+        <a
+          target="_blank"
+          className="bg-black m-0 p-0 flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2"
+          href="https://www.linkedin.com/in/leon-g-732b31204/"
+        >
+          <div className="w-full h-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5">
+            <h1 className="text-white font-poppins font-extrabold italic md:text-7xl lg:text-7xl text-4xl">
+              Leon Gustafsson
+            </h1>
+            <h2 className="text-white font-raleway font-bold md:text-2xl md:w-full w-5/6">
+              Frontend kehittäjä ja suunnittelija
+            </h2>
+            <p className="text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]">
+              "Päämääränä on käyttäjälle huomattava helpotus arjessa."
+            </p>
+            <p className="text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden">
+              Leon on kokenut frontend-kehittäjä, joka yhdessä suunnittelijan
+              kanssa luo vaikuttavia käyttöliittymiä. Hänen taitonsa
+              teknologiassa ja kykynsä yhdistää käytettävyys ja visuaalinen
+              houkuttelevuus tekevät hänestä arvokkaan tiimin jäsenen. Leonin
+              intohimo käyttäjärajapintojen kehittämiseen heijastuu hänen
+              työssään, ja hän pyrkii jatkuvasti tuomaan innovatiivisia
+              ratkaisuja projekteihin.
+            </p>
+          </div>
+          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
+            <img
+              alt="A handsome man"
+              className="-scale-y-100 -rotate-180 aspect-1:4 object-contain  lg:w-full md:w-3/7 w-1/2"
+              src="./src/assets/founders/transparent_leon.webp"
+            ></img>
+          </div>
+        </a>
+        <a
+          target="_blank"
+          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[50h] lg:justify-between grid-cols-1 md:grid-cols-2"
+          href="https://www.linkedin.com/in/victor-ocampo-a609b3250/"
+        >
+          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
+            <h1 className="text-black font-poppins font-extrabold italic md:text-7xl lg:text-7xl text-4xl">
+              Victor Ocampo
+            </h1>
+            <h2 className="text-black font-raleway font-bold md:text-2xl md:w-full w-5/6">
+              Full stack kehittäjä
+            </h2>
+            <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]">
+              "Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan
+              teknologian, kaikki on mahdollista."
+            </p>
+            <p className="text-black font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden">
+              Victor on monipuolinen fullstack-kehittäjä, joka loistaa
+              erityisesti backend-ohjelmoinnissa. Hänen hämmästyttävä
+              koodaustaitonsa ja vahva tekninen osaamisensa rikastuttavat
+              tiimiämme. Vaikka Victor keskittyy pääosin backend-kehitykseen,
+              hänellä on tarvittavat taidot myös frontendin parissa
+              työskentelyyn tarvittaessa. Victor panostaa huolellisesti
+              projektien laatuun ja turvallisuuteen, ja hänellä on vahva
+              sitoutuminen asiakkaidemme tarpeiden täyttämiseen.
+            </p>
+          </div>
+          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
+            <img
+              alt="A handsome man"
+              className="object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+              src="./src/assets/founders/transparent_victor2.png"
+            ></img>
+          </div>
+        </a>
+        <a
+          target="_blank"
+          className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[39vh] lg:justify-between grid-cols-1 md:grid-cols-2"
+          href="https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/"
+        >
+          <div className="w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5">
+            <h1 className="text-white font-poppins font-extrabold italic md:text-7xl lg:text-7xl text-4xl">
+              Marc Smeds
+            </h1>
+            <h2 className="text-white font-raleway font-bold md:text-2xl md:w-full w-5/6">
+              Full stack kehittäjä
+            </h2>
+            <p className="text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]">
+              "Hetki on kaikki mitä tarvitsemme."
+            </p>
+            <p className="text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden">
+              Marc on taitava fullstack-kehittäjä, joka on erikoistunut
+              monimutkaisten kokonaisuuksien hajottamiseen ja
+              yksinkertaistamiseen. Hänen kykynsä luoda selkeitä ja tehokkaita
+              ratkaisuja tekee hänestä arvokkaan tiimipelaajan. Marc on innokas
+              tekemään monimutkaisetkin projektit saumattomiksi ja helposti
+              hallittaviksi osiksi.
+            </p>
+          </div>
+          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
+            <img
+              alt="A handsome man"
+              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7"
+              src="./src/assets/team/transparent_alex.webp"
+            ></img>
+          </div>
+        </a>
+      </div>
+    </div>
+  );
 }
 
 /*
