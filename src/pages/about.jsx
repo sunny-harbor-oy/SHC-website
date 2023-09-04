@@ -6,7 +6,9 @@ let touchstart = null;
 let mobileScreen = window.innerWidth < 821;
 let scrollPoints = [];
 let scrollOffset = window.innerHeight / 2;
-let touchSensitivity = 50;
+const touchSensitivity = 50;
+const triggerDelay = 1250;
+const shouldReset = true;
 
 export default function AboutPage(language = "fi") {
   const aboutUsWrapper = useRef(null);
@@ -62,14 +64,18 @@ export default function AboutPage(language = "fi") {
         window.addEventListener('scroll', () => {
           let scrolled = true;
           scrollPoints.forEach(x => {
-            if (x.triggered) return;
             if (window.scrollY + scrollOffset > x.y) {
-              if (window.scrollY + scrollOffset < x.bottom) {
-                x.triggered = true;
-                setTimeout(() => {
-                  x.elem.children[0].style.left = '-100vw';
-                  x.elem.children[1].style.left = `${x.paddingX}px`;
-                }, 1250);
+              if (window.scrollY < x.bottom) {
+                if (!x.triggered) {
+                    x.triggered = true;
+                    setTimeout(() => {
+                      x.elem.children[0].style.left = '-100vw';
+                      x.elem.children[1].style.left = `${x.paddingX}px`;
+                    }, triggerDelay);
+                }
+              } else if (shouldReset) {
+                x.elem.children[0].style.left = `${x.paddingX}px`;
+                x.elem.children[1].style.left = '100vw';
               }
             } else {
               scrolled = false;
