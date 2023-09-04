@@ -25,15 +25,15 @@ export default function SHCFooter() {
                 Sosiaaliset mediat
               </h1>
               <div className="flex flex-col italic font-light text-footerElements">
-                <a className="mb-2" href="www.instagram.com">
+{/*                 <a className="mb-2" href="www.instagram.com">
                   Instagram
-                </a>
-                <a className="mb-2" href="www.linkedin.com">
+                </a> */}
+                <a className="mb-2" href="https://www.linkedin.com/company/sunny-harbor-consulting/">
                   Linkedin
                 </a>
-                <a className="mb-2" href="www.facebook.com">
+                {/* <a className="mb-2" href="www.facebook.com">
                   Facebook
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -43,10 +43,10 @@ export default function SHCFooter() {
                 Yhteystiedot
               </h1>
               <div className="italic font-light text-footerElements">
-                <p className="mb-2">Aurinkoinenkatu 4B, 00990 HELSINKI</p>
+                {/* <p className="mb-2">Aurinkoinenkatu 4B, 00990 HELSINKI</p> */}
                 <p className="mb-2">sunnyharborconsulting@gmail.com</p>
-                <p className="mb-2">+358 000000000</p>
-                <p className="mb-2">Y-Tunnus: 0000000-0</p>
+{/*                 <p className="mb-2">+358 000000000</p>
+                <p className="mb-2">Y-Tunnus: 0000000-0</p> */}
               </div>
             </div>
           </div>
