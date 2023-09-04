@@ -133,6 +133,7 @@ export default function HomePage(language = "fi") {
               autoPlay
               muted
               loop
+              playsInline
               id="backgroundVideo"
               /* className="top-0 z-0 object-cover w-full p-0 m-0 bgVideoFilter" */
               className="top-0 z-0 object-cover w-full p-0 m-0"
