@@ -28,7 +28,7 @@ export default function SHCFooter() {
 {/*                 <a className="mb-2" href="www.instagram.com">
                   Instagram
                 </a> */}
-                <a className="mb-2" href="https://www.linkedin.com/company/sunny-harbor-consulting/">
+                <a className="mb-2 hover:cursor-pointer" href="https://www.linkedin.com/company/sunny-harbor-consulting/">
                   Linkedin
                 </a>
                 {/* <a className="mb-2" href="www.facebook.com">
