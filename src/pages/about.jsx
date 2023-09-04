@@ -112,7 +112,7 @@ export default function AboutPage(language = "fi") {
               Frontend kehitäjä ja markkinointi
             </h2>
             <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[62vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+              <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Unelmointi on tärkeä osa onnea ja menestystä, mutta sen voima paljastuu vasta, kun sitoudumme tavoittelemaan niitä."
               </p>
               <p className="text-black font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
@@ -147,7 +147,7 @@ export default function AboutPage(language = "fi") {
               Frontend kehittäjä ja suunnittelija
             </h2>
             <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[62vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+              <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Mä haluun tehä se, mä teen se."
               </p>
               <p className="text-white font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
@@ -183,7 +183,7 @@ export default function AboutPage(language = "fi") {
               Full stack kehittäjä
             </h2>
             <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[62vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+              <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan
                 teknologian, kaikki on mahdollista."
               </p>
@@ -221,7 +221,7 @@ export default function AboutPage(language = "fi") {
               Full stack kehittäjä
             </h2>
             <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[62vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+              <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Suuret kokonaisuudet koostuu pienemmistä osista. Hajottamalla ja jakamalla voimme ymmärtää suuriakin kokonaisuuksia."
               </p>
               <p className="text-white font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
