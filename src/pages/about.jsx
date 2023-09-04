@@ -19,7 +19,7 @@ export default function AboutPage(language = "fi") {
 
       console.log(teamElems);
 
-      for(let i = 0; i < 1; i++) {
+      for(let i = 0; i < teamElems.length; i++) {
         teamElems[i].addEventListener('click', function (event) {
           event.preventDefault();
           return false;
@@ -47,7 +47,6 @@ export default function AboutPage(language = "fi") {
             const touchend = e.changedTouches[0].clientX;
             if (touchend - touchstart < -touchSensitivity) {
               console.log('swiped left');
-              console.log(contentDiv.children[0]);
               contentDiv.children[0].style.left = '-100vw';
               contentDiv.children[1].style.left = `${paddingX}px`;
             } else if (touchend - touchstart > touchSensitivity) {
@@ -63,20 +62,14 @@ export default function AboutPage(language = "fi") {
         window.addEventListener('scroll', () => {
           let scrolled = true;
           scrollPoints.forEach(x => {
-            if (!scrolled) return;
-
-            let timeout = false;
-
+            if (x.triggered) return;
             if (window.scrollY + scrollOffset > x.y) {
               if (window.scrollY + scrollOffset < x.bottom) {
-                if (!x.triggered) {
-                  console.log("scrolled over");
-                  x.triggered = true;
-                  timeout = setTimeout(() => {
-                    contentDiv.children[0].style.left = '-100vw';
-                    contentDiv.children[1].style.left = `${x.paddingX}px`;
-                  }, 2000);
-                }
+                x.triggered = true;
+                setTimeout(() => {
+                  x.elem.children[0].style.left = '-100vw';
+                  x.elem.children[1].style.left = `${x.paddingX}px`;
+                }, 1250);
               }
             } else {
               scrolled = false;
@@ -108,16 +101,16 @@ export default function AboutPage(language = "fi") {
               Frontend kehitäjä ja markkinointi
             </h2>
             <div className="absolute left-0 md:w-auto w-[65vw] md:h-auto h-[200px] md:relative overflow-hidden">
-              <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[64vw] lg:relative absolute md:left-0 left-6 transition-all ease-in-out delay-250">
-                "Hyvin suunniteltu on jo puoliksi tehty"
+              <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[62vw] lg:relative absolute md:left-0 left-6 transition-all ease-in-out delay-250">
+                "Unelmointi on tärkeä osa onnea ja menestystä, mutta sen voima paljastuu vasta, kun sitoudumme tavoittelemaan niitä."
               </p>
               <p className="text-black font-poppins md:font-extralight font-light lg:text-4xl text-base lg:mt-10 lg:relative md:w-auto w-[51vw] md:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
-                Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
-                frontend developerina että markkinoinnin ja toimitusjohtajuuden
-                tehtävissä. Hänellä on vankka tekninen osaaminen 
-                frontend-kehityksessä ja laaja kokemus markkinoinnista. Sisu
-                pyrkii luomaan vaikuttavia digitaalisia kokemuksia ja edistämään
-                yrityksen menestystä monipuolisesti.
+              Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
+              frontend developerina että markkinoinnin ja toimitusjohtajuuden
+              tehtävissä. Hänellä on vankka tekninen osaaminen
+              frontend-kehityksessä ja laaja kokemus markkinoinnista. Sisu
+              pyrkii luomaan vaikuttavia digitaalisia kokemuksia ja edistämään
+              yrityksen menestystä monipuolisesti.
               </p>
             </div>
           </div>
@@ -131,41 +124,45 @@ export default function AboutPage(language = "fi") {
         </a>
         <a
           target="_blank"
-          className="bg-black m-0 p-0 flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2"
+          className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
           href="https://www.linkedin.com/in/leon-g-732b31204/"
+          onclick="return false;"
         >
-          <div className="w-full h-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-4xl italic font-extrabold text-white font-poppins md:text-7xl lg:text-7xl">
+          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
+            <h1 className="text-white text-4xl italic font-extrabold text- font-poppins md:text-7xl lg:text-7xl">
               Leon Gustafsson
             </h1>
             <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
               Frontend kehittäjä ja suunnittelija
             </h2>
-            <p className="text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]">
-              "Päämääränä on käyttäjälle huomattava helpotus arjessa."
-            </p>
-            <p className="hidden text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block">
-              Leon on kokenut frontend-kehittäjä, joka yhdessä suunnittelijan
-              kanssa luo vaikuttavia käyttöliittymiä. Hänen taitonsa
-              teknologiassa ja kykynsä yhdistää käytettävyys ja visuaalinen
-              houkuttelevuus tekevät hänestä arvokkaan tiimin jäsenen. Leonin
-              intohimo käyttäjärajapintojen kehittämiseen heijastuu hänen
-              työssään, ja hän pyrkii jatkuvasti tuomaan innovatiivisia
-              ratkaisuja projekteihin.
-            </p>
+            <div className="absolute left-0 md:w-auto w-[65vw] md:h-auto h-[200px] md:relative overflow-hidden">
+              <p className="text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[64vw] lg:relative absolute md:left-0 left-6 transition-all ease-in-out delay-250">
+                "Mä haluun tehä se, mä teen se."
+              </p>
+              <p className="text-white font-poppins md:font-extralight font-light lg:text-4xl text-base lg:mt-10 lg:relative md:w-auto w-[51vw] md:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                Leon on kokenut frontend-kehittäjä, joka yhdessä suunnittelijan
+                kanssa luo vaikuttavia käyttöliittymiä. Hänen taitonsa
+                teknologiassa ja kykynsä yhdistää käytettävyys ja visuaalinen
+                houkuttelevuus tekevät hänestä arvokkaan tiimin jäsenen. Leonin
+                intohimo käyttäjärajapintojen kehittämiseen heijastuu hänen
+                työssään, ja hän pyrkii jatkuvasti tuomaan innovatiivisia
+                ratkaisuja projekteihin.
+              </p>
+            </div>
           </div>
           <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
             <img
               alt="A handsome man"
-              className="object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
               src="./src/assets/founders/transparent_leon.webp"
             ></img>
           </div>
         </a>
         <a
           target="_blank"
-          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[50h] lg:justify-between grid-cols-1 md:grid-cols-2"
+          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
           href="https://www.linkedin.com/in/victor-ocampo-a609b3250/"
+          onclick="return false;"
         >
           <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
             <h1 className="text-4xl italic font-extrabold text-black font-poppins md:text-7xl lg:text-7xl">
@@ -174,57 +171,62 @@ export default function AboutPage(language = "fi") {
             <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
               Full stack kehittäjä
             </h2>
-            <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]">
-              "Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan
-              teknologian, kaikki on mahdollista."
-            </p>
-            <p className="hidden text-black font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block">
-              Victor on monipuolinen fullstack-kehittäjä, joka loistaa
-              erityisesti backend-ohjelmoinnissa. Hänen hämmästyttävä
-              koodaustaitonsa ja vahva tekninen osaamisensa rikastuttavat
-              tiimiämme. Vaikka Victor keskittyy pääosin backend-kehitykseen,
-              hänellä on tarvittavat taidot myös frontendin parissa
-              työskentelyyn tarvittaessa. Victor panostaa huolellisesti
-              projektien laatuun ja turvallisuuteen, ja hänellä on vahva
-              sitoutuminen asiakkaidemme tarpeiden täyttämiseen.
-            </p>
+            <div className="absolute left-0 md:w-auto w-[65vw] md:h-auto h-[200px] md:relative overflow-hidden">
+              <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[62vw] lg:relative absolute md:left-0 left-6 transition-all ease-in-out delay-250">
+                "Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan
+                teknologian, kaikki on mahdollista."
+              </p>
+              <p className="text-black font-poppins md:font-extralight font-light lg:text-4xl text-base lg:mt-10 lg:relative md:w-auto w-[51vw] md:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                Victor on monipuolinen fullstack-kehittäjä, joka loistaa
+                erityisesti backend-ohjelmoinnissa. Hänen hämmästyttävä
+                koodaustaitonsa ja vahva tekninen osaamisensa rikastuttavat
+                tiimiämme. Vaikka Victor keskittyy pääosin backend-kehitykseen,
+                hänellä on tarvittavat taidot myös frontendin parissa
+                työskentelyyn tarvittaessa. Victor panostaa huolellisesti
+                projektien laatuun ja turvallisuuteen, ja hänellä on vahva
+                sitoutuminen asiakkaidemme tarpeiden täyttämiseen.
+              </p>
+            </div>
           </div>
           <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
             <img
               alt="A handsome man"
-              className="object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
               src="./src/assets/founders/transparent_victor2.png"
             ></img>
           </div>
         </a>
         <a
           target="_blank"
-          className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[39vh] lg:justify-between grid-cols-1 md:grid-cols-2"
+          className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
           href="https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/"
+          onclick="return false;"
         >
           <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-4xl italic font-extrabold text-white font-poppins md:text-7xl lg:text-7xl">
+            <h1 className="text-white text-4xl italic font-extrabold text- font-poppins md:text-7xl lg:text-7xl">
               Marc Smeds
             </h1>
             <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
               Full stack kehittäjä
             </h2>
-            <p className="text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]">
-              "Hetki on kaikki mitä tarvitsemme."
-            </p>
-            <p className="hidden text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block">
-              Marc on taitava fullstack-kehittäjä, joka on erikoistunut
-              monimutkaisten kokonaisuuksien hajottamiseen ja
-              yksinkertaistamiseen. Hänen kykynsä luoda selkeitä ja tehokkaita
-              ratkaisuja tekee hänestä arvokkaan tiimipelaajan. Marc on innokas
-              tekemään monimutkaisetkin projektit saumattomiksi ja helposti
-              hallittaviksi osiksi.
-            </p>
+            <div className="absolute left-0 md:w-auto w-[65vw] md:h-auto h-[200px] md:relative overflow-hidden">
+              <p className="text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[64vw] lg:relative absolute md:left-0 left-6 transition-all ease-in-out delay-250">
+                "Hetki on kaikki mitä tarvitsemme."
+              </p>
+              <p className="text-white font-poppins md:font-extralight font-light lg:text-4xl text-base lg:mt-10 lg:relative md:w-auto w-[51vw] md:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                Marc on taitava fullstack-kehittäjä, joka on erikoistunut
+                monimutkaisten kokonaisuuksien hajottamiseen ja
+                yksinkertaistamiseen. Hänen kykynsä luoda selkeitä ja tehokkaita
+                ratkaisuja tekee hänestä arvokkaan tiimipelaajan. Marc on innokas
+                tekemään monimutkaisetkin projektit saumattomiksi ja helposti
+                hallittaviksi osiksi.
+              </p>
+            </div>
           </div>
           <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
             <img
               alt="A handsome man"
-              className="object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
               src="./src/assets/team/transparent_alex.webp"
             ></img>
           </div>
