@@ -108,7 +108,7 @@ export default function AboutPage(language = "fi") {
             <h1 className="text-4xl italic font-extrabold text-black text- font-poppins md:text-7xl lg:text-7xl">
               Leon Gustafsson
             </h1>
-            <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
+            <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
               Frontend kehittäjä ja suunnittelija
             </h2>
             <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
