@@ -6,6 +6,7 @@ import AboutPage from "../pages/about.jsx";
 import ContactPage from "../pages/contact.jsx";
 import PartnersPage from "../pages/partners.jsx";
 import SHCFooter from "../elements/shcFooter";
+import { Link } from "react-router-dom";
 
 const motto = [
   "Developing technology beyond the horizon.",
@@ -180,10 +181,11 @@ export default function HomePage(language = "fi") {
             >
               <div className="inline-block align-middle overflow-hidden w-full z-[10]">
                 <h1 className="text-4xl xl:text-7xl font-poppins">Mitä osaamme?</h1>
-                <h2 className="relative w-full mt-2 text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl">
+                <h2 className="relative w-full mt-2 text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl lg:mb-10 md:mb-7 mb-4">
                 Olemme moniosaava ohjelmistokehitys yritys. Toteutamme teille mobiili-, netti- ja embedded-sovelluksia. <br/><br/>
                 Meillä on kokemusta seuraavien ohjelmointikielien kanssa: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo ja Assembly (x86, ARM ja Z80).
                 </h2>
+                {/* <Link to="#" className="text-white font-poppins lg:text-4xl md:text-2xl font-light border-2 border-white border-solid px-3 hover:cursor-pointer">Lue lisää...</Link> */}
               </div>
               <img src={capsuleImg} className="absolute top-0 left-0 object-cover w-full h-full grayscale" />
             </div>

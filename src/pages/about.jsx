@@ -24,8 +24,6 @@ export default function AboutPage(language = "fi") {
       // Mobile description swiping feature
       const teamElems = aboutUsWrapper.current.children[0].children;
 
-      console.log(teamElems);
-
       for(let i = 0; i < teamElems.length; i++) {
         teamElems[i].addEventListener('click', function (event) {
           event.preventDefault();
@@ -37,7 +35,7 @@ export default function AboutPage(language = "fi") {
         const posY = contentDiv.children[0].getBoundingClientRect().y;
         const bottomY = contentDiv.children[0].getBoundingClientRect().bottom;
 
-        scrollPoints.push({y: posY, bottom: bottomY, elem: contentDiv, triggered: false, paddingX});
+        scrollPoints.push({y: posY, bottom: bottomY, elem: contentDiv, triggered: false, paddingX, state: true, count: 0});
 
         //Trim description to three sentances
         const description = contentDiv.children[1].innerHTML;
@@ -45,7 +43,26 @@ export default function AboutPage(language = "fi") {
 
         contentDiv.children[1].innerHTML = sentances.join('.') + '.';
 
-        contentDiv.addEventListener('touchstart', e => {
+        contentDiv.addEventListener('touchend', () => {
+          if (scrollPoints[i].count !== 0) {
+            scrollPoints[i].count = 0;
+            return;
+          }
+          if (scrollPoints[i].state) {
+            contentDiv.children[0].style.left = '-100vw';
+            contentDiv.children[1].style.left = `${paddingX}px`;
+
+            scrollPoints[i].state = false;
+          } else {
+            contentDiv.children[0].style.left = `${paddingX}px`;
+            contentDiv.children[1].style.left = '100vw';
+
+            scrollPoints[i].state = true;
+          }
+          scrollPoints[i].count++;
+        });
+
+/*       contentDiv.addEventListener('touchstart', e => {
           touchstart = e.touches[0].clientX;
         })
 
@@ -62,10 +79,8 @@ export default function AboutPage(language = "fi") {
               contentDiv.children[1].style.left = '100vw';
             }
           }
-        }, false);
+        }, false); */
 
-        console.log(scrollPoints);
-        
         window.addEventListener('scroll', () => {
           let scrolled = true;
           scrollPoints.forEach(x => {
@@ -115,7 +130,7 @@ export default function AboutPage(language = "fi") {
             <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
               Frontend kehittäjä ja suunnittelija
             </h2>
-            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
+            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
               <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Mä haluun tehä se, mä teen se."
               </p>
@@ -151,7 +166,7 @@ export default function AboutPage(language = "fi") {
             <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
               Frontend kehitäjä ja markkinointi
             </h2>
-            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
+            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
               <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Unelmointi on tärkeä osa onnea ja menestystä, mutta sen voima paljastuu vasta, kun sitoudumme tavoittelemaan niitä."
               </p>
@@ -186,7 +201,7 @@ export default function AboutPage(language = "fi") {
             <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
               Full stack kehittäjä
             </h2>
-            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
+            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
               <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan
                 teknologian, kaikki on mahdollista."
@@ -224,7 +239,7 @@ export default function AboutPage(language = "fi") {
             <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
               Full stack kehittäjä
             </h2>
-            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
+            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
               <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Suuret kokonaisuudet koostuu pienemmistä osista. Hajottamalla ja jakamalla voimme ymmärtää suuriakin kokonaisuuksia."
               </p>
