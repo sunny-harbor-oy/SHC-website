@@ -121,7 +121,7 @@ export default function HomePage(language = "fi") {
       <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"></meta>
       <div
         id="main"
-        className="h-[50vh] flex justify-center mt-0 md:h-screen"
+        className="flex justify-center h-screen mt-0"
       >
         <video
               autoPlay
@@ -135,7 +135,7 @@ export default function HomePage(language = "fi") {
             </video>
         <div
           id="content"
-          className="absolute flex flex-col justify-center items-center text-white h-[50vh] md:h-screen"
+          className="absolute flex flex-col items-center justify-center h-screen text-white"
         >
           <h1 className="text-2xl font-bold text-center cursor-default select-none md:text-3xl font-poppins lg:text-6xl text-h1">
             Sunny Harbor Consulting

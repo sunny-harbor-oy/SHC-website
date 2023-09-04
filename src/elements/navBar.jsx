@@ -30,16 +30,16 @@ export default function NavBar() {
   return (
     <nav
       id="navBarWrapper"
-      className={`w-full fixed top-0 z-50 bg-main shadow ${
+      className={`w-full fixed top-0 px-5 z-50 bg-main shadow ${
         navbar ? "md:translate-y-0" : "md:-translate-y-full"
       } md:transition-transform md:duration-300 md:ease-in-out md:fixed md:z-60`}
     >
-      <div className="justify-between bg-transparent px-4 mx-auto lg:max-w-screen-2xl md:items-center md:flex md:px-0 md:bg-transparent ">
+      <div className="justify-between mx-auto bg-transparent lg:max-w-screen-2xl md:items-center md:flex md:bg-transparent ">
         <div>
           <div className="flex items-center justify-between py-2 md:block">
             <a href="/">
-              <img className="h-16 font-bold md:mx-5 lg:mx-0" src={logo} alt="SHC" />
-              {/* <h1 className="text-3xl text-white font-extrabold italic">Sunny Harbor Consulting</h1> */}
+              <img className="h-16 font-bold" src={logo} alt="SHC" />
+              {/* <h1 className="text-3xl italic font-extrabold text-white">Sunny Harbor Consulting</h1> */}
             </a>
             <div className="md:hidden">
               <button
@@ -83,7 +83,7 @@ export default function NavBar() {
           <div
             className={`text-white flex-1 justify-self-center pb-3 md:block md:pb-0 md:mt-0 ${listClassName}`}
           >
-            <ul className="items-center justify-center font-poppins space-y-8 md:flex md:space-x-12 md:space-y-0 ">
+            <ul className="items-center justify-center space-y-8 font-poppins md:flex md:space-x-12 md:space-y-0 ">
               <li className={`cursor-pointer text-h2`} onClick={() => {
                 if (window.location.pathname !== "/") window.location.href = '/#aboutUsWrapper';
                 else document.getElementById('about').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
