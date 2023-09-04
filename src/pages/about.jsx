@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 import leonImg from "../assets/founders/transparent_leon.webp";
 import sisuImg from "../assets/founders/transparent_sisu.webp";
-import victorImg from "../assets/founders/transparent_victor2.png";
+import victorImg from "../assets/founders/transparent_victor2.webp";
 import marcImg from "../assets/team/transparent_alex.webp";
 
 //import '../style/pages/about.css';
