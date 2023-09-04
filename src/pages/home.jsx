@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import capsuleImg from "../assets/capsule.png";
-import earthVideo from "../assets/earth.mp4";
+//import earthVideo from "../assets/earth.mp4";
 import earthImg from "../assets/earth.webp";
 import AboutPage from "../pages/about.jsx";
 import ContactPage from "../pages/contact.jsx";
