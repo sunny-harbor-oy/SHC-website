@@ -35,7 +35,7 @@ export default function AboutPage(language = "fi") {
         const posY = contentDiv.children[0].getBoundingClientRect().y;
         const bottomY = contentDiv.children[0].getBoundingClientRect().bottom;
 
-        scrollPoints.push({y: posY, bottom: bottomY, elem: contentDiv, triggered: false, paddingX, state: true, count: 0});
+        scrollPoints.push({y: posY, bottom: bottomY, elem: contentDiv, triggered: false, paddingX, state: true});
 
         //Trim description to three sentances
         const description = contentDiv.children[1].innerHTML;
@@ -44,10 +44,6 @@ export default function AboutPage(language = "fi") {
         contentDiv.children[1].innerHTML = sentances.join('.') + '.';
 
         contentDiv.addEventListener('touchend', () => {
-          if (scrollPoints[i].count !== 0) {
-            scrollPoints[i].count = 0;
-            return;
-          }
           if (scrollPoints[i].state) {
             contentDiv.children[0].style.left = '-100vw';
             contentDiv.children[1].style.left = `${paddingX}px`;
@@ -59,7 +55,6 @@ export default function AboutPage(language = "fi") {
 
             scrollPoints[i].state = true;
           }
-          scrollPoints[i].count++;
         });
 
 /*       contentDiv.addEventListener('touchstart', e => {
