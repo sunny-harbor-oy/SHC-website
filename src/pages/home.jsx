@@ -127,12 +127,12 @@ export default function HomePage(language = "fi") {
           id="content"
           className="absolute flex flex-col justify-center items-center text-white h-[50vh] md:h-screen"
         >
-          <h1 className="text-2xl md:text-3xl font-poppins font-bold text-center cursor-default select-none lg:text-6xl text-h1">
+          <h1 className="text-2xl font-bold text-center cursor-default select-none md:text-3xl font-poppins lg:text-6xl text-h1">
             Sunny Harbor Consulting
           </h1>
           <p
             id="titleDesc"
-            className="font-raleway font-normal text-center cursor-default select-none sm:text-2xl lg:text-3xl text-p"
+            className="font-normal text-center cursor-default select-none font-raleway sm:text-2xl lg:text-3xl text-p"
           ></p>
           <div className="flex justify-around hidden w-full mt-8 font-mono text-2xl lg:visible">
             <button 
@@ -156,8 +156,8 @@ export default function HomePage(language = "fi") {
               className="relative grid w-full h-full grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-32 xl:h-screen"
             >
               <div className="relative overflow-hidden w-full z-[10]">
-              <h1 className="text-4xl xl:text-7xl font-poppins font-bold italic">Sunny Harbor Consulting</h1>
-              <h2 className="relative w-full font-poppins font-extralight text-base lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-7">
+              <h1 className="text-4xl italic font-bold xl:text-7xl font-poppins">Sunny Harbor Consulting</h1>
+              <h2 className="relative w-full text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-7">
                   Sunny Harbor Consulting eli SHC on nuori ja taitava ohjelmistoyritys,
                   joka erikoistuu innovatiivisiin web- ja mobiilisovelluksiin.
                 <br/><br/>
@@ -175,12 +175,12 @@ export default function HomePage(language = "fi") {
               className="relative grid w-full h-screen grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-32"
             >
               <div className="inline-block align-middle overflow-hidden w-full z-[10]">
-                <h1 className="text-4xl xl:text-7xl font-poppins">Nuori mutta kokenut</h1>
-                <h2 className="relative w-full font-poppins font-extralight text-base lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-7">
+                <h1 className="text-4xl xl:text-7xl font-poppins">Mitä kieliä osaamme?</h1>
+                <h2 className="relative w-full text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-7">
                 Meillä on kokemusta seuraavien ohjelmointikielien kanssa työskentelystä: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo, Assembly (x86, ARM ja Z80) ja muilla.
                 </h2>
               </div>
-              <img src={capsuleImg} className="absolute top-0 left-0 object-cover h-full grayscale" />
+              <img src={capsuleImg} className="absolute top-0 left-0 object-cover w-full h-full grayscale" />
             </div>
           </div>
           <AboutPage />

@@ -65,11 +65,11 @@ export default function AboutPage(language = "fi") {
           href="https://www.linkedin.com/in/sisu-eriksson-b69475231/"
           onclick="return false;"
         >
-          <div className="w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5">
-            <h1 className="text-black font-poppins font-extrabold italic md:text-7xl lg:text-7xl text-4xl">
+          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
+            <h1 className="text-4xl italic font-extrabold text-black font-poppins md:text-7xl lg:text-7xl">
               Sisu Eriksson
             </h1>
-            <h2 className="text-black font-raleway font-bold md:text-2xl md:w-full w-5/6">
+            <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
               Frontend kehitäjä ja markkinointi
             </h2>
             <div className="absolute left-0 md:w-auto w-[65vw] md:h-auto h-[28vh] md:relative overflow-hidden">
@@ -99,17 +99,17 @@ export default function AboutPage(language = "fi") {
           className="bg-black m-0 p-0 flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2"
           href="https://www.linkedin.com/in/leon-g-732b31204/"
         >
-          <div className="w-full h-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5">
-            <h1 className="text-white font-poppins font-extrabold italic md:text-7xl lg:text-7xl text-4xl">
+          <div className="w-full h-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
+            <h1 className="text-4xl italic font-extrabold text-white font-poppins md:text-7xl lg:text-7xl">
               Leon Gustafsson
             </h1>
-            <h2 className="text-white font-raleway font-bold md:text-2xl md:w-full w-5/6">
+            <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
               Frontend kehittäjä ja suunnittelija
             </h2>
             <p className="text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]">
               "Päämääränä on käyttäjälle huomattava helpotus arjessa."
             </p>
-            <p className="text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden">
+            <p className="hidden text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block">
               Leon on kokenut frontend-kehittäjä, joka yhdessä suunnittelijan
               kanssa luo vaikuttavia käyttöliittymiä. Hänen taitonsa
               teknologiassa ja kykynsä yhdistää käytettävyys ja visuaalinen
@@ -122,7 +122,7 @@ export default function AboutPage(language = "fi") {
           <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
             <img
               alt="A handsome man"
-              className="-scale-y-100 -rotate-180 aspect-1:4 object-contain  lg:w-full md:w-3/7 w-1/2"
+              className="object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
               src="./src/assets/founders/transparent_leon.webp"
             ></img>
           </div>
@@ -133,17 +133,17 @@ export default function AboutPage(language = "fi") {
           href="https://www.linkedin.com/in/victor-ocampo-a609b3250/"
         >
           <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-black font-poppins font-extrabold italic md:text-7xl lg:text-7xl text-4xl">
+            <h1 className="text-4xl italic font-extrabold text-black font-poppins md:text-7xl lg:text-7xl">
               Victor Ocampo
             </h1>
-            <h2 className="text-black font-raleway font-bold md:text-2xl md:w-full w-5/6">
+            <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
               Full stack kehittäjä
             </h2>
             <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]">
               "Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan
               teknologian, kaikki on mahdollista."
             </p>
-            <p className="text-black font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden">
+            <p className="hidden text-black font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block">
               Victor on monipuolinen fullstack-kehittäjä, joka loistaa
               erityisesti backend-ohjelmoinnissa. Hänen hämmästyttävä
               koodaustaitonsa ja vahva tekninen osaamisensa rikastuttavat
@@ -167,17 +167,17 @@ export default function AboutPage(language = "fi") {
           className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[39vh] lg:justify-between grid-cols-1 md:grid-cols-2"
           href="https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/"
         >
-          <div className="w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5">
-            <h1 className="text-white font-poppins font-extrabold italic md:text-7xl lg:text-7xl text-4xl">
+          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
+            <h1 className="text-4xl italic font-extrabold text-white font-poppins md:text-7xl lg:text-7xl">
               Marc Smeds
             </h1>
-            <h2 className="text-white font-raleway font-bold md:text-2xl md:w-full w-5/6">
+            <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
               Full stack kehittäjä
             </h2>
             <p className="text-white font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[60vw]">
               "Hetki on kaikki mitä tarvitsemme."
             </p>
-            <p className="text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden">
+            <p className="hidden text-white font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block">
               Marc on taitava fullstack-kehittäjä, joka on erikoistunut
               monimutkaisten kokonaisuuksien hajottamiseen ja
               yksinkertaistamiseen. Hänen kykynsä luoda selkeitä ja tehokkaita
@@ -189,7 +189,7 @@ export default function AboutPage(language = "fi") {
           <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
             <img
               alt="A handsome man"
-              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7"
+              className="object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
               src="./src/assets/team/transparent_alex.webp"
             ></img>
           </div>
