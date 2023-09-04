@@ -107,6 +107,10 @@ export default function HomePage(language = "fi") {
     setTimeout(() => {
       navBarY = document.getElementById("navBarWrapper").getBoundingClientRect().y;
     }, 1000);
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
   }, []);
   return (
     <div id="homeWrapper" className="bg-main">

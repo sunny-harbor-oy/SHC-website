@@ -88,6 +88,10 @@ export default function AboutPage(language = "fi") {
           })
         });
       }
+
+      return () => {
+        window.removeEventListener('scroll', () => {});
+      }
     }
   }, []);
 
