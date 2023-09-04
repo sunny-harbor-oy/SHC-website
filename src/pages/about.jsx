@@ -1,5 +1,10 @@
 import { useEffect, useRef } from "react";
 
+import leonImg from "../assets/founders/transparent_leon.webp";
+import sisuImg from "../assets/founders/transparent_sisu.webp";
+import victorImg from "../assets/founders/transparent_victor2.png";
+import marcImg from "../assets/team/transparent_alex.webp";
+
 //import '../style/pages/about.css';
 
 let touchstart = null;
@@ -124,7 +129,7 @@ export default function AboutPage(language = "fi") {
             <img
               alt="A handsome man"
               className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
-              src="./src/assets/founders/transparent_sisu.webp"
+              src={sisuImg}
             ></img>
           </div>
         </div>
@@ -160,7 +165,7 @@ export default function AboutPage(language = "fi") {
             <img
               alt="A handsome man"
               className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
-              src="./src/assets/founders/transparent_leon.webp"
+              src={leonImg}
             ></img>
           </div>
         </div>
@@ -198,7 +203,7 @@ export default function AboutPage(language = "fi") {
             <img
               alt="A handsome man"
               className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
-              src="./src/assets/founders/transparent_victor2.png"
+              src={victorImg}
             ></img>
           </div>
         </div>
@@ -233,7 +238,7 @@ export default function AboutPage(language = "fi") {
             <img
               alt="A handsome man"
               className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
-              src="./src/assets/team/transparent_alex.webp"
+              src={marcImg}
             ></img>
           </div>
         </div>
