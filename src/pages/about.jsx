@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import ScrollingSlides from "../elements/scrollingSlides";
 
 import leonImg from "../assets/founders/transparent_leon.webp";
 import sisuImg from "../assets/founders/transparent_sisu.webp";
@@ -27,12 +28,12 @@ export default function AboutPage(language = "fi") {
           return false;
         });
 
-        const contentDiv = teamElems[i].children[0].children[2];
+        const contentDiv = teamElems.length - 1 !== i ? teamElems[i].children[0].children[2] : teamElems[i].children[0].children[0].children[0].children[2];
         const paddingX = contentDiv.children[0].getBoundingClientRect().x;
         const posY = contentDiv.children[0].getBoundingClientRect().y;
-        const bottomY = contentDiv.children[0].getBoundingClientRect().bottom;
+        const height = contentDiv.children[0].getBoundingClientRect().height;
 
-        scrollPoints.push({y: posY, bottom: bottomY, elem: contentDiv, triggered: false, paddingX, state: true});
+        scrollPoints.push({y: posY, bottom: height + posY, elem: contentDiv, triggered: false, paddingX, state: false});
 
         //Trim description to three sentances
         const description = contentDiv.children[1].innerHTML;
@@ -40,7 +41,7 @@ export default function AboutPage(language = "fi") {
 
         contentDiv.children[1].innerHTML = sentances.join('.') + '.';
 
-        contentDiv.addEventListener('touchend', () => {
+        contentDiv.addEventListener('click', () => {
           if (scrollPoints[i].state) {
             contentDiv.children[0].style.left = '-100vw';
             contentDiv.children[1].style.left = `${paddingX}px`;
@@ -199,41 +200,44 @@ export default function AboutPage(language = "fi") {
             ></img>
           </div>
         </div>
-        <div
-          target="_blank"
-          className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
-          href="https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/"
-          onclick="return false;"
-        >
-          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-4xl italic font-extrabold text-white text- font-poppins md:text-7xl lg:text-7xl">
-              Marc Smeds
-            </h1>
-            <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
-              Full stack kehittäjä
-            </h2>
-            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
-                "Suuret kokonaisuudet koostuu pienemmistä osista. Hajottamalla ja jakamalla voimme ymmärtää suuriakin kokonaisuuksia."
-              </p>
-              <p className="text-white font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
-                Marc on taitava fullstack-kehittäjä, joka on erikoistunut
-                monimutkaisten kokonaisuuksien hajottamiseen ja
-                yksinkertaistamiseen. Hänen kykynsä luoda selkeitä ja tehokkaita
-                ratkaisuja tekee hänestä arvokkaan tiimipelaajan. Marc on innokas
-                tekemään monimutkaisetkin projektit saumattomiksi ja helposti
-                hallittaviksi osiksi.
-              </p>
+        <ScrollingSlides reset={true} deviceType={"desktop"} slideAttributes={"w-full"}>
+          <div
+            target="_blank"
+            className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
+            href="https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/"
+            onclick="return false;"
+            id="marc"
+          >
+            <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
+              <h1 className="text-4xl italic font-extrabold text-white text- font-poppins md:text-7xl lg:text-7xl">
+                Marc Smeds
+              </h1>
+              <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
+                Full stack kehittäjä
+              </h2>
+              <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
+                <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+                  "Suuret kokonaisuudet koostuu pienemmistä osista. Hajottamalla ja jakamalla voimme ymmärtää suuriakin kokonaisuuksia."
+                </p>
+                <p className="text-white font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                  Marc on taitava fullstack-kehittäjä, joka on erikoistunut
+                  monimutkaisten kokonaisuuksien hajottamiseen ja
+                  yksinkertaistamiseen. Hänen kykynsä luoda selkeitä ja tehokkaita
+                  ratkaisuja tekee hänestä arvokkaan tiimipelaajan. Marc on innokas
+                  tekemään monimutkaisetkin projektit saumattomiksi ja helposti
+                  hallittaviksi osiksi.
+                </p>
+              </div>
+            </div>
+            <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
+              <img
+                alt="A handsome man"
+                className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+                src={marcImg}
+              ></img>
             </div>
           </div>
-          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
-            <img
-              alt="A handsome man"
-              className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
-              src={marcImg}
-            ></img>
-          </div>
-        </div>
+        </ScrollingSlides>
       </div>
     </div>
   );

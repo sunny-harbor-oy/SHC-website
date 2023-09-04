@@ -5,7 +5,8 @@ import earthImg from "../assets/earth.webp";
 import AboutPage from "../pages/about.jsx";
 import ContactPage from "../pages/contact.jsx";
 import PartnersPage from "../pages/partners.jsx";
-import SHCFooter from "../elements/shcFooter";
+import SHCFooter from "../elements/shcFooter.jsx";
+import ScrollingSlides from "../elements/scrollingSlides.jsx";
 import { Link } from "react-router-dom";
 
 const motto = [
