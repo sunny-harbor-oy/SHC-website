@@ -128,9 +128,8 @@ export default function HomePage(language = "fi") {
       <div
         id="main"
         className="h-[50vh] flex justify-center mt-0 md:h-screen"
-        dangerouslySetInnerHTML={{
-          __html: (
-            <video
+      >
+        <video
               autoPlay
               muted
               loop
@@ -141,9 +140,6 @@ export default function HomePage(language = "fi") {
               {/* <source src="./src/assets/HomePageBackground.mp4" type="video/mp4" /> */}
               <source src={earthVideo} type="video/mp4" />
             </video>
-          ),
-        }}
-      >
         <div
           id="content"
           className="absolute flex flex-col justify-center items-center text-white h-[50vh] md:h-screen"
@@ -239,11 +235,11 @@ export default function HomePage(language = "fi") {
             >
               <div className="inline-block align-middle overflow-hidden w-full z-[10]">
                 <h1 className="text-4xl xl:text-7xl font-poppins">Mitä osaamme?</h1>
-                <h2 className="relative w-full mt-2 text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl lg:mb-10 md:mb-7 mb-4">
+                <h2 className="relative w-full mt-2 mb-4 text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl lg:mb-10 md:mb-7">
                 Olemme moniosaava ohjelmistokehitys yritys. Toteutamme teille mobiili-, netti- ja embedded-sovelluksia. <br/><br/>
                 Meillä on kokemusta seuraavien ohjelmointikielien kanssa: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo ja Assembly (x86, ARM ja Z80).
                 </h2>
-                {/* <Link to="#" className="text-white font-poppins lg:text-4xl md:text-2xl font-light border-2 border-white border-solid px-3 hover:cursor-pointer">Lue lisää...</Link> */}
+                {/* <Link to="#" className="px-3 font-light text-white border-2 border-white border-solid font-poppins lg:text-4xl md:text-2xl hover:cursor-pointer">Lue lisää...</Link> */}
               </div>
               <img
                 src={capsuleImg}
