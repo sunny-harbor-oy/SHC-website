@@ -76,12 +76,6 @@ export default function HomePage(language = "fi") {
     // Animation for the background video
     const video = document.getElementById("backgroundVideo");
     video.playbackRate = 0.7;
-    let deg = 0;
-
-    /*setInterval(() => {
-            video.style.filter = `sepia(100%) hue-rotate(${deg}deg) saturate(1000%) brightness(50%) contrast(1.2)`
-            deg++;
-        }, 1000);*/
 
     // Animation for the title description
     const titleDesc = document.getElementById("titleDesc");
@@ -135,10 +129,8 @@ export default function HomePage(language = "fi") {
               loop
               playsInline
               id="backgroundVideo"
-              /* className="top-0 z-0 object-cover w-full p-0 m-0 bgVideoFilter" */
               className="top-0 z-0 object-cover w-full p-0 m-0"
             >
-              {/* <source src="./src/assets/HomePageBackground.mp4" type="video/mp4" /> */}
               <source src={earthVideo} type="video/mp4" />
             </video>
         <div
@@ -152,50 +144,6 @@ export default function HomePage(language = "fi") {
             id="titleDesc"
             className="font-normal text-center cursor-default select-none font-raleway sm:text-2xl lg:text-3xl text-p"
           ></p>
-          <div className="flex justify-around hidden w-full mt-8 font-mono text-2xl lg:visible">
-            <button
-              onClick={() =>
-                document
-                  .getElementById("aboutUsWrapper")
-                  .scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                    inline: "nearest",
-                  })
-              }
-              className="px-2 text-center text-white bg-black"
-            >
-              Tiimi
-            </button>
-            <button
-              onClick={() =>
-                document
-                  .getElementById("contactWrapper")
-                  .scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                    inline: "nearest",
-                  })
-              }
-              className="px-2 text-center text-white bg-black"
-            >
-              Ota yhteyttä
-            </button>
-            <button
-              onClick={() =>
-                document
-                  .getElementById("Partners")
-                  .scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                    inline: "nearest",
-                  })
-              }
-              className="px-2 text-center text-white bg-black"
-            >
-              Kumppanit
-            </button>
-          </div>
         </div>
       </div>
       <div id="content" className="mx-0 bg-white">
