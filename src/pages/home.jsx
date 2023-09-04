@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import capsuleImg from "../assets/capsule.png";
-//import earthVideo from "../assets/earth.mp4";
+import earthVideo from "../assets/earth.mp4";
 import earthImg from "../assets/earth.webp";
 import AboutPage from "../pages/about.jsx";
 import ContactPage from "../pages/contact.jsx";
@@ -125,7 +125,7 @@ export default function HomePage(language = "fi") {
           className="top-0 z-0 object-cover w-full p-0 m-0"
         >
           {/* <source src="./src/assets/HomePageBackground.mp4" type="video/mp4" /> */}
-          {/* <source src={earthVideo} type="video/mp4" /> */}
+          <source src={earthVideo} type="video/mp4" />
         </video>
         <div
           id="content"
@@ -161,7 +161,7 @@ export default function HomePage(language = "fi") {
             >
               <div className="relative overflow-hidden w-full z-[10]">
               <h1 className="text-4xl italic font-bold xl:text-7xl font-poppins">Sunny Harbor Consulting</h1>
-              <h2 className="relative w-full text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-2">
+              <h2 className="relative w-full mt-2 text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl">
                   Sunny Harbor Consulting eli SHC on nuori ja taitava ohjelmistoyritys,
                   joka erikoistuu innovatiivisiin web- ja mobiilisovelluksiin.
                 <br/><br/>
@@ -180,7 +180,7 @@ export default function HomePage(language = "fi") {
             >
               <div className="inline-block align-middle overflow-hidden w-full z-[10]">
                 <h1 className="text-4xl xl:text-7xl font-poppins">Mitä osaamme?</h1>
-                <h2 className="relative w-full text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-2">
+                <h2 className="relative w-full mt-2 text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl">
                 Olemme moniosaava ohjelmistokehitys yritys. Toteutamme teille mobiili-, netti- ja embedded-sovelluksia. <br/><br/>
                 Meillä on kokemusta seuraavien ohjelmointikielien kanssa: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo ja Assembly (x86, ARM ja Z80).
                 </h2>
