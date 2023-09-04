@@ -14,7 +14,7 @@ export default function AboutPage(language = "fi") {
       const teamElems = aboutUsWrapper.current.children[0].children;
 
       for(let i = 0; i < 1; i++) {
-        teamElems[i].addEventListener('onClick', function (event) {
+        teamElems[i].addEventListener('click', function (event) {
           event.preventDefault();
           return false;
         });
@@ -61,7 +61,7 @@ export default function AboutPage(language = "fi") {
       <div>
         <a
           target="_blank"
-          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2"
+          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
           href="https://www.linkedin.com/in/sisu-eriksson-b69475231/"
           onclick="return false;"
         >
@@ -72,11 +72,11 @@ export default function AboutPage(language = "fi") {
             <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
               Frontend kehitäjä ja markkinointi
             </h2>
-            <div className="absolute left-0 md:w-auto w-[65vw] md:h-auto h-[28vh] md:relative overflow-hidden">
+            <div className="absolute left-0 md:w-auto w-[65vw] md:h-auto h-[200px] md:relative overflow-hidden">
               <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[64vw] lg:relative absolute md:left-0 left-6 transition-all ease-in-out delay-250">
                 "Hyvin suunniteltu on jo puoliksi tehty"
               </p>
-              <p className="text-black font-poppins font-extralight lg:text-4xl text-sm lg:mt-10 lg:relative md:w-auto w-[51vw] md:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+              <p className="text-black font-poppins md:font-extralight font-light lg:text-4xl text-sm lg:mt-10 lg:relative md:w-auto w-[51vw] md:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
                 Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
                 frontend developerina että markkinoinnin ja toimitusjohtajuuden
                 tehtävissä. Hänellä on vankka tekninen osaaminen 

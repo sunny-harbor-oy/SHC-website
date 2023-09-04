@@ -157,7 +157,7 @@ export default function HomePage(language = "fi") {
             >
               <div className="relative overflow-hidden w-full z-[10]">
               <h1 className="text-4xl italic font-bold xl:text-7xl font-poppins">Sunny Harbor Consulting</h1>
-              <h2 className="relative w-full text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-7">
+              <h2 className="relative w-full text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-2">
                   Sunny Harbor Consulting eli SHC on nuori ja taitava ohjelmistoyritys,
                   joka erikoistuu innovatiivisiin web- ja mobiilisovelluksiin.
                 <br/><br/>
@@ -176,7 +176,7 @@ export default function HomePage(language = "fi") {
             >
               <div className="inline-block align-middle overflow-hidden w-full z-[10]">
                 <h1 className="text-4xl xl:text-7xl font-poppins">Mitä kieliä osaamme?</h1>
-                <h2 className="relative w-full text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-7">
+                <h2 className="relative w-full text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-3xl lg:text-5xl 2xl:text-5xl mt-2">
                 Meillä on kokemusta seuraavien ohjelmointikielien kanssa työskentelystä: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo, Assembly (x86, ARM ja Z80) ja muilla.
                 </h2>
               </div>
