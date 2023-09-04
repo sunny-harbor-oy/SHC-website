@@ -4,28 +4,37 @@ import { useEffect, useRef } from "react";
 
 let touchstart = null;
 let mobileScreen = window.innerWidth < 821;
+let scrollPoints = [];
+let scrollOffset = window.innerHeight / 2;
+let touchSensitivity = 50;
 
 export default function AboutPage(language = "fi") {
   const aboutUsWrapper = useRef(null);
 
   useEffect(() => {
     if (mobileScreen) {
+      scrollPoints = [];
       // Mobile description swiping feature
       const teamElems = aboutUsWrapper.current.children[0].children;
+
+      console.log(teamElems);
 
       for(let i = 0; i < 1; i++) {
         teamElems[i].addEventListener('click', function (event) {
           event.preventDefault();
           return false;
         });
-        console.log(teamElems[i].children[0].children[2]);
 
         const contentDiv = teamElems[i].children[0].children[2];
         const paddingX = contentDiv.children[0].getBoundingClientRect().x;
+        const posY = contentDiv.children[0].getBoundingClientRect().y;
+        const bottomY = contentDiv.children[0].getBoundingClientRect().bottom;
+
+        scrollPoints.push({y: posY, bottom: bottomY, elem: contentDiv, triggered: false, paddingX});
 
         //Trim description to three sentances
         const description = contentDiv.children[1].innerHTML;
-        const sentances = description.split('.').splice(0, 2);
+        const sentances = description.split('.').splice(0, 1);
 
         contentDiv.children[1].innerHTML = sentances.join('.') + '.';
 
@@ -36,18 +45,44 @@ export default function AboutPage(language = "fi") {
         contentDiv.addEventListener('touchend', e => {
           if (touchstart) {
             const touchend = e.changedTouches[0].clientX;
-            if (touchend < touchstart) {
+            if (touchend - touchstart < -touchSensitivity) {
               console.log('swiped left');
               console.log(contentDiv.children[0]);
               contentDiv.children[0].style.left = '-100vw';
               contentDiv.children[1].style.left = `${paddingX}px`;
-            } else {
+            } else if (touchend - touchstart > touchSensitivity) {
               console.log('swiped right');
               contentDiv.children[0].style.left = `${paddingX}px`;
               contentDiv.children[1].style.left = '100vw';
             }
           }
         }, false);
+
+        console.log(scrollPoints);
+        
+        window.addEventListener('scroll', () => {
+          let scrolled = true;
+          scrollPoints.forEach(x => {
+            if (!scrolled) return;
+
+            let timeout = false;
+
+            if (window.scrollY + scrollOffset > x.y) {
+              if (window.scrollY + scrollOffset < x.bottom) {
+                if (!x.triggered) {
+                  console.log("scrolled over");
+                  x.triggered = true;
+                  timeout = setTimeout(() => {
+                    contentDiv.children[0].style.left = '-100vw';
+                    contentDiv.children[1].style.left = `${x.paddingX}px`;
+                  }, 2000);
+                }
+              }
+            } else {
+              scrolled = false;
+            }
+          })
+        });
       }
     }
   }, []);
@@ -76,7 +111,7 @@ export default function AboutPage(language = "fi") {
               <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[64vw] lg:relative absolute md:left-0 left-6 transition-all ease-in-out delay-250">
                 "Hyvin suunniteltu on jo puoliksi tehty"
               </p>
-              <p className="text-black font-poppins md:font-extralight font-light lg:text-4xl text-sm lg:mt-10 lg:relative md:w-auto w-[51vw] md:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+              <p className="text-black font-poppins md:font-extralight font-light lg:text-4xl text-base lg:mt-10 lg:relative md:w-auto w-[51vw] md:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
                 Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
                 frontend developerina että markkinoinnin ja toimitusjohtajuuden
                 tehtävissä. Hänellä on vankka tekninen osaaminen 
