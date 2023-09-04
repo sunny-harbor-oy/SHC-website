@@ -75,7 +75,7 @@ export default function AboutPage(language = "fi") {
                   timeout = setTimeout(() => {
                     contentDiv.children[0].style.left = '-100vw';
                     contentDiv.children[1].style.left = `${x.paddingX}px`;
-                  }, 2000);
+                  }, 1000);
                 }
               }
             } else {
