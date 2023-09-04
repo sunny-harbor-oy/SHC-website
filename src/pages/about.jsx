@@ -65,11 +65,13 @@ export default function AboutPage(language = "fi") {
                     setTimeout(() => {
                       x.elem.children[0].style.left = '-100vw';
                       x.elem.children[1].style.left = `${x.paddingX}px`;
+                      x.state = false;
                     }, triggerDelay);
                 }
               } else if (shouldReset) {
                 x.elem.children[0].style.left = `${x.paddingX}px`;
                 x.elem.children[1].style.left = '100vw';
+                x.state = true;
               }
             } else {
               scrolled = false;
