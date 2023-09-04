@@ -127,11 +127,9 @@ export default function HomePage(language = "fi") {
       <div
         id="main"
         className="h-[50vh] flex justify-center mt-0 md:h-screen"
-        dangerouslySetInnerHTML={{
-          __html: (
-            <video
+      >
+        <video
               autoPlay
-              muted
               loop
               id="backgroundVideo"
               /* className="top-0 z-0 object-cover w-full p-0 m-0 bgVideoFilter" */
@@ -140,9 +138,6 @@ export default function HomePage(language = "fi") {
               {/* <source src="./src/assets/HomePageBackground.mp4" type="video/mp4" /> */}
               <source src={earthVideo} type="video/mp4" />
             </video>
-          ),
-        }}
-      >
         <div
           id="content"
           className="absolute flex flex-col justify-center items-center text-white h-[50vh] md:h-screen"
