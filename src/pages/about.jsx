@@ -1,9 +1,56 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 //import '../style/pages/about.css';
 
+let touchstart = null;
+let mobileScreen = window.innerWidth < 821;
+
 export default function AboutPage(language = "fi") {
   const aboutUsWrapper = useRef(null);
+
+  useEffect(() => {
+    if (mobileScreen) {
+      // Mobile description swiping feature
+      const teamElems = aboutUsWrapper.current.children[0].children;
+
+      for(let i = 0; i < 1; i++) {
+        teamElems[i].addEventListener('onClick', function (event) {
+          event.preventDefault();
+          return false;
+        });
+        console.log(teamElems[i].children[0].children[2]);
+
+        const contentDiv = teamElems[i].children[0].children[2];
+        const paddingX = contentDiv.children[0].getBoundingClientRect().x;
+
+        //Trim description to three sentances
+        const description = contentDiv.children[1].innerHTML;
+        const sentances = description.split('.').splice(0, 2);
+
+        contentDiv.children[1].innerHTML = sentances.join('.') + '.';
+
+        contentDiv.addEventListener('touchstart', e => {
+          touchstart = e.touches[0].clientX;
+        })
+
+        contentDiv.addEventListener('touchend', e => {
+          if (touchstart) {
+            const touchend = e.changedTouches[0].clientX;
+            if (touchend < touchstart) {
+              console.log('swiped left');
+              console.log(contentDiv.children[0]);
+              contentDiv.children[0].style.left = '-100vw';
+              contentDiv.children[1].style.left = `${paddingX}px`;
+            } else {
+              console.log('swiped right');
+              contentDiv.children[0].style.left = `${paddingX}px`;
+              contentDiv.children[1].style.left = '100vw';
+            }
+          }
+        }, false);
+      }
+    }
+  }, []);
 
   return (
     <div
@@ -16,6 +63,7 @@ export default function AboutPage(language = "fi") {
           target="_blank"
           className="bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[38vh] lg:justify-between grid-cols-1 md:grid-cols-2"
           href="https://www.linkedin.com/in/sisu-eriksson-b69475231/"
+          onclick="return false;"
         >
           <div className="w-full lg:pl-32 md:pl-10 pl-6 lg:mt-20 md:mt-10 mt-5">
             <h1 className="text-black font-poppins font-extrabold italic md:text-7xl lg:text-7xl text-4xl">
@@ -24,22 +72,24 @@ export default function AboutPage(language = "fi") {
             <h2 className="text-black font-raleway font-bold md:text-2xl md:w-full w-5/6">
               Frontend kehitäjä ja markkinointi
             </h2>
-            <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[64vw]">
-              "Hyvin suunniteltu on jo puoliksi tehty"
-            </p>
-            <p className="text-black font-poppins font-extralight lg:text-4xl lg:mt-10 lg:block hidden">
-              Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
-              frontend developerina että markkinoinnin ja toimitusjohtajuuden
-              tehtävissä. Hänellä on vankka tekninen osaaminen
-              frontend-kehityksessä ja laaja kokemus markkinoinnista. Sisu
-              pyrkii luomaan vaikuttavia digitaalisia kokemuksia ja edistämään
-              yrityksen menestystä monipuolisesti.
-            </p>
+            <div className="absolute left-0 md:w-auto w-[65vw] md:h-auto h-[28vh] md:relative overflow-hidden">
+              <p className="text-black font-poppins font-light italic text-lg md:text-5xl lg:text-4xl md:mt-5 lg:w-full w-[64vw] lg:relative absolute md:left-0 left-6 transition-all ease-in-out delay-250">
+                "Hyvin suunniteltu on jo puoliksi tehty"
+              </p>
+              <p className="text-black font-poppins font-extralight lg:text-4xl text-sm lg:mt-10 lg:relative md:w-auto w-[51vw] md:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
+                frontend developerina että markkinoinnin ja toimitusjohtajuuden
+                tehtävissä. Hänellä on vankka tekninen osaaminen 
+                frontend-kehityksessä ja laaja kokemus markkinoinnista. Sisu
+                pyrkii luomaan vaikuttavia digitaalisia kokemuksia ja edistämään
+                yrityksen menestystä monipuolisesti.
+              </p>
+            </div>
           </div>
           <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
             <img
               alt="A handsome man"
-              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7"
+              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
               src="./src/assets/founders/transparent_sisu.webp"
             ></img>
           </div>
