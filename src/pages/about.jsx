@@ -33,7 +33,7 @@ export default function AboutPage(language = "fi") {
         const posY = contentDiv.children[0].getBoundingClientRect().y;
         const height = contentDiv.children[0].getBoundingClientRect().height;
 
-        scrollPoints.push({y: posY, bottom: height + posY, elem: contentDiv, triggered: false, paddingX, state: false});
+        scrollPoints.push({y: posY, bottom: height + posY, elem: contentDiv, triggered: false, paddingX, state: true});
 
         //Trim description to three sentances
         const description = contentDiv.children[1].innerHTML;
