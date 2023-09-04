@@ -105,52 +105,17 @@ export default function AboutPage(language = "fi") {
           onclick="return false;"
         >
           <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-4xl italic font-extrabold text-black font-poppins md:text-7xl lg:text-7xl">
-              Sisu Eriksson
-            </h1>
-            <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
-              Frontend kehitäjä ja markkinointi
-            </h2>
-            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
-                "Unelmointi on tärkeä osa onnea ja menestystä, mutta sen voima paljastuu vasta, kun sitoudumme tavoittelemaan niitä."
-              </p>
-              <p className="text-black font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
-              Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
-              frontend developerina että markkinoinnin ja toimitusjohtajuuden
-              tehtävissä. Hänellä on vankka tekninen osaaminen
-              frontend-kehityksessä ja laaja kokemus markkinoinnista. Sisu
-              pyrkii luomaan vaikuttavia digitaalisia kokemuksia ja edistämään
-              yrityksen menestystä monipuolisesti.
-              </p>
-            </div>
-          </div>
-          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
-            <img
-              alt="A handsome man"
-              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
-              src={sisuImg}
-            ></img>
-          </div>
-        </div>
-        <div
-          target="_blank"
-          className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
-          href="https://www.linkedin.com/in/leon-g-732b31204/"
-          onclick="return false;"
-        >
-          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-white text-4xl italic font-extrabold text- font-poppins md:text-7xl lg:text-7xl">
+            <h1 className="text-4xl italic font-extrabold text-black text- font-poppins md:text-7xl lg:text-7xl">
               Leon Gustafsson
             </h1>
             <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
               Frontend kehittäjä ja suunnittelija
             </h2>
             <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+              <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Mä haluun tehä se, mä teen se."
               </p>
-              <p className="text-white font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+              <p className="text-black font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
                 Leon on kokenut frontend-kehittäjä, joka yhdessä suunnittelijan
                 kanssa luo vaikuttavia käyttöliittymiä. Hänen taitonsa
                 teknologiassa ja kykynsä yhdistää käytettävyys ja visuaalinen
@@ -164,8 +129,43 @@ export default function AboutPage(language = "fi") {
           <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
             <img
               alt="A handsome man"
-              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
+              className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
               src={leonImg}
+            ></img>
+          </div>
+        </div>
+        <div
+          target="_blank"
+          className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
+          href="https://www.linkedin.com/in/leon-g-732b31204/"
+          onclick="return false;"
+        >
+          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
+            <h1 className="text-4xl italic font-extrabold text-white font-poppins md:text-7xl lg:text-7xl">
+              Sisu Eriksson
+            </h1>
+            <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
+              Frontend kehitäjä ja markkinointi
+            </h2>
+            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[65vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
+              <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+                "Unelmointi on tärkeä osa onnea ja menestystä, mutta sen voima paljastuu vasta, kun sitoudumme tavoittelemaan niitä."
+              </p>
+              <p className="text-white font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+              Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
+              frontend developerina että markkinoinnin ja toimitusjohtajuuden
+              tehtävissä. Hänellä on vankka tekninen osaaminen
+              frontend-kehityksessä ja laaja kokemus markkinoinnista. Sisu
+              pyrkii luomaan vaikuttavia digitaalisia kokemuksia ja edistämään
+              yrityksen menestystä monipuolisesti.
+              </p>
+            </div>
+          </div>
+          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
+            <img
+              alt="A handsome man"
+              className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+              src={sisuImg}
             ></img>
           </div>
         </div>
@@ -202,7 +202,7 @@ export default function AboutPage(language = "fi") {
           <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
             <img
               alt="A handsome man"
-              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
+              className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
               src={victorImg}
             ></img>
           </div>
@@ -214,7 +214,7 @@ export default function AboutPage(language = "fi") {
           onclick="return false;"
         >
           <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-white text-4xl italic font-extrabold text- font-poppins md:text-7xl lg:text-7xl">
+            <h1 className="text-4xl italic font-extrabold text-white text- font-poppins md:text-7xl lg:text-7xl">
               Marc Smeds
             </h1>
             <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
@@ -237,7 +237,7 @@ export default function AboutPage(language = "fi") {
           <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
             <img
               alt="A handsome man"
-              className="object-contain w-1/2 aspect-1:4  lg:w-full md:w-3/7 relative z-40"
+              className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
               src={marcImg}
             ></img>
           </div>
