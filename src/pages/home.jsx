@@ -87,7 +87,7 @@ export default function HomePage(language = "fi") {
       <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"></meta>
       <div
         id="main"
-        className="flex justify-center h-screen mt-0"
+        className="flex justify-center h-screen mt-0 overflow-hidden"
       >
         <video
               autoPlay
@@ -111,9 +111,10 @@ export default function HomePage(language = "fi") {
             className="font-normal text-center cursor-default select-none font-raleway sm:text-2xl lg:text-3xl text-p"
           ></p>
           <div className="flex absolute flex-col justify-end top-[5vh] h-[90vh] w-screen">
-          <h2 className="text-base font-medium text-center cursor-default select-none font-poppins md:text-2xl text-h1">Coming soon...</h2>
+          <h2 className="text-base font-medium text-center cursor-default select-none font-poppins md:text-3xl text-h1">Coming soon...</h2>
 
           </div>
+          <h2 className="text-base fixed lg:bottom-[5vh] md:bottom-5 bottom-3 lg:left-10 md:left-5 font-medium text-left cursor-default select-none font-poppins md:text-lg text-h1">sunnyharborconsulting@gmail.com</h2>
         </div>
       </div>
       <div id="content" className="mx-0 bg-white hidden">
