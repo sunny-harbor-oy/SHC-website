@@ -9,8 +9,19 @@ import NavBar from "./elements/navBar.jsx";
 import SHCFooter from "./elements/shcFooter.jsx";
 import ContactPage from "./pages/contact.jsx";
 import GetAJobPage from "./pages/getAJob.jsx";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    window.addEventListener('beforeunload', () => {
+      window.scrollTo(0, 0);
+    });
+
+    return () => {
+      window.removeEventListener('beforeunload', () => {});
+    }
+  }, [])
+
   return (
     <div>
       <NavBar />

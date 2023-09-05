@@ -5,7 +5,7 @@ import NavBar from '../elements/navBar.jsx'
 
 export default function PartnersPage() {
     return (
-    <div className='w-full lg:h-4/5 bg-white z-10 relative' id='Partners'>
+    <div className='w-full lg:h-[80vh] bg-white relative z-[2]' id='Partners'>
         <h1 className='text-3xl italic font-semibold text-center text-black font-poppins md:text-6xl lg:pt-16 md:pt-12 py-7'>Asiakkaat</h1>
         <div className='block w-full px-5 overflow-hidden lg:flex lg:px-20'>
             <div  href='/partners/sykekotipalvelut'

@@ -88,7 +88,7 @@ export default function AboutPage(language = "fi") {
 
   return (
     <div
-      className="bg-main relative z-[10]"
+      className="bg-main relative z-[1]"
       ref={aboutUsWrapper}
       id="aboutUsWrapper"
     >

@@ -30,6 +30,7 @@ let isMobile = window.innerWidth < 821;
 window.addEventListener(
   "scroll",
   () => {
+    return;
     if (sectionOne && sectionSecond && !isMobile) {
       const scrollPos = window.scrollY;
 
@@ -69,8 +70,8 @@ export default function HomePage(language = "fi") {
   sectionSecond = useRef(null);
 
   useEffect(() => {
-    oneRect = sectionOne.current.getBoundingClientRect();
-    secondRect = sectionSecond.current.getBoundingClientRect();
+    //oneRect = sectionOne.current.getBoundingClientRect();
+    //secondRect = sectionSecond.current.getBoundingClientRect();
 
     window.scrollTo(0, 0);
 
@@ -148,8 +149,9 @@ export default function HomePage(language = "fi") {
         </div>
       </div>
       <div id="content" className="mx-0 bg-white">
-        <div id="about" className="block w-full h-screen p-0 m-0">
-          <div className="xl:h-screen h-1/2 z-[0]">
+        <div id="about" className="block w-full p-0 m-0">
+          <ScrollingSlides reset={true} deviceType={"desktop"} slideAttributes={"w-full"}>
+            <div className="h-1/2 z-[0]">
             <div
               id="storyDiv"
               ref={sectionOne}
@@ -177,11 +179,13 @@ export default function HomePage(language = "fi") {
               />
             </div>
           </div>
+          </ScrollingSlides>
+          <ScrollingSlides reset={true} deviceType={"desktop"} slideAttributes={"w-full"}>
           <div className="xl:h-screen h-1/2 z-[0]">
             <div
               id="storyDiv"
               ref={sectionSecond}
-              className="relative grid w-full h-screen grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-32"
+              className="relative grid w-full h-full grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-32 xl:h-screen"
             >
               <div className="inline-block align-middle overflow-hidden w-full z-[10]">
                 <h1 className="text-4xl xl:text-7xl font-poppins">Mitä osaamme?</h1>
@@ -197,10 +201,10 @@ export default function HomePage(language = "fi") {
               />
             </div>
           </div>
+          </ScrollingSlides>
           <AboutPage />
           <PartnersPage />
           <ContactPage />
-          <SHCFooter />
         </div>
       </div>
     </div>
