@@ -19,10 +19,6 @@ export default function ScrollingSlides({children, slideAttributes, offset, rese
 
     const assignValues = () => {
         mobile = window.innerWidth < 1024;
-    
-        if (!offset || isNaN(offset)) {
-            localOffset = document.getElementById("navBarWrapper").getBoundingClientRect().height;
-        } else localOffset = offset;
 
         let slideChild = slide.current.children[0];
     
@@ -62,6 +58,10 @@ export default function ScrollingSlides({children, slideAttributes, offset, rese
     
     useEffect(() => {
         localZIndex = globalZIndex;
+
+        if (!offset || isNaN(offset)) {
+            localOffset = document.getElementById("navBarWrapper").getBoundingClientRect().height;
+        } else localOffset = offset;
 
         parentSlide.current.style.position = "relative";
         slide.current.style.position = "relative";

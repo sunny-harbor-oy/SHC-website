@@ -150,7 +150,7 @@ export default function HomePage(language = "fi") {
       </div>
       <div id="content" className="mx-0 bg-white">
         <div id="about" className="block w-full p-0 m-0">
-          <ScrollingSlides reset={true} deviceType={"desktop"} slideAttributes={"w-full"}>
+          <ScrollingSlides reset={true} deviceType={"desktop"} offset={"0"} slideAttributes={"w-full"}>
             <div className="h-1/2 z-[0]">
             <div
               id="storyDiv"
@@ -170,7 +170,7 @@ export default function HomePage(language = "fi") {
                   <br />
                   SHC tekee mobiili- ja tietokonesovelluksia, nettisivuja sekä
                   embedded-toteutuksia. Osaamisemme vain laajenee tästä ja
-                  panostamme uuden osaamisen hankkimiseen.
+                  panostamme uuden osaamisen hankkimiseen.<i class="fa fa-angle-right"></i>
                 </h2>
               </div>
               <img
@@ -180,7 +180,7 @@ export default function HomePage(language = "fi") {
             </div>
           </div>
           </ScrollingSlides>
-          <ScrollingSlides reset={true} deviceType={"desktop"} slideAttributes={"w-full"}>
+          <ScrollingSlides reset={true} deviceType={"desktop"} offset={"0"} slideAttributes={"w-full"}>
           <div className="xl:h-screen h-1/2 z-[0]">
             <div
               id="storyDiv"
