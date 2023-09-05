@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import capsuleImg from "../assets/capsule.png";
 import earthVideo from "../assets/earth.mp4";
 import earthImg from "../assets/earth.webp";
+import logo from "../assets/shc_logo.png";
 import AboutPage from "../pages/about.jsx";
 import ContactPage from "../pages/contact.jsx";
 import PartnersPage from "../pages/partners.jsx";
@@ -26,43 +27,6 @@ let secondRect = null;
 let navBarY = null;
 let done = false;
 let isMobile = window.innerWidth < 821;
-
-window.addEventListener(
-  "scroll",
-  () => {
-    if (sectionOne && sectionSecond && !isMobile) {
-      const scrollPos = window.scrollY;
-
-      if (scrollPos + navBarY < oneRect.y) {
-        done = false;
-        sectionOne.current.style.position = "relative";
-      } else if (
-        scrollPos + navBarY > oneRect.y &&
-        scrollPos < secondRect.bottom - navBarY &&
-        !done
-      ) {
-        sectionOne.current.style.position = "fixed";
-        sectionOne.current.style.top = `${0}px`;
-
-        if (scrollPos > secondRect.y) {
-          sectionSecond.current.style.position = "fixed";
-          sectionSecond.current.style.top = `${0}px`;
-        } else {
-          sectionSecond.current.style.position = "relative";
-          sectionSecond.current.style.top = `${0}px`;
-        }
-      } else if (!done) {
-        sectionOne.current.style.position = "relative";
-        sectionOne.current.style.top = `${0}px`;
-
-        sectionSecond.current.style.position = "relative";
-        sectionSecond.current.style.top = `${0}px`;
-        done = true;
-      }
-    }
-  },
-  []
-);
 
 export default function HomePage(language = "fi") {
   sectionOne = useRef(null);
@@ -119,6 +83,7 @@ export default function HomePage(language = "fi") {
   }, []);
   return (
     <div id="homeWrapper" className="bg-main">
+      <img src={logo} className="absolute md:w-32 w-24 md:top-6 top-3 lg:left-16 md:left-10 left-3 z-10"></img>
       <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"></meta>
       <div
         id="main"
@@ -138,16 +103,20 @@ export default function HomePage(language = "fi") {
           id="content"
           className="absolute flex flex-col items-center justify-center h-screen text-white"
         >
-          <h1 className="text-2xl font-bold text-center cursor-default select-none md:text-3xl font-poppins lg:text-6xl text-h1">
+          <h1 className="text-2xl font-bold text-center cursor-default select-none md:text-5xl font-poppins lg:text-6xl text-h1">
             Sunny Harbor Consulting
           </h1>
           <p
             id="titleDesc"
             className="font-normal text-center cursor-default select-none font-raleway sm:text-2xl lg:text-3xl text-p"
           ></p>
+          <div className="flex absolute flex-col justify-end top-[5vh] h-[90vh] w-screen">
+          <h2 className="text-base font-medium text-center cursor-default select-none font-poppins md:text-2xl text-h1">Coming soon...</h2>
+
+          </div>
         </div>
       </div>
-      <div id="content" className="mx-0 bg-white">
+      <div id="content" className="mx-0 bg-white hidden">
         <div id="about" className="block w-full h-screen p-0 m-0">
           <div className="xl:h-screen h-1/2 z-[0]">
             <div
@@ -197,10 +166,9 @@ export default function HomePage(language = "fi") {
               />
             </div>
           </div>
-          <AboutPage />
+{/*           <AboutPage />
           <PartnersPage />
-          <ContactPage />
-          <SHCFooter />
+          <ContactPage /> */}
         </div>
       </div>
     </div>

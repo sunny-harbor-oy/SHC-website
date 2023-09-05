@@ -13,7 +13,7 @@ import GetAJobPage from "./pages/getAJob.jsx";
 function App() {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -21,7 +21,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/getAJob" element={<GetAJobPage />} />
       </Routes>
-      <SHCFooter />
+      {/* <SHCFooter /> */}
     </div>
   );
 }
