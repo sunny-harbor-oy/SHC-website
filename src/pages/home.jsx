@@ -83,7 +83,7 @@ export default function HomePage(language = "fi") {
   }, []);
   return (
     <div id="homeWrapper" className="bg-main">
-      <img src={logo} className="absolute md:w-32 w-24 md:top-6 top-3 lg:left-16 md:left-10 left-3 z-10"></img>
+      <img src={logo} className="absolute z-10 w-24 md:w-32 md:top-6 top-3 lg:left-16 md:left-10 left-3"></img>
       <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"></meta>
       <div
         id="main"
@@ -111,13 +111,11 @@ export default function HomePage(language = "fi") {
             className="font-normal text-center cursor-default select-none font-raleway sm:text-2xl lg:text-3xl text-p"
           ></p>
           <div className="flex absolute flex-col justify-end top-[5vh] h-[90vh] w-screen">
-          <h2 className="text-base font-medium text-center cursor-default select-none font-poppins md:text-3xl text-h1">Coming soon...</h2>
-
           </div>
           <h2 className="text-base fixed lg:bottom-[5vh] md:bottom-5 bottom-3 lg:left-10 md:left-5 font-medium text-left cursor-default select-none font-poppins md:text-lg text-h1">sunnyharborconsulting@gmail.com</h2>
         </div>
       </div>
-      <div id="content" className="mx-0 bg-white hidden">
+      <div id="content" className="hidden mx-0 bg-white">
         <div id="about" className="block w-full h-screen p-0 m-0">
           <div className="xl:h-screen h-1/2 z-[0]">
             <div
