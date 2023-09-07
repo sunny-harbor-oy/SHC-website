@@ -10,7 +10,12 @@ export default {
         p: "#ffffff",
         elemBackground: "#000000",
         footerTitle: "#ededed",
-        footerElements: "#c9c9c9"
+        footerElements: "#c9c9c9",
+        test: "#001d3d",
+        test2: "#002855",  
+        test3: "#ef233c",
+        velka: "#C55A11",
+        syke: "#ff5f5f",
       },
       fontFamily: {
         "primary": ["Crimson Pro"],

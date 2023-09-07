@@ -1,13 +1,33 @@
 import SHCFooter from '../elements/shcFooter.jsx'
 import NavBar from '../elements/navBar.jsx'
+import { Link } from 'react-router-dom'
 
 //import '../style/pages/partner.css';
 
 export default function PartnersPage() {
     return (
-    <div className='w-full lg:h-[80vh] bg-white relative z-[2]' id='Partners'>
+    <div className='w-full lg:h-[50vw] bg-white relative z-[2]' id='Partners'>
         <h1 className='text-3xl italic font-semibold text-center text-black font-poppins md:text-6xl lg:pt-16 md:pt-12 py-7'>Asiakkaat</h1>
-
+        <div className='block lg:flex lg:w-[90%] w-[70%] lg:py-[2%] lg:h-[70%] mx-auto justify-around'>
+            <div className='lg:h-full h-[80vw] lg:w-4/12 lg:pt-0 pt-[4vw] lg:mb-0 mb-[5vw] w-full bg-black rounded-2xl text-white'>
+                <h2 className='ml-[4%] pl-[1%] lg:mt-[7%] mb-[4.8%] lg:text-[1.8vw] text-[4.5vw] font-poppins border-l-4 '>Korjausvelkalaskuri.fi</h2>
+                <p className='ml-[5%] w-[85%] lg:text-[1.6vw] text-[3.9vw] lg:h-[20vw] h-[73%] mb-[2%] font-poppins font-light'>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, ea eveniet accusamus cupiditate sit adipisci doloribus possimus quos quis, quas, totam excepturi! Odit delectus reprehenderit nulla vitae accusantium? Provident, ipsum.
+                </p>
+                <Link className='ml-[5%] lg:text-[1.5vw] text-[3vw] font-poppins font-medium border-b-4 px-4 border-solid hover:cursor-pointer text-test3'>
+                    Lue lisää <i class="fa fa-angle-right"></i>
+                    </Link>
+            </div>
+            <div className='lg:h-full h-[80vw] lg:w-4/12 lg:pt-0 pt-[4vw] lg:mb-0 mb-[5vw]  w-full bg-test rounded-2xl text-white'>
+                <h2 className='ml-[4%] pl-[1%] lg:mt-[7%] mb-[4.8%] lg:text-[1.8vw] text-[4.5vw] font-poppins border-l-4 '>Syke Kotipalvelut</h2>
+                <p className='ml-[5%] w-[85%] lg:text-[1.6vw] text-[3.9vw] lg:h-[20vw] h-[73%] mb-[2%] font-poppins font-light'>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, ea eveniet accusamus cupiditate sit adipisci doloribus possimus quos quis, quas, totam excepturi! Odit delectus reprehenderit nulla vitae accusantium? Provident, ipsum.
+                </p>
+                <Link className='ml-[5%] lg:text-[1.5vw] text-[3vw] font-poppins font-medium border-b-4 px-4 border-solid hover:cursor-pointer text-test3'>
+                    Lue lisää <i class="fa fa-angle-right"></i>
+                    </Link>
+            </div>
+        </div>
     </div>
     );
 }
