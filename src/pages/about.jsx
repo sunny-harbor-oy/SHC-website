@@ -95,11 +95,11 @@ export default function AboutPage(language = "fi") {
       <div>
         <div
           target="_blank"
-          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
+          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[45vw] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
           href="https://www.linkedin.com/in/sisu-eriksson-b69475231/"
           onclick="return false;"
         >
-          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
+          <div className="w-full pl-6 mt-5 lg:pl-[5vw] md:pl-10 lg:mt-20 md:mt-10">
             <h1 className="text-4xl italic font-extrabold text-black text- font-poppins md:text-7xl lg:text-7xl">
               Leon Gustafsson
             </h1>
@@ -110,8 +110,8 @@ export default function AboutPage(language = "fi") {
               <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Mä haluun tehä se, mä teen se."
               </p>
-              <p className="text-black font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
-                Leon on kokenut frontend-kehittäjä, joka yhdessä suunnittelijan
+              <p className="text-black font-poppins lg:font-extralight md:font-extralight font-light lg:text-[1.7vw] md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                Leon on kokenut frontend-kehittäjä, joka yhdessä suunnittelijan 
                 kanssa luo vaikuttavia käyttöliittymiä. Hänen taitonsa
                 teknologiassa ja kykynsä yhdistää käytettävyys ja visuaalinen
                 houkuttelevuus tekevät hänestä arvokkaan tiimin jäsenen. Leonin
