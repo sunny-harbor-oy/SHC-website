@@ -94,23 +94,20 @@ export default function AboutPage(language = "fi") {
     >
       <div>
         <div
-          target="_blank"
-          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[45vw] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
-          href="https://www.linkedin.com/in/sisu-eriksson-b69475231/"
-          onclick="return false;"
+          className="bg-white relative md:flex justify-between md:flex-row lg:h-[45vw] md:h-[80vw] h-[85vw] lg:justify-between grid-cols-1 md:grid-cols-2"
         >
-          <div className="w-full pl-6 mt-5 lg:pl-[5vw] md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-4xl italic font-extrabold text-black text- font-poppins md:text-7xl lg:text-7xl">
+          <div className="w-full pl-6 mt-5 md:pl-[5vw] lg:mt-[3.5vw] md:mt-10">
+            <h1 className="text-4xl italic font-extrabold text-black font-poppins lg:text-[3.8vw] md:text-[7vw] lg:leading-[3.8vw] md:leading-[7vw]">
               Leon Gustafsson
             </h1>
-            <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
+            <h2 className="w-5/6 font-bold text-black font-raleway lg:mt-0 md:mt-[0.5vw] lg:text-[1.3vw] md:text-[2.5vw] md:w-full">
               Frontend kehittäjä ja suunnittelija
             </h2>
-            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+            <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[200px] lg:relative overflow-hidden">
+              <p className="text-black font-poppins font-light italic text-lg lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Mä haluun tehä se, mä teen se."
               </p>
-              <p className="text-black font-poppins lg:font-extralight md:font-extralight font-light lg:text-[1.7vw] md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+              <p className="text-black font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-base lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[54vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
                 Leon on kokenut frontend-kehittäjä, joka yhdessä suunnittelijan 
                 kanssa luo vaikuttavia käyttöliittymiä. Hänen taitonsa
                 teknologiassa ja kykynsä yhdistää käytettävyys ja visuaalinen
@@ -121,70 +118,59 @@ export default function AboutPage(language = "fi") {
               </p>
             </div>
           </div>
-          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
-            <img
+          <img
               alt="A handsome man"
-              className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+              className="lg:relative absolute z-40 object-contain object-bottom right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] lg:w-[40vw] md:w-auto w-[54vw]"
               src={leonImg}
-            ></img>
-          </div>
+          ></img>
         </div>
         <div
-          target="_blank"
-          className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
-          href="https://www.linkedin.com/in/leon-g-732b31204/"
-          onclick="return false;"
+          className="bg-black relative md:flex justify-between md:flex-row lg:h-[45vw] md:h-[80vw] h-[85vw] lg:justify-between grid-cols-1 md:grid-cols-2"
         >
-          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-4xl italic font-extrabold text-white font-poppins md:text-7xl lg:text-7xl">
+          <div className="w-full pl-6 pt-5 md:pl-[5vw] lg:mt-[3.5vw] md:mt-10">
+            <h1 className="text-4xl italic font-extrabold text-white font-poppins lg:text-[3.8vw] md:text-[7vw] lg:leading-[3.8vw] md:leading-[7vw]">
               Sisu Eriksson
             </h1>
-            <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
+            <h2 className="w-5/6 font-bold text-white font-raleway lg:mt-0 md:mt-[0.5vw] lg:text-[1.3vw] md:text-[2.5vw] md:w-full">
               Frontend kehitäjä ja markkinointi
             </h2>
-            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+            <div className="absolute left-0 md:w-[95%] w-[72vw] lg:relative overflow-hidden">
+              <p className="text-white font-poppins font-light italic text-lg lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full md:w-[59vw] w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Unelmointi on tärkeä osa onnea ja menestystä, mutta sen voima paljastuu vasta, kun sitoudumme tavoittelemaan niitä."
               </p>
-              <p className="text-white font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
-              Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
-              frontend developerina että markkinoinnin ja toimitusjohtajuuden
-              tehtävissä. Hänellä on vankka tekninen osaaminen
-              frontend-kehityksessä ja laaja kokemus markkinoinnista. Sisu
-              pyrkii luomaan vaikuttavia digitaalisia kokemuksia ja edistämään
-              yrityksen menestystä monipuolisesti.
+              <p className="text-white font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-base lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[54vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
+                frontend developerina että markkinoinnin ja toimitusjohtajuuden
+                tehtävissä. Hänellä on vankka tekninen osaaminen
+                frontend-kehityksessä ja laaja kokemus markkinoinnista. Sisu
+                pyrkii luomaan vaikuttavia digitaalisia kokemuksia ja edistämään
+                yrityksen menestystä monipuolisesti.
               </p>
             </div>
           </div>
-          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
-            <img
+          <img
               alt="A handsome man"
-              className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+              className="lg:relative absolute z-40 object-contain object-bottom right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] lg:w-[40vw] md:w-auto w-[49vw]"
               src={sisuImg}
-            ></img>
-          </div>
+          ></img>
         </div>
         <div
-          target="_blank"
-          className="bg-white flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
-          href="https://www.linkedin.com/in/victor-ocampo-a609b3250/"
-          onclick="return false;"
+          className="bg-white relative md:flex justify-between md:flex-row lg:h-[45vw] md:h-[80vw] h-[85vw] lg:justify-between grid-cols-1 md:grid-cols-2"
         >
-          <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-            <h1 className="text-4xl italic font-extrabold text-black font-poppins md:text-7xl lg:text-7xl">
+          <div className="w-full pl-6 mt-5 md:pl-[5vw] lg:mt-[3.5vw] md:mt-10">
+            <h1 className="text-4xl italic font-extrabold text-black font-poppins lg:text-[3.8vw] md:text-[7vw] lg:leading-[3.8vw] md:leading-[7vw]">
               Victor Ocampo
             </h1>
-            <h2 className="w-5/6 font-bold text-black font-raleway md:text-2xl md:w-full">
+            <h2 className="w-5/6 font-bold text-black font-raleway lg:mt-0 md:mt-[0.5vw] lg:text-[1.3vw] md:text-[2.5vw] md:w-full">
               Full stack kehittäjä
             </h2>
-            <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-              <p className="text-black font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
-                "Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan
-                teknologian, kaikki on mahdollista."
+            <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[200px] lg:relative overflow-hidden">
+              <p className="text-black font-poppins font-light italic text-lg lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+                "Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan teknologian, kaikki on mahdollista."
               </p>
-              <p className="text-black font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
-                Victor on monipuolinen fullstack-kehittäjä, joka loistaa
-                erityisesti backend-ohjelmoinnissa. Hänen hämmästyttävä
+              <p className="text-black font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-base lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[51vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                Victor on monipuolinen fullstack kehittäjä, joka loistaa
+                erityisesti backend ohjelmoinnissa. Hänen hämmästyttävä
                 koodaustaitonsa ja vahva tekninen osaamisensa rikastuttavat
                 tiimiämme. Vaikka Victor keskittyy pääosin backend-kehitykseen,
                 hänellä on tarvittavat taidot myös frontendin parissa
@@ -194,34 +180,29 @@ export default function AboutPage(language = "fi") {
               </p>
             </div>
           </div>
-          <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
-            <img
+          <img
               alt="A handsome man"
-              className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+              className="lg:relative absolute z-40 object-contain object-bottom right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] lg:w-[40vw] md:w-[54vw] w-[52vw]"
               src={victorImg}
-            ></img>
-          </div>
+          ></img>
         </div>
+
         <ScrollingSlides reset={true} deviceType={"desktop"} slideAttributes={"w-full"}>
           <div
-            target="_blank"
-            className="bg-black flex justify-between flex-col lg:flex-row lg:h-[90vh] md:min-h-[67.5vh] min-h-[340px] lg:justify-between grid-cols-1 md:grid-cols-2"
-            href="https://www.linkedin.com/in/marc-alex-smeds-17a08a26b/"
-            onclick="return false;"
-            id="marc"
+            className="bg-black relative md:flex justify-between md:flex-row lg:h-[45vw] md:h-[80vw] h-[85vw] lg:justify-between grid-cols-1 md:grid-cols-2"
           >
-            <div className="w-full pl-6 mt-5 lg:pl-32 md:pl-10 lg:mt-20 md:mt-10">
-              <h1 className="text-4xl italic font-extrabold text-white text- font-poppins md:text-7xl lg:text-7xl">
+            <div className="w-full pl-6 pt-5 md:pl-[5vw] lg:mt-[3.5vw] md:mt-10">
+              <h1 className="text-4xl italic font-extrabold text-white font-poppins lg:text-[3.8vw] md:text-[7vw] lg:leading-[3.8vw] md:leading-[7vw]">
                 Marc Smeds
               </h1>
-              <h2 className="w-5/6 font-bold text-white font-raleway md:text-2xl md:w-full">
+              <h2 className="w-5/6 font-bold text-white font-raleway lg:mt-0 md:mt-[0.5vw] lg:text-[1.3vw] md:text-[2.5vw] md:w-full">
                 Full stack kehittäjä
               </h2>
-              <div className="absolute left-0 lg:w-auto md:w-[65vw] w-[72vw] lg:h-auto md:h-[54vh] h-[200px] lg:relative overflow-hidden">
-                <p className="text-white font-poppins font-light italic text-lg md:text-4xl lg:text-4xl md:mt-5 lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
-                  "Suuret kokonaisuudet koostuu pienemmistä osista. Hajottamalla ja jakamalla voimme ymmärtää suuriakin kokonaisuuksia."
+              <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[200px] lg:relative overflow-hidden">
+                <p className="text-white font-poppins font-light italic text-lg lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full w-[62vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+                  "Quality is not an act, it is a habit."
                 </p>
-                <p className="text-white font-poppins lg:font-extralight md:font-extralight font-light lg:text-4xl md:text-3xl text-base lg:mt-10 md:mt-5 lg:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                <p className="text-white font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-base lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
                   Marc on taitava fullstack-kehittäjä, joka on erikoistunut
                   monimutkaisten kokonaisuuksien hajottamiseen ja
                   yksinkertaistamiseen. Hänen kykynsä luoda selkeitä ja tehokkaita
@@ -231,13 +212,11 @@ export default function AboutPage(language = "fi") {
                 </p>
               </div>
             </div>
-            <div className="flex lg:mr-10 lg:w-2/3 w-full justify-end lg:mt-0 md:mt-[-150px] mt-[-110px]">
-              <img
+            <img
                 alt="A handsome man"
-                className="relative z-40 object-contain w-1/2 aspect-1:4 lg:w-full md:w-3/7"
+                className="lg:relative absolute z-40 object-bottom object-contain right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] lg:w-[40vw] md:w-auto w-[50vw]"
                 src={marcImg}
-              ></img>
-            </div>
+            ></img>
           </div>
         </ScrollingSlides>
       </div>
