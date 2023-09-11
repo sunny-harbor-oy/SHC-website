@@ -155,13 +155,13 @@ export default function HomePage(language = "fi") {
             <div
               id="storyDiv"
               ref={sectionOne}
-              className="relative grid w-full lg:h-[50vw] h-[64vw] grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-[7.4vw]"
+              className="relative grid w-full lg:h-[50vw] h-[70vw] grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-[7.4vw]"
             >
               <div className="relative overflow-hidden h-full w-full z-[10]">
                 <h1 className="text-[5vw] italic font-bold lg:text-[3.5vw] lg:leading-[3.89vw] font-poppins">
                   Sunny Harbor Consulting
                 </h1>
-                <h2 className="relative w-full mt-2 text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-[3.5vw] md:leading-[3.8vw] lg:text-[2.5vw] lg:leading-[2.7vw]">
+                <h2 className="relative w-full mt-2 text-[3.3vw] font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-[3.5vw] md:leading-[3.8vw] lg:text-[2.5vw] lg:leading-[2.7vw]">
                   Sunny Harbor Consulting eli SHC on nuori ja taitava
                   ohjelmistoyritys, joka erikoistuu innovatiivisiin web- ja
                   mobiilisovelluksiin.
@@ -181,15 +181,15 @@ export default function HomePage(language = "fi") {
           </div>
           </ScrollingSlides>
           <ScrollingSlides reset={true} deviceType={"desktop"} offset={"0"} slideAttributes={"w-full"}>
-          <div className="xl:h-screen h-1/2 z-[0]">
+          <div className="h-1/2 z-[0]">
             <div
               id="storyDiv"
               ref={sectionSecond}
-              className="relative grid w-full h-[60vw] grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-32 xl:h-screen"
+              className="relative grid w-full lg:h-[50vw] h-[70vw] grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-[7.4vw]"
             >
-              <div className="relative overflow-hidden h-[60vw] w-full z-[10]">
+              <div className="relative overflow-hidden h-full w-full z-[10]">
                 <h1 className="text-[5vw] italic font-bold lg:text-[3.5vw] lg:leading-[3.89vw] font-poppins">Mitä osaamme?</h1>
-                <h2 className="relative w-full mt-2 text-base font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-[] lg:text-[2.5vw] lg:leading-[2.7vw]">
+                <h2 className="relative w-full mt-2 text-[3.3vw] font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-[text-3.5w] md:leading-[3.8vw] lg:text-[2.5vw] lg:leading-[2.7vw]">
                 Olemme moniosaava ohjelmistokehitys yritys. Toteutamme teille mobiili-, netti- ja embedded-sovelluksia. <br/><br/>
                 Meillä on kokemusta seuraavien ohjelmointikielien kanssa: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo ja Assembly (x86, ARM ja Z80).
                 </h2>

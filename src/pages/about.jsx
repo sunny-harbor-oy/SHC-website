@@ -96,18 +96,18 @@ export default function AboutPage(language = "fi") {
         <div
           className="bg-white relative md:flex justify-between md:flex-row lg:h-[45vw] md:h-[80vw] h-[85vw] lg:justify-between grid-cols-1 md:grid-cols-2"
         >
-          <div className="w-full pl-6 mt-5 md:pl-[5vw] lg:mt-[3.5vw] md:mt-10">
+          <div className="w-full pl-6 pt-5 md:pl-[5vw] lg:mt-[3.5vw] md:mt-10">
             <h1 className="text-4xl italic font-extrabold text-black font-poppins lg:text-[3.8vw] md:text-[7vw] lg:leading-[3.8vw] md:leading-[7vw]">
               Leon Gustafsson
             </h1>
             <h2 className="w-5/6 font-bold text-black font-raleway lg:mt-0 md:mt-[0.5vw] lg:text-[1.3vw] md:text-[2.5vw] md:w-full">
               Frontend kehittäjä ja suunnittelija
             </h2>
-            <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[200px] lg:relative overflow-hidden">
-              <p className="text-black font-poppins font-light italic text-lg lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+            <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[60vw] lg:relative overflow-hidden">
+              <p className="text-black font-poppins font-light italic text-[4.75vw] lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Mä haluun tehä se, mä teen se."
               </p>
-              <p className="text-black font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-base lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[54vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+              <p className="text-black font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-[4.5vw] lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[54vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
                 Leon on kokenut frontend-kehittäjä, joka yhdessä suunnittelijan 
                 kanssa luo vaikuttavia käyttöliittymiä. Hänen taitonsa
                 teknologiassa ja kykynsä yhdistää käytettävyys ja visuaalinen
@@ -120,7 +120,7 @@ export default function AboutPage(language = "fi") {
           </div>
           <img
               alt="A handsome man"
-              className="lg:relative absolute z-40 object-contain object-bottom right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] lg:w-[40vw] md:w-auto w-[54vw]"
+              className="lg:relative absolute z-40 object-contain object-bottom right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] top-0 lg:w-[40vw] md:w-auto w-[54vw]"
               src={leonImg}
           ></img>
         </div>
@@ -134,11 +134,11 @@ export default function AboutPage(language = "fi") {
             <h2 className="w-5/6 font-bold text-white font-raleway lg:mt-0 md:mt-[0.5vw] lg:text-[1.3vw] md:text-[2.5vw] md:w-full">
               Frontend kehitäjä ja markkinointi
             </h2>
-            <div className="absolute left-0 md:w-[95%] w-[72vw] lg:relative overflow-hidden">
-              <p className="text-white font-poppins font-light italic text-lg lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full md:w-[59vw] w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+            <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[60vw] lg:relative overflow-hidden">
+              <p className="text-white font-poppins font-light italic text-[4.75vw] lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full md:w-[59vw] w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Unelmointi on tärkeä osa onnea ja menestystä, mutta sen voima paljastuu vasta, kun sitoudumme tavoittelemaan niitä."
               </p>
-              <p className="text-white font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-base lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[54vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+              <p className="text-white font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-[4.5vw] lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[54vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
                 Sisu on monitaitoinen osaaja, joka toimii yrityksessä sekä
                 frontend developerina että markkinoinnin ja toimitusjohtajuuden
                 tehtävissä. Hänellä on vankka tekninen osaaminen
@@ -150,25 +150,25 @@ export default function AboutPage(language = "fi") {
           </div>
           <img
               alt="A handsome man"
-              className="lg:relative absolute z-40 object-contain object-bottom right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] lg:w-[40vw] md:w-auto w-[49vw]"
+              className="lg:relative absolute z-40 object-contain object-bottom right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] top-0 lg:w-[40vw] md:w-auto w-[49vw]"
               src={sisuImg}
           ></img>
         </div>
         <div
           className="bg-white relative md:flex justify-between md:flex-row lg:h-[45vw] md:h-[80vw] h-[85vw] lg:justify-between grid-cols-1 md:grid-cols-2"
         >
-          <div className="w-full pl-6 mt-5 md:pl-[5vw] lg:mt-[3.5vw] md:mt-10">
+          <div className="w-full pl-6 pt-5 md:pl-[5vw] lg:mt-[3.5vw] md:mt-10">
             <h1 className="text-4xl italic font-extrabold text-black font-poppins lg:text-[3.8vw] md:text-[7vw] lg:leading-[3.8vw] md:leading-[7vw]">
               Victor Ocampo
             </h1>
             <h2 className="w-5/6 font-bold text-black font-raleway lg:mt-0 md:mt-[0.5vw] lg:text-[1.3vw] md:text-[2.5vw] md:w-full">
               Full stack kehittäjä
             </h2>
-            <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[200px] lg:relative overflow-hidden">
-              <p className="text-black font-poppins font-light italic text-lg lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full w-[63vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+            <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[60vw] lg:relative overflow-hidden">
+              <p className="text-black font-poppins font-light italic text-[4.75vw] lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full w-[50vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                 "Yhdistämällä hyvän suhteen asiakkaisiin ja luotettavan teknologian, kaikki on mahdollista."
               </p>
-              <p className="text-black font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-base lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[51vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+              <p className="text-black font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-[4.5vw] lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[51vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
                 Victor on monipuolinen fullstack kehittäjä, joka loistaa
                 erityisesti backend ohjelmoinnissa. Hänen hämmästyttävä
                 koodaustaitonsa ja vahva tekninen osaamisensa rikastuttavat
@@ -182,7 +182,7 @@ export default function AboutPage(language = "fi") {
           </div>
           <img
               alt="A handsome man"
-              className="lg:relative absolute z-40 object-contain object-bottom right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] lg:w-[40vw] md:w-[54vw] w-[52vw]"
+              className="lg:relative absolute z-40 object-contain object-bottom right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] top-0 lg:w-[40vw] md:w-[54vw] w-[52vw]"
               src={victorImg}
           ></img>
         </div>
@@ -198,11 +198,11 @@ export default function AboutPage(language = "fi") {
               <h2 className="w-5/6 font-bold text-white font-raleway lg:mt-0 md:mt-[0.5vw] lg:text-[1.3vw] md:text-[2.5vw] md:w-full">
                 Full stack kehittäjä
               </h2>
-              <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[200px] lg:relative overflow-hidden">
-                <p className="text-white font-poppins font-light italic text-lg lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full w-[62vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
+              <div className="absolute left-0 md:w-[95%] w-[72vw] md:h-auto h-[60vw] lg:relative overflow-hidden">
+                <p className="text-white font-poppins font-light italic text-[4.75vw] lg:text-[2vw] lg:leading-[2.56vw] md:text-[4vw] md:leading-[4.4vw] lg:mt-[0.6vw] md:mt-[2vw] lg:w-full w-[62vw] lg:relative absolute lg:left-0 md:left-10 left-6 transition-all ease-in-out delay-250">
                   "Quality is not an act, it is a habit."
                 </p>
-                <p className="text-white font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-base lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
+                <p className="text-white font-poppins lg:font-extralight font-light lg:text-[2vw] md:text-[3vw] lg:leading-[2.25vw] md:leading-[4.4vw] text-[4.5vw] lg:mt-[2] md:mt-[1.5vw] md:relative lg:w-auto md:w-[60vw] w-[51vw] lg:left-0 left-[100vw] z-0 absolute transition-all ease-in-out delay-250">
                   Marc on taitava fullstack-kehittäjä, joka on erikoistunut
                   monimutkaisten kokonaisuuksien hajottamiseen ja
                   yksinkertaistamiseen. Hänen kykynsä luoda selkeitä ja tehokkaita
@@ -214,7 +214,7 @@ export default function AboutPage(language = "fi") {
             </div>
             <img
                 alt="A handsome man"
-                className="lg:relative absolute z-40 object-bottom object-contain right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] lg:w-[40vw] md:w-auto w-[50vw]"
+                className="lg:relative absolute z-40 object-bottom object-contain right-0 lg:h-auto md:h-[70vw] h-[85vw] lg:top-0 md:top-[10vw] top-0 lg:w-[40vw] md:w-auto w-[50vw]"
                 src={marcImg}
             ></img>
           </div>
