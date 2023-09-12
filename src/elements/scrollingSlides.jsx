@@ -57,10 +57,10 @@ export default function ScrollingSlides({children, slideAttributes, offset, rese
         }
         else if (rect.y < -bottom) {
             resetElem();
-            
+
             if (localReset != null) localReset = false;
         } else {
-            console.log(`Slide element error: Something went wrong... \nValue dump:\nelem y: ${rect.y}\nbottom: ${-bottom}\noffset: ${localOffset}\nlocalReset: ${localReset}\n1st logic: ${rect.y <= 0 + localOffset}\n2nd logic: ${rect.y > -bottom}`);
+            //console.log(`Slide element error: Something went wrong... \nValue dump:\nelem y: ${rect.y}\nbottom: ${-bottom}\noffset: ${localOffset}\nlocalReset: ${localReset}\n1st logic: ${rect.y <= 0 + localOffset}\n2nd logic: ${rect.y > -bottom}`);
         }
     }
     
