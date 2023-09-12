@@ -187,7 +187,7 @@ export default function AboutPage(language = "fi") {
           ></img>
         </div>
 
-        <ScrollingSlides reset={true} deviceType={"desktop"} slideAttributes={"w-full"}>
+        <ScrollingSlides reset={true} deviceType={"desktop"} slideAttributes={"w-full"} offset={""}>
           <div
             className="bg-black relative md:flex justify-between md:flex-row lg:h-[45vw] md:h-[80vw] h-[85vw] lg:justify-between grid-cols-1 md:grid-cols-2"
           >

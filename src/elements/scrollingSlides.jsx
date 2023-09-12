@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-let globalZIndex = -10;
+let globalIdCount = 0;
 
 export default function ScrollingSlides({children, slideAttributes, offset, reset = null, deviceType = null}) {
     let mobile = null;
@@ -7,58 +7,64 @@ export default function ScrollingSlides({children, slideAttributes, offset, rese
     let bottom = null;
     let localOffset = null;
     let localReset = null;
-    let slidePos = null;
     let widhtOffset = null;
     let ogWidth = null;
-    let ogHeight = null;
 
-    let localZIndex = 0;
+    let localId = 0;
 
     let parentSlide = useRef(null);
     let slide = useRef(null);
 
     const assignValues = () => {
+        resetElem();
+
         mobile = window.innerWidth < 1024;
 
         let slideChild = slide.current.children[0];
     
         slideRect = slide.current.getBoundingClientRect();
-        slidePos = slideRect.y + window.scrollY;
-        bottom = slidePos + slideRect.height;
+        bottom = slideRect.height;
         widhtOffset = slideChild.getBoundingClientRect().width - window.innerWidth;
 
         parentSlide.current.style.height = `${slideChild.getBoundingClientRect().height}px`;
-        ogWidth = `${slideChild.getBoundingClientRect().width}px`;
+        ogWidth = `${slideChild.getBoundingClientRect().width}px`;       
+    }
+
+    const resetElem = () => {
+        slide.current.style.position = "relative";
+        slide.current.style.top = `${0}px`;
+        slide.current.style.width = ``;
+    }
+
+    const activateElem = () => {
+        slide.current.style.position = "fixed";
+        slide.current.style.top = `${localOffset}px`;
+        slide.current.style.width = `${ogWidth}`;
     }
     
     const scrollingEffect = () => {
         if (deviceType == "desktop" && mobile) return;
-        const scrollPos = window.scrollY;
 
-        if (scrollPos + localOffset > slidePos && scrollPos < bottom && (localReset == null || localReset == true)) {
-            slide.current.style.position = "fixed";
-            slide.current.style.top = `${localOffset}px`;
-            slide.current.style.width = `${ogWidth}`;
+        const rect = parentSlide.current.getBoundingClientRect();
+
+        if (rect.y <= 0 + localOffset && rect.y > -bottom && (localReset == null || localReset == true)) {
+            activateElem();
         }
-        else if (scrollPos + localOffset < slidePos) {
-            slide.current.style.position = "relative";
-            slide.current.style.top = `${0}px`;
-            slide.current.style.width = ``;
-
+        else if (rect.y > 0) {
+            resetElem();
+            
             if (localReset != null) localReset = true;
         }
-        else if (scrollPos > bottom) {
-            slide.current.style.position = "relative";
-            slide.current.style.top = `${0}px`;
-            slide.current.style.width = ``;
-    
+        else if (rect.y < -bottom) {
+            resetElem();
+            
             if (localReset != null) localReset = false;
+        } else {
+            console.log(`Slide element error: Something went wrong... \nValue dump:\nelem y: ${rect.y}\nbottom: ${-bottom}\noffset: ${localOffset}\nlocalReset: ${localReset}\n1st logic: ${rect.y <= 0 + localOffset}\n2nd logic: ${rect.y > -bottom}`);
         }
     }
     
     useEffect(() => {
-        localZIndex = globalZIndex;
-
         if (!offset || isNaN(offset)) {
             localOffset = document.getElementById("navBarWrapper").getBoundingClientRect().height;
         } else localOffset = offset;
@@ -73,6 +79,8 @@ export default function ScrollingSlides({children, slideAttributes, offset, rese
 
         window.addEventListener("resize", assignValues);
 
+        localId = globalIdCount;
+        globalIdCount++;
         return () => {
             window.removeEventListener("scroll", () => {});
             window.removeEventListener("resize", () => {});

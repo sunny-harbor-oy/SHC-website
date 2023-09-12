@@ -161,7 +161,7 @@ export default function HomePage(language = "fi") {
                 <h1 className="text-[5vw] italic font-bold lg:text-[3.5vw] lg:leading-[3.89vw] font-poppins">
                   Sunny Harbor Consulting
                 </h1>
-                <h2 className="relative w-full mt-2 text-[3.3vw] font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-[3.5vw] md:leading-[3.8vw] lg:text-[2.5vw] lg:leading-[2.7vw]">
+                <h2 className="relative w-full mt-2 text-[3.3vw] leading-[3.7vw] font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-[3.5vw] md:leading-[3.8vw] lg:text-[2.5vw] lg:leading-[2.7vw]">
                   Sunny Harbor Consulting eli SHC on nuori ja taitava
                   ohjelmistoyritys, joka erikoistuu innovatiivisiin web- ja
                   mobiilisovelluksiin.
