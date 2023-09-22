@@ -104,7 +104,7 @@ export default function NavBar() {
               </li>
               <li>
                 <Link
-                  to={"/getAJob"}
+                  to={"/get-a-job"}
                   className={`cursor-pointer text-h2`}
                 >
                     Töihin
