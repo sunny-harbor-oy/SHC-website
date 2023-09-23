@@ -15,7 +15,7 @@ const cardData = [
     },
 },
 {
-    title: "Alusta",
+    title: "Alustat",
     question: "Millä alustoilla ohjelmiston pitäisi toimia?",
     settings: {
         multipleChoice: true,
@@ -31,8 +31,7 @@ const cardData = [
     question: "Kuinka yksilöidyn ohjelmiston haluat?",
     answers: {
     "Valmis ohjelmisto": {complexity: 1, scale: 1, cost: 1},
-    "Valmis ohjelmisto, jossa pieniä muutoksia": {complexity: 3, scale: 2, cost: 2},
-    "Valmis ohjelmisto, jossa suuria muutoksia": {complexity: 5, scale: 3, cost: 4},
+    "Valmis ohjelmisto, jossa joitakin muutoksia": {complexity: 3, scale: 2, cost: 3},
     "Ohjelmisto, joka on tehty alusta asti sinulle": {complexity: 10, scale: 5, cost: 6},
     }
 },
@@ -67,7 +66,7 @@ const FormElements = cardData.map((card) => {
             <h1 className="text-[3vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
             <div className="flex flex-col px-[2vw] py-[1vw]">
                 {Object.entries(card.answers).map(([option, value]) => (
-                    <div className="flex justify-between w-3/4 text-white my-[1vw] mx-[2vw] py-[0.75vw] px-[2vw] bg-[#2b2d42] rounded-lg">
+                    <div className="flex justify-between w-3/4 text-white my-[1vw] mx-[2vw] py-[0.75vw] px-[2vw] bg-[#2b2d42] rounded-lg hover:cursor-pointer select-none">
                         <h1 className="font-poppins text-[2vw]">
                             {option}
                         </h1>
@@ -167,6 +166,10 @@ const renderCard = (cardId) => {
     const answers = slideDiv.current.firstChild.children[1].children;
 
     for (let i = 0; i < answers.length; i++) {
+        if (chosenOptions[cardId] != undefined && chosenOptions[cardId][`${i}`] != undefined) {
+            answers[i].children[1].style["background-color"] = "#1eb82a";
+        }
+
         answers[i].addEventListener("click", () => {
             const self = answers[i];
             const ownId = i;
@@ -215,16 +218,16 @@ useEffect(() => {
 });
 
 return (
-    <div className="h-screen max-h-screen overflow-hidden w-[75vw] pt-32 mx-auto">
+    <div className="min-h-screen w-[75vw] pt-32 mx-auto">
         <div className="w-1/2 mx-auto pt-[4vw]">
             <div className={`grid gap-4 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 10 ? cardData.length : 10}, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
         <div className="flex w-[70vw] justify-between mx-auto h-[40vw]]">
-            <button onClick={() => changeCard(-1)}><i className="fa fa-angle-left"></i></button>
+            <button onClick={() => changeCard(-1)}><i className="fa fa-angle-left text-[7vw]"></i></button>
             <div ref={slideDiv} className="w-[70vw]"></div>
-            <button onClick={() => changeCard(1)}><i className="fa fa-angle-right"></i></button>
+            <button onClick={() => changeCard(1)}><i className="fa fa-angle-right text-[7vw]"></i></button>
         </div>
         <div ref={report} className="w-[70vw] h-[40vw] mx-auto py-[4vw]">
         </div>
