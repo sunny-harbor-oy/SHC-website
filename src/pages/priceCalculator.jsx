@@ -30,7 +30,7 @@ const cardData = [
 },
 {
     title: "Ulkonäkö",
-    question: "Pitääkö ulkonäkö suunnitella alusta asti?",
+    question: "Tarvitsetko täysin yksilöidyn ulkonäön?",
     answers: {
     "Kyllä": {coefficient: 1.5},
     "Ei": {coefficient: 1},
@@ -46,14 +46,30 @@ const cardData = [
     }
 },
 {
+    title: "Ominaisuudet",
+    question: "Kuinka yksilöityjä ominaisuudet ovat?",
+    answers: {
+    "Valmiit ominaisuudet": {coefficient: 1},
+    "Ominaisuudet vaativat yksilöintiä": {coefficient: 1.2},
+    }
+},
+{
     title: "Käyttäjät",
-    question: "Kenen käyttöön ohjelmisto on?",
+    question: "Ovatko käyttäjät ?",
     settings: {
         multipleChoice: true,
     },
     answers: {
     "Yksityishenkilöt": {coefficient: 1.1},
     "Yritykset": {coefficient: 1.1},
+    }
+},
+{
+    title: "Käyttäjät",
+    question: "Toimiiko käyttäjä kohderyhmä tietyllä toimialalla? Onko ohjelmisto tarkoitettu tietylle toimialalle?",
+    answers: {
+    "Kyllä": {coefficient: 1.1},
+    "Ei": {coefficient: 1},
     }
 },
 {
@@ -104,9 +120,9 @@ const FormElements = cardData.map((card) => {
         <div questionid={cardId} className="h-full transition-all duration-[500ms] w-full px-[4vw] pt-[3vw]">
             <h1 className="text-[3vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
             <h2 className="text-[1.5vw] w-4/5 font-poppins my-0">{card.question}</h2>
-            <div className="flex flex-col px-[2vw] py-[1vw]">
+            <div className="flex flex-col py-[1vw] mx-auto w-3/4">
                 {Object.entries(card.answers).map(([option, value]) => (
-                    <div className="flex justify-between w-3/4 text-white my-[1vw] mx-[2vw] py-[0.75vw] px-[2vw] bg-[#2b2d42] rounded-lg hover:cursor-pointer select-none">
+                    <div className="flex justify-between w-full text-white my-[1vw] py-[0.75vw] px-[2vw] bg-[#2b2d42] rounded-lg hover:cursor-pointer select-none">
                         <h1 className="font-poppins text-[2vw]">
                             {option}
                         </h1>
@@ -161,8 +177,6 @@ const finalPrice = () => {
             });
         });
     });
-
-    console.log(finalAttributes);
 
     let finalPrice = 0;
 
@@ -318,11 +332,11 @@ useEffect(() => {
 return (
     <div className="min-h-screen w-[75vw] pt-32 mx-auto">
         <div className="w-1/2 mx-auto pt-[2vw]">
-            <div className={`grid gap-4 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 6 ? cardData.length : 6}, minmax(0, 1fr))`}} ref={barDiv}>
+            <div className={`grid gap-4 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 8 ? cardData.length : 8}, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
-        <div className="flex w-[70vw] justify-between mx-auto h-[40vw]]">
+        <div className="flex w-[70vw] min-h-[40vw] justify-between mx-auto">
             <button onClick={() => changeCard(-1)}><i className="fa fa-angle-left text-[6vw]"></i></button>
             <div ref={slideDiv} className="w-[70vw]"></div>
             <button onClick={() => changeCard(1)}><i className="fa fa-angle-right text-[6vw]"></i></button>

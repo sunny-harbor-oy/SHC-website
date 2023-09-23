@@ -11,7 +11,7 @@ import PriceEstimation from "./pages/priceCalculator.jsx";
 
 import NavBar from "./elements/navBar.jsx";
 import SHCFooter from "./elements/shcFooter.jsx";
-import AlertManager from "./elements/alertManager";
+//import AlertManager from "./elements/alertManager";
 
 import { useEffect } from "react";
 
