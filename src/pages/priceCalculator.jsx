@@ -38,11 +38,11 @@ const cardData = [
 },
 {
     title: "Ominaisuudet",
-    question: "Monta ominaisuutta ohjelmistossa olisi?",
+    question: "Monta uniikkia ominaisuutta ohjelmistossa olisi?",
     answers: {
-    "x < 3": {cost: 1},
+    "3 tai vähemmän": {cost: 1},
     "3 - 6": {cost: 20},
-    "6 < x": {cost: 30},
+    "6 tai enemmän": {cost: 30},
     }
 },
 {
@@ -55,7 +55,7 @@ const cardData = [
 },
 {
     title: "Käyttäjät",
-    question: "Ovatko käyttäjät ?",
+    question: "Ketä käyttäjät ovat?",
     settings: {
         multipleChoice: true,
     },
@@ -92,7 +92,7 @@ const cardData = [
 ];
 
 const progressBar = cardData.map(() => {
-    return <div className="h-[0.75vw] w-full rounded-lg transition-all duration-[250ms]"></div>;
+    return <div className="2xl:h-[0.75vw] md:h-[1.5vw] sm:h-[2vw] h-[3vw] w-full rounded-lg transition-all duration-[250ms]"></div>;
 });
 
 let chosenOptions = [];
@@ -103,9 +103,12 @@ let tranition = false;
 let completedStages = {};
 let locked = false;
 
+let isMobile = window.innerWidth < 640;
+
 const slideDiv = useRef(null);
 const barDiv = useRef(null);
 const report = useRef(null);
+const mobileBtn = useRef(null);
 
 let cardId = -1;
 const FormElements = cardData.map((card) => {
@@ -117,16 +120,16 @@ const FormElements = cardData.map((card) => {
     }
 
     return (
-        <div questionid={cardId} className="h-full transition-all duration-[500ms] w-full px-[4vw] pt-[3vw]">
-            <h1 className="text-[3vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
-            <h2 className="text-[1.5vw] w-4/5 font-poppins my-0">{card.question}</h2>
-            <div className="flex flex-col py-[1vw] mx-auto w-3/4">
+        <div questionid={cardId} className="h-full transition-all duration-[500ms] w-full 2xl:px-[4vw] px-[2vw] pt-[3vw]">
+            <h1 className="2xl:text-[3vw] md:text-[4vw] sm:text-[8wv] text-[10vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
+            <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] sm:w-4/5 w-[90%] font-poppins my-0">{card.question}</h2>
+            <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] mx-auto 2xl:w-3/4 sm:w-[85%] w-[95%]">
                 {Object.entries(card.answers).map(([option, value]) => (
-                    <div className="flex justify-between w-full text-white my-[1vw] py-[0.75vw] px-[2vw] bg-[#2b2d42] rounded-lg hover:cursor-pointer select-none">
-                        <h1 className="font-poppins text-[2vw]">
+                    <div className="flex justify-between w-full text-white sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] px-[2vw] bg-[#2b2d42] rounded-lg hover:cursor-pointer select-none">
+                        <h1 className="font-poppins 2xl:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left text-center md:w-auto w-full text-[5vw]">
                             {option}
                         </h1>
-                        <div className="bg-white w-[1.25vw] h-[1.25vw] my-auto transition-all duration-[250ms] rounded-sm" />
+                        <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] sm:rounded-sm rounded-full" />
                     </div>
                 ))}
             </div>
@@ -229,7 +232,9 @@ const chooseOption = (optionValues) => {
     if (chosenOptions[currentCard] == undefined) chosenOptions[currentCard] = {};
     let currentValues = chosenOptions[currentCard];
 
-    if (getCardOption("multipleChoice") == false && lastOptionSelected != undefined) {
+    const isMultipleChoice = getCardOption("multipleChoice");
+
+    if (isMultipleChoice == false && lastOptionSelected != undefined) {
         if (lastOptionSelected.questionId != optionValues.questionId) {
             lastOptionSelected.self.children[1].style["background-color"] = "#c6d0d8";
             currentValues[`${lastOptionSelected.questionId}`] = undefined;
@@ -242,11 +247,25 @@ const chooseOption = (optionValues) => {
         currentValues[`${optionValues.questionId}`] = undefined;
         chosenOptions[currentCard] = currentValues;
 
+        //Check if all options are empty
+        let hasValue = false;
+        Object.values(currentValues).forEach((option) => {
+            if (option != undefined) hasValue = true;
+        });
+
+        if (!hasValue) {
+            mobileBtn.current.style["background-color"] = "#c6d0d8";
+        } else if (!isMultipleChoice) {
+            mobileBtn.current.style["background-color"] = "#c6d0d8";
+        }
+
         return false;
     }
     else {
         currentValues[`${optionValues.questionId}`] = optionValues.value;
         chosenOptions[currentCard] = currentValues;
+
+        mobileBtn.current.style["background-color"] = "#1eb82a";
 
         return true;
     }
@@ -321,27 +340,36 @@ const changeCard = (change) => {
     
 }
 
+const resizeUpdate = () => {
+    isMobile = window.innerWidth < 640;
+}
+
 useEffect(() => {
     changeCard(0);
     window.addEventListener("load", changeCard(0));
+    window.addEventListener("resize", resizeUpdate);
     return () => {
         window.removeEventListener("load", changeCard(0));
+        window.removeEventListener("resize", resizeUpdate);
     }
 });
 
 return (
-    <div className="min-h-screen w-[75vw] pt-32 mx-auto">
-        <div className="w-1/2 mx-auto pt-[2vw]">
-            <div className={`grid gap-4 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 8 ? cardData.length : 8}, minmax(0, 1fr))`}} ref={barDiv}>
+    <div className="min-h-screen 2xl:w-[75vw] sm::w-[80vw] w-[90%] sm:pt-32 pt-24 mx-auto">
+        <div className="2xl:1/2 md:w-2/3 mx-auto pt-[2vw]">
+            <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 8 ? cardData.length : 8}, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
-        <div className="flex w-[70vw] min-h-[40vw] justify-between mx-auto">
-            <button onClick={() => changeCard(-1)}><i className="fa fa-angle-left text-[6vw]"></i></button>
-            <div ref={slideDiv} className="w-[70vw]"></div>
-            <button onClick={() => changeCard(1)}><i className="fa fa-angle-right text-[6vw]"></i></button>
+        <div className="flex w-[100%] min-h-[40vw] justify-between mx-auto">
+            <button onClick={() => changeCard(-1)}><i className="fa fa-angle-left text-[6vw] md:block hidden"></i></button>
+            <div ref={slideDiv} className="md:w-[70vw] w-[90vw]"></div>
+            <button onClick={() => changeCard(1)}><i className="fa fa-angle-right text-[6vw] md:block hidden"></i></button>
+            <div>
+                <button onClick={() => changeCard(1)} ref={mobileBtn} className="md:hidden absolute transition-colors duration-[250ms] bg-[#c6d0d8] text-white font-poppins font-bold text-[5vw] px-[2vw] py-[1vw] rounded-lg w-[35vw] top-[90vh] left-1/2 transform -translate-x-1/2">Seuraava</button>
+            </div>
         </div>
-        <div ref={report} className="w-[70vw] h-[40vw] mx-auto py-[4vw]">
+        <div ref={report} className="w-[100%] h-[40vw] mx-auto py-[4vw]">
         </div>
     </div>
 );
