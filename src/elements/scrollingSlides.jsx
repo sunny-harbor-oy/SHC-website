@@ -1,54 +1,96 @@
 import { useEffect, useRef } from "react";
-
-const mobile = window.innerWidth < 821;
+let globalIdCount = 0;
 
 export default function ScrollingSlides({children, slideAttributes, offset, reset = null, deviceType = null}) {
-    const parentSlide = useRef(null);
-    const slide = useRef(null);    
+    let mobile = null;
+    let slideRect = null;
+    let bottom = null;
+    let localOffset = null;
+    let localReset = null;
+    let widhtOffset = null;
+    let ogWidth = null;
+
+    let localId = 0;
+
+    let parentSlide = useRef(null);
+    let slide = useRef(null);
+
+    const assignValues = () => {
+        resetElem();
+
+        mobile = window.innerWidth < 1024;
+
+        let slideChild = slide.current.children[0];
     
-    useEffect(() => {
+        slideRect = slide.current.getBoundingClientRect();
+        bottom = slideRect.height;
+        widhtOffset = slideChild.getBoundingClientRect().width - window.innerWidth;
+
+        parentSlide.current.style.height = `${slideChild.getBoundingClientRect().height}px`;
+        ogWidth = `${slideChild.getBoundingClientRect().width}px`;       
+    }
+
+    const resetElem = () => {
+        slide.current.style.position = "relative";
+        slide.current.style.top = `${0}px`;
+        slide.current.style.width = ``;
+    }
+
+    const activateElem = () => {
+        slide.current.style.position = "fixed";
+        slide.current.style.top = `${localOffset}px`;
+        slide.current.style.width = `${ogWidth}`;
+    }
+    
+    const scrollingEffect = () => {
         if (deviceType == "desktop" && mobile) return;
 
-        if (!offset) {
-            offset = document.getElementById("navBarWrapper").getBoundingClientRect().height;
+        const rect = parentSlide.current.getBoundingClientRect();
+
+        if (rect.y <= 0 + localOffset && rect.y > -bottom && (localReset == null || localReset == true)) {
+            activateElem();
         }
+        else if (rect.y > 0) {
+            resetElem();
+            
+            if (localReset != null) localReset = true;
+        }
+        else if (rect.y < -bottom) {
+            resetElem();
 
-        const slideRect = slide.current.getBoundingClientRect();
-        const bottom = slideRect.y + slideRect.height;
-        const ogZIndex = slide.current.style['z-index'];
+            if (localReset != null) localReset = false;
+        } else {
+            //console.log(`Slide element error: Something went wrong... \nValue dump:\nelem y: ${rect.y}\nbottom: ${-bottom}\noffset: ${localOffset}\nlocalReset: ${localReset}\n1st logic: ${rect.y <= 0 + localOffset}\n2nd logic: ${rect.y > -bottom}`);
+        }
+    }
+    
+    useEffect(() => {
+        if (!offset || isNaN(offset)) {
+            localOffset = document.getElementById("navBarWrapper").getBoundingClientRect().height;
+        } else localOffset = offset;
 
-        parentSlide.current.style.height = `${slideRect.height}px`;
+        parentSlide.current.style.position = "relative";
+        slide.current.style.position = "relative";
 
-        window.addEventListener("scroll", () => {
-            const scrollPos = window.scrollY;
-            const slidePos = slideRect.y;
+        assignValues(offset, deviceType);
+        localReset = reset;
 
-            if (scrollPos + offset > slidePos && scrollPos < bottom && (reset == null || reset == true)) {
-                slide.current.style.position = "fixed";
-                slide.current.style.top = `${offset}px`;
-                slide.current.style['z-index'] = -1;
-            }
-            else if (scrollPos + offset < slidePos) {
-                slide.current.style.position = "relative";
-                slide.current.style.top = `${0}px`;
-                slide.current.style['z-index'] = ogZIndex;
-                
-                if (reset != null) reset = true;
-            }
-            else if (scrollPos > bottom) {
-                slide.current.style.position = "relative";
-                slide.current.style.top = `${0}px`;
-                slide.current.style['z-index'] = ogZIndex;
+        window.addEventListener("scroll", scrollingEffect);
 
-                if (reset != null) reset = false;
-            }
-        });
+        window.addEventListener("resize", assignValues);
+
+        localId = globalIdCount;
+        globalIdCount++;
+        return () => {
+            window.removeEventListener("scroll", () => {});
+            window.removeEventListener("resize", () => {});
+        }
     }, []);
 
     return (
-        <div ref={parentSlide} className={slideAttributes}>
+        <div ref={parentSlide} style={{overflow: "hidden"}} className={slideAttributes}>
             <div ref={slide}>
-            {children}
+                {children}
             </div>
         </div>
     )

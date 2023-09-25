@@ -1,6 +1,6 @@
 export default function ContactPage() {
     return (
-        <div className='bg-black lg:h-[75vh] lg:pb-0 pb-10 relative z-10' id="contactWrapper">
+        <div className='bg-black lg:h-[75vh] lg:pb-0 pb-10 relative z-[9]' id="contactWrapper">
             <div id="main" className='lg:h-full'>
             <h1 className='text-white font-poppins md:text-6xl text-4xl lg:pt-[10vh] md:pt-10 lg:px-24 pt-7 md:px-14 px-6 font-semibold italic'>Ota yhteyttä</h1>
                 <div className='flex flex-col grid-cols-1 mt-5 md:mt-5 lg:mt-10 lg:flex-row lg:grid-cols-2' id='firstSection'>
