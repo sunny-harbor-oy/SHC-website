@@ -19,194 +19,58 @@ const motto = [
   "We are Sunny Harbor Consulting.",
 ];
 
-let sectionOne = null;
-let sectionSecond = null;
-let oneRect = null;
-let secondRect = null;
-let navBarY = null;
-let done = false;
-let isMobile = window.innerWidth < 821;
-
-window.addEventListener(
-  "scroll",
-  () => {
-    return;
-    if (sectionOne && sectionSecond && !isMobile) {
-      const scrollPos = window.scrollY;
-
-      if (scrollPos + navBarY < oneRect.y) {
-        done = false;
-        sectionOne.current.style.position = "relative";
-      } else if (
-        scrollPos + navBarY > oneRect.y &&
-        scrollPos < secondRect.bottom - navBarY &&
-        !done
-      ) {
-        sectionOne.current.style.position = "fixed";
-        sectionOne.current.style.top = `${0}px`;
-
-        if (scrollPos > secondRect.y) {
-          sectionSecond.current.style.position = "fixed";
-          sectionSecond.current.style.top = `${0}px`;
-        } else {
-          sectionSecond.current.style.position = "relative";
-          sectionSecond.current.style.top = `${0}px`;
-        }
-      } else if (!done) {
-        sectionOne.current.style.position = "relative";
-        sectionOne.current.style.top = `${0}px`;
-
-        sectionSecond.current.style.position = "relative";
-        sectionSecond.current.style.top = `${0}px`;
-        done = true;
-      }
-    }
-  },
-  []
-);
-
 export default function HomePage(language = "fi") {
-  sectionOne = useRef(null);
-  sectionSecond = useRef(null);
 
-  useEffect(() => {
-    //oneRect = sectionOne.current.getBoundingClientRect();
-    //secondRect = sectionSecond.current.getBoundingClientRect();
-
-    window.scrollTo(0, 0);
-
-    // Animation for the background video
-    const video = document.getElementById("backgroundVideo");
-    video.playbackRate = 0.7;
-
-    // Animation for the title description
-    const titleDesc = document.getElementById("titleDesc");
-    let current = 0;
-    let currentChar = 0;
-    let charLimit = motto[current].length;
-    let waiting = 0;
-
-    setInterval(() => {
-      if (waiting == 0) {
-        if (currentChar == 0) titleDesc.innerHTML = "";
-        if (currentChar < charLimit) {
-          titleDesc.innerHTML = motto[current]
-            .concat(" ")
-            .substring(0, currentChar + 1);
-          currentChar++;
-        } else {
-          currentChar = 0;
-          current++;
-          waiting = current == motto.length ? 100 : 40;
-          if (current >= motto.length) {
-            current = 0;
-          }
-          charLimit = motto[current].length;
-        }
-      } else {
-        waiting--;
-      }
-    }, 60);
-
-    setTimeout(() => {
-      navBarY = document
-        .getElementById("navBarWrapper")
-        .getBoundingClientRect().y;
-    }, 1000);
-
-    return () => {
-      window.removeEventListener("scroll", () => {});
-    };
-  }, []);
   return (
-    <div id="homeWrapper" className="bg-main">
-      <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"></meta>
-      <div
-        id="main"
-        className="flex justify-center h-screen mt-0"
-      >
-        <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              id="backgroundVideo"
-              className="top-0 z-0 object-cover w-full p-0 m-0"
-            >
-              <source src={earthVideo} type="video/mp4" />
-            </video>
-        <div
-          id="content"
-          className="absolute flex flex-col items-center justify-center h-screen text-white"
-        >
-          <h1 className="text-2xl font-bold text-center cursor-default select-none md:text-3xl font-poppins lg:text-6xl text-h1">
-            Sunny Harbor Consulting
-          </h1>
-          <p
-            id="titleDesc"
-            className="font-normal text-center cursor-default select-none font-raleway sm:text-2xl lg:text-3xl text-p"
-          ></p>
-        </div>
-      </div>
-      <div id="content" className="mx-0 bg-white">
-        <div id="about" className="block w-full p-0 m-0">
-          <ScrollingSlides reset={true} deviceType={"desktop"} offset={"0"} slideAttributes={"w-full"}>
-          <div className="h-1/2 z-[0]">
-            <div
-              id="storyDiv"
-              ref={sectionOne}
-              className="relative grid w-full lg:h-[50vw] h-[70vw] grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-[7.4vw]"
-            >
-              <div className="relative overflow-hidden h-full w-full z-[10]">
-                <h1 className="text-[5vw] italic font-bold lg:text-[3.5vw] lg:leading-[3.89vw] font-poppins">
-                  Sunny Harbor Consulting
-                </h1>
-                <h2 className="relative w-full mt-2 text-[3.3vw] leading-[3.7vw] font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-[3.5vw] md:leading-[3.8vw] lg:text-[2.5vw] lg:leading-[2.7vw]">
-                  Sunny Harbor Consulting eli SHC on nuori ja taitava
-                  ohjelmistoyritys, joka erikoistuu innovatiivisiin web- ja
-                  mobiilisovelluksiin.
-                  <br />
-                  <br />
-                  <br />
-                  SHC tekee mobiili- ja tietokonesovelluksia, nettisivuja sekä
-                  embedded-toteutuksia. Osaamisemme vain laajenee tästä ja
-                  panostamme uuden osaamisen hankkimiseen.
-                </h2>
-              </div>
-              <img
-                className="h-4/5 absolute aspect-square xl:right-5 right-0 z-[0] xl:bottom-[8%] bottom-[0]"
-                src={earthImg}
-              />
+    <div id="homeWrapper" className="w-screen">
+        <div className="relative h-screen w-screen text-white font-poppins font-semibold">
+          <div className="px-[5vw] pt-[13vh]">
+            <h1 className="text-[12.5vh]">Ratkaisuja<br/>joihin luotat.<br/></h1>
+            <h2 className="w-[60vw] text-[3.43vh] h-[20vh] pt-[5vh]">
+              Uskomme vahvasti, että luomalla kestäviä ja pitkäikäisiä ratkaisuja, voimme mahdollistaa asiakkailemme ennennäkemättömän edun teknologiassa.
+            </h2>
+            <div className="relative mt-[13vh]">
+              <div className="absolute hidden z-[1] bg-[#FCA311] filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
+              <button className="relative z-[3] text-[2.6vh] text-left py-[1.5vh] px-[2vh] bg-[#14213D] rounded-lg">Hinta-arvio sekunneissa! &rarr;</button>
             </div>
           </div>
-          </ScrollingSlides>
-          <ScrollingSlides reset={true} deviceType={"desktop"} offset={"0"} slideAttributes={"w-full"}>
-          <div className="h-1/2 z-[0]">
-            <div
-              id="storyDiv"
-              ref={sectionSecond}
-              className="relative grid w-full lg:h-[50vw] h-[70vw] grid-cols-1 p-5 pt-5 m-auto bg-black text-h2 lg:p-[7.4vw]"
-            >
-              <div className="relative overflow-hidden h-full w-full z-[10]">
-                <h1 className="text-[5vw] italic font-bold lg:text-[3.5vw] lg:leading-[3.89vw] font-poppins">Mitä osaamme?</h1>
-                <h2 className="relative w-full mt-2 text-[3.3vw] font-poppins font-extralight lg:w-2/3 md:w-2/3 text-h1 sm:text-2xl md:text-[text-3.5w] md:leading-[3.8vw] lg:text-[2.5vw] lg:leading-[2.7vw]">
-                Olemme moniosaava ohjelmistokehitys yritys. Toteutamme teille mobiili-, netti- ja embedded-sovelluksia. <br/><br/>
-                Meillä on kokemusta seuraavien ohjelmointikielien kanssa: C, C++, Python, Golang, JavaScript, TypeScript, Dart, Java, Kotlin, Swift, Lua, Rust, Mojo ja Assembly (x86, ARM ja Z80).
-                </h2>
-                {/* <Link to="#" className="px-3 font-light text-white border-2 border-white border-solid font-poppins lg:text-4xl md:text-2xl hover:cursor-pointer">Lue lisää...</Link> */}
-              </div>
-              <img
-                src={capsuleImg}
-                className="absolute top-0 left-0 object-cover w-full h-full grayscale"
-              />
+          <div className="fixed z-[-1] filter top-0 left-0 h-screen w-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"></div>
+        </div>
+        <div className="w-screen py-[5vw] px-[10vw] grid grid-cols-3 gap-[10vw] bg-white">
+          <div className="shadow-lg border-solid bg-[#14213D] h-[20vw] rounded-lg text-center text-white font-poppins">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FCA311" className="mx-auto w-[8vw] pt-[2vw]">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 7.756a4.5 4.5 0 100 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h1 className="text-[1.5vw] w-3/4 mx-auto pt-[2vw]">Kustannustehokkaat ratkaisut</h1>
+          </div>
+          <div className="flex flex-col shadow-lg border-solid bg-[#14213D] h-[20vw] rounded-lg text-center text-white font-poppins">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FCA311" className="mx-auto w-[8vw] pt-[2vw]">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+          </svg>
+          <h1 className="text-[1.5vw] w-3/4 mx-auto pt-[2vw]">Aktiivinen ja erehtymätön tuki</h1>
+          </div>
+          <div className="flex flex-col shadow-lg border-solid bg-[#14213D] h-[20vw] rounded-lg text-center text-white font-poppins">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FCA311" className="mx-auto w-[8vw] pt-[2vw]">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+          </svg>
+          <h1 className="text-[1.5vw] w-3/4 mx-auto pt-[2vw]">Täysin yksilöidyt ratkaisut</h1>
+          </div>
+        </div>
+        <div className="h-[40vw] bg-[#14213D] text-white font-poppins py-[5vw]">
+          <h1 className="text-center text-[4vw] font-semibold mx-auto mb-[5vw] text-[#FCA311]">Löydä itsesi muiden joukosta!</h1>
+          <div className="grid grid-cols-2 gap-[2vw] w-[75vw] mx-auto">
+            <div className="bg-[#E5E5E5] rounded-lg h-[20vw] text-[#14213D] px-[2vw] py-[1vw]">
+              <h1 className="text-[2.75vw] font-semibold">Sykekotipalvelut</h1>
+              <p className="text-[1.35vw] h-[10.5vw]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic aperiam aliquam beatae sunt recusandae commodi</p>
+              <button className="bg-[#14213D] text-[#FCA311] py-[0.5vw] px-[1vw] text-left text-[1.5vw] rounded-lg">Lue lisää <i className="fa fa-angle-right"></i></button>
+            </div>
+            <div className="bg-[#E5E5E5] rounded-lg h-[20vw] text-[#14213D] px-[2vw] py-[1vw]">
+              <h1 className="text-[2.75vw] font-semibold">Korjausvelkalaskuri.fi</h1>
+              <p className="text-[1.35vw] h-[10.5vw]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic aperiam aliquam beatae sunt recusandae commodi</p>
+              <button className="bg-[#14213D] text-[#FCA311] py-[0.5vw] px-[1vw] text-left text-[1.5vw] rounded-lg">Lue lisää <i className="fa fa-angle-right"></i></button>
             </div>
           </div>
-          </ScrollingSlides>
-          <AboutPage />
-          <PartnersPage />
-          <ContactPage />
         </div>
-      </div>
     </div>
   );
 }
