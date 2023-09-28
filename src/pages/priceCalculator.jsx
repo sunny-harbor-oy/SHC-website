@@ -32,7 +32,7 @@ const cardData = [
     title: "Ulkonäkö",
     question: "Tarvitsetko täysin yksilöidyn ulkonäön?",
     answers: {
-    "Kyllä": {coefficient: 1.5},
+    "Kyllä": {coefficient: 1.25},
     "Ei": {coefficient: 1},
     }
 },
@@ -50,7 +50,7 @@ const cardData = [
     question: "Kuinka yksilöityjä ominaisuudet ovat?",
     answers: {
     "Valmiit ominaisuudet": {coefficient: 1},
-    "Ominaisuudet vaativat yksilöintiä": {coefficient: 1.2},
+    "Ominaisuudet vaativat yksilöintiä": {coefficient: 1.1},
     }
 },
 {
@@ -76,7 +76,7 @@ const cardData = [
     title: "Integraatio",
     question: "Pitääkö ohjelmisto integroida jo jonkin valmiin järjestelmän kanssa?",
     answers: {
-    "Kyllä": {coefficient: 1.3},
+    "Kyllä": {coefficient: 1.1},
     "Ei": {coefficient: 1},
     }
 },
@@ -84,19 +84,25 @@ const cardData = [
     title: "Aikataulu",
     question: "Millä aikataululla ohjelmiston pitäisi olla valmis?",
     answers: {
-    "viikko - kuukausi": {coefficient: 1.25},
-    "2 - 6 kuukautta": {coefficient: 1.15},
-    "6 - 12 kuukautta": {coefficient: 1},
+    "viikko - kuukausi": {},
+    "2 - 6 kuukautta": {},
+    "6 - 12 kuukautta": {},
     }
 },
 ];
 
+let index = 0;
 const progressBar = cardData.map(() => {
-    return <div className="2xl:h-[0.75vw] md:h-[1.5vw] sm:h-[2vw] h-[3vw] w-full rounded-lg transition-all duration-[250ms]"></div>;
+    const i = index;
+    index++;
+    return <div onClick={() => {
+        currentCard = i;
+        changeCard(0);
+    }} className="hover:cursor-pointer 2xl:h-[0.75vw] md:h-[1.5vw] sm:h-[2vw] h-[3vw] w-full rounded-lg transition-all duration-[250ms]"></div>;
 });
 
 let chosenOptions = [];
-let currentCard = 0;
+let currentCard = -1;
 let currentCardObject = undefined;
 let lastOptionSelected = undefined;
 let tranition = false;
@@ -120,13 +126,13 @@ const FormElements = cardData.map((card) => {
     }
 
     return (
-        <div questionid={cardId} className="h-full transition-all duration-[500ms] w-full 2xl:px-[4vw] px-[2vw] pt-[3vw]">
-            <h1 className="2xl:text-[3vw] md:text-[4vw] sm:text-[8wv] text-[10vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
+        <div questionid={cardId} className="text-white h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] px-[2vw] pt-[3vw]">
+            <h1 className="text-[#FCA311] 2xl:text-[3vw] md:text-[4vw] sm:text-[8wv] text-[10vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
             <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] sm:w-4/5 w-[90%] font-poppins my-0">{card.question}</h2>
-            <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] mx-auto 2xl:w-3/4 sm:w-[85%] w-[95%]">
+            <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
                 {Object.entries(card.answers).map(([option, value]) => (
-                    <div className="flex justify-between w-full text-white sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] px-[2vw] bg-[#2b2d42] rounded-lg hover:cursor-pointer select-none">
-                        <h1 className="font-poppins 2xl:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left text-center md:w-auto w-full text-[5vw]">
+                    <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] px-[2vw] bg-[#1b2843] rounded-lg hover:cursor-pointer select-none">
+                        <h1 className="transition-all duration-200 font-poppins 2xl:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left text-center md:w-auto w-full text-[5vw]">
                             {option}
                         </h1>
                         <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] sm:rounded-sm rounded-full" />
@@ -196,7 +202,7 @@ const finalPrice = () => {
             <h1 className="text-center font-poppins text-[6vw] font-extrabold">Onneksi olkoon!</h1>
             <h2 className="text-center font-poppins text-[3vw]">alk. {Math.ceil(finalPrice)*1000}€</h2>
         </div>
-    );
+    ); // Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan! Ota yhteyttä!
 }
 
 const updateStages = () => {
@@ -334,7 +340,7 @@ const changeCard = (change) => {
         return;
     } else {
         renderCard(currentCard);
-        slideDiv.current.parentElement.style.display = "flex";
+        slideDiv.current.parentElement.style.display = "block";
         report.current.style.display = "none";
     }
     
@@ -345,32 +351,39 @@ const resizeUpdate = () => {
 }
 
 useEffect(() => {
-    changeCard(0);
-    window.addEventListener("load", changeCard(0));
+    //changeCard(0);
+    //window.addEventListener("load", changeCard(0));
     window.addEventListener("resize", resizeUpdate);
     return () => {
-        window.removeEventListener("load", changeCard(0));
         window.removeEventListener("resize", resizeUpdate);
     }
 });
 
 return (
+    <div className="bg-[#14213D] w-screen">
     <div className="min-h-screen 2xl:w-[75vw] sm::w-[80vw] w-[90%] sm:pt-32 pt-24 mx-auto">
         <div className="2xl:1/2 md:w-2/3 mx-auto pt-[2vw]">
             <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 8 ? cardData.length : 8}, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
-        <div className="flex w-[100%] min-h-[40vw] justify-between mx-auto">
-            <button onClick={() => changeCard(-1)}><i className="fa fa-angle-left text-[6vw] md:block hidden"></i></button>
-            <div ref={slideDiv} className="md:w-[70vw] w-[90vw]"></div>
-            <button onClick={() => changeCard(1)}><i className="fa fa-angle-right text-[6vw] md:block hidden"></i></button>
+        <div className="w-[100%] min-h-[40vw] mx-auto">
+            <div ref={slideDiv} className="md:w-[70vw] w-[90vw] mx-auto font-poppins">
+                <div className="md:w-[51vw] mx-auto text-[#FCA311] pb-[3vw]">
+                    <h1 className="text-[4vw] font-semibold">Kustannusarvio laskuri</h1>
+                    <p className="text-white text-[2.5vw] font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
+                </div>
+            </div>
+            <div className="md:w-[51vw] w-[90vw] mx-auto">
+            <button onClick={() => changeCard(1)} className="md:block hidden text-[1.5vw] font-semibold bg-[#FCA311] text-[#1b2843] px-[1vw] py-[0.25vw] rounded-lg font-poppins">Seuraava <i className="fa fa-angle-right"></i></button>
+            </div>
             <div>
-                <button onClick={() => changeCard(1)} ref={mobileBtn} className="md:hidden absolute transition-colors duration-[250ms] bg-[#c6d0d8] text-white font-poppins font-bold text-[5vw] px-[2vw] py-[1vw] rounded-lg w-[35vw] top-[90vh] left-1/2 transform -translate-x-1/2">Seuraava</button>
+                <button onClick={() => changeCard(1)} ref={mobileBtn} className="md:hidden absolute transition-colors duration-[250ms] bg-[#c6d0d8] text-white font-poppins font-bold text-[5vw] px-[2vw] py-[1vw] rounded-lg w-[35vw] bottom-[10vh] left-1/2 transform -translate-x-1/2">Seuraava</button>
             </div>
         </div>
-        <div ref={report} className="w-[100%] h-[40vw] mx-auto py-[4vw]">
+        <div ref={report} className="hidden w-[100%] h-[40vw] mx-auto py-[4vw]">
         </div>
+    </div>
     </div>
 );
 }

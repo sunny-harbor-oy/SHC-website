@@ -9,6 +9,12 @@ import SHCFooter from "../elements/shcFooter.jsx";
 import ScrollingSlides from "../elements/scrollingSlides.jsx";
 import { Link } from "react-router-dom";
 
+import leonImg from "../assets/founders/leonv2.jpg";
+import sisuImg from "../assets/founders/sisu.png";
+import victorImg from "../assets/founders/victor.jpg";
+import marcImg from "../assets/team/alexv2.png";
+import ceoImg from "../assets/founders/CEO.jpg";
+
 const motto = [
   "Developing technology beyond the horizon.",
   "Your edge in technology.",
@@ -20,18 +26,17 @@ const motto = [
 ];
 
 export default function HomePage(language = "fi") {
-
   return (
     <div id="homeWrapper" className="w-screen">
         <div className="relative h-screen w-screen text-white font-poppins font-semibold">
           <div className="px-[5vw] pt-[13vh]">
             <h1 className="text-[12.5vh]">Ratkaisuja<br/>joihin luotat.<br/></h1>
-            <h2 className="w-[60vw] text-[3.43vh] h-[20vh] pt-[5vh]">
+            <h2 className="w-[80vh] text-[3.43vh] h-[20vh] pt-[5vh]">
               Uskomme vahvasti, että luomalla kestäviä ja pitkäikäisiä ratkaisuja, voimme mahdollistaa asiakkailemme ennennäkemättömän edun teknologiassa.
             </h2>
             <div className="relative mt-[13vh]">
               <div className="absolute hidden z-[1] bg-[#FCA311] filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
-              <button className="relative z-[3] text-[2.6vh] text-left py-[1.5vh] px-[2vh] bg-[#14213D] rounded-lg">Hinta-arvio sekunneissa! &rarr;</button>
+              <Link to={"./price-estimate"} className="relative z-[3] text-[2.6vh] text-left py-[1.5vh] px-[2vh] bg-[#14213D] rounded-lg">Kustannusarvio sekunneissa! &rarr;</Link>
             </div>
           </div>
           <div className="fixed z-[-1] filter top-0 left-0 h-screen w-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"></div>
@@ -53,10 +58,10 @@ export default function HomePage(language = "fi") {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FCA311" className="mx-auto w-[8vw] pt-[2vw]">
             <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
           </svg>
-          <h1 className="text-[1.5vw] w-3/4 mx-auto pt-[2vw]">Täysin yksilöidyt ratkaisut</h1>
+          <h1 className="text-[1.5vw] w-3/4 mx-auto pt-[2vw]">Täysin räätälöidyt ratkaisut</h1>
           </div>
         </div>
-        <div className="h-[40vw] bg-[#14213D] text-white font-poppins py-[5vw]">
+        <div className="h-[40vw] bg-[#14213D] text-white font-poppins py-[5vw]" id="customers">
           <h1 className="text-center text-[4vw] font-semibold mx-auto mb-[5vw] text-[#FCA311]">Löydä itsesi muiden joukosta!</h1>
           <div className="grid grid-cols-2 gap-[2vw] w-[75vw] mx-auto">
             <div className="bg-[#E5E5E5] rounded-lg h-[20vw] text-[#14213D] px-[2vw] py-[1vw]">
@@ -70,6 +75,31 @@ export default function HomePage(language = "fi") {
               <button className="bg-[#14213D] text-[#FCA311] py-[0.5vw] px-[1vw] text-left text-[1.5vw] rounded-lg">Lue lisää <i className="fa fa-angle-right"></i></button>
             </div>
           </div>
+        </div>
+        <div className="bg-[#14213D] w-screen font-poppins" id="team">
+        <h1 className="pt-[2vw] text-[3.5vw] left-0 font-semibold text-[#FCA311] text-center w-screen">Tiimimme</h1>
+        <div className="grid grid-cols-4 gap-[2vw] w-[90vw] h-[43vw] py-[5vw] font-poppins font-bold mx-auto text-white">
+          <div className="bg-[#1b2843] h-[full] relative rounded-lg overflow-hidden font-normal">
+            <img src={leonImg} className="w-full mx-auto h-[26vw] object-cover"></img>
+            <h1 className="text-center leading-snug text-[2.5vw] pb-[-1vw] pt-[0.5vw]">Leon</h1>
+            <h2 className="text-center text-[1vw] my-0">Frontend kehittäjä ja suunnittelija</h2>
+          </div>
+          <div className="bg-[#1b2843] h-[full] relative rounded-lg overflow-hidden font-normal">
+            <img src={victorImg} className="w-full mx-auto h-[26vw] object-cover"></img>
+            <h1 className="text-center leading-snug text-[2.5vw] pb-[-1vw] pt-[0.5vw]">Victor</h1>
+            <h2 className="text-center text-[1vw] my-0">Fullstack kehittäjä</h2>
+          </div>
+          <div className="bg-[#1b2843] h-[full] relative rounded-lg overflow-hidden font-normal">
+            <img src={sisuImg} className="w-full mx-auto h-[26vw] object-cover"></img>
+            <h1 className="text-center leading-snug text-[2.5vw] pb-[-1vw] pt-[0.5vw]">Sisu</h1>
+            <h2 className="text-center text-[1vw] my-0">Markkinointi ja frontend kehittäjä</h2>
+          </div>
+          <div className="bg-[#1b2843] h-[full] relative rounded-lg overflow-hidden font-normal">
+            <img src={marcImg} className="w-full mx-auto h-[26vw] object-cover"></img>
+            <h1 className="text-center leading-snug text-[2.5vw] pb-[-1vw] pt-[0.5vw]">Marc</h1>
+            <h2 className="text-center text-[1vw] my-0">Fullstack kehittäjä</h2>
+          </div>
+        </div>
         </div>
     </div>
   );
