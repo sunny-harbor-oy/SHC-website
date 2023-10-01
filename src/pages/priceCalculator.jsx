@@ -199,8 +199,8 @@ const finalPrice = () => {
 
     return (
         <div>
-            <h1 className="text-center font-poppins text-[6vw] font-extrabold">Onneksi olkoon!</h1>
-            <h2 className="text-center font-poppins text-[3vw]">alk. {Math.ceil(finalPrice)*1000}€</h2>
+            <h1 className="font-poppins text-[5vw] font-extrabold">Onneksi olkoon!</h1>
+            <h2 className="font-poppins text-[3vw]">alk. {Math.ceil(finalPrice)*1000}€</h2>
         </div>
     ); // Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan! Ota yhteyttä!
 }

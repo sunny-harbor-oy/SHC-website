@@ -12,7 +12,7 @@ export default function SHCFooter() {
         <p className="text-[2vh] font-light w-full pt-[1vw] px-[2vw]">sunnyharborconsulting@gmail.com</p>
       </div>
       <div>
-        <Link to={"/price-estimate"}><p className="hover:cursor-pointer text-[2vh] font-light w-full pt-[1vw] px-[2vw]">Kustannusarvio</p></Link>
+        <Link reloadDocument="true"  to={"/price-estimate"}><p className="hover:cursor-pointer text-[2vh] font-light w-full pt-[1vw] px-[2vw]">Kustannusarvio</p></Link>
         <p className="hover:cursor-pointer text-[2vh] font-light w-full pt-[1vw] px-[2vw]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop);
@@ -29,7 +29,7 @@ export default function SHCFooter() {
               document.cookie = "scrollTo=true";
             }
         }}>Asiakkaat</p>
-        <Link><p className="hover:cursor-pointer text-[2vh] font-light w-full pt-[1vw] px-[2vw]">Ota yhteyttä</p></Link>
+        <Link reloadDocument="true" to={"/contact"}><p className="hover:cursor-pointer text-[2vh] font-light w-full pt-[1vw] px-[2vw]">Ota yhteyttä</p></Link>
       </div>
       <div className="flex-col flex overflow-hidden">
         <a href="https://www.instagram.com/sunnyharborconsulting/" target="_blank" className="text-[2vh] font-light w-full pt-[1vw] px-[2vw]">Instagram</a>
