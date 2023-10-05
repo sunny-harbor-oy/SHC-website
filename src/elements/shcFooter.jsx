@@ -5,8 +5,8 @@ import instagram from "../assets/socials/instagram-250.svg";
 
 export default function SHCFooter() {
   return (
-    <div className="bg-[#14213D] w-screen pb-[3vw]">
-      <div className="text-white relative bg-[#1b2843] py-[2vw] md:w-[80vh] w-screen mx-auto px-[3vw] font-poppins rounded-lg">
+    <div className="bg-[#14213D] w-screen md:pb-[3vw]">
+      <div className="text-white relative bg-[#1b2843] py-[2vw] md:w-[80vh] w-screen mx-auto px-[3vw] font-poppins md:rounded-lg">
       <h1 className="md:text-[3vh] text-[5vw] font-semibold w-full px-[2vw] text-center md:mb-[0.5vw] mb-[3vw] md:pt-0 pt-[2vw]">Sunny Harbor Consulting</h1>
       <div className="md:w-[95%] w-[90%] mx-auto pb-[3vh]">
       <div className="md:flex block justify-center gap-[2vw] md:pb-[1vh] w-full mx-auto">
@@ -37,7 +37,7 @@ export default function SHCFooter() {
         <h2 className="mx-[0] my-auto text-lg">sunnyharborconsulting@gmail.com</h2>
       </div>
       </div>
-      <div className="md:flex md:justify-center grid grid-cols-2 md:w-full w-[80%] mx-auto text-center gap-[1vw]">
+      <div className="md:flex md:justify-center hidden grid-cols-2 md:w-full w-[80%] mx-auto text-center gap-[1vw]">
         <Link to={"/price-estimate"} reloadDocument="true">Kustannusarvio</Link>
         <p className="hover:cursor-pointer" onClick={() => {
             if (window.location.pathname == "/") {
