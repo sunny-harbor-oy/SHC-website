@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 export default function ContactPage() {
     return (
         <div className='relative w-screen z-[0] bg-[#14213D] font-poppins'>
-            <div className="pt-[9vh] px-[5vw]">
+            <div className="pt-[16vh] w-[90vw] mx-auto">
+            <h1 className='text-[#FCA311] text-[7vh] font-semibold'>Ota yhteyttä!</h1>
+            <h2 className='text-white text-[3vh] font-light pb-[6vh] w-[90vh]'>Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!</h2>
             </div>
-            <div className="grid grid-cols-2 w-[90vw] mx-auto pt-[7vh] pb-[20vh]">
-            <div className="border-r-[1px] border-[#FCA311] h-full overflow-hidden px-[2vw] w-full">
-                <h1 className='text-[#FCA311] text-[7vh] font-semibold'>Ota yhteyttä!</h1>
-                <h2 className='text-white text-[3vh] font-light pb-[6vh]'>Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee kustannusarvio laskurillamme, niin vastaamme mahdollisimman nopeasti!</h2>
+             <div className="grid grid-cols-2 w-[90vw] mx-auto pb-[20vh]"> 
+            <div className="border-r-[4px] border-[#FCA311] h-full overflow-hidden px-[2vw] w-full">
                 <h2 className="text-[1.8vw] text-[#FCA311] pb-[1vh]">Nimi</h2>
                 <input for="name" type="text" placeholder="Nimi" className="bg-[#E5E5E5] px-[1vw] w-[90%] h-[5vh] py-[1vw] text-[#14213D] mb-[3vh]"></input>
                 <h2 className="text-[1.8vw] text-[#FCA311] pb-[1vh]">Sähköposti</h2>
@@ -19,7 +19,7 @@ export default function ContactPage() {
                 <p className="text-[1.2vw] text-white pb-[1.5vh] font-light]">Kuvaile yksityiskohtaisesti tarvettasi.</p>
                 <textarea className="bg-[#E5E5E5] px-[1vw] w-[90%] h-[20vh] py-[1vw] text-[#14213D] mb-[3vh]"></textarea>
             </div>
-            <div className="flex flex-col justify-center items-center border-l-[1px] border-[#FCA311] h-[90%] overflow-hidden px-[2vw] w-full hover:cursor-pointer">
+            <div className="flex flex-col justify-center items-center border-l-[0px] border-[#FCA311] h-[90%] overflow-hidden px-[2vw] w-full hover:cursor-pointer">
                 <Link to={"/price-estimate"} reloadDocument="true" className="w-[70%]">
                 <h1 className="relative
                 text-[#FCA311] text-[4vw] font-semibold

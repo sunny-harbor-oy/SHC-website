@@ -1,9 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/shc_logo.png";
 
 export default function NavBar() {
+  let isMobile = false;
+  let vhPx = window.innerHeight * 0.01;
+  let navItems = null;
+  let navBar = null;
+
+  const navItemsRef = useRef(null);
+  const navBarRef = useRef(null);
+
   useEffect(() => {
+    navItems = navItemsRef.current;
+    navBar = navBarRef.current;
+    isMobile = window.innerWidth < 768;
+
     if (window.location.hash != "") {
       if (document.cookie.split(";").some((item) => item.trim().startsWith("scrollTo="))) {
         const elem = document.getElementById(window.location.hash.substring(1));
@@ -13,25 +25,70 @@ export default function NavBar() {
         }
       }
     }
+
+    if (window.location.pathname == "/") {
+      if (!isMobile) {
+        if (window.scrollY < vhPx * 3) {
+          navBar.style.background = "none";
+        }
+      }
+    }
+
+    const onScroll = () => {
+      if (window.location.pathname == "/") {
+        if (!isMobile) {
+          if (window.scrollY < vhPx * 3) {
+            navBar.style.background = "none";
+          } else {
+            navBar.style.background = "#14213D";
+          }
+        }
+      }
+    }
+    window.addEventListener("scroll", onScroll);
+
+    const onResize = () => {
+      let vhPx = window.innerHeight * 0.01;
+      document.body.style.overflow = "scroll"
+      if (window.innerWidth < 768) {
+        isMobile = true;
+        navBar.style.background = "#14213D";
+      } else {
+        isMobile = false;
+      }
+    }
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+
+      window.removeEventListener("scroll", onScroll);
+    }
   });
 
   return (
-    <nav id="navBar" className="fixed z-[10000] h-[8vh] bg-[#14213D] flex justify-between w-screen px-[2vw] text-white text-center text-[1.75vh] font-poppins">
+    <nav ref={navBarRef} id="navBar" className="fixed z-[11] h-[8vh] transition-all duration-[150ms] bg-[#14213D] flex justify-between w-screen px-[2vw] text-white text-center md:text-[1.75vh] font-poppins">
       <div className="flex">
         <Link className="my-auto hover:cursor-pointer" reloadDocument="true" to={"/"}><img src={logo} className="h-[7vh] my-auto"></img></Link>
-        <div className="grid grid-cols-3 gap-4 my-auto font-light text-center px-[3vw]">
-          <Link to={"/price-estimate"}><h1 className="hover:cursor-pointer">Kustannusarvio</h1></Link>
-          <h1 className="hover:cursor-pointer" onClick={() => {
+        <div ref={navItemsRef} className="z-[10] md:bg-transparent bg-[#14213D] transition-all duration-[250ms] md:grid grid-cols-3 gap-4 md:my-auto md:text-center md:font-light font-semibold text-left md:text-[1.75vh] text-[4.5vh] md:px-[3vw] px-[5vw] md:relative fixed md:top-auto top-[8vh] left-0 md:h-auto h-[0vh] md:w-auto w-screen overflow-hidden">
+          <Link to={"/price-estimate"}><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Kustannusarvio</h1></Link>
+          <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
+              if (isMobile) {
+                document.getElementById("navItems").style.height = "0vh";
+              }
             } else {
               window.location = "/#team";
               document.cookie = "scrollTo=true";
             }
           }}>Tiimi</h1>
-          <h1 className="hover:cursor-pointer" onClick={() => {
+          <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("customers").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
+              if (isMobile) {
+                document.getElementById("navItems").style.height = "0vh";
+              }
             } else {
               window.location = "/#customers";
               document.cookie = "scrollTo=true";
@@ -39,9 +96,22 @@ export default function NavBar() {
           }}>Asiakkaat</h1>
         </div>
       </div>
-      <div className="border-solid border-[#FCA311] border-2 w-[15vh] my-auto">
+      <div className="border-solid border-[#FCA311] border-2 w-[15vh] my-auto md:block hidden">
         <Link reloadDocument="true" to={"/contact"}><h1 className="text-[#FCA311] hover:font-extrabold font-semibold hover:cursor-pointer transition-all duration-[250ms] my-auto py-[0.5vw] w-full h-full">Ota yhteyttä!</h1></Link>
       </div>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FFFFFF" className="w-[5vh] h-[5vh] my-auto md:hidden block" onClick={(e) => {
+        if (navItems.getBoundingClientRect().height < 10) {
+          navItems.style.height = "92vh";
+          navItems.style.borderTop = "3px solid #FCA311";
+          document.body.style.overflow = "hidden"
+        } else {
+          navItems.style.height = "0vh";
+          navItems.style.borderTop = "0px solid #FCA311";
+          document.body.style.overflow = "scroll"
+        }
+      }}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
     </nav>
   );
 }
