@@ -131,8 +131,8 @@ const FormElements = cardData.map((card) => {
             <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] sm:w-4/5 w-[90%] font-poppins my-0">{card.question}</h2>
             <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
                 {Object.entries(card.answers).map(([option, value]) => (
-                    <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] px-[2vw] bg-[#1b2843] rounded-lg hover:cursor-pointer select-none">
-                        <h1 className="transition-all duration-200 font-poppins 2xl:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left text-center md:w-auto w-full text-[5vw]">
+                    <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-[#1b2843] rounded-lg hover:cursor-pointer select-none">
+                        <h1 className="transition-all duration-200 font-poppins 2xl:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                             {option}
                         </h1>
                         <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] sm:rounded-sm rounded-full" />
@@ -197,10 +197,29 @@ const finalPrice = () => {
 
     finalPrice *= finalAttributes["coefficient"];
 
+    let answersObj = {};
+    let i = 0;
+
+    Object.entries(cardData).map(([option, value]) => {
+        i++;
+        if (answersObj[value.title] == undefined) answersObj[value.title] = [];
+        if (chosenOptions[i] != undefined) {
+            const options = chosenOptions[i];
+            console.log(value);
+            Object.entries(options).map(([option, value]) => {
+            });
+        }
+    })
+
     return (
-        <div>
-            <h1 className="font-poppins text-[5vw] font-extrabold">Onneksi olkoon!</h1>
-            <h2 className="font-poppins text-[3vw]">alk. {Math.ceil(finalPrice)*1000}€</h2>
+        <div className="text-white absolute top-[14vh] w-3/4">
+            <h1 className="font-poppins text-[#FCA311] text-[4vw] font-extrabold">Alustava kustannusarvio:</h1>
+            <h2 className="font-poppins text-[2vw] w-3/4">Hinta-arvio on suuntaa antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
+            <h2 className="font-poppins text-[2vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv 24%</h2>
+
+            <div className="flex flex-col mt-[5vw]">
+                {}
+            </div>
         </div>
     ); // Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan! Ota yhteyttä!
 }
@@ -290,6 +309,11 @@ const renderCard = (cardId) => {
 
     const answers = slideDiv.current.firstChild.children[slideDiv.current.firstChild.children.length - 1].children;
 
+    if (chosenOptions[cardId] == undefined) mobileBtn.current.style["background-color"] = "#c6d0d8";
+    else if (Object.keys(chosenOptions[cardId]).length == 0) mobileBtn.current.style["background-color"] = "#c6d0d8";
+    else mobileBtn.current.style["background-color"] = "#1eb82a";
+
+
     for (let i = 0; i < answers.length; i++) {
         if (chosenOptions[cardId] != undefined && chosenOptions[cardId][`${i}`] != undefined) {
             answers[i].children[1].style["background-color"] = "#1eb82a";
@@ -318,6 +342,16 @@ const changeCard = (change) => {
 
     if (currentCard < 0) currentCard = 0;
 
+    if (false) {
+        slideDiv.current.parentElement.style.display = "none";
+
+        barDiv.current.style.display = "none";
+
+        report.current.innerHTML = renderToString(finalPrice());
+        report.current.style.display = "block";
+        return;
+    }
+
     if (currentCard == cardData.length) {
 
         for (let i = 0; i < cardData.length; i++) {
@@ -333,6 +367,8 @@ const changeCard = (change) => {
         updateStages();
 
         slideDiv.current.parentElement.style.display = "none";
+
+        barDiv.current.style.display = "none";
 
         report.current.innerHTML = renderToString(finalPrice());
         report.current.style.display = "block";
@@ -368,17 +404,19 @@ return (
             </div>
         </div>
         <div className="w-[100%] min-h-[40vw] mx-auto">
-            <div ref={slideDiv} className="md:w-[70vw] w-[90vw] mx-auto font-poppins">
-                <div className="md:w-[51vw] mx-auto text-[#FCA311] pb-[3vw]">
-                    <h1 className="text-[4vw] font-semibold">Kustannusarvio laskuri</h1>
-                    <p className="text-white text-[2.5vw] font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
+            <div ref={slideDiv} className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto font-poppins">
+                <div className="lg:w-[51vw] mx-auto text-[#FCA311] pb-[3vw]">
+                    <h1 className="lg:text-[4vw] md:text-[6vw] sm:text-[7vw] text-[10vw] font-semibold">Kustannusarvio laskuri</h1>
+                    <p className="text-white lg:text-[3vw] md:text-[3vw] sm:text-[4vw] text-[6vw] font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
                 </div>
             </div>
-            <div className="md:w-[51vw] w-[90vw] mx-auto">
-            <button onClick={() => changeCard(1)} className="md:block hidden text-[1.5vw] font-semibold bg-[#FCA311] text-[#1b2843] px-[1vw] py-[0.25vw] rounded-lg font-poppins">Seuraava <i className="fa fa-angle-right"></i></button>
+            <div className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto md:block hidden">
+                <div className="sm:w-[85%] w-[95%] mx-auto 2xl:px-[4vw] px-[2vw]">
+                <button onClick={() => changeCard(1)} className="xl:text-[1.5vw] text-[2vw] font-semibold bg-[#FCA311] text-[#1b2843] px-[1vw] py-[0.25vw] rounded-lg font-poppins">Seuraava <i className="fa fa-angle-right"></i></button>
+                </div>
             </div>
             <div>
-                <button onClick={() => changeCard(1)} ref={mobileBtn} className="md:hidden absolute transition-colors duration-[250ms] bg-[#c6d0d8] text-white font-poppins font-bold text-[5vw] px-[2vw] py-[1vw] rounded-lg w-[35vw] bottom-[10vh] left-1/2 transform -translate-x-1/2">Seuraava</button>
+                <button onClick={() => changeCard(1)} ref={mobileBtn} className="md:hidden absolute transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold sm:text-[3.5vw] text-[5vw] px-[2vw] py-[1vw] rounded-lg sm:w-[30vw] w-[35vw] bottom-[10vh] left-1/2 transform -translate-x-1/2">Seuraava</button>
             </div>
         </div>
         <div ref={report} className="hidden w-[100%] h-[40vw] mx-auto py-[4vw]">

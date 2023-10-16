@@ -1,12 +1,6 @@
 import { useEffect, useRef } from "react";
-import capsuleImg from "../assets/capsule.png";
-import earthVideo from "../assets/earth.mp4";
-import earthImg from "../assets/earth.webp";
-import AboutPage from "../pages/about.jsx";
-import ContactPage from "../pages/contact.jsx";
-import PartnersPage from "../pages/partners.jsx";
-import SHCFooter from "../elements/shcFooter.jsx";
 import ScrollingSlides from "../elements/scrollingSlides.jsx";
+import SlideShow from "../elements/slideShow.jsx";
 import { Link } from "react-router-dom";
 
 import leonImg from "../assets/founders/leonv2.jpg";
@@ -28,6 +22,7 @@ const motto = [
 export default function HomePage(language = "fi") {
   return (
     <div id="homeWrapper" className="w-screen">
+        <SlideShow delay={5*1000} duration={200000} viewPortClassNames="w-screen h-screen">
         <div className="relative h-screen w-screen text-white font-poppins font-semibold">
           <div className="px-[5vw] pt-[13vh]">
             <h1 className="sm:text-[12.5vh] text-[15vw]">Ratkaisuja<br/>joihin luotat.<br/></h1>
@@ -41,6 +36,10 @@ export default function HomePage(language = "fi") {
           </div>
           <div className="fixed z-[-1] filter top-0 left-0 h-screen w-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"></div>
         </div>
+        <div className="relative h-screen w-screen bg-[#000000] text-white font-poppins font-semibold">
+
+        </div>
+        </SlideShow>
         <div className="w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-white">
           <div className="shadow-lg border-solid bg-[#14213D] sm:h-[20vw] sm:w-auto w-[80vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[15vw] rounded-lg text-center text-white font-poppins">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FCA311" className="mx-auto md:w-[8vw] w-[30vw] md:pt-[2vw]">
