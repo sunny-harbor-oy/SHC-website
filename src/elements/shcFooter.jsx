@@ -5,7 +5,7 @@ import instagram from "../assets/socials/instagram-250.svg";
 
 export default function SHCFooter() {
   return (
-    <div className="bg-[#14213D] w-screen md:pb-[3vw] sm:pt-[4vh] pt-[1vh]">
+    <div className="bg-[#14213D] w-screen md:pb-[3vw] sm:pt-[4vh] pt-[1vh] md:mb-[3vh]">
       <div className="text-white relative bg-[#1b2843] py-[2vw] md:w-[80vh] w-screen mx-auto px-[3vw] font-poppins md:rounded-lg">
       <h1 className="md:text-[3vh] text-[5vw] font-semibold w-full px-[2vw] text-center md:mb-[0.5vw] mb-[3vw] md:pt-0 pt-[2vw]">Sunny Harbor Consulting</h1>
       <div className="md:w-[95%] w-[90%] mx-auto pb-[3vh]">
