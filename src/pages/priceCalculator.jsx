@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
 import {renderToString} from "react-dom/server";
 
 const decaultSettings = {

@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import ScrollingSlides from "../elements/scrollingSlides.jsx";
+import { useRef } from "react";
 import SlideShow from "../elements/slideShow.jsx";
 import { Link } from "react-router-dom";
 
@@ -7,9 +6,7 @@ import leonImg from "../assets/founders/leonv2.jpg";
 import sisuImg from "../assets/founders/sisu.png";
 import victorImg from "../assets/founders/victor.jpg";
 import marcImg from "../assets/team/alexv2.png";
-import ceoImg from "../assets/founders/CEO.jpg";
 import ilmoImg from "../assets/ilmo.png";
-import earthVid from "../assets/earth.mp4";
 
 const motto = [
   "Developing technology beyond the horizon.",

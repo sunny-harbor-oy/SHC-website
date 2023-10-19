@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/shc_logo.png";
-import linkedin from "../assets/socials/linkedin-250.svg";
-import instagram from "../assets/socials/instagram-250.svg";
 
 export default function SHCFooter() {
   return (

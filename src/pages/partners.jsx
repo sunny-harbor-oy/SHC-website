@@ -1,8 +1,4 @@
-import SHCFooter from '../elements/shcFooter.jsx'
-import NavBar from '../elements/navBar.jsx'
 import { Link } from 'react-router-dom'
-
-//import '../style/pages/partner.css';
 
 export default function PartnersPage() {
     return (
