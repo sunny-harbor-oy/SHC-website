@@ -70,8 +70,8 @@ export default function NavBar() {
     <nav ref={navBarRef} id="navBar" className="fixed z-[11] h-[8vh] transition-all duration-[150ms] bg-[#14213D] flex justify-between w-screen px-[2vw] text-white text-center md:text-[1.75vh] font-poppins">
       <div className="flex">
         <Link className="my-auto hover:cursor-pointer" reloadDocument="true" to={"/"}><img src={logo} className="h-[7vh] my-auto"></img></Link>
-        <div ref={navItemsRef} className="z-[10] md:bg-transparent bg-[#14213D] transition-all duration-[250ms] md:grid grid-cols-3 gap-4 md:my-auto md:text-center md:font-light font-semibold text-left md:text-[1.75vh] text-[4.5vh] md:px-[3vw] px-[5vw] md:relative fixed md:top-auto top-[8vh] left-0 md:h-auto h-[0vh] md:w-auto w-screen overflow-hidden">
-          <Link to={"/price-estimate"} reloadDocument="true"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Kustannusarvio</h1></Link>
+        <div ref={navItemsRef} className="z-[10] md:bg-transparent bg-[#14213D] transition-all duration-[250ms] md:grid grid-cols-4 gap-4 md:my-auto md:text-center md:font-light font-semibold text-left md:text-[1.75vh] text-[3vh] md:px-[3vw] px-[5vw] md:relative fixed md:top-auto top-[8vh] left-0 md:h-auto h-[0vh] md:w-auto w-screen overflow-hidden">
+        <Link to={"/price-estimate"} reloadDocument="true"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Kustannusarvio</h1></Link>
           <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
@@ -94,10 +94,11 @@ export default function NavBar() {
               document.cookie = "scrollTo=true";
             }
           }}>Asiakkaat</h1>
+          <Link to={"/contact"} reloadDocument="true"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Ota yhteyttä</h1></Link>
         </div>
       </div>
-      <div className="border-solid border-[#FCA311] border-2 w-[15vh] my-auto md:block hidden">
-        <Link reloadDocument="true" to={"/contact"}><h1 className="text-[#FCA311] hover:font-extrabold font-semibold hover:cursor-pointer transition-all duration-[250ms] my-auto py-[0.5vw] w-full h-full">Ota yhteyttä!</h1></Link>
+      <div className="border-solid border-[#FFFFFF] border-2 w-[15vh] my-auto md:block hidden">
+        <Link reloadDocument="true" to={"/contact"}><h1 className="text-[#FFFFFF] hover:font-extrabold font-semibold hover:cursor-pointer transition-all duration-[250ms] my-auto py-[0.5vw] w-full h-full">Ota yhteyttä!</h1></Link>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FFFFFF" className="w-[5vh] h-[5vh] my-auto md:hidden block" onClick={(e) => {
         if (navItems.getBoundingClientRect().height < 10) {

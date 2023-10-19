@@ -24,52 +24,51 @@ const cardData = [
     },
     answers: {
     "Selain": {coefficient: 1},
-    "Mobiili": {coefficient: 1.25},
-    "Tietokone": {coefficient: 1.25},
+    "Mobiili (Android & iOS)": {coefficient: 1.2},
+    "Tietokone": {coefficient: 1.2},
     },
 },
 {
     title: "Ulkonäkö",
     question: "Tarvitsetko täysin yksilöidyn ulkonäön?",
     answers: {
-    "Kyllä": {coefficient: 1.25},
+    "Kyllä": {coefficient: 1.2},
     "Ei": {coefficient: 1},
     }
 },
 {
     title: "Ominaisuudet",
-    question: "Monta uniikkia ominaisuutta ohjelmistossa olisi?",
-    answers: {
-    "3 tai vähemmän": {cost: 1},
-    "3 - 6": {cost: 20},
-    "6 tai enemmän": {cost: 30},
-    }
-},
-{
-    title: "Ominaisuudet",
-    question: "Kuinka yksilöityjä ominaisuudet ovat?",
-    answers: {
-    "Valmiit ominaisuudet": {coefficient: 1},
-    "Ominaisuudet vaativat yksilöintiä": {coefficient: 1.1},
-    }
-},
-{
-    title: "Käyttäjät",
-    question: "Ketä käyttäjät ovat?",
+    question: "Mitkä ovat hankkeen toivotut ominaisuudet? (Valitse kaikki soveltuvat)",
     settings: {
         multipleChoice: true,
     },
     answers: {
-    "Yksityishenkilöt": {coefficient: 1.1},
-    "Yritykset": {coefficient: 1.1},
+    "Sähköisen kaupankäynnin toiminnallisuus": {cost: 1},
+    "Mukautettu suunnittelu": {cost: 1},
+    "Analytiikka": {cost: 2},
+    "Tietokanta (esim. SQL)": {cost: 2},
+    "Muu...": {cost: 2},
+    }
+},
+{
+    title: "Ominaisuudet",
+    question: "Ominaisuudet olisivat...",
+    answers: {
+    "Avoimen lähdekoodin": {coefficient: 1},
+    "Juuri sinulle kehitetty": {coefficient: 1.1},
+    "Kummatkin": {coefficient: 1.1},
     }
 },
 {
     title: "Käyttäjät",
-    question: "Toimiiko käyttäjä kohderyhmä tietyllä toimialalla? Onko ohjelmisto tarkoitettu tietylle toimialalle?",
+    question: "Ketä käyttäjät/asiakkaat ovat?",
+    settings: {
+        multipleChoice: false,
+    },
     answers: {
-    "Kyllä": {coefficient: 1.1},
-    "Ei": {coefficient: 1},
+    "Yksityishenkilöt": {coefficient: 1.1},
+    "Yritykset": {coefficient: 1.2},
+    "Kummatkin": {coefficient: 1.1},
     }
 },
 {
@@ -82,13 +81,30 @@ const cardData = [
 },
 {
     title: "Aikataulu",
-    question: "Millä aikataululla ohjelmiston pitäisi olla valmis?",
+    question: "Kuinka kauan uskot ohjelmiston kehityksen kestävän?",
     answers: {
-    "viikko - kuukausi": {},
-    "2 - 6 kuukautta": {},
-    "6 - 12 kuukautta": {},
+    "Alle 3 kuukautta": {coefficient: 1},
+    "3 - 6  kuukautta": {coefficient: 1.5},
+    "6 - 12 kuukautta": {coefficient: 2},
     }
 },
+{
+    title: "Aikataulu",
+    question: "Millä aikataululla ohjelmiston pitäisi olla valmis?",
+    answers: {
+    "1 - 3  kuukautta": {coefficient: 1},
+    "3 - 6  kuukautta": {coefficient: 1},
+    "6 - 12 kuukautta": {coefficient: 1},
+    }
+},
+{
+    title: "Ylläpito",
+    question: "Tarvitsetko ylläpitoa?",
+    answers: {
+    "Kyllä": {coefficient: 1},
+    "Ei": {coefficient: 1.05},
+    }
+}
 ];
 
 let index = 0;
@@ -126,8 +142,8 @@ const FormElements = cardData.map((card) => {
     }
 
     return (
-        <div questionid={cardId} className="text-white h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] px-[2vw] pt-[3vw]">
-            <h1 className="text-[#FCA311] 2xl:text-[3vw] md:text-[4vw] sm:text-[8wv] text-[10vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
+        <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] px-[2vw] pt-[3vw]">
+            <h1 className="text-[#FCA311] 2xl:text-[3vw] lg:text-[3vw] md:text-[2vw] sm:text-[8wv] text-[10vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
             <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] sm:w-4/5 w-[90%] font-poppins my-0">{card.question}</h2>
             <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
                 {Object.entries(card.answers).map(([option, value]) => (
@@ -201,21 +217,57 @@ const finalPrice = () => {
     let i = 0;
 
     Object.entries(cardData).map(([option, value]) => {
-        i++;
-        if (answersObj[value.title] == undefined) answersObj[value.title] = [];
+        if (answersObj[value.title] == undefined) answersObj[value.title] = {};
         if (chosenOptions[i] != undefined) {
             const options = chosenOptions[i];
             console.log(value);
-            Object.entries(options).map(([option, value]) => {
+            answersObj[value.title][value.question] = [];
+            Object.entries(options).map(([option, v]) => {
+                let x = 0;
+                Object.entries(cardData[i].answers).map(([o, val]) => {
+                    console.log(o);
+                    console.log(v);
+                    console.log(x);
+                    console.log(v == option);
+                    if (x == option) {
+                        answersObj[value.title][value.question].push(o);
+                    }
+                    x++;
+                });
+                //answersObj[value.title].push(cardData[i].answers[option]);
             });
         }
+        i++;
     })
 
+    i = -1;
+    const answerElements = Object.entries(answersObj).map(([option, value]) => {
+        i++;
+        return (
+            <div className="flex flex-col">
+                <h1 className="text-[#FCA311] text-[2.5vw] mt-[1vw]">{option}:</h1>
+                <h2 className="text-[2vw] w-3/4">{Object.entries(value).map(([option, value]) => {
+                    return (
+                        <div className="flex flex-col">
+                            <h1 className="text-[#FCA311] text-[2.5vw] mt-[1vw]">{option}:</h1>
+                            <h2 className="text-[2vw] w-3/4">{value}</h2>
+                        </div>
+                    );
+                })}</h2>
+            </div>
+        );
+    });
+
+    console.log(answersObj);
+
     return (
-        <div className="text-white absolute top-[14vh] w-3/4">
-            <h1 className="font-poppins text-[#FCA311] text-[4vw] font-extrabold">Alustava kustannusarvio:</h1>
-            <h2 className="font-poppins text-[2vw] w-3/4">Hinta-arvio on suuntaa antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
-            <h2 className="font-poppins text-[2vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv 24%</h2>
+        <div className="text-white top-[14vh] w-full font-poppins mx-auto">
+            <h1 className="text-[#FCA311] text-[3.5vw] font-extrabold">Alustava kustannusarvio:</h1>
+            <h2 className="text-[2vw] w-3/4">Hinta-arvio on suuntaa antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
+            <h1 className="text-[#FCA311] text-[2.5vw] mt-[1vw]">Valintasi:</h1>
+            <div className="grid grid-cols-2">{answerElements}</div>
+            <h1 className="text-[#FCA311] text-[2.5vw] mt-[1vw]">Hinta:</h1>
+            <h2 className="text-[2vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv 24%</h2>
 
             <div className="flex flex-col mt-[5vw]">
                 {}
@@ -397,17 +449,17 @@ useEffect(() => {
 
 return (
     <div className="bg-[#14213D] w-screen">
-    <div className="min-h-screen 2xl:w-[75vw] sm::w-[80vw] w-[90%] sm:pt-32 pt-24 mx-auto">
+    <div className="min-h-screen 2xl:w-[75vw] sm::w-[80vw] w-[90%] xl:pt-32 lg:pt-[10vh] sm:pt-32 pt-24 mx-auto">
         <div className="2xl:1/2 md:w-2/3 mx-auto pt-[2vw]">
             <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 8 ? cardData.length : 8}, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
         <div className="w-[100%] min-h-[40vw] mx-auto">
-            <div ref={slideDiv} className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto font-poppins">
-                <div className="lg:w-[51vw] mx-auto text-[#FCA311] pb-[3vw]">
-                    <h1 className="lg:text-[4vw] md:text-[6vw] sm:text-[7vw] text-[10vw] font-semibold">Kustannusarvio laskuri</h1>
-                    <p className="text-white lg:text-[3vw] md:text-[3vw] sm:text-[4vw] text-[6vw] font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
+            <div ref={slideDiv} className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto font-poppins md:min-h-auto min-h-[61vh]">
+                <div className="lg:w-[51vw] mx-auto text-[#FCA311] md:b-[3vw]">
+                    <h1 className="xl:text-[3.5vw] lg:text-[3vw] md:text-[6vw] sm:text-[7vw] text-[10vw] font-semibold">Kustannusarvio laskuri</h1>
+                    <p className="text-white lg:text-[2.5vw] md:text-[3vw] sm:text-[4vw] text-[6vw] font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
                 </div>
             </div>
             <div className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto md:block hidden">
@@ -415,11 +467,11 @@ return (
                 <button onClick={() => changeCard(1)} className="xl:text-[1.5vw] text-[2vw] font-semibold bg-[#FCA311] text-[#1b2843] px-[1vw] py-[0.25vw] rounded-lg font-poppins">Seuraava <i className="fa fa-angle-right"></i></button>
                 </div>
             </div>
-            <div>
-                <button onClick={() => changeCard(1)} ref={mobileBtn} className="md:hidden absolute transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold sm:text-[3.5vw] text-[5vw] px-[2vw] py-[1vw] rounded-lg sm:w-[30vw] w-[35vw] bottom-[10vh] left-1/2 transform -translate-x-1/2">Seuraava</button>
+            <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
+                <button onClick={() => changeCard(1)} ref={mobileBtn} className="md:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold sm:text-[3.5vw] text-[5vw] px-[2vw] py-[1vw] rounded-lg sm:w-[30vw] w-[35vw] left-0">Seuraava</button>
             </div>
         </div>
-        <div ref={report} className="hidden w-[100%] h-[40vw] mx-auto py-[4vw]">
+        <div ref={report} className="hidden w-[100%] min-h-[40vw] mx-auto py-[4vw]">
         </div>
     </div>
     </div>

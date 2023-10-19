@@ -4,26 +4,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        main: "#000000",
-        h1: "#ffffff",
-        h2: "#ffffff",
-        p: "#ffffff",
-        elemBackground: "#000000",
-        footerTitle: "#ededed",
-        footerElements: "#c9c9c9",
-        test: "#001d3d",
-        test2: "#002855",  
-        test3: "#ef233c",
         velka: "#C55A11",
         syke: "#ff5f5f",
+        primary: "#14213D",   // 14213D
+        secondary: "#FCA311", // FCA311
+        card: "#E5E5E5",      // E5E5E5
+        card2: "#1b2843",     // 1b2843
+
+        ilmoPrimaryColor: "#464646", // Dark Gray
+        ilmoSecondaryColor: "#BFA28E", // Beige
+        ilmoBackgroundColor: "#EFEFEF", // Light Gray Background
+        ilmoCardColor: "#FFFFFF", // White Card
+        ilmoPrimaryTextColor: "#333333", // Dark Text
+        ilmoSecondaryTextColor: "rgba(229, 229, 229, 1)", // Gray Text
       },
       fontFamily: {
-        "primary": ["Crimson Pro"],
-        "raleway": ["Raleway"],
-        "lora": ["Lora"],
-        "oxanium": ["Oxanium"],
-        "poppins": ["Poppins"]
-      }
+        primary: ["Crimson Pro"],
+        raleway: ["Raleway"],
+        lora: ["Lora"],
+        oxanium: ["Oxanium"],
+        poppins: ["Poppins"],
+      },
     },
   },
   plugins: [],
