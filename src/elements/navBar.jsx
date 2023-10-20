@@ -12,59 +12,66 @@ export default function NavBar() {
   const navBarRef = useRef(null);
 
   useEffect(() => {
-    navItems = navItemsRef.current;
-    navBar = navBarRef.current;
-    isMobile = window.innerWidth < 768;
-
-    if (window.location.hash != "") {
+    let navBar = navBarRef.current;
+    let isMobile = window.innerWidth < 768;
+    let vhPx = window.innerHeight * 0.01;
+  
+    // Function to apply frosted glass effect
+    function applyFrostedGlassEffect() {
+      navBar.style.background = "rgba(255, 255, 255, 0.1)";
+      navBar.style.backdropFilter = "blur(10px)";
+    }
+  
+    if (window.location.hash !== "") {
       if (document.cookie.split(";").some((item) => item.trim().startsWith("scrollTo="))) {
         const elem = document.getElementById(window.location.hash.substring(1));
-        if (elem != null) {
+        if (elem !== null) {
           window.scrollTo(0, elem.offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
           document.cookie = "scrollTo=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         }
       }
     }
-
-    if (window.location.pathname == "/") {
+  
+    if (window.location.pathname === "/") {
       if (!isMobile) {
         if (window.scrollY < vhPx * 3) {
-          navBar.style.background = "none";
+          applyFrostedGlassEffect(); 
         }
       }
     }
-
+  
     const onScroll = () => {
-      if (window.location.pathname == "/") {
+      if (window.location.pathname === "/") {
         if (!isMobile) {
           if (window.scrollY < vhPx * 3) {
-            navBar.style.background = "none";
+            applyFrostedGlassEffect(); 
           } else {
             navBar.style.background = "#14213D";
+            navBar.style.backdropFilter = "none"; 
           }
         }
       }
-    }
+    };
     window.addEventListener("scroll", onScroll);
-
+  
     const onResize = () => {
-      let vhPx = window.innerHeight * 0.01;
-      document.body.style.overflow = "scroll"
+      vhPx = window.innerHeight * 0.01;
+      document.body.style.overflow = "scroll";
       if (window.innerWidth < 768) {
         isMobile = true;
         navBar.style.background = "#14213D";
       } else {
         isMobile = false;
       }
-    }
+    };
     window.addEventListener("resize", onResize);
-
+  
     return () => {
       window.removeEventListener("resize", onResize);
-
       window.removeEventListener("scroll", onScroll);
-    }
-  });
+    };
+  }, []);
+  
 
   return (
     <nav ref={navBarRef} id="navBar" className="fixed z-[11] h-[8vh] transition-all duration-[150ms] bg-[#14213D] flex justify-between w-screen px-[2vw] text-white text-center md:text-[1.75vh] font-poppins">

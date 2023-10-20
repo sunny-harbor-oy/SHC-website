@@ -32,7 +32,7 @@ export default function HomePage(language = "fi") {
         delay={10 * 1000}
         duration={200000}
         maxAfk={10}
-        swipeThreshold={100}
+        swipeThreshold={50}
         swipeTimer={250}
         viewPortClassNames="w-screen h-screen"
       >
@@ -92,14 +92,14 @@ export default function HomePage(language = "fi") {
 
       </div>
       <div className="w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-white">
-        <div className="shadow-lg border-solid bg-card2 sm:h-[20vw] sm:w-auto w-[80vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[15vw] rounded-lg text-center text-white font-poppins">
+        <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="#FCA311"
-            className="mx-auto md:w-[8vw] w-[30vw] md:pt-[2vw]"
+            className="mx-auto md:w-[8vw] w-[25vw] md:pt-[2vw] md:mb-0 mb-[0.5vw]"
           >
             <path
               strokeLinecap="round"
@@ -107,18 +107,18 @@ export default function HomePage(language = "fi") {
               d="M14.25 7.756a4.5 4.5 0 100 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <h1 className="sm:text-[1.3vw] text-[6.5vw] md:font-medium font-semibold sm:w-3/4 mx-auto sm:pt-[2vw]">
+          <h1 className="sm:text-[1.6vw] text-[5.5vw] md:font-medium font-semibold w-[90%] mx-auto sm:pt-[2vw]">
             Kustannustehokkaat ratkaisut
           </h1>
         </div>
-        <div className="shadow-lg border-solid bg-card2 sm:h-[20vw] sm:w-auto w-[80vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[15vw] rounded-lg text-center text-white font-poppins">
+        <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="#FCA311"
-            className="mx-auto md:w-[8vw] w-[30vw] md:pt-[2vw]"
+            className="mx-auto md:w-[8vw] w-[25vw] md:pt-[2vw] md:mb-0 mb-[0.5vw]"
           >
             <path
               strokeLinecap="round"
@@ -126,18 +126,18 @@ export default function HomePage(language = "fi") {
               d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
             />
           </svg>
-          <h1 className="sm:text-[1.3vw] text-[6.5vw] md:font-medium font-semibold sm:w-3/4 mx-auto sm:pt-[2vw]">
+          <h1 className="sm:text-[1.6vw] text-[5.5vw] md:font-medium font-semibold w-[90%] mx-auto sm:pt-[2vw]">
             Aktiivinen ja erehtymätön tuki
           </h1>
         </div>
-        <div className="shadow-lg border-solid bg-card2 sm:h-[20vw] sm:w-auto w-[80vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[15vw] rounded-lg text-center text-white font-poppins">
+        <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="#FCA311"
-            className="mx-auto md:w-[8vw] w-[30vw] md:pt-[2vw]"
+            className="mx-auto md:w-[8vw] w-[25vw] md:pt-[2vw] md:mb-0 mb-[0.5vw]"
           >
             <path
               strokeLinecap="round"
@@ -145,7 +145,7 @@ export default function HomePage(language = "fi") {
               d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
             />
           </svg>
-          <h1 className="sm:text-[1.3vw] text-[6.5vw] md:font-medium font-semibold sm:w-3/4 mx-auto sm:pt-[2vw]">
+          <h1 className="sm:text-[1.6vw] text-[5.5vw] md:font-medium font-semibold w-[90%] mx-auto sm:pt-[2vw]">
             Täysin räätälöidyt ratkaisut
           </h1>
         </div>
@@ -166,7 +166,7 @@ export default function HomePage(language = "fi") {
               Kehitimme Sykekotipalvelulle mobiilisovelluksen työkeikkojen jakamiseen työntekijöilleen, 
               korostaen SHC:n kykyä toteuttaa korkealaatuisia digitaalisia ratkaisuja asiakkailleen.
             </p>
-            <Link target="_blank" to={"https://apps.apple.com/fi/app/omasyke/id6450539265"} className="bg-primary text-secondary font-semibold py-[0.5vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
+            <Link target="_blank" to={"https://apps.apple.com/fi/app/omasyke/id6450539265"} className="bg-primary text-secondary md:font-semibold md:py-[0.5vw] py-[1vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
               Tuotteeseen <i className="fa fa-angle-right"></i>
             </Link>
           </div>
@@ -178,7 +178,7 @@ export default function HomePage(language = "fi") {
               Korjausvelkalaskuri on verkkopohjainen työkalu kiinteistöjen korjausvelan arvioimiseen, 
               ja sen käyttö opetti tiimin tehokasta yhteistyötä, vahvistaen tiimin erinomaisuutta ja toimivuutta.
             </p>
-            <Link target="_blank" to={"https://korjausvelkalaskuri.fi/"} className="bg-primary text-secondary font-semibold py-[0.5vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
+            <Link target="_blank" to={"https://korjausvelkalaskuri.fi/"} className="bg-primary text-secondary md:font-semibold md:py-[0.5vw] py-[1vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
               Tuotteeseen <i className="fa fa-angle-right"></i>
             </Link>
           </div>
@@ -210,7 +210,7 @@ export default function HomePage(language = "fi") {
               Leon Gustafsson
             </h1>
             <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
-            hallituksen puheenjohtaja ja frontend kehittäjä
+              Hallituksen puheenjohtaja ja frontend kehittäjä
             </h2>
           </div>
           <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
