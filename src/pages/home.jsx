@@ -176,7 +176,7 @@ export default function HomePage(language = "fi") {
             </h1>
             <p className="md:text-[1.35vw] text-[4.6vw] md:h-[10.5vw] h-[46vw]">
               Korjausvelkalaskuri on verkkopohjainen työkalu kiinteistöjen korjausvelan arvioimiseen, 
-              ja sen käyttö opetti tiimin tehokasta yhteistyötä, vahvistaen tiimin erinomaisuutta ja toimivuutta.
+              josta tiimimme sai tärkeitä oppeja ja näin vahvistaen tiimin erinomaisuutta ja toimivuutta.
             </p>
             <Link target="_blank" to={"https://korjausvelkalaskuri.fi/"} className="bg-primary text-secondary md:font-semibold md:py-[0.5vw] py-[1vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
               Tuotteeseen <i className="fa fa-angle-right"></i>

@@ -10,7 +10,15 @@ const attributeCost = {
     complexity: 1.25,
     urgency: 1.25,
     cost: 1,
-    coefficient: 0
+    coefficient: 0,
+    laajuusAlustat: 0,
+    laajuusOminaisuudet: 0,
+    kiireellisyys: 0,
+    räätälöityUlkonakö: 0,
+    räätälöityOminaisuudet: 0,
+    käyttäjät: 0,
+    integraatio: 0,
+    ylläpito: 0,
 }
 
 export default function PriceEstimation() {
@@ -22,17 +30,17 @@ const cardData = [
         multipleChoice: true,
     },
     answers: {
-    "Selain": {coefficient: 1},
-    "Mobiili (Android & iOS)": {coefficient: 1.2},
-    "Tietokone": {coefficient: 1.2},
+    "Selain": {coefficient: 1, laajuusAlustat: 1},
+    "Mobiili (Android & iOS)": {coefficient: 1.2, laajuusAlustat: 1},
+    "Tietokone": {coefficient: 1.2, laajuusAlustat: 1},
     },
 },
 {
     title: "Ulkonäkö",
     question: "Tarvitsetko täysin yksilöidyn ulkonäön?",
     answers: {
-    "Kyllä": {coefficient: 1.2},
-    "Ei": {coefficient: 1},
+    "Kyllä": {coefficient: 1.2, räätälöityUlkonakö: 1},
+    "Ei": {coefficient: 1, räätälöityUlkonakö: 0},
     }
 },
 {
@@ -42,20 +50,20 @@ const cardData = [
         multipleChoice: true,
     },
     answers: {
-    "Sähköisen kaupankäynnin toiminnallisuus": {cost: 1},
-    "Mukautettu suunnittelu": {cost: 1},
-    "Analytiikka": {cost: 2},
-    "Tietokanta (esim. SQL)": {cost: 2},
-    "Muu...": {cost: 2},
+    "Sähköisen kaupankäynnin toiminnallisuus": {cost: 1, laajuusOminaisuudet: 1},
+    "Mukautettu suunnittelu": {cost: 1, laajuusOminaisuudet: 1},
+    "Analytiikka": {cost: 2, laajuusOminaisuudet: 1},
+    "Tietokanta (esim. SQL)": {cost: 2, laajuusOminaisuudet: 1},
+    "Muu...": {cost: 2, laajuusOminaisuudet: 1},
     }
 },
 {
     title: "Ominaisuudet",
     question: "Ominaisuudet olisivat...",
     answers: {
-    "Avoimen lähdekoodin": {coefficient: 1},
-    "Juuri sinulle kehitetty": {coefficient: 1.1},
-    "Kummatkin": {coefficient: 1.1},
+    "Avoimen lähdekoodin": {coefficient: 1, räätälöityOminaisuudet: 0},
+    "Juuri sinulle kehitetty": {coefficient: 1.1, räätälöityOminaisuudet: 1},
+    "Kummatkin": {coefficient: 1.1, räätälöityOminaisuudet: 1}, 
     }
 },
 {
@@ -65,43 +73,43 @@ const cardData = [
         multipleChoice: false,
     },
     answers: {
-    "Yksityishenkilöt": {coefficient: 1.1},
-    "Yritykset": {coefficient: 1.2},
-    "Kummatkin": {coefficient: 1.1},
+    "Yksityishenkilöt": {coefficient: 1.1, käyttäjät: 0},
+    "Yritykset": {coefficient: 1.2, käyttäjät: 1},
+    "Kummatkin": {coefficient: 1.1, käyttäjät: 2},
     }
 },
 {
     title: "Integraatio",
     question: "Pitääkö ohjelmisto integroida jo jonkin valmiin järjestelmän kanssa?",
     answers: {
-    "Kyllä": {coefficient: 1.1},
-    "Ei": {coefficient: 1},
+    "Kyllä": {coefficient: 1.1, integraatio: 1},
+    "Ei": {coefficient: 1, integraatio: 0},
     }
 },
 {
     title: "Aikataulu",
     question: "Kuinka kauan uskot ohjelmiston kehityksen kestävän?",
     answers: {
-    "Alle 3 kuukautta": {coefficient: 1},
-    "3 - 6  kuukautta": {coefficient: 1.5},
-    "6 - 12 kuukautta": {coefficient: 2},
+    "Alle 3 kuukautta": {coefficient: 1,    laajuusAikataulu: 3},
+    "3 - 6  kuukautta": {coefficient: 1.5,  laajuusAikataulu: 2},
+    "6 - 12 kuukautta": {coefficient: 2,    laajuusAikataulu: 1},
     }
 },
 {
     title: "Aikataulu",
     question: "Millä aikataululla ohjelmiston pitäisi olla valmis?",
     answers: {
-    "1 - 3  kuukautta": {coefficient: 1},
-    "3 - 6  kuukautta": {coefficient: 1},
-    "6 - 12 kuukautta": {coefficient: 1},
+    "1 - 3  kuukautta": {coefficient: 1, kiireellisyys: 3},
+    "3 - 6  kuukautta": {coefficient: 1, kiireellisyys: 2},
+    "6 - 12 kuukautta": {coefficient: 1, kiireellisyys: 1},
     }
 },
 {
     title: "Ylläpito",
     question: "Tarvitsetko ylläpitoa?",
     answers: {
-    "Kyllä": {coefficient: 1},
-    "Ei": {coefficient: 1.05},
+    "Kyllä": {coefficient: 1, ylläpito: 1},
+    "Ei": {coefficient: 1.05, ylläpito: 0},
     }
 }
 ];
@@ -215,18 +223,16 @@ const finalPrice = () => {
     let answersObj = {};
     let i = 0;
 
+    console.log(finalAttributes);
+
     Object.entries(cardData).map(([option, value]) => {
         if (answersObj[value.title] == undefined) answersObj[value.title] = {};
         if (chosenOptions[i] != undefined) {
             const options = chosenOptions[i];
-            console.log(value);
             answersObj[value.title][value.question] = [];
             Object.entries(options).map(([option, v]) => {
                 let x = 0;
                 Object.entries(cardData[i].answers).map(([o, val]) => {
-                    console.log(o);
-                    console.log(v);
-                    console.log(x);
                     console.log(v == option);
                     if (x == option) {
                         answersObj[value.title][value.question].push(o);
@@ -243,34 +249,53 @@ const finalPrice = () => {
     const answerElements = Object.entries(answersObj).map(([option, value]) => {
         i++;
         return (
-            <div className="flex flex-col">
-                <h1 className="text-[#FCA311] text-[2.5vw] mt-[1vw]">{option}:</h1>
-                <h2 className="text-[2vw] w-3/4">{Object.entries(value).map(([option, value]) => {
+            <div className="flex flex-col mx-auto w-[95%] bg-card2 rounded-lg px-[1vw] my-[1.5vw]">
+                <h1 className="text-[#FCA311] text-[1.75vw] mt-[1vw] mb-0">{option}:</h1>
+                <div className="w-[95%] mx-auto">{Object.entries(value).map(([option, value]) => {
                     return (
-                        <div className="flex flex-col">
-                            <h1 className="text-[#FCA311] text-[2.5vw] mt-[1vw]">{option}:</h1>
-                            <h2 className="text-[2vw] w-3/4">{value}</h2>
+                        <div className="flex flex-col mb-[0.5vw]">
+                            <h1 className="text-card text-[1.25vw] w-[100%] font-semibold">{option}</h1>
+                            {Object.entries(value).map(([option, value]) => {
+                                return (
+                                    <h2 className="text-[1vw] w-[75%]">- {value}</h2>
+                                );
+                            })}
                         </div>
                     );
-                })}</h2>
+                })}</div>
             </div>
         );
     });
 
-    console.log(answersObj);
+    const writtenFeedback = <h2 className="text-[1.25vw]">
+        {`Vastaamasi perusteella tuote olisi laajuudeltaan ${finalAttributes.laajuusAikataulu == 3 ? "erittäin laaja" : (finalAttributes.laajuusAikataulu == 2 ? "laaja" : "pieni")} ja sen kehitys ${finalAttributes.kiireellisyys == 1 ? "ei olisi kiireellistä" : (finalAttributes.kiireellisyys == 2 ? "olisi melko kiireellistä" : "olisi kiireellistä")}.
+        Se tulisi kehittää ${finalAttributes.laajuusAlustat > 1 ? "useimmalle alustalle" : "yhdelle alustalle"} ja sen ulkonäkö ${finalAttributes.räätälöityUlkonakö == 1 ? "räätälöity juuri sinulle" : "valmiin pohjan päälle rakennettu"}.`}<br/><br/>{`
+        Ominaisuuksia olisi ${finalAttributes.laajuusOminaisuudet > 1 ? (finalAttributes.laajuusOminaisuudet > 4 ? "erittäin kattavasti" : "useita") : "muutamia"} ja olisivat 
+        ${finalAttributes.räätälöityOminaisuudet == 1 ? "meidän kehittämiä sekä avoimen lähdekoodin tuotoksia" : "jo olemassa olevia avoimeen lähdekoodiin perustuvia"}.`}<br/><br/>{`
+        Tuote on suunnattu ${finalAttributes.käyttäjät == 0 ? "yksityishenkilöille" : (finalAttributes.käyttäjät == 1 ? "yrityksille" : "sekä yksityishenkilöille että yrityksille")}
+        ${finalAttributes.integraatio == 0 ? "eikä sitä tulisi integroida olemassa oleviin järjestelmiin" : "ja tulisi integroida jo olemassa oleviin järjestelmiin"}.`}<br/><br/>{`
+        ${finalAttributes.ylläpito == 0 ? " Et nähnyt kehityksen jälkeistä ylläpitoa tarpeellisena." : "Tulisimme ylläpitämään tuotettasi kehityksen jälkeenkin."}`}
+    </h2>
 
     return (
-        <div className="text-white top-[14vh] w-full font-poppins mx-auto">
-            <h1 className="text-[#FCA311] text-[3.5vw] font-extrabold">Alustava kustannusarvio:</h1>
-            <h2 className="text-[2vw] w-3/4">Hinta-arvio on suuntaa antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
-            <h1 className="text-[#FCA311] text-[2.5vw] mt-[1vw]">Valintasi:</h1>
-            <div className="grid grid-cols-2">{answerElements}</div>
-            <h1 className="text-[#FCA311] text-[2.5vw] mt-[1vw]">Hinta:</h1>
-            <h2 className="text-[2vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv 24%</h2>
-
-            <div className="flex flex-col mt-[5vw]">
-                {}
+        <div className="text-white top-[10vh] font-poppins mx-auto w-[70vw]">
+            <h1 className="text-[#FCA311] text-[3vw] font-extrabold">Kustannusarvion yhteenveto:</h1>
+            <h2 className="text-[1.5vw] w-[75%] mb-[1vw]">Hinta-arvio on suuntaa-antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
+            <div className="md:flex">
+                <div className="w-[100%]">
+                    <h1 className="text-[#FCA311] text-[2vw] mt-[1vw]">Valintasi:</h1>
+                    <div className="">{answerElements}</div>
+                </div>
+                <div className="w-[75%]">
+                    <div className="w-[90%] mx-auto">
+                    <h1 className="text-[#FCA311] text-[1.75vw] mt-[1vw]">Kirjallinen yhteenveto:</h1>
+                    {writtenFeedback}
+                    <h1 className="text-[#FCA311] text-[1.75vw] mt-[1vw]">Hinta:</h1>
+                    <h2 className="text-[1.25vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv 24%</h2>
+                    </div>
+                </div>
             </div>
+            <h1 className="text-[1.5vw] mt-[1vw] text-center w-[75%] mx-auto">Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan!<br/><strong className="text-[#FCA311]">Ota yhteyttä!</strong></h1>
         </div>
     ); // Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan! Ota yhteyttä!
 }
@@ -393,7 +418,7 @@ const changeCard = (change) => {
 
     if (currentCard < 0) currentCard = 0;
 
-    if (false) {
+    if (true) {
         slideDiv.current.parentElement.style.display = "none";
 
         barDiv.current.style.display = "none";
@@ -450,7 +475,7 @@ return (
     <div className="bg-[#14213D] w-screen">
     <div className="min-h-screen 2xl:w-[75vw] sm::w-[80vw] w-[90%] xl:pt-32 lg:pt-[10vh] sm:pt-32 pt-24 mx-auto">
         <div className="2xl:1/2 md:w-2/3 mx-auto pt-[2vw]">
-            <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 8 ? cardData.length : 8}, minmax(0, 1fr))`}} ref={barDiv}>
+            <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 9 ? cardData.length : 9}, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
@@ -470,7 +495,7 @@ return (
                 <button onClick={() => changeCard(1)} ref={mobileBtn} className="md:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold sm:text-[3.5vw] text-[5vw] px-[2vw] py-[1vw] rounded-lg sm:w-[30vw] w-[35vw] left-0">Seuraava</button>
             </div>
         </div>
-        <div ref={report} className="hidden w-[100%] min-h-[40vw] mx-auto py-[4vw]">
+        <div ref={report} className="hidden w-[100%] min-h-[40vw] mx-auto pb-[4vw]">
         </div>
     </div>
     </div>
