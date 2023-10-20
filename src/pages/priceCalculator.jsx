@@ -418,7 +418,7 @@ const changeCard = (change) => {
 
     if (currentCard < 0) currentCard = 0;
 
-    if (true) {
+    if (false) {
         slideDiv.current.parentElement.style.display = "none";
 
         barDiv.current.style.display = "none";
