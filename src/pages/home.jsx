@@ -3,7 +3,7 @@ import SlideShow from "../elements/slideShow.jsx";
 import { Link } from "react-router-dom";
 
 import leonImg from "../assets/founders/leonv2.jpg";
-import sisuImg from "../assets/founders/sisu.png";
+import sisuImg from "../assets/founders/sisu.jpg";
 import victorImg from "../assets/founders/victor.jpg";
 import marcImg from "../assets/team/alexv2.png";
 import ilmoImg from "../assets/Ilmo.png";
@@ -163,24 +163,24 @@ export default function HomePage(language = "fi") {
               Sykekotipalvelut
             </h1>
             <p className="md:text-[1.35vw] text-[4.6vw] md:h-[10.5vw] h-[46vw]">
-              Korjausvelkalaskuri on verkkopohjainen työkalu kiinteistöjen korjausvelan arvioimiseen, 
-              ja sen käyttö opetti tiimin tehokasta yhteistyötä, vahvistaen tiimin erinomaisuutta ja toimivuutta.
+              Kehitimme Sykekotipalvelulle mobiilisovelluksen työkeikkojen jakamiseen työntekijöilleen, 
+              korostaen SHC:n kykyä toteuttaa korkealaatuisia digitaalisia ratkaisuja asiakkailleen.
             </p>
-            <button className="bg-primary text-secondary font-semibold py-[0.5vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
-              Lue lisää <i className="fa fa-angle-right"></i>
-            </button>
+            <Link target="_blank" to={"https://apps.apple.com/fi/app/omasyke/id6450539265"} className="bg-primary text-secondary font-semibold py-[0.5vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
+              Tuotteeseen <i className="fa fa-angle-right"></i>
+            </Link>
           </div>
           <div className="bg-card rounded-lg md:h-[18vw] h-[70vw] text-primary px-[2vw] py-[1vw] md:my-0 my-[10vw]">
             <h1 className="md:text-[1.75vw] text-[7vw] font-semibold">
               Korjausvelkalaskuri.fi
             </h1>
             <p className="md:text-[1.35vw] text-[4.6vw] md:h-[10.5vw] h-[46vw]">
-            Kehitimme Sykekotipalvelulle mobiilisovelluksen työkeikkojen jakamiseen työntekijöilleen, 
-            korostaen SHC:n kykyä toteuttaa korkealaatuisia digitaalisia ratkaisuja asiakkailleen.
+              Korjausvelkalaskuri on verkkopohjainen työkalu kiinteistöjen korjausvelan arvioimiseen, 
+              ja sen käyttö opetti tiimin tehokasta yhteistyötä, vahvistaen tiimin erinomaisuutta ja toimivuutta.
             </p>
-            <button className="bg-primary text-secondary font-semibold py-[0.5vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
-              Lue lisää <i className="fa fa-angle-right"></i>
-            </button>
+            <Link target="_blank" to={"https://korjausvelkalaskuri.fi/"} className="bg-primary text-secondary font-semibold py-[0.5vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
+              Tuotteeseen <i className="fa fa-angle-right"></i>
+            </Link>
           </div>
         </div>
       </div>
