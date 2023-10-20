@@ -189,16 +189,28 @@ export default function HomePage(language = "fi") {
           Tiimimme
         </h1>
         <div className="block md:grid grid-cols-4 gap-[2vw] w-[90vw] md:h-[43vw] py-[5vw] font-poppins font-bold mx-auto text-white">
+        <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
+            <img
+              src={sisuImg}
+              className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
+            ></img>
+            <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
+              Sisu Eriksson
+            </h1>
+            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
+              Toimitusjohtaja ja frontend kehittäjä
+            </h2>
+          </div>
           <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
             <img
               src={leonImg}
               className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
             ></img>
             <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
-              Leon
+              Leon Gustafsson
             </h1>
             <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
-              Frontend kehittäjä ja suunnittelija
+            hallituksen puheenjohtaja ja frontend kehittäjä
             </h2>
           </div>
           <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
@@ -207,22 +219,10 @@ export default function HomePage(language = "fi") {
               className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
             ></img>
             <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
-              Victor
+              Victor Ocampo
             </h1>
             <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
-              Fullstack kehittäjä
-            </h2>
-          </div>
-          <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
-            <img
-              src={sisuImg}
-              className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
-            ></img>
-            <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
-              Sisu
-            </h1>
-            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
-              Markkinointi ja frontend kehittäjä
+              Teknologiajohtaja ja fullstack kehittäjä 
             </h2>
           </div>
           <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
@@ -231,7 +231,7 @@ export default function HomePage(language = "fi") {
               className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
             ></img>
             <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
-              Marc
+              Marc Smeds
             </h1>
             <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
               Fullstack kehittäjä

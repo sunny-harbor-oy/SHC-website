@@ -141,7 +141,7 @@ const FormElements = cardData.map((card) => {
     }
 
     return (
-        <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] px-[2vw] pt-[3vw]">
+        <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] px-[2vw] md:pt-[1vw] pt-[3vw]">
             <h1 className="text-[#FCA311] 2xl:text-[3vw] lg:text-[3vw] md:text-[2vw] sm:text-[8wv] text-[10vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
             <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] sm:w-4/5 w-[90%] font-poppins my-0">{card.question}</h2>
             <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
@@ -455,12 +455,12 @@ return (
             </div>
         </div>
         <div className="w-[100%] min-h-[40vw] mx-auto">
-            <div ref={slideDiv} className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto font-poppins md:min-h-auto min-h-[61vh]">
+            <div ref={slideDiv} className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto font-poppins md:min-h-auto min-h-[50vh]">
                 <div className="lg:w-[51vw] mx-auto text-[#FCA311] md:b-[3vw]">
                     <h1 className="xl:text-[3.5vw] lg:text-[3vw] md:text-[6vw] sm:text-[7vw] text-[10vw] font-semibold">Kustannusarvio laskuri</h1>
                     <p className="text-white lg:text-[2.5vw] md:text-[3vw] sm:text-[4vw] text-[6vw] font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
                 </div>
-            </div>
+            </div> 
             <div className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto md:block hidden">
                 <div className="sm:w-[85%] w-[95%] mx-auto 2xl:px-[4vw] px-[2vw]">
                 <button onClick={() => changeCard(1)} className="xl:text-[1.5vw] text-[2vw] font-semibold bg-[#FCA311] text-[#1b2843] px-[1vw] py-[0.25vw] rounded-lg font-poppins">Seuraava <i className="fa fa-angle-right"></i></button>
