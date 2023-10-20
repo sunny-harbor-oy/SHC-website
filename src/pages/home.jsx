@@ -6,7 +6,7 @@ import leonImg from "../assets/founders/leonv2.jpg";
 import sisuImg from "../assets/founders/sisu.png";
 import victorImg from "../assets/founders/victor.jpg";
 import marcImg from "../assets/team/alexv2.png";
-import ilmoImg from "../assets/ilmo.png";
+import ilmoImg from "../assets/Ilmo.png";
 
 const motto = [
   "Developing technology beyond the horizon.",
