@@ -15,7 +15,8 @@ export default function NavBar() {
     let navBar = navBarRef.current;
     let isMobile = window.innerWidth < 768;
     let vhPx = window.innerHeight * 0.01;
-  
+    navItems = navItemsRef.current;
+
     // Function to apply frosted glass effect
     function applyFrostedGlassEffect() {
       navBar.style.background = "rgba(255, 255, 255, 0.1)";
