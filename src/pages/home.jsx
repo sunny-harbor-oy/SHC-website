@@ -83,7 +83,7 @@ export default function HomePage(language = "fi") {
 {/*           <div className="ml-16 h-screen mt-[25vh] flex flex-col justify-center md:relative absolute z-[0]">
             <img src={ilmoImg} className="w-3/4 my-auto"/>
           </div> */}
-          <div className="md:ml-16 h-screen md:mt-[25vh] md:relative absolute md:bottom-auto bottom-[-38vh] md:right-auto right-0 z-[0]">
+          <div className="md:ml-16 h-screen md:mt-[10vh] md:relative absolute md:bottom-auto bottom-[-38vh] md:right-auto right-0 z-[0]">
             <img src={ilmoImg} className="md:w-3/4 w-screen md:my-auto"/>
           </div>
         </div>
