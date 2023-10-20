@@ -138,6 +138,7 @@ const slideDiv = useRef(null);
 const barDiv = useRef(null);
 const report = useRef(null);
 const mobileBtn = useRef(null);
+let writtenSummary = undefined;
 
 let cardId = -1;
 const FormElements = cardData.map((card) => {
@@ -281,18 +282,18 @@ const finalPrice = () => {
         <div className="text-white top-[10vh] font-poppins mx-auto w-[70vw]">
             <h1 className="text-[#FCA311] text-[3vw] font-extrabold">Kustannusarvion yhteenveto:</h1>
             <h2 className="text-[1.5vw] w-[75%] mb-[1vw]">Hinta-arvio on suuntaa-antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
-            <div className="md:flex">
-                <div className="w-[100%]">
+            <div className="md:flex w-[100%]">
+                <div className="w-[32.5vw]" id="choicesSummary">
                     <h1 className="text-[#FCA311] text-[2vw] mt-[1vw]">Valintasi:</h1>
                     <div className="">{answerElements}</div>
                 </div>
-                <div className="w-[75%]">
-                    <div className="w-[90%] mx-auto">
+                <div className="w-[34vw] mx-auto relative" id="writtenSummary">
+                <div className="w-[34vw] px-[5vw]">
                     <h1 className="text-[#FCA311] text-[1.75vw] mt-[1vw]">Kirjallinen yhteenveto:</h1>
                     {writtenFeedback}
                     <h1 className="text-[#FCA311] text-[1.75vw] mt-[1vw]">Hinta:</h1>
                     <h2 className="text-[1.25vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv 24%</h2>
-                    </div>
+                </div>
                 </div>
             </div>
             <h1 className="text-[1.5vw] mt-[1vw] text-center w-[75%] mx-auto">Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan!<br/><strong className="text-[#FCA311]">Ota yhteyttä!</strong></h1>
@@ -348,7 +349,6 @@ const chooseOption = (optionValues) => {
         currentValues[`${optionValues.questionId}`] = undefined;
         chosenOptions[currentCard] = currentValues;
 
-        //Check if all options are empty
         let hasValue = false;
         Object.values(currentValues).forEach((option) => {
             if (option != undefined) hasValue = true;
@@ -425,6 +425,8 @@ const changeCard = (change) => {
 
         report.current.innerHTML = renderToString(finalPrice());
         report.current.style.display = "block";
+
+        resizeUpdate();
         return;
     }
 
@@ -449,6 +451,8 @@ const changeCard = (change) => {
         report.current.innerHTML = renderToString(finalPrice());
         report.current.style.display = "block";
 
+        resizeUpdate();
+
         return;
     } else {
         renderCard(currentCard);
@@ -458,16 +462,76 @@ const changeCard = (change) => {
     
 }
 
+let writtenSummaryHeight = 0;
+let writtenSummaryTop = 0;
+let writtenSummaryBottom = 0;
+let choicesSummaryHeight = 0;
+
 const resizeUpdate = () => {
     isMobile = window.innerWidth < 640;
+
+    writtenSummary = document.getElementById("writtenSummary");
+    console.log("updated");
+
+    if (writtenSummary != undefined) {
+        const choicesSummary = document.getElementById("choicesSummary");
+        const childDiv = writtenSummary.children[0];
+
+        childDiv.style.position = "relative";
+        childDiv.style.top = "auto";
+        childDiv.style.bottom = "auto";
+
+        writtenSummary.style.height = "auto";
+        writtenSummaryHeight = childDiv.getBoundingClientRect().height;
+        writtenSummary.style.height = `${choicesSummary.getBoundingClientRect().height}px`;
+    }
+}
+
+const onScroll = () => {
+    writtenSummary = document.getElementById("writtenSummary");
+    if (writtenSummary != undefined) {
+        const childDiv = writtenSummary.children[0];
+        if (isMobile) {
+            childDiv.style.position = "relative";
+            childDiv.style.top = "auto";
+            childDiv.style.bottom = "auto";
+            return;
+        }
+        const scroll = window.scrollY;
+
+        writtenSummaryTop = writtenSummary.getBoundingClientRect().top;
+        writtenSummaryBottom = writtenSummary.getBoundingClientRect().bottom;
+
+        console.log(writtenSummaryBottom, writtenSummaryHeight, window.innerHeight*0.92);
+
+        if (window.innerHeight*0.92 > writtenSummaryHeight) {
+            if (writtenSummaryBottom - window.innerHeight*0.1 < writtenSummaryHeight) {
+                childDiv.style.position = "absolute";
+                childDiv.style.bottom = `0px`;
+                childDiv.style.top = "auto";
+            } else if (writtenSummaryTop < window.innerHeight*0.08) {
+                childDiv.style.position = "fixed";
+                childDiv.style.bottom = "auto";
+                childDiv.style.top = "8vh";
+            } else {
+                childDiv.style.position = "relative";
+                childDiv.style.top = "auto";
+                childDiv.style.bottom = "auto";
+            }
+        }
+    }
 }
 
 useEffect(() => {
     //changeCard(0);
     //window.addEventListener("load", changeCard(0));
+    resizeUpdate();
     window.addEventListener("resize", resizeUpdate);
+    window.addEventListener("scroll", onScroll);
+
     return () => {
         window.removeEventListener("resize", resizeUpdate);
+        window.removeEventListener("scroll", onScroll);
     }
 });
 

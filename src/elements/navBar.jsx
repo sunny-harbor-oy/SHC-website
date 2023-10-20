@@ -39,6 +39,9 @@ export default function NavBar() {
           applyFrostedGlassEffect(); 
         }
       }
+    } else {
+      navBar.style.background = "#14213D";
+      navBar.style.backdropFilter = "none"; 
     }
   
     const onScroll = () => {
@@ -51,6 +54,9 @@ export default function NavBar() {
             navBar.style.backdropFilter = "none"; 
           }
         }
+      } else {
+        navBar.style.background = "#14213D";
+        navBar.style.backdropFilter = "none"; 
       }
     };
     window.addEventListener("scroll", onScroll);
