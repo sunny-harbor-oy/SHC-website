@@ -250,15 +250,15 @@ const finalPrice = () => {
     const answerElements = Object.entries(answersObj).map(([option, value]) => {
         i++;
         return (
-            <div className="flex flex-col mx-auto w-[95%] bg-card2 rounded-lg px-[1vw] my-[1.5vw]">
-                <h1 className="text-[#FCA311] text-[1.75vw] mt-[1vw] mb-0">{option}:</h1>
+            <div className="flex flex-col mx-auto w-[95%] bg-card2 rounded-lg md:px-[1vw] px-[3vw] md:my-[1.5vw] my-[3vw] md:pb-[1vw] pb-[2vw]">
+                <h1 className="text-[#FCA311] md:text-[1.75vw] text-[5vw] mt-[1vw] mb-0">{option}:</h1>
                 <div className="w-[95%] mx-auto">{Object.entries(value).map(([option, value]) => {
                     return (
-                        <div className="flex flex-col mb-[0.5vw]">
-                            <h1 className="text-card text-[1.25vw] w-[100%] font-semibold">{option}</h1>
+                        <div className="flex flex-col md:mb-[0.5vw] mb-[2vw]">
+                            <h1 className="text-card md:text-[1.25vw] text-[3.75vw] w-[100%] font-semibold">{option}</h1>
                             {Object.entries(value).map(([option, value]) => {
                                 return (
-                                    <h2 className="text-[1vw] w-[75%]">- {value}</h2>
+                                    <h2 className="md:text-[1vw] text-[3.5vw] w-[75%]">- {value}</h2>
                                 );
                             })}
                         </div>
@@ -268,35 +268,35 @@ const finalPrice = () => {
         );
     });
 
-    const writtenFeedback = <h2 className="text-[1.25vw]">
+    const writtenFeedback = <h2 className="md:text-[1.25vw] text-[4vw]">
         {`Vastaamasi perusteella tuote olisi laajuudeltaan ${finalAttributes.laajuusAikataulu == 3 ? "erittäin laaja" : (finalAttributes.laajuusAikataulu == 2 ? "laaja" : "pieni")} ja sen kehitys ${finalAttributes.kiireellisyys == 1 ? "ei olisi kiireellistä" : (finalAttributes.kiireellisyys == 2 ? "olisi melko kiireellistä" : "olisi kiireellistä")}.
-        Se tulisi kehittää ${finalAttributes.laajuusAlustat > 1 ? "useimmalle alustalle" : "yhdelle alustalle"} ja sen ulkonäkö ${finalAttributes.räätälöityUlkonakö == 1 ? "räätälöity juuri sinulle" : "valmiin pohjan päälle rakennettu"}.`}<br/><br/>{`
+        Se tulisi kehittää ${finalAttributes.laajuusAlustat > 1 ? "useimmalle alustalle" : "yhdelle alustalle"} ja sen ulkonäkö ${finalAttributes.räätälöityUlkonakö == 1 ? "räätälöity juuri sinulle" : "valmiin pohjan päältä tehty"}.`}<br/><br/>{`
         Ominaisuuksia olisi ${finalAttributes.laajuusOminaisuudet > 1 ? (finalAttributes.laajuusOminaisuudet > 4 ? "erittäin kattavasti" : "useita") : "muutamia"} ja olisivat 
         ${finalAttributes.räätälöityOminaisuudet == 1 ? "meidän kehittämiä sekä avoimen lähdekoodin tuotoksia" : "jo olemassa olevia avoimeen lähdekoodiin perustuvia"}.`}<br/><br/>{`
         Tuote on suunnattu ${finalAttributes.käyttäjät == 0 ? "yksityishenkilöille" : (finalAttributes.käyttäjät == 1 ? "yrityksille" : "sekä yksityishenkilöille että yrityksille")}
-        ${finalAttributes.integraatio == 0 ? "eikä sitä tulisi integroida olemassa oleviin järjestelmiin" : "ja tulisi integroida jo olemassa oleviin järjestelmiin"}.`}<br/><br/>{`
+        ${finalAttributes.integraatio == 0 ? "eikä sitä tarvitse integroida olemassa oleviin järjestelmiin" : "ja tulisi integroida jo olemassa oleviin järjestelmiin"}.`}<br/><br/>{`
         ${finalAttributes.ylläpito == 0 ? " Et nähnyt kehityksen jälkeistä ylläpitoa tarpeellisena." : "Tulisimme ylläpitämään tuotettasi kehityksen jälkeenkin."}`}
     </h2>
 
     return (
-        <div className="text-white top-[10vh] font-poppins mx-auto w-[70vw]">
-            <h1 className="text-[#FCA311] text-[3vw] font-extrabold">Kustannusarvion yhteenveto:</h1>
-            <h2 className="text-[1.5vw] w-[75%] mb-[1vw]">Hinta-arvio on suuntaa-antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
+        <div className="text-white md:mt-0 mt-[-2vh] font-poppins mx-auto md:w-[70vw] w-[90vw]">
+            <h1 className="text-[#FCA311] md:text-[3vw] text-[7vw] font-extrabold">Kustannusarvion yhteenveto:</h1>
+            <h2 className="md:text-[1.5vw] text-[4vw] w-[75%] md:mb-[1vw] mb-[5vw]">Hinta-arvio on suuntaa-antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
             <div className="md:flex w-[100%]">
-                <div className="w-[32.5vw]" id="choicesSummary">
-                    <h1 className="text-[#FCA311] text-[2vw] mt-[1vw]">Valintasi:</h1>
-                    <div className="">{answerElements}</div>
+                <div className="md:w-[32.5vw] w-[100%]" id="choicesSummary">
+                    <h1 className="text-[#FCA311] md:text-[2vw] md:font-normal font-semibold text-[6vw] mt-[1vw]">Valintasi:</h1>
+                    <div className="mx-auto md:w-auto w-[80vw]">{answerElements}</div>
                 </div>
-                <div className="w-[34vw] mx-auto relative" id="writtenSummary">
-                <div className="w-[34vw] px-[5vw]">
-                    <h1 className="text-[#FCA311] text-[1.75vw] mt-[1vw]">Kirjallinen yhteenveto:</h1>
+                <div className="md:w-[34vw] w-[90vw] md:mt-0 mt-[6vw] mx-auto relative" id="writtenSummary">
+                <div className="md:w-[34vw] md:px-[5vw] w-[100%]">
+                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] mt-[1vw] md:font-normal font-semibold">Kirjallinen yhteenveto:</h1>
                     {writtenFeedback}
-                    <h1 className="text-[#FCA311] text-[1.75vw] mt-[1vw]">Hinta:</h1>
-                    <h2 className="text-[1.25vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv 24%</h2>
+                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] md:mt-[1vw] mt-[4vw] md:font-normal font-semibold">Hinta:</h1>
+                    <h2 className="md:text-[1.25vw] text-[4vw] md:mb-0 mb-[3vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv 24%</h2>
                 </div>
                 </div>
             </div>
-            <h1 className="text-[1.5vw] mt-[1vw] text-center w-[75%] mx-auto">Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan!<br/><strong className="text-[#FCA311]">Ota yhteyttä!</strong></h1>
+            <h1 className="md:text-[1.5vw] text-[4vw] md:pt-[1vw] pt-[5vw] md:mb-0 mb-[10vw] text-center md:w-[75%] w-[100%] mx-auto">Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan!<br/><strong className="text-[#FCA311]">Ota yhteyttä!</strong></h1>
         </div>
     ); // Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan! Ota yhteyttä!
 }
@@ -473,7 +473,7 @@ const resizeUpdate = () => {
     writtenSummary = document.getElementById("writtenSummary");
     console.log("updated");
 
-    if (writtenSummary != undefined) {
+    if (writtenSummary != undefined && !isMobile) {
         const choicesSummary = document.getElementById("choicesSummary");
         const childDiv = writtenSummary.children[0];
 
