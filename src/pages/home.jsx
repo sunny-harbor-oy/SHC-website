@@ -83,15 +83,15 @@ export default function HomePage(language = "fi") {
 {/*           <div className="ml-16 h-screen mt-[25vh] flex flex-col justify-center md:relative absolute z-[0]">
             <img src={ilmoImg} className="w-3/4 my-auto"/>
           </div> */}
-          <div className="md:ml-16 h-screen md:mt-[10vh] md:relative absolute md:bottom-auto bottom-[-38vh] md:right-auto right-0 z-[0]">
-            <img src={ilmoImg} className="md:w-3/4 w-screen md:my-auto"/>
+          <div className="md:ml-16 h-screen mt-3 md:relative absolute md:bottom-auto bottom-[-38vh] md:right-auto right-0 z-[0]">
+            <img src={ilmoImg} className="md:w-3/4 w-screen  md:my-auto"/>
           </div>
         </div>
       </SlideShow>
       <div ref={ilmoDescription} className="absolute transition-all duration-[250ms] top-[100vh] h-0 w-screen bg-white">
 
       </div>
-      <div className="w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-white">
+      <div className=" bg-gray-200 w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block ">
         <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@ export default function HomePage(language = "fi") {
           Löydä itsesi muiden joukosta!
         </h1>
         <div className="block md:grid grid-cols-2 gap-[2vw] md:w-[75vw] w-[90vw] mx-auto">
-          <div className="bg-card rounded-lg md:h-[18vw] h-[70vw] text-primary px-[2vw] py-[1vw] md:my-0 my-[10vw]">
+          <div className="bg-gray-300 rounded-lg md:h-[18vw] h-[70vw] text-primary px-[2vw] py-[1vw] md:my-0 my-[10vw]">
             <h1 className="md:text-[1.75vw] text-[7vw] font-semibold">
               Sykekotipalvelut
             </h1>
@@ -170,7 +170,7 @@ export default function HomePage(language = "fi") {
               Tuotteeseen <i className="fa fa-angle-right"></i>
             </Link>
           </div>
-          <div className="bg-card rounded-lg md:h-[18vw] h-[70vw] text-primary px-[2vw] py-[1vw] md:my-0 my-[10vw]">
+          <div className=" bg-gray-300 rounded-lg md:h-[18vw] h-[70vw] text-primary px-[2vw] py-[1vw] md:my-0 my-[10vw]">
             <h1 className="md:text-[1.75vw] text-[7vw] font-semibold">
               Korjausvelkalaskuri.fi
             </h1>

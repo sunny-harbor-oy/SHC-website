@@ -36,6 +36,7 @@ export default function NavBar() {
     if (window.location.pathname === "/") {
       if (!isMobile) {
         if (window.scrollY < vhPx * 3) {
+       
           applyFrostedGlassEffect(); 
         }
       }
