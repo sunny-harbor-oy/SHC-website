@@ -29,7 +29,7 @@ export default function HomePage(language = "fi") {
   return (
     <div id="homeWrapper" className="w-screen">
       <SlideShow
-        delay={10 * 1000}
+        delay={8 * 1000}
         duration={200000}
         maxAfk={10}
         swipeThreshold={50}
@@ -91,7 +91,7 @@ export default function HomePage(language = "fi") {
       <div ref={ilmoDescription} className="absolute transition-all duration-[250ms] top-[100vh] h-0 w-screen bg-white">
 
       </div>
-      <div className="w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-white">
+      <div className="w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
         <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
