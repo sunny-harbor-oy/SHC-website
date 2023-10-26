@@ -36,8 +36,8 @@ export default function NavBar() {
     if (window.location.pathname === "/") {
       if (!isMobile) {
         if (window.scrollY < vhPx * 3) {
-       
-          applyFrostedGlassEffect(); 
+          //applyFrostedGlassEffect(); 
+          navBar.style.background = "none";
         }
       }
     } else {
@@ -49,7 +49,8 @@ export default function NavBar() {
       if (window.location.pathname === "/") {
         if (!isMobile) {
           if (window.scrollY < vhPx * 3) {
-            applyFrostedGlassEffect(); 
+            //applyFrostedGlassEffect(); 
+            navBar.style.background = "none";
           } else {
             navBar.style.background = "#14213D";
             navBar.style.backdropFilter = "none"; 
@@ -90,9 +91,11 @@ export default function NavBar() {
           <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
-              navItems.style.height = "0vh";
-              navItems.style.borderTop = "0px solid #FCA311";
-              document.body.style.overflow = "scroll"
+              if (isMobile) {
+                navItems.style.height = "0vh";
+                navItems.style.borderTop = "0px solid #FCA311";
+                document.body.style.overflow = "scroll"
+              }
             } else {
               window.location = "/#team";
               document.cookie = "scrollTo=true";
@@ -101,9 +104,11 @@ export default function NavBar() {
           <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("customers").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
-              navItems.style.height = "0vh";
-              navItems.style.borderTop = "0px solid #FCA311";
-              document.body.style.overflow = "scroll"
+              if (isMobile) {
+                navItems.style.height = "0vh";
+                navItems.style.borderTop = "0px solid #FCA311";
+                document.body.style.overflow = "scroll"
+              }
             } else {
               window.location = "/#customers";
               document.cookie = "scrollTo=true";

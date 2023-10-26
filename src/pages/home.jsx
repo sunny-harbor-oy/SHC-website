@@ -38,13 +38,13 @@ export default function HomePage(language = "fi") {
       >
         <div className="relative w-screen h-screen font-semibold text-white font-poppins">
           <div className="px-[5vw] pb-[2vh] h-screen flex flex-col justify-center">
-            <h1 className="sm:text-[7vh] text-[10vw] leading-[11vw] sm:leading-[8vw] lg:leading-[5vw] xl:leading-[4vw]">
+            <h1 className="sm:text-[7vh] text-[7vh] leading-[7.2vh] sm:leading-[8vw] lg:leading-[7.2vh] xl:leading-[7.2vh]">
               Ratkaisuja
               <br />
               joihin luotat.
               <br />
             </h1>
-            <h2 className="sm:w-[80vh] sm:text-[3.43vh] text-[5vw] sm:h-[20vh] h-[35vh] pt-[3vh] font-medium">
+            <h2 className="sm:w-[80vh] sm:text-[3.43vh] text-[3vh] sm:h-[20vh] h-[35vh] pt-[3vh] font-medium">
               Uskomme vahvasti, että luomalla kestäviä ja pitkäikäisiä
               ratkaisuja, voimme mahdollistaa asiakkailemme ennennäkemättömän
               edun teknologiassa.
@@ -62,9 +62,9 @@ export default function HomePage(language = "fi") {
           <div className="fixed z-[-1] filter top-0 left-0 h-screen w-screen bg-gradient-to-br from-[#14213D] via-[#14213D] to-[#000000]"></div>
         </div>
         <div className="bg-[#BFA28E] relative grid w-screen h-screen grid-cols-1 md:grid-cols-2 font-semibold text-white font-poppins">
-          <div className="px-[5vw] pb-[2vh] h-screen flex flex-col md:justify-center md:pt-0 pt-[24vw] z-[1]">
+          <div className="px-[5vw] pb-[2vh] h-screen flex flex-col md:justify-center md:pt-0 pt-[13vh] z-[1]">
             <h1 className="sm:text-[7vh] text-[10vw]">ILMO</h1>
-            <h2 className="sm:w-[80vh] sm:text-[3.43vh] text-[5vw] sm:h-[20vh] h-[35vh] font-medium">
+            <h2 className="sm:w-[80vh] sm:text-[3.43vh] text-[2.8vh] sm:h-[20vh] h-[35vh] font-medium">
               ILMO on helppokäyttöinen työnjakosovellus, joka on suunniteltu
               helpottamaan organisaatioiden arkea tarjoamalla selkeän ja
               tehokkaan tavan hallita, jakaa ja seurata työtehtäviä.
@@ -83,15 +83,15 @@ export default function HomePage(language = "fi") {
 {/*           <div className="ml-16 h-screen mt-[25vh] flex flex-col justify-center md:relative absolute z-[0]">
             <img src={ilmoImg} className="w-3/4 my-auto"/>
           </div> */}
-          <div className="md:ml-16 h-screen mt-3 md:relative absolute md:bottom-auto bottom-[-38vh] md:right-auto right-0 z-[0]">
-            <img src={ilmoImg} className="md:w-3/4 w-screen  md:my-auto"/>
+          <div className="h-screen md:relative absolute md:bottom-auto bottom-[-40vh] 2xl:left-0 2xl:right-auto lg:right-[-7vw] md:right-[-8vh] right-0 lg:ml-[1vw] md:top-[14vh] z-[0]">
+            <img src={ilmoImg} className="md:w-[70vh] h-screen w-screen md:my-auto md:object-cover object-contain"/>
           </div>
         </div>
       </SlideShow>
       <div ref={ilmoDescription} className="absolute transition-all duration-[250ms] top-[100vh] h-0 w-screen bg-white">
 
       </div>
-      <div className="w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-white">
+      <div className="w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
         <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
