@@ -4,7 +4,7 @@ export default function ContactPage() {
     return (
         <div className='relative w-screen z-[0] bg-[#14213D] font-poppins'>
             <div className="md:pt-[16vh] pt-[12vh] w-[90vw] mx-auto">
-            <h1 className='text-[#FCA311] md:text-[7vh] text-[10vw] font-semibold'>Ota yhteyttä!</h1>
+            <h1 className='text-[#FCA311] md:text-[5vh] text-[7vw] font-semibold'>Ota yhteyttä!</h1>
             <h2 className='text-white md:text-[3vh] text-[4.5vw] font-light pb-[6vh] md:w-[90vh] w-[80vw]'>Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!</h2>
             </div>
              <div className="md:grid md:grid-cols-2 lg:w-[90vw] md:w-[95vw] w-[80vw] mx-auto md:pb-[20vh] pb-[5vh]"> 
