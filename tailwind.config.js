@@ -8,7 +8,7 @@ export default {
         syke: "#ff5f5f",
         primary: "#14213D",   // 14213D
         secondary: "#FCA311", // FCA311
-        card: "#E5E5E5",      // E5E5E5
+        card: "#E5E5E5",      // E5E5E5w
         card2: "#1b2843",     // 1b2843
 
         ilmoPrimaryColor: "#464646", // Dark Gray

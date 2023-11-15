@@ -7,6 +7,7 @@ import sisuImg from "../assets/founders/sisu.jpg";
 import victorImg from "../assets/founders/victor.jpg";
 import marcImg from "../assets/team/alexv2.png";
 import ilmoImg from "../assets/Ilmo.png";
+import background from "../assets/earth.mp4";
 
 const motto = [
   "Developing technology beyond the horizon.",
@@ -18,13 +19,12 @@ const motto = [
   "We are Sunny Harbor Consulting.",
 ];
 
-
 export default function HomePage(language = "fi") {
   const ilmoDescription = useRef(null);
 
   const ilmoFunc = () => {
     ilmoDescription.current.style.height = "100vh";
-  }
+  };
 
   return (
     <div id="homeWrapper" className="w-screen">
@@ -37,19 +37,27 @@ export default function HomePage(language = "fi") {
         viewPortClassNames="w-screen h-screen"
       >
         <div className="relative w-screen h-screen font-semibold text-white font-poppins">
+          <video
+            src={background}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute w-screen object-cover h-screen z-[-1]"
+          />
           <div className="px-[5vw] pb-[2vh] h-screen flex flex-col justify-center">
-            <h1 className="sm:text-[7vh] text-[7vh] leading-[7.2vh] sm:leading-[8vw] lg:leading-[7.2vh] xl:leading-[7.2vh]">
+            <h1 className="sm:text-[7vh] text-[7vh] leading-[8vh] sm:leading-[8vw] lg:leading-[7.2vh] xl:leading-[7.2vh]">
               Ratkaisuja
               <br />
               joihin luotat.
               <br />
             </h1>
-            <h2 className="sm:w-[80vh] sm:text-[3.43vh] text-[3vh] sm:h-[20vh] h-[35vh] pt-[3vh] font-medium">
+            <h2 className="sm:w-[80vh] sm:text-[3.43vh] text-[3vh] sm:h-[20vh] h-[37vh] pt-[3vh] font-medium">
               Uskomme vahvasti, että luomalla kestäviä ja pitkäikäisiä
               ratkaisuja, voimme mahdollistaa asiakkailemme ennennäkemättömän
               edun teknologiassa.
             </h2>
-            <div className="relative sm:mt-[10vh]">
+            <div className="relative sm:mt-[10vh] mt-[5vh] ">
               <div className="absolute hidden z-[1] bg-secondary filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
               <Link
                 to={"./price-estimate"}
@@ -59,7 +67,7 @@ export default function HomePage(language = "fi") {
               </Link>
             </div>
           </div>
-          <div className="fixed z-[-1] filter top-0 left-0 h-screen w-screen bg-gradient-to-br from-[#14213D] via-[#14213D] to-[#000000]"></div>
+          {/* <div className="fixed z-[-1] filter top-0 left-0 h-screen w-screen bg-gradient-to-br from-[#14213D] via-[#14213D] to-[#000000]"></div> */}
         </div>
         <div className="bg-[#BFA28E] relative grid w-screen h-screen grid-cols-1 md:grid-cols-2 font-semibold text-white font-poppins">
           <div className="px-[5vw] pb-[2vh] h-screen flex flex-col md:justify-center md:pt-0 pt-[13vh] z-[1]">
@@ -69,8 +77,7 @@ export default function HomePage(language = "fi") {
               helpottamaan organisaatioiden arkea tarjoamalla selkeän ja
               tehokkaan tavan hallita, jakaa ja seurata työtehtäviä.
             </h2>
-            <div className="relative sm:mt-[10vh] sm:h-[2.43vh] h-[4.6vw] py-[1.5vh] px-[2vh] w-[1vw]">
-            </div>
+            <div className="relative sm:mt-[10vh] sm:h-[2.43vh] h-[4.6vw] py-[1.5vh] px-[2vh] w-[1vw]"></div>
             {/* <div className="relative sm:mt-[13vh]">
               <Link
                 onClick={ilmoFunc}
@@ -80,17 +87,21 @@ export default function HomePage(language = "fi") {
               </Link>
             </div> */}
           </div>
-{/*           <div className="ml-16 h-screen mt-[25vh] flex flex-col justify-center md:relative absolute z-[0]">
+          {/*           <div className="ml-16 h-screen mt-[25vh] flex flex-col justify-center md:relative absolute z-[0]">
             <img src={ilmoImg} className="w-3/4 my-auto"/>
           </div> */}
           <div className="h-screen md:relative absolute md:bottom-auto bottom-[-40vh] 2xl:left-0 2xl:right-auto lg:right-[-7vw] md:right-[-8vh] right-0 lg:ml-[1vw] md:top-[14vh] z-[0]">
-            <img src={ilmoImg} className="md:w-[70vh] h-screen w-screen md:my-auto md:object-cover object-contain"/>
+            <img
+              src={ilmoImg}
+              className="md:w-[70vh] h-screen w-screen md:my-auto md:object-cover object-contain"
+            />
           </div>
         </div>
       </SlideShow>
-      <div ref={ilmoDescription} className="absolute transition-all duration-[250ms] top-[100vh] h-0 w-screen bg-white">
-
-      </div>
+      <div
+        ref={ilmoDescription}
+        className="absolute transition-all duration-[250ms] top-[100vh] h-0 w-screen bg-white"
+      ></div>
       <div className="w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
         <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
@@ -163,10 +174,15 @@ export default function HomePage(language = "fi") {
               Sykekotipalvelut
             </h1>
             <p className="md:text-[1.35vw] text-[4.6vw] md:h-[10.5vw] h-[46vw]">
-              Kehitimme Sykekotipalvelulle mobiilisovelluksen työkeikkojen jakamiseen työntekijöilleen, 
-              korostaen SHC:n kykyä toteuttaa korkealaatuisia digitaalisia ratkaisuja asiakkailleen.
+              Kehitimme Sykekotipalvelulle mobiilisovelluksen työkeikkojen
+              jakamiseen työntekijöilleen, korostaen SHC:n kykyä toteuttaa
+              korkealaatuisia digitaalisia ratkaisuja asiakkailleen.
             </p>
-            <Link target="_blank" to={"https://apps.apple.com/fi/app/omasyke/id6450539265"} className="bg-primary text-secondary md:font-semibold md:py-[0.5vw] py-[1vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
+            <Link
+              target="_blank"
+              to={"https://apps.apple.com/fi/app/omasyke/id6450539265"}
+              className="bg-primary text-secondary md:font-semibold md:py-[0.5vw] py-[1vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg"
+            >
               Tuotteeseen <i className="fa fa-angle-right"></i>
             </Link>
           </div>
@@ -175,10 +191,15 @@ export default function HomePage(language = "fi") {
               Korjausvelkalaskuri.fi
             </h1>
             <p className="md:text-[1.35vw] text-[4.6vw] md:h-[10.5vw] h-[46vw]">
-              Korjausvelkalaskuri on verkkopohjainen työkalu kiinteistöjen korjausvelan arvioimiseen, 
-              josta tiimimme sai tärkeitä oppeja ja näin vahvistaen tiimin erinomaisuutta ja toimivuutta.
+              Korjausvelkalaskuri on verkkopohjainen työkalu kiinteistöjen
+              korjausvelan arvioimiseen, josta tiimimme sai tärkeitä oppeja ja
+              näin vahvistaen tiimin erinomaisuutta ja toimivuutta.
             </p>
-            <Link target="_blank" to={"https://korjausvelkalaskuri.fi/"} className="bg-primary text-secondary md:font-semibold md:py-[0.5vw] py-[1vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg">
+            <Link
+              target="_blank"
+              to={"https://korjausvelkalaskuri.fi/"}
+              className="bg-primary text-secondary md:font-semibold md:py-[0.5vw] py-[1vw] md:px-[1vw] px-[3vw] text-left md:text-[1.2vw] text-[5vw] rounded-lg"
+            >
               Tuotteeseen <i className="fa fa-angle-right"></i>
             </Link>
           </div>
@@ -189,7 +210,7 @@ export default function HomePage(language = "fi") {
           Tiimimme
         </h1>
         <div className="block md:grid grid-cols-4 gap-[2vw] w-[90vw] md:h-[43vw] py-[5vw] font-poppins font-bold mx-auto text-white">
-        <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
+          <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
             <img
               src={sisuImg}
               className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
@@ -222,7 +243,7 @@ export default function HomePage(language = "fi") {
               Victor Ocampo
             </h1>
             <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
-              Teknologiajohtaja ja fullstack kehittäjä 
+              Teknologiajohtaja ja fullstack kehittäjä
             </h2>
           </div>
           <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
@@ -239,7 +260,6 @@ export default function HomePage(language = "fi") {
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
