@@ -5,6 +5,7 @@ import "./style/global.css";
 import HomePage from "./pages/home.jsx";
 import ContactPage from "./pages/contact.jsx";
 import PriceEstimation from "./pages/priceCalculator.jsx";
+import IlmoPage from "./pages/ilmo.jsx";
 
 import NavBar from "./elements/navBar.jsx";
 import SHCFooter from "./elements/shcFooter.jsx";
@@ -30,6 +31,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/price-estimate" element={<PriceEstimation />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/ilmo" element={<IlmoPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
       <SHCFooter />
     </div>

@@ -115,7 +115,7 @@ const cardData = [
 ];
 
 let index = 0;
-const progressBar = cardData.map(() => {
+const progressBar = cardData.map(() => {    
     const i = index;
     index++;
     return <div onClick={() => {

@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        velka: "#C55A11",
-        syke: "#ff5f5f",
+        velka: "#dededc",
+        syke: "#263544", //"#ff5f5f",
         primary: "#14213D",   // 14213D
         secondary: "#FCA311", // FCA311
         card: "#E5E5E5",      // E5E5E5w
@@ -24,6 +24,15 @@ export default {
         lora: ["Lora"],
         oxanium: ["Oxanium"],
         poppins: ["Poppins"],
+      },
+      fontSize: {
+        "h1": "7vh",
+        "h1-sm": "7vh",
+        "h2": "3vh",
+        "h2-sm": "3.43vh",
+        "h3": "5.5vw",
+        "h3-sm": "1.6vw",
+        "p": "",
       },
     },
   },

@@ -13,7 +13,31 @@
     contrast(1.2);
 }
 
+.frostedglass {
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: skewY(0deg);
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.8px);
+  -webkit-backdrop-filter: blur(12.8px);
+  border: 1px solid rgba(255, 255, 255, 0.23);
+}
 
+.frostedglass-ilmo {
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: skewY(0deg);
+  background: rgba(191, 162, 142, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.8px);
+  -webkit-backdrop-filter: blur(12.8px);
+  border: 1px solid rgba(255, 255, 255, 0.23);
+}
 
 @media screen and (orientation: landscape) {
   html {
