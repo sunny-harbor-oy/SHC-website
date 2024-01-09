@@ -25,7 +25,7 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div className="overflow-x-hidden w-screen">
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
