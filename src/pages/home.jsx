@@ -27,7 +27,7 @@ import velkaRaportti from "../assets/velkaRaportti.png";
 
 // Moon
 import moonBg from "../assets/moonBg.mp4";
-import moonLogo from "../assets/moonLogo.png";
+import moonLogo from "../assets/.png";
 import moonPhone from "../assets/moon-wallet.png";
 
 const motto = [
