@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import background from "../assets/earth.mp4";
 
 // The squad
-import leonImg from "../assets/founders/leonv2.jpg";
+import leonImg from "../assets/founders/leon.png";
 import sisuImg from "../assets/founders/sisu.jpg";
 import victorImg from "../assets/founders/victor.jpg";
 import marcImg from "../assets/team/alexv2.png";
@@ -48,17 +48,17 @@ export default function HomePage(language = "fi") {
   let ilmoOpen = false;
   let ilmoHeight = 0;
   let ilmoVidTimeout = null;
+  let isMobile = false;
 
   const ilmoUpdateHeight = () => {
     ilmoOpen = false;
     ilmoHeight = ilmoContext.current.children[0].offsetHeight;
     ilmoContext.current.style.height = ilmoOpen ? `auto` : `${ilmoHeight}px`;
-    ilmoContext.current.children[0].style.borderRadius = ilmoOpen ? `10px 10px 0px 0px` : `10px`;
+    ilmoContext.current.children[0].style.borderRadius = isMobile ? '0px' : (ilmoOpen ? `10px 10px 0px 0px` : `10px`);
   }
 
   const ilmoVideo = (e) => {
     if (ilmoVidRef.current === null) return;
-    console.log(ilmoVidRef.current.duration);
     const rect = ilmoVidRef.current.getBoundingClientRect();
     if (rect.y < window.innerHeight && rect.y > -ilmoVidRef.current.getBoundingClientRect().height) {
       if (ilmoVidTimeout) return;
@@ -74,20 +74,28 @@ export default function HomePage(language = "fi") {
     }
   }
 
+  const updateMobile = () => {
+    isMobile = window.innerWidth < 768;
+  }
+
   useEffect(() => {
+    updateMobile();
     ilmoUpdateHeight();
 
     ilmoButton.current.addEventListener("click", () => {
         ilmoOpen = !ilmoOpen;
         ilmoContext.current.style.height = ilmoOpen ? `auto` : `${ilmoHeight}px`;
-        ilmoContext.current.children[0].style.borderRadius = ilmoOpen ? `10px 10px 0px 0px` : `10px`;
+        ilmoContext.current.children[0].style.borderRadius = isMobile ? '0px' : (ilmoOpen ? `10px 10px 0px 0px` : `10px`);
     });
 
-    window.addEventListener("resize", ilmoUpdateHeight);
+    window.addEventListener("resize", () => {
+      ilmoUpdateHeight();
+      updateMobile();
+    });
+
     window.addEventListener("scroll", ilmoVideo);
 
     return () => {
-        window.removeEventListener("resize", ilmoUpdateHeight);
         window.removeEventListener("scroll", ilmoVideo);
     }
   }, []);
@@ -295,24 +303,29 @@ export default function HomePage(language = "fi") {
           <img src={sykePhone} className="object-contain md:w-[15vw] md:mt-[-2vw] md:ml-[-13vw]"></img>
           </div>
           </div>
-          <img src={sykePhone} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[80vh] bottom-[-7vh]"></img>
+          <div className="overflow-hidden absolute top-[13vh] h-[80%] w-full">
+          <img src={sykePhone} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[80vh] top-0"></img>
+          </div>
+          <img src={sykeLaptop} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[100vh] bottom-[-30vh]"></img>
         </div>
       </SlideShow>
       </div>
       <h1 className="text-center md:text-[3vw] text-[9vw] font-semibold mx-auto md:mb-[2vw] mb-[10vw] text-secondary" id="customers">
           Tuotteemme
       </h1>
-      <div ref={ilmoContext} style={{transitionProperty: "all", transitionDuration: "250ms"}} className="transition-all duration-200 bg-ilmoSecondaryColor relative px-[1vw] py-[1vw] w-[98vw] mx-auto rounded-lg text-white font-poppins overflow-hidden">
-      <video ref={ilmoVidRef} src={ilmoVid} autoPlay loop muted playsInline className="absolute h-[80vh] w-[98vw] object-cover rounded-lg top-0"></video>
-      <div className="h-[80vh] pt-[20vh] relative z-[0]">
+      <div ref={ilmoContext} style={{transitionProperty: "all", transitionDuration: "250ms"}} className="transition-all md:max-w-[2500px] duration-200 bg-ilmoSecondaryColor relative md:px-[1vw] md:py-[1vw] md:w-[98vw] w-screen mx-auto md:rounded-lg text-white font-poppins overflow-hidden">
+      <div className="absolute max-md:left-0 top-0 h-[75vh] max-h-[900px] w-full overflow-hidden">
+        <video ref={ilmoVidRef} src={ilmoVid} autoPlay loop muted playsInline className="absolute top-[-5vh] h-[90vh] max-h-[1000px] md:w-[98vw] w-screen object-cover md:rounded-lg"></video>
+        <h2 ref={ilmoButton} className="max-md:hidden hover:cursor-pointer text-[1.8vw] font-semibold text-center px-[1vw] md:rounded-lg absolute bottom-[5%] left-[50%] translate-x-[-50%] z-[1]"><i className="fa fa-angle-right rotate-90"></i> Tuotteeseen <i className="fa fa-angle-right rotate-90"></i></h2>
+      </div>
+      <div className="h-[80vh] max-h-[900px] pt-[20vh] relative z-[0]">
       <h1 className="sm:text-[3vw] text-[10vw] font-poppins font-semibold text-center">ILMO</h1>
-      <div className="md:block frostedglass-ilmo with-shadow w-[40vw] text-white mx-auto">
-      <h3 className="text-[1.5vw] font-semibold py-[1vw] px-[2vw] w-full text-center">ILMO tekee työnteon sujuvaksi:<br></br>Hallitse, jaa ja seuraa tehtäviä helposti ja tehokkaasti organisaatiossasi!</h3>
+      <div className="md:block frostedglass-ilmo with-shadow md:w-[40vw] w-[80%] text-white mx-auto">
+      <h3 className="md:text-[1.5vw] text-[2vh] md:font-semibold py-[1vw] px-[2vw] w-full text-center">ILMO tekee työnteon sujuvaksi:<br></br>Hallitse, jaa ja seuraa tehtäviä helposti ja tehokkaasti organisaatiossasi!</h3>
       </div>
-      <h2 ref={ilmoButton} className="hover:cursor-pointer text-[1.8vw] font-semibold text-center px-[1vw] rounded-lg absolute top-[70vh] left-[50%] translate-x-[-50%]"><i className="fa fa-angle-right rotate-90"></i> Tuotteeseen <i className="fa fa-angle-right rotate-90"></i></h2>
       </div>
-      <div className="px-[2vw] pt-[2vh] top-[80vh] w-full grid grid-cols-2">
-      <div className="grid grid-cols-1 grid-rows-2 h-[50vh]">
+      <div className="px-[2vw] pt-[2vh] top-[80vh] w-full grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 grid-rows-2 h-[50vh] max-h-[500px]">
         <div className="w-[35vw]">
           <h2 className="text-[2vw] font-poppins font-semibold">Mikä on ILMO?</h2>
           <h3 className="text-[1.2vw] font-poppins">ILMO on helppokäyttöinen työnjakosovellus, joka on suunniteltu helpottamaan organisaatioiden arkea tarjoamalla selkeän ja tehokkaan tavan hallita, jakaa ja seurata työtehtäviä.</h3>
@@ -371,7 +384,7 @@ export default function HomePage(language = "fi") {
               Leon Gustafsson
             </h1>
             <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
-              Hallituksen puheenjohtaja ja frontend kehittäjä
+              Perustaja ja frontend kehittäjä
             </h2>
           </div>
           <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">

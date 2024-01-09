@@ -536,8 +536,8 @@ useEffect(() => {
 });
 
 return (
-    <div className="bg-[#14213D] w-screen">
-    <div className="min-h-screen 2xl:w-[75vw] sm::w-[80vw] w-[90%] xl:pt-32 lg:pt-[10vh] sm:pt-32 pt-24 mx-auto">
+    <div className="bg-[#14213D] w-screen h-screen flex flex-col justify-center">
+    <div className="2xl:w-[75vw] sm::w-[80vw] w-[90%] xl:pt-32 lg:pt-[10vh] sm:pt-32 pt-24 mx-auto">
         <div className="2xl:1/2 md:w-2/3 mx-auto pt-[2vw]">
             <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 9 ? cardData.length : 9}, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
