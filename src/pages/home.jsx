@@ -339,19 +339,19 @@ export default function HomePage(language = "fi") {
         <h2 className="text-[2vw] font-poppins font-semibold">UKK:</h2>
         <DropDown test="w-full mb-[1vh] h-[3vh]">
           <h1 className="w-full hover:cursor-pointer bg-ilmoPrimaryColor px-[1vw] py-[1vh] rounded-lg text-[1.35vw] font-poppins font-semibold">Miten ILMO eroaa muista työnjakosovelluksista?</h1>
-          <h2 className="px-[1vw] py-[1vh] bg-ilmoPrimaryTextColor rounded-b-lg text-[1vw]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quia dolor assumenda obcaecati hic, culpa nisi necessitatibus harum ut quasi quae dignissimos odio pariatur voluptatem, fuga voluptas ad placeat ipsum!</h2>
+          <h2 className="px-[1vw] py-[1vh] bg-ilmoPrimaryTextColor rounded-b-lg text-[1vw]">ILMO tarjoaa helppokäyttöisen ja tehokkaan tavan hallita, jakaa ja seurata työtehtäviä. Käyttäjälähtöinen suunnittelu, reaaliaikainen yhteistyö ja monialustainen käytettävyys tekevät siitä ensiluokkaisen työkalun organisaatioiden arjen tehostamiseksi. Lisäksi ILMO on alan edullisin hinta, tarjoten huippuluokan ominaisuudet kilpailukykyiseen hintaan.</h2>
         </DropDown>
         <DropDown test="w-full mb-[1vh]">
           <h1 className="w-full hover:cursor-pointer bg-ilmoPrimaryColor px-[1vw] py-[1vh] rounded-lg text-[1.35vw] font-poppins font-semibold">Onko ILMO turvallinen käyttää organisaation sisäisissä työtehtävissä?</h1>
-          <h2 className="px-[1vw] py-[1vh] bg-ilmoPrimaryTextColor rounded-b-lg text-[1vw]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quia dolor assumenda obcaecati hic, culpa nisi necessitatibus harum ut quasi quae dignissimos odio pariatur voluptatem, fuga voluptas ad placeat ipsum!</h2>
+          <h2 className="px-[1vw] py-[1vh] bg-ilmoPrimaryTextColor rounded-b-lg text-[1vw]">ILMO erottuu kilpailijoistaan monipuolisilla ominaisuuksillaan, kuten räätälöitävillä ratkaisuilla, reaaliaikaisella yhteistyöllä ja edullisuudellaan. Se tarjoaa kattavan hallintosivun ja mobiilisovelluksen, jotka yhdessä muodostavat tehokkaan työkalun työvuorojen hallintaan.</h2>
         </DropDown>
         <DropDown test="w-full mb-[1vh]">
           <h1 className="w-full hover:cursor-pointer bg-ilmoPrimaryColor px-[1vw] py-[1vh] rounded-lg text-[1.35vw] font-poppins font-semibold">Voidaanko ILMO integroida muihin organisaation järjestelmiin?</h1>
-          <h2 className="px-[1vw] py-[1vh] bg-ilmoPrimaryTextColor rounded-b-lg text-[1vw]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quia dolor assumenda obcaecati hic, culpa nisi necessitatibus harum ut quasi quae dignissimos odio pariatur voluptatem, fuga voluptas ad placeat ipsum!</h2>
+          <h2 className="px-[1vw] py-[1vh] bg-ilmoPrimaryTextColor rounded-b-lg text-[1vw]">Kyllä, ILMO on suunniteltu tietoturvalliseksi. Kaikki tiedot siirretään salatussa muodossa, ja käyttäjien hallintaan liittyvät toiminnot ovat suojattuja. ILMO takaa luottamuksellisen työskentely-ympäristön organisaatiolle.</h2>
         </DropDown>
         <DropDown test="w-full mb-[1vh]">
           <h1 className="w-full hover:cursor-pointer bg-ilmoPrimaryColor px-[1vw] py-[1vh] rounded-lg text-[1.35vw] font-poppins font-semibold">Miksi valita ILMO työnjakosovellukseksi, ja miten se eroaa muista alan ratkaisuista?</h1>
-          <h2 className="px-[1vw] py-[1vh] bg-ilmoPrimaryTextColor rounded-b-lg text-[1vw]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quia dolor assumenda obcaecati hic, culpa nisi necessitatibus harum ut quasi quae dignissimos odio pariatur voluptatem, fuga voluptas ad placeat ipsum!</h2>
+          <h2 className="px-[1vw] py-[1vh] bg-ilmoPrimaryTextColor rounded-b-lg text-[1vw]">Kyllä, ILMO on suunniteltu integroitumaan saumattomasti muiden järjestelmien kanssa. Tarjoamme avoimen rajapinnan, joka mahdollistaa integraatiot esimerkiksi palkanlaskenta- tai henkilöstöhallintajärjestelmiin. Näin varmistamme, että ILMO sopeutuu organisaation olemassa oleviin prosesseihin.</h2>
         </DropDown>
       </div>
       </div>
