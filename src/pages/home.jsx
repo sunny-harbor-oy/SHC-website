@@ -310,7 +310,7 @@ export default function HomePage(language = "fi") {
         </div>
       </SlideShow>
       </div>
-      <h1 className="text-center md:text-[3vw] text-[9vw] font-semibold mx-auto md:mb-[2vw] mb-[10vw] text-secondary" id="customers">
+      <h1 className="text-center md:text-[3vw] text-[9vw] pt-[7vh] font-semibold mx-auto md:mb-[2vw] mb-[10vw] text-secondary" id="customers">
           Tuotteemme
       </h1>
       <div ref={ilmoContext} style={{transitionProperty: "all", transitionDuration: "250ms"}} className="transition-all md:max-w-[2500px] duration-200 bg-ilmoSecondaryColor relative md:px-[1vw] md:py-[1vw] md:w-[98vw] w-screen mx-auto md:rounded-lg text-white font-poppins overflow-hidden">
@@ -318,7 +318,7 @@ export default function HomePage(language = "fi") {
         <video ref={ilmoVidRef} src={ilmoVid} autoPlay loop muted playsInline className="absolute top-[-5vh] h-[90vh] max-h-[1000px] md:w-[98vw] w-screen object-cover md:rounded-lg"></video>
         <h2 ref={ilmoButton} className="max-md:hidden hover:cursor-pointer text-[1.8vw] font-semibold text-center px-[1vw] md:rounded-lg absolute bottom-[5%] left-[50%] translate-x-[-50%] z-[1]"><i className="fa fa-angle-right rotate-90"></i> Tuotteeseen <i className="fa fa-angle-right rotate-90"></i></h2>
       </div>
-      <div className="h-[80vh] max-h-[900px] pt-[20vh] relative z-[0]">
+      <div className="h-[80vh] max-h-[900px] pt-[30vh] md:pt-[20vh] relative z-[0]">
       <h1 className="md:text-[3vw] text-[10vw] font-poppins font-semibold text-center">ILMO</h1>
       <div className="md:block md:frostedglass-ilmo frostedglass-ilmo-mobile with-shadow md:w-[40vw] w-[80%] text-white mx-auto">
       <h3 className="md:text-[1.5vw] text-[4.4vw] font-semibold py-[1vw] px-[2vw] w-full text-center">ILMO tekee työnteon sujuvaksi:<br></br>Hallitse, jaa ja seuraa tehtäviä helposti ja tehokkaasti organisaatiossasi!</h3>
@@ -358,8 +358,8 @@ export default function HomePage(language = "fi") {
       <Link to={"/contact"} reloadDocument="true" className="text-center absolute left-[50%] translate-x-[-50%] justify-center font-poppins text-[1.5vw] pb-[1vh] font-bold">Kiinnostuitko? Ota yhteyttä!</Link>
       <div className="h-[5vh] w-full"></div>
       </div>
-      <div className="w-screen bg-primary font-poppins" id="team">
-        <h1 className="pt-[4vw] md:text-[3vw] text-[9vw] left-0 font-semibold text-secondary text-center w-screen">
+      <div className="w-screen bg-primary font-poppins pt-[7vh] md:pt-[20vh]" id="team">
+        <h1 className="md:text-[3vw] text-[9vw] left-0 font-semibold text-secondary text-center w-screen">
           Tiimimme
         </h1>
         <div className="block md:grid grid-cols-4 gap-[2vw] w-[90vw] md:h-[43vw] py-[5vw] font-poppins font-bold mx-auto text-white">
