@@ -249,9 +249,9 @@ export default function HomePage(language = "fi") {
         maxAfk={10}
         swipeThreshold={50}
         swipeTimer={250}
-        viewPortClassNames="md:w-[90vw] w-[90vw] md:h-[40vw] h-[87vh] md:font-poppins font-oxanium mx-auto rounded-lg font-light"
+        viewPortClassNames="md:w-[90vw] w-[90vw] md:h-[40vw] h-[63vh] md:font-poppins font-oxanium mx-auto rounded-lg font-light"
       >
-        <div className="w-[90vw] md:h-[40vw] h-[87vh] relative bg-syke text-white overflow-hidden">
+        <div className="w-[90vw] md:h-[40vw] h-[63vh] relative bg-syke text-white overflow-hidden">
           <img src={sykeImg} className="md:h-[11vh] max-md:to-zinc-100 object-contain md:py-7 md:relative max-md:absolute max-md:h-[8vh] max-md:top-[3vh] left-[50%] translate-x-[-55%]"></img>
           <div className="md:grid grid-cols-2 space-x-10 md:px-[2vw] h-[27vw] hidden">
           <div className="md:h-full my-auto translate-y-[-2.5vw]">
@@ -266,11 +266,11 @@ export default function HomePage(language = "fi") {
           </div>
           </div>
           <div className="overflow-hidden absolute top-[15vh] h-[72%] w-full">
-          <img src={sykePhone} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[80vh] top-0"></img>
           </div>
-          <img src={sykeLaptop} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[100vh] bottom-[-30vh]"></img>
+          <img src={sykeLaptop} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[110%] bottom-[-18%]"></img>
+          <img src={sykePhone} className="object-contain absolute md:hidden left-[75%] translate-x-[-50%] h-[54%] bottom-[15%]"></img>
         </div>
-        <div className="md:w-[90vw] w-[90vw] md:h-[40vw] h-[87vh] relative">
+        <div className="md:w-[90vw] w-[90vw] md:h-[40vw] h-[63vh] relative">
           <video
             src={moonBg}
             autoPlay
@@ -287,11 +287,11 @@ export default function HomePage(language = "fi") {
             Moon Application on meidän uusin projekti, jonka tarkoitus on mullistaa vaikuttajamarkkinointi. Sovelluksen kehityksessä panostimme eniten käyttäjäkokemukseen.<br/><br/>
             Projektiin sisältyy web-pohjainen adminpaneeli, josta hallinnoidaan sisällöntuottajien markkinointihaasteita, sekä sovellus, jonka avulla vaikuttajat voivat osallistua haasteisiin ja ansaita.  Työstimme myös projektin kotisivut! Käytimme teknologioina flutteria, typescriptiä, giniä, golangia ja pythonia.            </p>
           </div>
-          <img src={moonPhone} className="absolute md:right-[7vw] md:w-[22vw] h-[83vh] object-contain md:top-[50%] max-md:right-[50%] max-md:translate-x-[50%] bottom-[-10vh] md:translate-y-[-50%]"/>
+          <img src={moonPhone} className="absolute md:right-[7vw] md:w-[22vw] h-[90%] object-contain md:top-[50%] max-md:right-[50%] max-md:translate-x-[50%] bottom-[-10vh] md:translate-y-[-50%]"/>
           </div>
           <img src={moonLogo} className="object-contain absolute md:w-[4vw] w-[20vw] left-[50%] md:top-[1.5vh] top-[2vh] translate-x-[-50%]"></img>
         </div>
-        <div className="relative w-[90vw] md:h-[40vw] h-[87vh] bg-velka overflow-hidden">
+        <div className="relative w-[90vw] md:h-[40vw] h-[63vh] bg-velka overflow-hidden">
         <img src={velkaImg} className="md:h-[11vh] max-md:h-[10vh] max-md:absolute md:relative object-contain md:py-7 left-[50%] translate-x-[-50%] max-md:top-[4vh]"></img>
         <div className="md:grid grid-cols-2 hidden space-x-10 md:px-[2vw] h-[27vw]">
           <div className="md:h-full my-auto">
@@ -305,8 +305,8 @@ export default function HomePage(language = "fi") {
           <img src={velkaRaportti} className="object-contain md:block hidden absolute md:w-[20vw] top-[50%] right-[2vw] translate-y-[-60%] z-[2]"></img>
           </div>
         </div>
-        <img src={velkaRaportti} className="object-contain md:hidden block absolute w-[80vw] bottom-[15vh] left-[50%] translate-x-[-50%] z-[0]"></img>
-        <img src={velkaLaptop} className="object-contain md:hidden block absolute w-[90vw] bottom-[10vh] left-[50%] translate-x-[-50%]"></img>
+        <img src={velkaLaptop} className="object-contain md:hidden block absolute h-[40%] bottom-[15%] left-[50%] translate-x-[-50%]"></img>
+        <img src={velkaRaportti} className="object-contain md:hidden block absolute h-[45%] bottom-[20%] left-[65%] translate-x-[-50%] z-[0]"></img>
         </div>
       </SlideShow>
       </div>
@@ -320,7 +320,7 @@ export default function HomePage(language = "fi") {
       </div>
       <div className="h-[80vh] max-h-[900px] pt-[20vh] relative z-[0]">
       <h1 className="md:text-[3vw] text-[10vw] font-poppins font-semibold text-center">ILMO</h1>
-      <div className="md:block frostedglass-ilmo with-shadow md:w-[40vw] w-[80%] text-white mx-auto">
+      <div className="md:block md:frostedglass-ilmo frostedglass-ilmo-mobile with-shadow md:w-[40vw] w-[80%] text-white mx-auto">
       <h3 className="md:text-[1.5vw] text-[4.4vw] font-semibold py-[1vw] px-[2vw] w-full text-center">ILMO tekee työnteon sujuvaksi:<br></br>Hallitse, jaa ja seuraa tehtäviä helposti ja tehokkaasti organisaatiossasi!</h3>
       </div>
       </div>
