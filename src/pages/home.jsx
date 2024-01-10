@@ -310,7 +310,7 @@ export default function HomePage(language = "fi") {
         </div>
       </SlideShow>
       </div>
-      <h1 className="text-center md:text-[3vw] text-[9vw] pt-[7vh] font-semibold mx-auto md:mb-[2vw] mb-[10vw] text-secondary" id="customers">
+      <h1 id="products" className="text-center md:text-[3vw] text-[9vw] pt-[7vh] font-semibold mx-auto md:mb-[2vw] mb-[10vw] text-secondary">
           Tuotteemme
       </h1>
       <div ref={ilmoContext} style={{transitionProperty: "all", transitionDuration: "250ms"}} className="transition-all md:max-w-[2500px] duration-200 bg-ilmoSecondaryColor relative md:px-[1vw] md:py-[1vw] md:w-[98vw] w-screen mx-auto md:rounded-lg text-white font-poppins overflow-hidden">
