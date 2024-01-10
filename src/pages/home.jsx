@@ -267,8 +267,25 @@ export default function HomePage(language = "fi") {
           </div>
           <div className="overflow-hidden absolute top-[15vh] h-[72%] w-full">
           </div>
-          <img src={sykeLaptop} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[110%] bottom-[-18%]"></img>
+          <img src={sykeLaptop} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[41%] bottom-[14%]"></img>
           <img src={sykePhone} className="object-contain absolute md:hidden left-[75%] translate-x-[-50%] h-[54%] bottom-[15%]"></img>
+        </div>
+        <div className="relative w-[90vw] md:h-[40vw] h-[63vh] bg-velka overflow-hidden">
+        <img src={velkaImg} className="md:h-[11vh] max-md:h-[10vh] max-md:absolute md:relative object-contain md:py-7 left-[50%] translate-x-[-50%] max-md:top-[4vh]"></img>
+        <div className="md:grid grid-cols-2 hidden space-x-10 md:px-[2vw] h-[27vw]">
+          <div className="md:h-full my-auto">
+          <h3 className="text-[1.5vw] font-semibold py-[1vw]">Isännöitsijätodistus selkokielellä</h3>
+          <p className="text-[1.3vw] ">
+          Korjausvelkalaskuri® avaa isännöitsijäntodistuksen ja korjaussuunnitelman sisällön selkeällä kielellä, tarjoten yksityiskohtaisen katsauksen helposti luettavan raportin muodossa taloyhtiön tuleviin remontteihin ja niiden arvioituihin kustannuksiin.<br/><br/>Kehittämiseen käytetty taitomme ja teknologiat, kuten React, JavaScript, Gin ja Golang, takaavat laskurin tehokkuuden ja luotettavuuden. Suunnittele ja hallinnoi korjausvelkaasi helposti ja pitkäjänteisesti Korjausvelkalaskurin avulla!          
+          </p>
+          </div>
+          <div className="relative px-7">
+          <img src={velkaLaptop} className="object-contain md:block hidden absolute md:w-[35vw] mx-auto my-auto top-[50%] right-[10%] translate-y-[-50%] z-[1]"></img>
+          <img src={velkaRaportti} className="object-contain md:block hidden absolute md:w-[20vw] top-[50%] right-[2vw] translate-y-[-60%] z-[2]"></img>
+          </div>
+        </div>
+        <img src={velkaLaptop} className="object-contain md:hidden block absolute h-[40%] bottom-[15%] left-[50%] translate-x-[-50%]"></img>
+        <img src={velkaRaportti} className="object-contain md:hidden block absolute h-[45%] bottom-[20%] left-[65%] translate-x-[-50%] z-[0]"></img>
         </div>
         <div className="md:w-[90vw] w-[90vw] md:h-[40vw] h-[63vh] relative">
           <video
@@ -290,23 +307,6 @@ export default function HomePage(language = "fi") {
           <img src={moonPhone} className="absolute md:right-[7vw] md:w-[22vw] h-[90%] object-contain md:top-[50%] max-md:right-[50%] max-md:translate-x-[50%] bottom-[-10vh] md:translate-y-[-50%]"/>
           </div>
           <img src={moonLogo} className="object-contain absolute md:w-[4vw] w-[20vw] left-[50%] md:top-[1.5vh] top-[2vh] translate-x-[-50%]"></img>
-        </div>
-        <div className="relative w-[90vw] md:h-[40vw] h-[63vh] bg-velka overflow-hidden">
-        <img src={velkaImg} className="md:h-[11vh] max-md:h-[10vh] max-md:absolute md:relative object-contain md:py-7 left-[50%] translate-x-[-50%] max-md:top-[4vh]"></img>
-        <div className="md:grid grid-cols-2 hidden space-x-10 md:px-[2vw] h-[27vw]">
-          <div className="md:h-full my-auto">
-          <h3 className="text-[1.5vw] font-semibold py-[1vw]">Isännöitsijätodistus selkokielellä</h3>
-          <p className="text-[1.3vw] ">
-          Korjausvelkalaskuri® avaa isännöitsijäntodistuksen ja korjaussuunnitelman sisällön selkeällä kielellä, tarjoten yksityiskohtaisen katsauksen helposti luettavan raportin muodossa taloyhtiön tuleviin remontteihin ja niiden arvioituihin kustannuksiin.<br/><br/>Kehittämiseen käytetty taitomme ja teknologiat, kuten React, JavaScript, Gin ja Golang, takaavat laskurin tehokkuuden ja luotettavuuden. Suunnittele ja hallinnoi korjausvelkaasi helposti ja pitkäjänteisesti Korjausvelkalaskurin avulla!          
-          </p>
-          </div>
-          <div className="relative px-7">
-          <img src={velkaLaptop} className="object-contain md:block hidden absolute md:w-[35vw] mx-auto my-auto top-[50%] right-[10%] translate-y-[-50%] z-[1]"></img>
-          <img src={velkaRaportti} className="object-contain md:block hidden absolute md:w-[20vw] top-[50%] right-[2vw] translate-y-[-60%] z-[2]"></img>
-          </div>
-        </div>
-        <img src={velkaLaptop} className="object-contain md:hidden block absolute h-[40%] bottom-[15%] left-[50%] translate-x-[-50%]"></img>
-        <img src={velkaRaportti} className="object-contain md:hidden block absolute h-[45%] bottom-[20%] left-[65%] translate-x-[-50%] z-[0]"></img>
         </div>
       </SlideShow>
       </div>
