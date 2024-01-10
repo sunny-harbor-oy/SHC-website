@@ -87,7 +87,7 @@ export default function NavBar() {
     <nav ref={navBarRef} id="navBar" className="fixed z-[11] h-[8vh] transition-all duration-[150ms] bg-[#14213D] flex justify-between w-screen px-[2vw] text-white text-center md:text-[1.75vh] font-poppins">
       <div className="flex">
         <Link className="my-auto hover:cursor-pointer" reloadDocument="true" to={"/"}><img src={logo} className="h-[7vh] my-auto"></img></Link>
-        <div ref={navItemsRef} className="z-[10] md:bg-transparent bg-[#14213D] transition-all duration-[250ms] md:grid grid-cols-4 gap-4 md:my-auto md:text-center md:font-light font-semibold text-left md:text-[1.75vh] text-[3vh] md:px-[3vw] px-[5vw] md:relative fixed md:top-auto top-[8vh] left-0 md:h-auto h-[0vh] md:w-auto w-screen overflow-hidden">
+        <div ref={navItemsRef} className="z-[10] md:bg-transparent bg-[#14213D] transition-all duration-[250ms] md:grid grid-cols-5 gap-4 md:my-auto md:text-center md:font-light font-semibold text-left md:text-[1.75vh] text-[3vh] md:px-[3vw] px-[5vw] md:relative fixed md:top-auto top-[8vh] left-0 md:h-auto h-[0vh] md:w-auto w-screen overflow-hidden">
           <Link to={"/price-estimate"} reloadDocument="true"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Kustannusarvio</h1></Link>
           <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
