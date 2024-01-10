@@ -13,7 +13,6 @@ export default function NavBar() {
 
   useEffect(() => {
     let navBar = navBarRef.current;
-    let isMobile = window.innerWidth < 768;
     let vhPx = window.innerHeight * 0.01;
     navItems = navItemsRef.current;
 
@@ -67,12 +66,14 @@ export default function NavBar() {
       vhPx = window.innerHeight * 0.01;
       document.body.style.overflow = "scroll";
       if (window.innerWidth < 768) {
+        console.log("mobile");
         isMobile = true;
         navBar.style.background = "#14213D";
       } else {
         isMobile = false;
       }
     };
+    onResize();
     window.addEventListener("resize", onResize);
   
     return () => {
@@ -91,6 +92,12 @@ export default function NavBar() {
           <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
+              console.log(isMobile);
+              if (window.innerWidth < 768) {
+                console.log("true");
+              } else {
+                console.log("false");
+              }
               if (isMobile) {
                 navItems.style.height = "0vh";
                 navItems.style.borderTop = "0px solid #FCA311";
