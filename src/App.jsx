@@ -7,6 +7,9 @@ import ContactPage from "./pages/contact.jsx";
 import PriceEstimation from "./pages/priceCalculator.jsx";
 import IlmoPage from "./pages/ilmo.jsx";
 
+import OkPage from "./pages/thanks.jsx";
+import FailedPage from "./pages/failed.jsx"
+
 import NavBar from "./elements/navBar.jsx";
 import SHCFooter from "./elements/shcFooter.jsx";
 //import AlertManager from "./elements/alertManager";
@@ -33,6 +36,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/ilmo" element={<IlmoPage />} />
         <Route path="*" element={<HomePage />} />
+        <Route path="/contact/ok" element={<OkPage/>}></Route>
+        <Route path="/contact/failed" element={<FailedPage/>}></Route>
       </Routes>
       <SHCFooter />
     </div>

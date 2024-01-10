@@ -25,12 +25,13 @@ export default function ContactPage() {
             phone,
             desc
         }
-
         emialjs.send(service_id, template_id, template_params, public_key)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
+            window.location = "/contact/ok"
         }, function(error) {
             console.log('FAILED...', error);
+            window.location = "/contact/failed"
         });
     }
 

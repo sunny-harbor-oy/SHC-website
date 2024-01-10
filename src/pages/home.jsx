@@ -251,6 +251,25 @@ export default function HomePage(language = "fi") {
         swipeTimer={250}
         viewPortClassNames="md:w-[90vw] w-[90vw] md:h-[40vw] h-[87vh] md:font-poppins font-oxanium mx-auto rounded-lg font-light"
       >
+        <div className="w-[90vw] md:h-[40vw] h-[87vh] relative bg-syke text-white overflow-hidden">
+          <img src={sykeImg} className="md:h-[11vh] max-md:to-zinc-100 object-contain md:py-7 md:relative max-md:absolute max-md:h-[8vh] max-md:top-[3vh] left-[50%] translate-x-[-55%]"></img>
+          <div className="md:grid grid-cols-2 space-x-10 md:px-[2vw] h-[27vw] hidden">
+          <div className="md:h-full my-auto translate-y-[-2.5vw]">
+          <h3 className="text-[1.5vw] font-semibold py-[1vw]">Tehokasta ja automatisoitua työnjakoa</h3>
+          <p className="text-[1.3vw] ">
+          Syke Kotipalvelut tarjoaa henkilökohtaista avustajapalvelua, ja OmaSyke on projekti, joka kehitettiin tukemaan heidän toimintaansa ohjelmiston avulla. Kehitimme ohjelmiston, joka yhdistää mobiili- ja web-alustan. Esimiehet hallinnoivat työkeikkoja, käyttäjiä ja raportteja helppokäyttöisellä ja monitoimisella admin-nettisivulla. <br/><br/>Työntekijät käyttävät android- ja iOS-yhteensopivaa mobiilisovellusta keikkojen lukemiseen, osallistumiseen ja raportointiin. Teknologiat React, TypeScript, Gin, Golang ja Flutter takaavat järjestelmän tehokkuuden ja saumattoman integraation. OmaSyke tehosti ja automatisoi Syke Kotihoitopalveluiden liiketoiminnan!
+          </p>
+          </div>
+          <div className="flex justify-center px-7 md:mt-[-2vw] w-full">
+          <img src={sykeLaptop} className="object-contain md:w-[35vw]"></img>
+          <img src={sykePhone} className="object-contain md:w-[15vw] md:mt-[-2vw] md:ml-[-13vw]"></img>
+          </div>
+          </div>
+          <div className="overflow-hidden absolute top-[15vh] h-[72%] w-full">
+          <img src={sykePhone} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[80vh] top-0"></img>
+          </div>
+          <img src={sykeLaptop} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[100vh] bottom-[-30vh]"></img>
+        </div>
         <div className="md:w-[90vw] w-[90vw] md:h-[40vw] h-[87vh] relative">
           <video
             src={moonBg}
@@ -271,25 +290,6 @@ export default function HomePage(language = "fi") {
           <img src={moonPhone} className="absolute md:right-[7vw] md:w-[22vw] h-[83vh] object-contain md:top-[50%] max-md:right-[50%] max-md:translate-x-[50%] bottom-[-10vh] md:translate-y-[-50%]"/>
           </div>
           <img src={moonLogo} className="object-contain absolute md:w-[4vw] w-[20vw] left-[50%] md:top-[1.5vh] top-[2vh] translate-x-[-50%]"></img>
-        </div>
-        <div className="w-[90vw] md:h-[40vw] h-[87vh] relative bg-syke text-white overflow-hidden">
-          <img src={sykeImg} className="md:h-[11vh] max-md:to-zinc-100 object-contain md:py-7 md:relative max-md:absolute max-md:h-[8vh] max-md:top-[3vh] left-[50%] translate-x-[-55%]"></img>
-          <div className="md:grid grid-cols-2 space-x-10 md:px-[2vw] h-[27vw] hidden">
-          <div className="md:h-full my-auto translate-y-[-2.5vw]">
-          <h3 className="text-[1.5vw] font-semibold py-[1vw]">Tehokasta ja automatisoitua työnjakoa</h3>
-          <p className="text-[1.3vw] ">
-          Syke Kotipalvelut tarjoaa henkilökohtaista avustajapalvelua, ja OmaSyke on projekti, joka kehitettiin tukemaan heidän toimintaansa ohjelmiston avulla. Kehitimme ohjelmiston, joka yhdistää mobiili- ja web-alustan. Esimiehet hallinnoivat työkeikkoja, käyttäjiä ja raportteja helppokäyttöisellä ja monitoimisella admin-nettisivulla. <br/><br/>Työntekijät käyttävät android- ja iOS-yhteensopivaa mobiilisovellusta keikkojen lukemiseen, osallistumiseen ja raportointiin. Teknologiat React, TypeScript, Gin, Golang ja Flutter takaavat järjestelmän tehokkuuden ja saumattoman integraation. OmaSyke tehosti ja automatisoi Syke Kotihoitopalveluiden liiketoiminnan!
-          </p>
-          </div>
-          <div className="flex justify-center px-7 md:mt-[-2vw] w-full">
-          <img src={sykeLaptop} className="object-contain md:w-[35vw]"></img>
-          <img src={sykePhone} className="object-contain md:w-[15vw] md:mt-[-2vw] md:ml-[-13vw]"></img>
-          </div>
-          </div>
-          <div className="overflow-hidden absolute top-[15vh] h-[72%] w-full">
-          <img src={sykePhone} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[80vh] top-0"></img>
-          </div>
-          <img src={sykeLaptop} className="object-contain absolute md:hidden left-[50%] translate-x-[-50%] h-[100vh] bottom-[-30vh]"></img>
         </div>
         <div className="relative w-[90vw] md:h-[40vw] h-[87vh] bg-velka overflow-hidden">
         <img src={velkaImg} className="md:h-[11vh] max-md:h-[10vh] max-md:absolute md:relative object-contain md:py-7 left-[50%] translate-x-[-50%] max-md:top-[4vh]"></img>
@@ -319,9 +319,9 @@ export default function HomePage(language = "fi") {
         <h2 ref={ilmoButton} className="max-md:hidden hover:cursor-pointer text-[1.8vw] font-semibold text-center px-[1vw] md:rounded-lg absolute bottom-[5%] left-[50%] translate-x-[-50%] z-[1]"><i className="fa fa-angle-right rotate-90"></i> Tuotteeseen <i className="fa fa-angle-right rotate-90"></i></h2>
       </div>
       <div className="h-[80vh] max-h-[900px] pt-[20vh] relative z-[0]">
-      <h1 className="sm:text-[3vw] text-[10vw] font-poppins font-semibold text-center">ILMO</h1>
+      <h1 className="md:text-[3vw] text-[10vw] font-poppins font-semibold text-center">ILMO</h1>
       <div className="md:block frostedglass-ilmo with-shadow md:w-[40vw] w-[80%] text-white mx-auto">
-      <h3 className="md:text-[1.5vw] text-[2vh] md:font-semibold py-[1vw] px-[2vw] w-full text-center">ILMO tekee työnteon sujuvaksi:<br></br>Hallitse, jaa ja seuraa tehtäviä helposti ja tehokkaasti organisaatiossasi!</h3>
+      <h3 className="md:text-[1.5vw] text-[4.4vw] font-semibold py-[1vw] px-[2vw] w-full text-center">ILMO tekee työnteon sujuvaksi:<br></br>Hallitse, jaa ja seuraa tehtäviä helposti ja tehokkaasti organisaatiossasi!</h3>
       </div>
       </div>
       <div className="px-[2vw] pt-[2vh] top-[80vh] w-full grid grid-cols-1 md:grid-cols-2">
