@@ -13,7 +13,7 @@ export default function BlogitPage() {
                     <img src={victorImg} className="w-full h-[50%] object-cover"/>
                     <div className="mt-[4%] px-[5%] w-full h-full">
                         <h2 className="text-secondary font-semibold text-left border-l-secondary border-l-[3px] pl-[3%] max-md:text-[140%] max-xl:text-[1.65vw] xl:text-[140%]">SHC tiimi: Victor Ocampo</h2>
-                        <p className="text-white mt-[3%] max-sm:text-[0.7rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.6rem] 2xl:text-[0.95rem]">Tutustu SHC:n teknologiajohtajaan Victor Ocampoon. Scratchistä C-kieleen ja shakkipelistä simulaattoreista. Hän on yksi Sunny Harbour Oy:n perustajista ja IT konkari.</p>
+                        <p className="text-white mt-[3%] max-sm:text-[0.7rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.6rem] 2xl:text-[0.95rem]">Tutustu SHC:n teknologiajohtajaan Victor Ocampoon. Scratchistä C-kieleen ja shakkipelistä simulaattoreihin. Hän on yksi Sunny Harbour Oy:n perustajista ja IT konkari.</p>
                         <div className="absolute bottom-[2%] left-0 px-[5%] flex justify-between w-full">
                         <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">Victor Ocampo</p>
                         <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">17.01.2024</p>                        
