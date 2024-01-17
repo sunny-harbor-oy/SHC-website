@@ -17,7 +17,7 @@ export default function SHC_Victor() {
             <DescWithImage kuvaTeksti='Fella pitämässä pussia avaruudessa.'>
                 <h1>Tarinani</h1>
                 <p>Olen ohjelmoinut jo lapsuudesta asti erilaisia ohjelmia ja olen aina ollut kiinnostunut teknologiasta. Ennen kun olin edes oli tavannut SHC:n muut perustajat, ohjelmoin Scratch ohjelmistolla erilaisia pelejä ja siitä lopulta hyppäsin koodaamaan C-kielellä shakkipeliä, erilaisia emulaattoreita, evoluutio simulaattoreita ja muita nörtti-hommia.</p>
-                <img className='max-md:mx-auto object-cover aspect-square h-0' src={victorImg} />
+                <img className='max-md:mx-auto md:my-auto object-cover aspect-square h-0' src={victorImg} />
                 <p>Kuvassa Victor Ocampo</p>
             </DescWithImage>
             <SubParagraph>
