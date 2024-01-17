@@ -132,7 +132,7 @@ export default function HomePage(language = "fi") {
             </h1>
             <h2 className="sm:w-[80vh] sm:text-h2-sm text-h2 sm:h-[20vh] h-[37vh] pt-[3vh] font-medium">
               Meidän vahvuutemme on kestävien ja kustannustehokkaiden IT-ratkaisujen luomisessa, jotka nostavat liiketoimintasi uudelle tasolle.
-              Yhteistyössämme voimme tehostaa toimintaasi ja auttaa sinua saavuttamaan ainutlaatuisen kilpailuedun markkinoilla.
+              Voimme tehostaa toimintaasi ja luoda ainutlaatuisen kilpailuedun markkinoilla.
             </h2>
             <div className="relative sm:mt-[10vh] mt-[5vh] ">
               <div className="absolute hidden z-[1] bg-secondary filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
