@@ -4,7 +4,7 @@ import SubParagraph from '../../../elements/blogit/subParagraph.jsx';
 import Title from '../../../elements/blogit/title.jsx';
 import Author from '../../../elements/blogit/author.jsx';
 
-import PlaceHolderImg from '../../../assets/founders/CEO.jpg';
+import PlaceHolderImg from '../../../assets/founders/victor.jpg';
 
 export default function BlogV1() {
     return (
