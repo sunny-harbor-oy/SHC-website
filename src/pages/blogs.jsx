@@ -9,7 +9,7 @@ export default function BlogitPage() {
             <h1 className="text-center pt-[4vh] text-[5vh] text-secondary font-semibold">Blogit</h1>
             <h2 className="text-center md:min-w-[600px] md:text-[1.3rem] md:w-[40%] mx-auto text-white text-[1]">Blogi tekstimme tarjoavat oivan mahdollisuuden tutustua teknologian maailmaan ja sen kiperiin kysymyksiin.</h2>
             <div className="grid min-h-[60vh] gap-20 md:gap-10 mt-[5vh] md:grid-cols-3 xl:grid-cols-4 md:px-[10vw]">
-                <Link to={"/blogs/shc_victor"} className="w-full h-[60vh] md:h-full relative bg-card2 md:aspect-[5/7] rounded-lg overflow-hidden hover:cursor-pointer">
+                <Link to={"/blogs/shc_victor"} reloadDocument="true" className="w-full h-[60vh] md:h-full relative bg-card2 md:aspect-[5/7] rounded-lg overflow-hidden hover:cursor-pointer">
                     <img src={victorImg} className="w-full h-[50%] object-cover"/>
                     <div className="mt-[4%] px-[5%] w-full h-full">
                         <h2 className="text-secondary font-semibold text-left border-l-secondary border-l-[3px] pl-[3%] max-md:text-[140%] max-xl:text-[1.65vw] xl:text-[140%]">SHC tiimi: Victor Ocampo</h2>
