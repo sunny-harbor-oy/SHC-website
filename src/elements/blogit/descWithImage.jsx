@@ -27,7 +27,7 @@ export default function DescWithImage({children, kuvaTeksti = ""}) {
         <div className="md:flex w-full py-[1vh]">
             <div ref={textRef} className="md:w-[60%]">
             <h2 className="text-black font-roboto max-md:font-semibold text-[1.6rem] md:text-[2rem]">{children[0] ? children[0].props.children : "Ei ole otsikkoa."}</h2>
-            <div className="text-justify">
+            <div className="md:text-justify">
             <p className="text-black font-roboto text-[1.1rem] md:text-[1.05rem]">{children[1] ? children[1].props.children : "Ei ole leipätekstiä."}</p>
             </div>
             </div>
