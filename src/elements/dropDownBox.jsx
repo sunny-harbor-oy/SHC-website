@@ -21,6 +21,7 @@ export default function DropDown({children, test}) {
             open = !open;
             box.current.style.height = open ? `auto` : `${height}px`;
             box.current.children[0].style.borderRadius = open ? `10px 10px 0px 0px` : `10px`;
+            box.current.children[1].style.hidden = open ? `hidden` : `visible`;
         });
 
         window.addEventListener("resize", updateHeight);
