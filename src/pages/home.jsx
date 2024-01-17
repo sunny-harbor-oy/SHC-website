@@ -180,7 +180,7 @@ export default function HomePage(language = "fi") {
         ref={ilmoDescription}
         className="absolute transition-all duration-[250ms] top-[100vh] h-0 w-screen bg-white"
       ></div>
-      <div className="w-screen py-[5vw] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
+      <div className="w-screen pb-[5vw] md:pb-[0vh] px-[10vw] pt-[13vh] md:pt-[16vh] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
         <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -239,12 +239,12 @@ export default function HomePage(language = "fi") {
           </h3>
         </div>
       </div>
-      <div className="bg-primary pb-[5vw]">
+      <div className="bg-primary pb-[5vw] pt-[10vh] md:pt-[17vh]">
       <h1 className="text-center md:text-[3vw] text-[9vw] font-semibold mx-auto md:mb-[2vw] mb-[10vw] text-secondary" id="customers">
           Löydä itsesi muiden joukosta!
       </h1>
       <SlideShow
-        delay={10 * 1000}
+        delay={20 * 1000}
         duration={200000}
         maxAfk={10}
         swipeThreshold={50}
@@ -310,7 +310,7 @@ export default function HomePage(language = "fi") {
         </div>
       </SlideShow>
       </div>
-      <h1 id="products" className="text-center md:text-[3vw] text-[9vw] pt-[7vh] font-semibold mx-auto md:mb-[2vw] mb-[10vw] text-secondary">
+      <h1 id="products" className="text-center md:text-[3vw] text-[9vw] pt-[15vh] md:pt-[13vh] font-semibold mx-auto md:mb-[2vw] mb-[10vw] text-secondary">
           Tuotteemme
       </h1>
       <div ref={ilmoContext} style={{transitionProperty: "all", transitionDuration: "250ms"}} className="transition-all md:max-w-[2500px] duration-200 bg-ilmoSecondaryColor relative md:px-[1vw] md:py-[1vw] md:w-[98vw] w-screen mx-auto md:rounded-lg text-white font-poppins overflow-hidden">
@@ -358,7 +358,7 @@ export default function HomePage(language = "fi") {
       <Link to={"/contact"} reloadDocument="true" className="text-center absolute left-[50%] translate-x-[-50%] justify-center font-poppins text-[1.5vw] pb-[1vh] font-bold">Kiinnostuitko? Ota yhteyttä!</Link>
       <div className="h-[5vh] w-full"></div>
       </div>
-      <div className="w-screen bg-primary font-poppins pt-[7vh] md:pt-[20vh]" id="team">
+      <div className="w-screen bg-primary font-poppins pt-[17vh] md:pt-[20vh]" id="team">
         <h1 className="md:text-[3vw] text-[9vw] left-0 font-semibold text-secondary text-center w-screen">
           Tiimimme
         </h1>
@@ -384,7 +384,7 @@ export default function HomePage(language = "fi") {
               Leon Gustafsson
             </h1>
             <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
-              Perustaja ja frontend kehittäjä
+              Frontend kehittäjä
             </h2>
           </div>
           <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">

@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function SHCFooter() {
+  useEffect(() => {
+    if (document.getElementById("blog")) {
+      document.getElementById("footer").classList.replace("bg-[#14213D]", "bg-gray-200");
+    }
+});
   return (
-    <div className="bg-[#14213D] w-screen md:pb-[3vw] sm:pt-[4vh] pt-[1vh]">
+    <div id="footer" className="bg-[#14213D] w-screen md:pb-[3vw] sm:pt-[4vh] pt-[1vh]">
       <div className="text-white relative bg-[#1b2843] py-[2vw] md:w-[80vh] w-screen mx-auto px-[3vw] font-poppins md:rounded-lg">
-      <h1 className="md:text-[3vh] text-[5vw] font-semibold w-full px-[2vw] text-center md:mb-[0.5vw] mb-[3vw] md:pt-0 pt-[2vw]">Sunny Harbor Consulting</h1>
+      <h1 className="md:text-[3vh] text-[5vw] font-semibold w-full px-[2vw] text-center md:mb-[0.5vw] mb-[3vw] md:pt-0 pt-[2vw]">Sunny Harbor</h1>
       <div className="md:w-[95%] w-[90%] mx-auto pb-[3vh]">
       <div className="md:flex block justify-center gap-[2vw] md:pb-[1vh] w-full mx-auto">
       <div className="flex my-auto md:pb-0 pb-[1vw]">
@@ -13,7 +19,7 @@ export default function SHCFooter() {
             <path fillRule="evenodd" d="M3 2.25a.75.75 0 000 1.5v16.5h-.75a.75.75 0 000 1.5H15v-18a.75.75 0 000-1.5H3zM6.75 19.5v-2.25a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v2.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75zM6 6.75A.75.75 0 016.75 6h.75a.75.75 0 010 1.5h-.75A.75.75 0 016 6.75zM6.75 9a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM6 12.75a.75.75 0 01.75-.75h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 6a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zm-.75 3.75A.75.75 0 0110.5 9h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 12a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM16.5 6.75v15h5.25a.75.75 0 000-1.5H21v-12a.75.75 0 000-1.5h-4.5zm1.5 4.5a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008zm.75 2.25a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75v-.008a.75.75 0 00-.75-.75h-.008zM18 17.25a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z" clipRule="evenodd" />
           </svg>
         </div>
-        <h2 className="mx-[0] my-auto text-md">Tulossa</h2>
+        <h2 className="mx-[0] my-auto text-md">3419146-6</h2>
       </div>
       <div className="flex my-auto md:pb-0 pb-[1vw]">
         <div className="my-auto md:mr-[0.5vw] mr-[2vw]">

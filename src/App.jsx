@@ -6,12 +6,18 @@ import HomePage from "./pages/home.jsx";
 import ContactPage from "./pages/contact.jsx";
 import PriceEstimation from "./pages/priceCalculator.jsx";
 import IlmoPage from "./pages/ilmo.jsx";
+import BlogsPage from "./pages/blogs.jsx";
 
 import OkPage from "./pages/thanks.jsx";
 import FailedPage from "./pages/failed.jsx"
 
 import NavBar from "./elements/navBar.jsx";
 import SHCFooter from "./elements/shcFooter.jsx";
+
+// Blogit
+import BlogV1 from "./pages/templates/blogs/blogv1.jsx";
+import SHC_Victor from "./pages/blogs/shc_victor.jsx";
+
 //import AlertManager from "./elements/alertManager";
 
 import { useEffect } from "react";
@@ -38,6 +44,11 @@ function App() {
         <Route path="*" element={<HomePage />} />
         <Route path="/contact/ok" element={<OkPage/>}></Route>
         <Route path="/contact/failed" element={<FailedPage/>}></Route>
+        <Route path="/blogs" element={<BlogsPage/>}></Route>
+
+        {/* BLOGIT */}
+        <Route path="/blogs/v1" element={<BlogV1/>}></Route>
+        <Route path="/blogs/shc_victor" element={<SHC_Victor/>}></Route>
       </Routes>
       <SHCFooter />
     </div>

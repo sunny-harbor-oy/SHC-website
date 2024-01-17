@@ -24,6 +24,7 @@ export default {
         lora: ["Lora"],
         oxanium: ["Oxanium"],
         poppins: ["Poppins"],
+        roboto: ["Roboto Slab"],
       },
       fontSize: {
         "h1": "7vh",
