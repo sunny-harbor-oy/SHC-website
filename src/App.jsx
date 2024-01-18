@@ -17,6 +17,7 @@ import SHCFooter from "./elements/shcFooter.jsx";
 // Blogit
 import BlogV1 from "./pages/templates/blogs/blogv1.jsx";
 import SHC_Victor from "./pages/blogs/shc_victor.jsx";
+import SHC_Sisu from "./pages/blogs/shc_sisu.jsx";
 
 //import AlertManager from "./elements/alertManager";
 
@@ -49,6 +50,7 @@ function App() {
         {/* BLOGIT */}
         <Route path="/blogs/v1" element={<BlogV1/>}></Route>
         <Route path="/blogs/shc_victor" element={<SHC_Victor/>}></Route>
+        <Route path="/blogs/shc_sisu" element={<SHC_Sisu/>}></Route>
       </Routes>
       <SHCFooter />
     </div>
