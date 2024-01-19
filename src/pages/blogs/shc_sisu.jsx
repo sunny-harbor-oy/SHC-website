@@ -10,7 +10,7 @@ import talkImg from "../../assets/sisublogtalk.jpeg"
 
 export default function SHC_Sisu() {
     return (
-        <div id='blog' className='bg-gray-200 pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen'>
+        <div id='blog' className='bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen'>
         <div className='w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white'>
             <Title>
                 <h1>SHC Tiimi: Sisu Eriksson</h1>

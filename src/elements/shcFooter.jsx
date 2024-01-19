@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 export default function SHCFooter() {
   useEffect(() => {
     if (document.getElementById("blog")) {
-      document.getElementById("footer").classList.replace("bg-[#14213D]", "bg-gray-200");
+      console.log("asda");
+      document.getElementById("footer").classList.replace("bg-[#14213D]", "bg-black");
     }
 });
   return (

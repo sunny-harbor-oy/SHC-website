@@ -3,7 +3,7 @@ import { useEffect } from "react"
 export default function Author({children}) {
     useEffect(() => {
         if (document.getElementById("blog")) {
-          document.getElementById("footer").classList.replace("bg-[#14213D]", "bg-gray-200");
+          document.getElementById("footer").classList.replace("bg-[#14213D]", "bg-white");
         }
     });
 

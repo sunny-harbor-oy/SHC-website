@@ -121,7 +121,7 @@ export default function HomePage(language = "fi") {
             loop
             muted
             playsInline
-            className="absolute w-screen 2xl:object-fill object-cover h-screen z-[0]"
+            className="absolute bg-black max-md:opacity-[0.7] w-screen 2xl:object-fill object-cover h-screen z-[0]"
           />
           <div className="px-[5vw] pb-[2vh] h-screen flex flex-col justify-center relative z-[2]">
             <h1 className="sm:text-h1-sm text-h1 leading-[8vh] sm:leading-[8vw] lg:leading-[7.2vh] xl:leading-[7.2vh]">
