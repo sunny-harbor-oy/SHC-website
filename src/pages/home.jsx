@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import background from "../assets/earth.mp4";
 
 // The squad
-import leonImg from "../assets/founders/leon.png";
+import leonImg from "../assets/founders/leon.jpg";
 import sisuImg from "../assets/founders/sisu.jpg";
-import victorImg from "../assets/founders/victor.jpg";
-import marcImg from "../assets/team/alexv2.png";
+import victorImg from "../assets/founders/victorv2.jpg";
+import marcImg from "../assets/team/alexv3.jpg";
 
 // Ilmo
 import ilmoImg from "../assets/Ilmo.png";
@@ -80,16 +80,16 @@ export default function HomePage(language = "fi") {
 
   useEffect(() => {
     updateMobile();
+/*
     ilmoUpdateHeight();
-
     ilmoButton.current.addEventListener("click", () => {
         ilmoOpen = !ilmoOpen;
         ilmoContext.current.style.height = ilmoOpen ? `auto` : `${ilmoHeight}px`;
         ilmoContext.current.children[0].style.borderRadius = isMobile ? '0px' : (ilmoOpen ? `10px 10px 0px 0px` : `10px`);
     });
-
+*/
     window.addEventListener("resize", () => {
-      ilmoUpdateHeight();
+      //ilmoUpdateHeight();
       updateMobile();
     });
 
@@ -106,6 +106,38 @@ export default function HomePage(language = "fi") {
 
   return (
     <div id="homeWrapper" className="w-screen overflow-x-hidden bg-primary">
+              <div className="relative w-screen h-screen font-semibold text-white font-poppins">
+          <video
+            src={background}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute bg-black max-md:opacity-[0.7] w-screen 2xl:object-fill object-cover h-screen z-[0]"
+          />
+          <div className="px-[5vw] pb-[2vh] h-screen flex flex-col justify-center relative z-[2]">
+            <h1 className="sm:text-h1-sm text-h1 leading-[8vh] sm:leading-[8vw] lg:leading-[7.2vh] xl:leading-[7.2vh]">
+              Ratkaisuja,
+              <br />
+              joihin luotat.
+              <br />
+            </h1>
+            <h2 className="sm:w-[100vh] sm:text-h2-sm text-h2 sm:h-[20vh] h-[37vh] pt-[3vh] font-medium">
+              Meidän vahvuutemme on kustannustehokkaiden IT-ratkaisujen luomisessa, jotka nostavat liiketoimintasi uudelle tasolle.
+              Voimme tehostaa toimintaasi ja luoda yrityksellesi ainutlaatuisen kilpailuedun.
+            </h2>
+            <div className="relative sm:mt-[10vh] mt-[5vh] ">
+              <div className="absolute hidden z-[1] bg-secondary filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
+              <Link
+                to={"./price-estimate"}
+                className="relative z-[3] sm:text-[2.43vh] text-[4.6vw] text-left py-[1.5vh] px-[2vh] bg-gray-800 rounded-lg"
+              >
+                Kustannusarvio sekunneissa! &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      {/*
       <SlideShow
         delay={8 * 1000}
         duration={200000}
@@ -144,7 +176,6 @@ export default function HomePage(language = "fi") {
               </Link>
             </div>
           </div>
-          {/* <div className="fixed z-[-1] filter top-0 left-0 h-screen w-screen bg-gradient-to-br from-[#14213D] via-[#14213D] to-[#000000]"></div> */}
         </div>
         <div className="bg-[#BFA28E] relative grid w-screen h-screen grid-cols-1 md:grid-cols-2 font-semibold text-white font-poppins">
           <div className="px-[5vw] pb-[2vh] h-screen flex flex-col md:justify-center md:pt-0 pt-[13vh] z-[1]">
@@ -155,18 +186,16 @@ export default function HomePage(language = "fi") {
               tehokkaan tavan hallita, jakaa ja seurata työtehtäviä.
             </h2>
             <div className="relative sm:mt-[10vh] sm:h-[2.43vh] h-[4.6vw] py-[1.5vh] px-[2vh] w-[1vw]"></div>
-            {/* <div className="relative sm:mt-[13vh]">
               <Link
                 onClick={ilmoFunc}
                 className="relative z-[3] text-[2.4vh] text-left py-[1.5vh] px-[2vh] bg-ilmoPrimaryColor rounded-lg"
               >
                 Katso tarkemmin! &rarr;
               </Link>
-            </div> */}
+            </div>
           </div>
-          {/*           <div className="ml-16 h-screen mt-[25vh] flex flex-col justify-center md:relative absolute z-[0]">
             <img src={ilmoImg} className="w-3/4 my-auto"/>
-          </div> */}
+          </div>
           <div className="h-screen md:relative absolute md:bottom-auto bottom-[-40vh] 2xl:left-0 2xl:right-auto lg:right-[-7vw] md:right-[-8vh] right-0 lg:ml-[1vw] md:top-[14vh] z-[0]">
             <img
               src={ilmoImg}
@@ -175,6 +204,7 @@ export default function HomePage(language = "fi") {
           </div>
         </div>
       </SlideShow>
+      */}
       <div
         ref={ilmoDescription}
         className="absolute transition-all duration-[250ms] top-[100vh] h-0 w-screen bg-white"
@@ -309,6 +339,7 @@ export default function HomePage(language = "fi") {
         </div>
       </SlideShow>
       </div>
+      {/*
       <h1 id="products" className="text-center md:text-[3vw] text-[9vw] pt-[15vh] md:pt-[13vh] font-semibold mx-auto md:mb-[2vw] mb-[10vw] text-secondary">
           Tuotteemme
       </h1>
@@ -357,6 +388,7 @@ export default function HomePage(language = "fi") {
       <Link to={"/contact"} reloadDocument="true" className="text-center absolute left-[50%] translate-x-[-50%] justify-center font-poppins text-[1.5vw] pb-[1vh] font-bold">Kiinnostuitko? Ota yhteyttä!</Link>
       <div className="h-[5vh] w-full"></div>
       </div>
+      */}
       <div className="w-screen bg-primary font-poppins pt-[17vh] md:pt-[20vh]" id="team">
         <h1 className="md:text-[3vw] text-[9vw] left-0 font-semibold text-secondary text-center w-screen">
           Tiimimme

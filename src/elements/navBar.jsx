@@ -115,7 +115,7 @@ export default function NavBar() {
               document.cookie = "scrollTo=true";
             }
           }}>Asiakkaat</h1>
-          <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
+{/*          <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("products").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
               if (isMobile) {
@@ -127,7 +127,7 @@ export default function NavBar() {
               window.location = "/#products";
               document.cookie = "scrollTo=true";
             }
-          }}>Tuotteemme</h1>
+          }}>Tuotteemme</h1>*/}
           <Link to={"/blogs"} reloadDocument="true"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Blogit</h1></Link>
           <Link to={"/contact"} reloadDocument="true" className="md:hidden"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Ota yhteyttä</h1></Link>
         </div>
