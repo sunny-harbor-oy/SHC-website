@@ -205,10 +205,10 @@ export default function HomePage(language = "fi") {
         </div>
       </SlideShow>
       */}
-      <div
+    {/*   <div
         ref={ilmoDescription}
         className="absolute transition-all duration-[250ms] top-[100vh] h-0 w-screen bg-white"
-      ></div>
+      ></div> */}
       <div className="w-screen pb-[5vw] md:pb-[0vh] px-[10vw] pt-[13vh] md:pt-[16vh] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
         <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
