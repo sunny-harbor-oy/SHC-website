@@ -40,7 +40,7 @@ export default function NavBar() {
         }
       }
     } else {
-      navBar.style.background = "#14213D";
+      navBar.style.background = "#111111";
       navBar.style.backdropFilter = "none"; 
     }
   
@@ -51,12 +51,12 @@ export default function NavBar() {
             //applyFrostedGlassEffect(); 
             navBar.style.background = "none";
           } else {
-            navBar.style.background = "#14213D";
+            navBar.style.background = "#111111";
             navBar.style.backdropFilter = "none"; 
           }
         }
       } else {
-        navBar.style.background = "#14213D";
+        navBar.style.background = "#111111";
         navBar.style.backdropFilter = "none"; 
       }
     };
@@ -68,7 +68,7 @@ export default function NavBar() {
       if (window.innerWidth < 768) {
         console.log("mobile");
         isMobile = true;
-        navBar.style.background = "#14213D";
+        navBar.style.background = "#111111";
       } else {
         isMobile = false;
       }
@@ -84,10 +84,10 @@ export default function NavBar() {
   
 
   return (
-    <nav ref={navBarRef} id="navBar" className="fixed z-[11] h-[8vh] transition-all duration-[150ms] bg-[#14213D] flex justify-between w-screen px-[2vw] text-white text-center md:text-[1.75vh] font-poppins">
+    <nav ref={navBarRef} id="navBar" className="fixed z-[11] h-[8vh] transition-all duration-[150ms] bg-primary flex justify-between w-screen px-[2vw] text-white text-center md:text-[1.75vh] font-poppins">
       <div className="flex">
         <Link className="my-auto md:min-w-[100px] hover:cursor-pointer" reloadDocument="true" to={"/"}><img src={logo} className="h-[7vh] my-auto"></img></Link>
-        <div ref={navItemsRef} className="z-[10] md:bg-transparent bg-[#14213D] transition-all duration-[250ms] md:grid grid-cols-6 gap-4 md:my-auto md:text-center md:font-light font-semibold text-left md:text-[1.75vh] text-[3vh] md:px-[3vw] px-[5vw] md:relative fixed md:top-auto top-[8vh] left-0 md:h-auto h-[0vh] md:w-auto w-screen overflow-hidden">
+        <div ref={navItemsRef} className="z-[10] md:bg-transparent bg-primary transition-all duration-[250ms] md:grid grid-cols-6 gap-4 md:my-auto md:text-center md:font-light font-semibold text-left md:text-[1.75vh] text-[3vh] md:px-[3vw] px-[5vw] md:relative fixed md:top-auto top-[8vh] left-0 md:h-auto h-[0vh] md:w-auto w-screen overflow-hidden">
           <Link to={"/price-estimate"} reloadDocument="true"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Kustannusarvio</h1></Link>
           <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
@@ -102,7 +102,7 @@ export default function NavBar() {
               document.cookie = "scrollTo=true";
             }
           }}>Tiimi</h1>
-          <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
+          {/* <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("customers").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
               if (isMobile) {
@@ -114,8 +114,8 @@ export default function NavBar() {
               window.location = "/#customers";
               document.cookie = "scrollTo=true";
             }
-          }}>Asiakkaat</h1>
-          <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
+          }}>Asiakkaat</h1> */}
+          {/* <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("products").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
               if (isMobile) {
@@ -127,7 +127,7 @@ export default function NavBar() {
               window.location = "/#products";
               document.cookie = "scrollTo=true";
             }
-          }}>Tuotteemme</h1>
+          }}>Tuotteemme</h1> */}
           <Link to={"/blogs"} reloadDocument="true"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Blogit</h1></Link>
           <Link to={"/contact"} reloadDocument="true" className="md:hidden"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Ota yhteyttä</h1></Link>
         </div>

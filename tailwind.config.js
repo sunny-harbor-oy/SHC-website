@@ -6,10 +6,10 @@ export default {
       colors: {
         velka: "#dededc",
         syke: "#263544", //"#ff5f5f",
-        primary: "#14213D",   // 14213D
+        primary: "#111111",   // 14213D
         secondary: "#FCA311", // FCA311
         card: "#E5E5E5",      // E5E5E5w
-        card2: "#1b2843",     // 1b2843
+        card2: "#1f1e1e",     // 1b2843
 
         ilmoPrimaryColor: "#464646", // Dark Gray
         ilmoSecondaryColor: "#BFA28E", // Beige

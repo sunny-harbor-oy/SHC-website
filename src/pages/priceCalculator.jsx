@@ -155,7 +155,7 @@ const FormElements = cardData.map((card) => {
             <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] sm:w-4/5 w-[90%] font-poppins my-0">{card.question}</h2>
             <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
                 {Object.entries(card.answers).map(([option, value]) => (
-                    <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-[#1b2843] rounded-lg hover:cursor-pointer select-none">
+                    <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
                         <h1 className="transition-all duration-200 font-poppins 2xl:text-[1.5vw] xl:text-[1.7vw] lg:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                             {option}
                         </h1>
@@ -536,7 +536,7 @@ useEffect(() => {
 });
 
 return (
-    <div className="bg-[#14213D] w-screen min-h-screen flex flex-col justify-center">
+    <div className="flex flex-col justify-center w-screen min-h-screen bg-primary">
     <div className="2xl:w-[75vw] sm::w-[80vw] w-[90%] xl:pt-32 lg:pt-[10vh] sm:pt-32 pt-24 mx-auto">
         <div className="2xl:1/2 md:w-2/3 mx-auto pt-[2vw]">
             <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 9 ? cardData.length : 9}, minmax(0, 1fr))`}} ref={barDiv}>
@@ -552,7 +552,7 @@ return (
             </div> 
             <div className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto lg:block hidden">
                 <div className="sm:w-[85%] w-[95%] mx-auto 2xl:px-[4vw] px-[2vw]">
-                <button onClick={() => changeCard(1)} className="xl:text-[1.3vw] text-[2vw] font-semibold bg-[#FCA311] text-[#1b2843] px-[1vw] py-[0.25vw] rounded-lg font-poppins">Seuraava <i className="fa fa-angle-right"></i></button>
+                <button onClick={() => changeCard(1)} className="xl:text-[1.3vw] text-[2vw] font-semibold bg-[#FCA311] text-white px-[1vw] py-[0.25vw] rounded-lg font-poppins">Seuraava <i className="fa fa-angle-right"></i></button>
                 </div>
             </div>
             <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">

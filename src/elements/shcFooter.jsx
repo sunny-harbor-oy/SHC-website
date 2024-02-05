@@ -9,8 +9,8 @@ export default function SHCFooter() {
     }
 });
   return (
-    <div id="footer" className="bg-[#14213D] w-screen md:pb-[3vw] sm:pt-[4vh] pt-[1vh]">
-      <div className="text-white relative bg-[#1b2843] py-[2vw] md:w-[80vh] w-screen mx-auto px-[3vw] font-poppins md:rounded-lg">
+    <div id="footer" className="bg-primary w-screen md:pb-[3vw] sm:pt-[4vh] pt-[1vh]">
+      <div className="text-white relative bg-card2 py-[2vw] md:w-[80vh] w-screen mx-auto px-[3vw] font-poppins md:rounded-lg">
       <h1 className="md:text-[3vh] text-[5vw] font-semibold w-full px-[2vw] text-center md:mb-[0.5vw] mb-[3vw] md:pt-0 pt-[2vw]">Sunny Harbor</h1>
       <div className="md:w-[95%] w-[90%] mx-auto pb-[3vh]">
       <div className="md:flex block justify-center gap-[2vw] md:pb-[1vh] w-full mx-auto">
@@ -97,7 +97,7 @@ export default function SHCFooter() {
         }}>Asiakkaat</p>
         <Link reloadDocument="true" to={"/contact"}><p className="hover:cursor-pointer text-[2vh] font-light w-full pt-[1vw] px-[2vw]">Ota yhteyttä</p></Link>
       </div>
-      <div className="flex-col flex overflow-hidden">
+      <div className="flex flex-col overflow-hidden">
         <a href="https://www.instagram.com/sunnyharborconsulting/" target="_blank" className="text-[2vh] font-light w-full pt-[1vw] px-[2vw]">Instagram</a>
         <a href="https://www.linkedin.com/company/sunny-harbor-consulting/" className="text-[2vh] font-light w-full pt-[1vw] px-[2vw]">LinkedIn</a>
         <a className="text-[2vh] font-light w-full pt-[1vw] px-[2vw]">Twitter</a>
