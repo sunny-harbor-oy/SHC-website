@@ -110,12 +110,12 @@ export default function NavBar() {
           className="z-[10] md:bg-transparent bg-primary transition-all duration-[250ms] md:grid grid-cols-6 gap-4 md:my-auto md:text-center md:font-light font-semibold text-left md:text-[1.75vh] text-[3vh] md:px-[3vw] px-[5vw] md:relative fixed md:top-auto top-[8vh] left-0 md:h-auto h-[0vh] md:w-auto w-screen overflow-hidden"
         >
           <Link to={"/price-estimate"} reloadDocument="true">
-            <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">
+            <h1 className="hover:cursor-pointer transition duration-500 hover:scale-110 hover:text-secondary hover:font-semibold md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">
               Kustannusarvio
             </h1>
           </Link>
           <h1
-            className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]"
+            className="hover:cursor-pointer transition duration-500 hover:scale-110 hover:text-secondary hover:font-semibold md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]"
             onClick={() => {
               if (window.location.pathname == "/") {
                 window.scrollTo(
@@ -164,7 +164,7 @@ export default function NavBar() {
             }
           }}>Tuotteemme</h1> */}
           <Link to={"/blogs"} reloadDocument="true">
-            <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">
+            <h1 className="hover:cursor-pointer transition duration-500 hover:scale-110 hover:text-secondary hover:font-semibold md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">
               Blogit
             </h1>
           </Link>
@@ -175,9 +175,9 @@ export default function NavBar() {
           </Link>
         </div>
       </div>
-      <div className="border-solid border-[#FFFFFF] border-2 w-[15vh] my-auto md:block hidden">
+      <div className="border-solid transition duration-500 hover:scale-110  hover:shadow-md hover:border-secondary  border-[#FFFFFF] border-2 w-[15vh] my-auto md:block hidden">
         <Link reloadDocument="true" to={"/contact"}>
-          <h1 className="text-[#FFFFFF] hover:font-extrabold font-semibold hover:cursor-pointer transition-all duration-[250ms] my-auto py-[0.5vw] w-full h-full">
+          <h1 className="text-[#FFFFFF] hover:text-secondary hover:font-extrabold font-semibold hover:cursor-pointer transition-all duration-[250ms] my-auto py-[0.5vw] w-full h-full">
             Ota yhteyttä!
           </h1>
         </Link>
