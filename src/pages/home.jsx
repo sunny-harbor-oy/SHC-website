@@ -23,7 +23,7 @@ export default function HomePage(language = "fi") {
       </div>
       <AboutUs />
       <div className="w-screen pb-[5vw] md:pb-[3vh] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
-        <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
+        <div className="transition duration-500 hover:scale-125 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -42,7 +42,7 @@ export default function HomePage(language = "fi") {
             Kustannustehokkaat ratkaisut
           </h3>
         </div>
-        <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
+        <div className="transition duration-500 hover:scale-125 hover:bg-ilmoPrimaryColor  shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -61,7 +61,7 @@ export default function HomePage(language = "fi") {
             Aktiivinen ja erehtymätön tuki
           </h3>
         </div>
-        <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
+        <div className="transition duration-500 hover:scale-125 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

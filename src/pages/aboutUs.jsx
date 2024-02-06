@@ -53,7 +53,7 @@ function AboutUs() {
             <div className="absolute hidden z-[1] bg-secondary filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
             <Link
               to={"./price-estimate"}
-              className="relative z-[3] sm:text-[2.43vh] text-[4.6vw] text-left py-[1.5vh] px-[2vh] bg-gray-800 rounded-lg"
+              className="relative z-[3] sm:text-[2.43vh] text-[4.6vw] text-left py-[1.5vh] px-[2vh] transform bg-card2 transition duration-500 hover:scale-225 hover:bg-secondary rounded-lg"
             >
               Kustannusarvio sekunneissa! &rarr;
             </Link>
