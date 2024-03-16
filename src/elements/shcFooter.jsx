@@ -38,12 +38,12 @@ export default function SHCFooter() {
           <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
           </svg>
         </div>
-        <h2 className="mx-[0] my-auto text-md">sunnyharborconsulting@gmail.com</h2>
+        <h2 className="mx-[0] my-auto text-md">sisu@sunnyharbor.fi</h2>
       </div>
       </div>
       <div className="md:flex md:justify-center hidden grid-cols-2 md:w-full w-[80%] mx-auto text-center gap-[1vw]">
-        <Link to={"/price-estimate"} reloadDocument="true">Kustannusarvio</Link>
-        <p className="hover:cursor-pointer" onClick={() => {
+        <Link to={"/price-estimate"} reloadDocument="true" className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary">Kustannusarvio</Link>
+        <p className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop);
             } else {
@@ -51,7 +51,7 @@ export default function SHCFooter() {
               document.cookie = "scrollTo=true";
             }
         }}>Tiimi</p>
-        <p className="hover:cursor-pointer" onClick={() => {
+        <p className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("customers").offsetTop);
             } else {
@@ -59,7 +59,7 @@ export default function SHCFooter() {
               document.cookie = "scrollTo=true";
             }
         }}>Asiakkaat</p>
-        <Link to={"/contact"} reloadDocument="true">Ota yhteyttä</Link>
+        <Link to={"/contact"} reloadDocument="true" className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary">Ota yhteyttä</Link>
       </div>
     </div>
     </div>
