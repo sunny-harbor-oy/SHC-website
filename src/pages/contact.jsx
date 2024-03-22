@@ -48,17 +48,17 @@ export default function ContactPage() {
   return (
     <div className="relative w-screen z-[0] bg-primary font-poppins">
       <div className="md:pt-[16vh] pt-[12vh] w-[90vw] mx-auto">
-        <h1 className="text-[#FCA311] md:text-[5vh] text-[7vw] font-semibold">
+        <h1 className="text-[#FCA311] md:text-3xl text-[7vw] font-semibold">
           Ota yhteyttä!
         </h1>
-        <h2 className="text-white md:text-[3vh] text-[4.5vw] font-light pb-[6vh] md:w-[90vh] w-[80vw]">
+        <h2 className="text-white md:text-xl text-[4.5vw] font-light pb-[6vh] md:w-[90vh] w-[80vw]">
           Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee
           kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!
         </h2>
       </div>
       <div className="md:grid md:grid-cols-2 lg:w-[90vw] md:w-[95vw] w-[80vw] mx-auto md:pb-[20vh] pb-[5vh]">
         <div className="md:border-r-[4px] border-[#FCA311] md:min-w-[400px] h-full overflow-hidden md:px-[2vw] md:w-full">
-          <h2 className="md:text-[1.8vw] text-[5.5vw] text-[#FCA311] pb-[1vh]">
+          <h2 className="md:text-lg text-[5.5vw] text-[#FCA311] pb-1">
             Nimi
           </h2>
           <input
@@ -66,20 +66,20 @@ export default function ContactPage() {
             for="name"
             type="text"
             placeholder="Nimi"
-            className="bg-[#E5E5E5] px-[1vw] w-[90%] h-[5vh] py-[1vw] text-[#14213D] mb-[3vh]"
+            className="bg-[#E5E5E5] w-[90%] p-3 text-[#14213D] mb-[1.5vh]"
           ></input>
-          <h2 className="md:text-[1.8vw] text-[5.5vw] text-[#FCA311] pb-[1vh]">
+          <h2 className="md:text-lg text-[5.5vw] text-[#FCA311] pb-1">
             Sähköposti
           </h2>
           <input
             ref={emailRef}
             type="text"
             placeholder="Sähköposti"
-            className="bg-[#E5E5E5] px-[1vw] w-[90%] h-[5vh] py-[1vw] text-[#14213D] mb-[3vh]"
+            className="bg-[#E5E5E5] w-[90%] p-3 text-[#14213D] mb-[1.5vh]"
           ></input>
           <h2
             for="email"
-            className="md:text-[1.8vw] text-[5.5vw] text-[#FCA311] pb-[1vh]"
+            className="md:text-lg text-[5.5vw] text-[#FCA311] pb-1"
           >
             Puhelinnumero
           </h2>
@@ -87,21 +87,21 @@ export default function ContactPage() {
             ref={phoneRef}
             type="text"
             placeholder="Puhelinnumero"
-            className="bg-[#E5E5E5] px-[1vw] w-[90%] h-[5vh] py-[1vw] text-[#14213D] mb-[3vh]"
+            className="bg-[#E5E5E5] w-[90%] p-3 text-[#14213D] mb-[1.5vh]"
           ></input>
-          <h2 className="md:text-[1.8vw] text-[5.5vw] text-[#FCA311] md:pb-[0vh] pb-[0.3vh] md:leading-[1.8vw] leading-[5vw]">
+          <h2 className="md:text-lg text-[5.5vw] text-[#FCA311] pb-1">
             Kuvaus
           </h2>
-          <p className="md:text-[1.2vw] md:w-auto w-[70%] text-[4vw] md:leading-normal leading-[4.2vw] text-white pb-[1.5vh] font-light]">
+          <p className="md:text-base md:w-auto w-[70%] text-[4vw] md:leading-normal leading-[4.2vw] text-white font-light mb-2 md:mb-0">
             Kuvaile yksityiskohtaisesti tarvettasi.
           </p>
           <textarea
             ref={descRef}
-            className="bg-[#E5E5E5] px-[1vw] w-[90%] h-[20vh] py-[1vw] text-[#14213D] mb-[3vh]"
+            className="bg-[#E5E5E5] p-2 w-[90%] h-[20vh] text-[#14213D] mb-[3vh]"
           ></textarea>
           <button
             ref={btnRef}
-            className="bg-[#FCA311] md:w-[12vw] md:px-[1vw] px-[2.5vw] md:py-[0.5vw] py-[1vw] md:text-[1.8vw] text-[5vw] text-white rounded-lg"
+            className=" bg-card2 md:w-[8vw] md:px-[1vw] px-[2.5vw] md:py-[0.5vw] py-[1vw] md:text-lg text-[5vw] text-white rounded-lg hover:cursor-pointer transition-all duration-[500ms] hover:scale-110 hover:bg-[#FCA311] mb-5"
           >
             Lähetä <i className="fa fa-angle-right"></i>
           </button>
@@ -114,7 +114,7 @@ export default function ContactPage() {
           >
             <h1
               className="relative
-                text-[#FCA311] text-[4vw] font-semibold
+                text-[#FCA311] text-5xl font-semibold
                 "
             >
               Kustannusarvio
@@ -126,7 +126,7 @@ export default function ContactPage() {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="#FCA311"
-                className="z-[-1] absolute top-[4.75vw] right-[3vw] w-[8vw] h-[8vw]"
+                className="z-[-1] absolute top-[2.8vw] right-[15vw] w-[2vw] h-[2vw]"
               >
                 <path
                   strokeLinecap="round"
