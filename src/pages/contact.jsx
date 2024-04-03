@@ -126,7 +126,7 @@ export default function ContactPage() {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="#FCA311"
-                className="z-[-1] absolute top-[2.8vw] right-[15vw] w-[2vw] h-[2vw]"
+                className="z-[-1] absolute top-[2.8vw] right-[30vw] w-[2vw] h-[2vw]"
               >
                 <path
                   strokeLinecap="round"
