@@ -53,9 +53,9 @@ export default function SHCFooter() {
         }}>Tiimi</p>
         <p className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary" onClick={() => {
             if (window.location.pathname == "/") {
-              window.scrollTo(0, document.getElementById("customers").offsetTop);
+              window.scrollTo(0, document.getElementById("homeWrapper").offsetTop);
             } else {
-              window.location = "/#customers";
+              window.location = "/#homeWrapper";
               document.cookie = "scrollTo=true";
             }
         }}>Asiakkaat</p>

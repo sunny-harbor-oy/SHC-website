@@ -35,7 +35,7 @@ function App() {
   }, [])
 
   return (
-    <div className="overflow-x-hidden w-screen">
+    <div className="overflow-x-hidden">
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />

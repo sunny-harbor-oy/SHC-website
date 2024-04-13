@@ -73,7 +73,7 @@ export default function NavBar() {
 
     const onResize = () => {
       vhPx = window.innerHeight * 0.01;
-      document.body.style.overflow = "scroll";
+      /* document.body.style.overflow = "scroll"; */ //this causes the overflow on ubuntu etc
       if (window.innerWidth < 768) {
         console.log("mobile");
         isMobile = true;
@@ -137,37 +137,11 @@ export default function NavBar() {
           >
             Tiimi
           </h1>
-          {/* <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
-            if (window.location.pathname == "/") {
-              window.scrollTo(0, document.getElementById("customers").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
-              if (isMobile) {
-                navItems.style.height = "0vh";
-                navItems.style.borderTop = "0px solid #FCA311";
-                document.body.style.overflow = "scroll"
-              }
-            } else {
-              window.location = "/#customers";
-              document.cookie = "scrollTo=true";
-            }
-          }}>Asiakkaat</h1> */}
-          {/* <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
-            if (window.location.pathname == "/") {
-              window.scrollTo(0, document.getElementById("products").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
-              if (isMobile) {
-                navItems.style.height = "0vh";
-                navItems.style.borderTop = "0px solid #FCA311";
-                document.body.style.overflow = "scroll"
-              }
-            } else {
-              window.location = "/#products";
-              document.cookie = "scrollTo=true";
-            }
-          }}>Tuotteemme</h1> */}
-          <Link to={"/blogs"} reloadDocument="true">
+          {/* <Link to={"/blogs"} reloadDocument="true">
             <h1 className="hover:cursor-pointer transition duration-500 hover:scale-110 hover:text-secondary hover:font-semibold md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">
               Blogit
             </h1>
-          </Link>
+          </Link> */}
           <Link to={"/contact"} reloadDocument="true" className="md:hidden">
             <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">
               Ota yhteyttä

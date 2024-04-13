@@ -121,8 +121,8 @@ export default function HomePage(language = "fi") {
             <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
               Victor Ocampo
             </h1>
-            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
-              Teknologiajohtaja ja fullstack kehittäjä
+            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 b-[3vw] pb-[3vw]">
+              Teknologiajohtaja ja backend kehittäjä
             </h2>
           </div>
           <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
