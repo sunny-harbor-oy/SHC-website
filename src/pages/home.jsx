@@ -3,10 +3,10 @@ import backgroundForMobile from "../assets/MobileVideo.mp4";
 import AboutUs from "../pages/aboutUs.jsx";
 
 // The squad
-import leonImg from "../assets/founders/leon.png";
+import leonImg from "../assets/founders/leon.jpg";
 import sisuImg from "../assets/founders/sisu.jpg";
-import victorImg from "../assets/founders/victor.jpg";
-import marcImg from "../assets/team/alexv2.png";
+import victorImg from "../assets/founders/victorv2.jpg";
+import marcImg from "../assets/team/alexv3.jpg";
 
 export default function HomePage(language = "fi") {
   return (
@@ -23,7 +23,7 @@ export default function HomePage(language = "fi") {
       </div>
       <AboutUs />
       <div className="w-screen pb-[5vw] md:pb-[3vh] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
-        <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
+        <div className="transition duration-500 hover:scale-110 md:hover:scale-125 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -42,7 +42,7 @@ export default function HomePage(language = "fi") {
             Kustannustehokkaat ratkaisut
           </h3>
         </div>
-        <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
+        <div className="transition duration-500 hover:scale-110 md:hover:scale-125 hover:bg-ilmoPrimaryColor  shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -61,7 +61,7 @@ export default function HomePage(language = "fi") {
             Aktiivinen ja erehtymätön tuki
           </h3>
         </div>
-        <div className="shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
+        <div className="transition duration-500 hover:scale-110 md:hover:scale-125 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -81,7 +81,7 @@ export default function HomePage(language = "fi") {
           </h3>
         </div>
       </div>
-      <div
+      {/* <div
         className="w-screen bg-primary font-poppins pt-[17vh] md:pt-[20vh]"
         id="team"
       >
@@ -121,8 +121,8 @@ export default function HomePage(language = "fi") {
             <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
               Victor Ocampo
             </h1>
-            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
-              Teknologiajohtaja ja fullstack kehittäjä
+            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 b-[3vw] pb-[3vw]">
+              Teknologiajohtaja ja backend kehittäjä
             </h2>
           </div>
           <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
@@ -138,7 +138,7 @@ export default function HomePage(language = "fi") {
             </h2>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
