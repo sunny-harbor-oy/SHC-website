@@ -47,10 +47,9 @@ function AboutUs() {
           </h1> */}
         
 <h2 className="sm:w-[75vh] sm:text-h2-sm mb-10 md:mb-5 text-h2 sm:h-[20vh] h-[37vh] pt-[3vh] font-medium">
-            Meidän vahvuutemme on kustannustehokkaiden IT-ratkaisujen
-            luomisessa, jotka nostavat liiketoimintasi uudelle tasolle. Voimme
+            Olemme luotettavin valinta IT-ratkaisuissasi, jotka vievät liiketoimintasi seuraavalle tasolle. Voimme
             tehostaa toimintaasi ja luoda yrityksellesi ainutlaatuisen
-            kilpailuedun.
+            kilpailuedun!
           </h2> 
           <div className="relative sm:mt-[20vh] mt-[5vh] transition hover:cursor-pointer duration-500 hover:scale-105 hover:text-ilmoCardColor hover:font-semibold ">
             <div className="absolute hidden z-[1] bg-secondary filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
