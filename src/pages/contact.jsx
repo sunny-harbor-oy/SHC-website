@@ -37,6 +37,16 @@ export default function ContactPage() {
     );
   };
 
+  function getCookie(name) {
+    const priceCalculatorCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('priceCalculator='));
+
+    if (priceCalculatorCookie) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   useEffect(() => {
     btnRef.current.addEventListener("click", send);
 
@@ -47,17 +57,17 @@ export default function ContactPage() {
 
   return (
     <div className="relative w-screen z-[0] bg-primary font-poppins">
-      <div className="md:pt-[16vh] pt-[12vh] w-[90vw] mx-auto">
+      <div className="md:pt-[16vh] pt-[12vh] w-[53vw] mx-auto">
         <h1 className="text-[#FCA311] md:text-3xl text-[7vw] font-semibold">
           Ota yhteyttä!
         </h1>
-        <h2 className="text-white md:text-xl text-[4.5vw] font-light pb-[6vh] md:w-[90vh] w-[80vw]">
+        <h2 className="text-white md:text-xl text-[4.5vw] font-light pb-[6vh] md:w-[70%] w-[80vw]">
           Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee
           kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!
         </h2>
       </div>
-      <div className="md:grid md:grid-cols-2 lg:w-[90vw] md:w-[95vw] w-[80vw] mx-auto md:pb-[20vh] pb-[5vh]">
-        <div className="md:border-r-[4px] border-[#FCA311] md:min-w-[400px] h-full overflow-hidden md:px-[2vw] md:w-full">
+      <div className="lg:w-[90vw] md:w-[60vw] w-[80vw] mx-auto md:pb-[20vh] pb-[5vh]">
+        <div className="md:min-w-[400px] h-full mx-auto overflow-hidden md:px-[2vw] md:w-[60%]">
           <h2 className="md:text-lg text-[5.5vw] text-[#FCA311] pb-1">
             Nimi
           </h2>
@@ -97,8 +107,22 @@ export default function ContactPage() {
           </p>
           <textarea
             ref={descRef}
-            className="bg-[#E5E5E5] p-2 w-[90%] h-[20vh] text-[#14213D] mb-[3vh]"
+            className="bg-[#E5E5E5] p-2 w-[90%] h-[20vh] text-[#14213D] mb-[1.5vh]"
           ></textarea>
+          <div className="mb-[5vh]">
+          <h2 className="md:text-lg text-[5.5vw] text-[#FCA311] pb-1">
+            Korjasuvelkalaskuri syöte:
+          </h2>
+          {
+            getCookie('priceCalculator') ?          
+          <p className="md:text-base md:w-auto w-[70%] text-[4vw] md:leading-normal leading-[4.2vw] text-green-400 font-semibold mb-2 md:mb-0">
+            Syöte saatavilla!
+          </p> :           
+          <p className="md:text-base md:w-auto w-[70%] text-[4vw] md:leading-normal leading-[4.2vw] text-white font-light mb-2 md:mb-0">
+            p2
+          </p>
+          }
+          </div>
           <button
             ref={btnRef}
             className=" bg-card2 md:w-[8vw] md:px-[1vw] px-[2.5vw] md:py-[0.5vw] py-[1vw] md:text-lg text-[5vw] text-white rounded-lg hover:cursor-pointer transition-all duration-[500ms] hover:scale-110 hover:bg-[#FCA311] mb-5"
@@ -106,7 +130,7 @@ export default function ContactPage() {
             Lähetä <i className="fa fa-angle-right"></i>
           </button>
         </div>
-        <div className="md:flex hidden flex-col justify-center items-center border-l-[0px] border-[#FCA311] md:h-[90%] overflow-hidden px-[2vw] w-full hover:cursor-pointer">
+        {/* <div className="md:flex hidden flex-col justify-center items-center border-l-[0px] border-[#FCA311] md:h-[90%] overflow-hidden px-[2vw] w-full hover:cursor-pointer">
           <Link
             to={"/price-estimate"}
             reloadDocument="true"
@@ -136,7 +160,7 @@ export default function ContactPage() {
               </svg>
             </h1>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
