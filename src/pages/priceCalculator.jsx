@@ -149,7 +149,7 @@ let kotisivutData = [
         },
     },
     {
-        title: "Blogi tai järjestelmä",
+        title: "Järjestelmät",
         question: "Onko sivuilla tarve blogisysteemille tai muille samankaltaisille järjestelmille?",
         answers: {
             "Blogi järjestelmälle on tarvetta": { cost: 0.5 },
@@ -166,8 +166,8 @@ let kotisivutData = [
         },
     },
     {
-        title: "Käyttöehdot ja cookie policy",
-        question: "Onko tarvetta sille, että kirjoitamme *cookie policy*:n, jne?",
+        title: "Käyttöehdot ja muu",
+        question: "Onko tarvetta sille, että kirjoitamme eväsehdät, jne?",
         answers: {
             "Kyllä": { cost: 0.2 },
             "Ei": { cost: 0 },
@@ -194,7 +194,7 @@ let verkkokauppaData = [
         }
     },
     {
-        title: "Digitaalinen vai fyysinen tuote",
+        title: "Tuotteet",
         question: "Onko kyseessä digitaalinen vai fyysinen tuote?",
         answers: {
             "Digitaalinen": {cost: 0},
@@ -219,7 +219,7 @@ let verkkokauppaData = [
         }
     },
     {
-        title: "Tuotteiden tiedot",
+        title: "Integraatio",
         question: "Tuleeko tuotteiden tiedot toisesta verkkopalvelusta?",
         answers: {
             "Ei": {cost: 0},
@@ -252,7 +252,7 @@ let verkkokauppaData = [
         }
     },
     {
-        title: "Myytävien tuotteiden muuttuvuus",
+        title: "Tuotteiden hallinnointi",
         question: "Pysyvätkö myytävät tuotteet/palvelut samoina?",
         answers: {
             "Ei, minun pitää pystyä muuttamaan niitä helposti": {cost: 0.1},
@@ -338,7 +338,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Vaatiiko sovellus seuraavia ominaisuuksia",
+        title: "Ominaisuudet",
         question: "Vaatiiko sovellus seuraavia ominaisuuksia?",
         answers: {
             "Kartan käyttö": { cost: 1 },
@@ -348,9 +348,12 @@ let mobiilisovellusData = [
             "Integraatio sosiaalisen median alustan kanssa": { cost: 1 },
             "Tarkka analytiikka sovelluksen käytöstä": { cost: 4 },
         },
+        settings: {
+            multipleChoice: true,
+        },
     },
     {
-        title: "Tarve käyttäjille / sisäänkirjautumiselle?",
+        title: "Käyttäjät",
         question: "Onko tarve käyttäjille / sisäänkirjautumiselle?",
         answers: {
             "Ei": { cost: 0 },
@@ -358,7 +361,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Vaatiiko sovellus sovellusta hallitsevan nettisivun (hallintapaneelin)?",
+        title: "Hallintapaneeli",
         question: "Vaatiiko sovellus sovellusta hallitsevan nettisivun (hallintapaneelin)?",
         answers: {
             "Ei": { coefficient: 1 },
@@ -366,7 +369,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Tarvitseeko sovellus ilmoituksia?",
+        title: "Ilmoitukset",
         question: "Tarvitseeko sovellus ilmoituksia?",
         answers: {
             "Ei": { cost: 0 },
@@ -374,7 +377,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Vaatiiko sovellus maksujärjestelmää?",
+        title: "Maksujärjestelmä",
         question: "Vaatiiko sovellus maksujärjestelmää?",
         answers: {
             "Ei": { cost: 0 },
@@ -382,7 +385,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Onko sovellus yrityksen sisäiseen käyttöön vai julkiseen käyttöön?",
+        title: "Käyttö",
         question: "Onko sovellus yrityksen sisäiseen käyttöön vai julkiseen käyttöön?",
         answers: {
             "Sisäiseen": { cost: 0 },
@@ -390,7 +393,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Onko sovellus monikielinen?",
+        title: "Kielisyys",
         question: "Onko sovellus monikielinen?",
         answers: {
             "Ei": { cost: 0 },
@@ -398,7 +401,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Tarvitseeko sovellus viestintä/chat -ominaisuuden?",
+        title: "Viestintä",
         question: "Tarvitseeko sovellus viestintä/chat -ominaisuuden?",
         answers: {
             "Ei": { cost: 0 },
@@ -406,7 +409,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Mihin alustoihin tämä julkaistaan?",
+        title: "Alustat",
         question: "Mihin alustoihin tämä julkaistaan?",
         answers: {
             "iOS": { cost: 0.2 },
@@ -415,7 +418,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Vaatiiko sovellus identtisen nettisivun (WebAppin) mobiilisovelluksen rinnalle?",
+        title: "Identtinen nettisivu",
         question: "Vaatiiko sovellus identtisen nettisivun (WebAppin) mobiilisovelluksen rinnalle?",
         answers: {
             "Ei": { insta_coef: 1 },
@@ -423,7 +426,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Onko tarvetta sille, että kirjoitamme käyttöehdot, jne?",
+        title: "Käyttöehdot",
         question: "Onko tarvetta sille, että kirjoitamme käyttöehdot, jne?",
         answers: {
             "Ei": { cost: 0 },
@@ -431,7 +434,7 @@ let mobiilisovellusData = [
         },
     },
     {
-        title: "Mikä on projektin aikataulu?",
+        title: "Aikataulu",
         question: "Mikä on projektin aikataulu?",
         answers: {
             "2-3 kuukautta": { coefficient: 2 },
@@ -451,7 +454,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Vaatiiko sovellus seuraavia ominaisuuksia",
+        title: "Ominaisuudet",
         question: "Vaatiiko sovellus seuraavia ominaisuuksia?",
         answers: {
             "Kartan käyttö": { cost: 1 },
@@ -463,7 +466,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Tarve käyttäjille / sisäänkirjautumiselle?",
+        title: "Käyttäjät",
         question: "Onko tarve käyttäjille / sisäänkirjautumiselle?",
         answers: {
             "Ei": { cost: 0 },
@@ -471,7 +474,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Vaatiiko sovellus sovellusta hallitsevan nettisivun (hallintapaneelin)?",
+        title: "Hallintapaneeli",
         question: "Vaatiiko sovellus sovellusta hallitsevan nettisivun (hallintapaneelin)?",
         answers: {
             "Ei": { coefficient: 1 },
@@ -479,7 +482,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Tarvitseeko sovellus ilmoituksia?",
+        title: "Ilmoitukset",
         question: "Tarvitseeko sovellus ilmoituksia?",
         answers: {
             "Ei": { cost: 0 },
@@ -487,7 +490,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Vaatiiko sovellus maksujärjestelmää?",
+        title: "Maksujärjestelmä",
         question: "Vaatiiko sovellus maksujärjestelmää?",
         answers: {
             "Ei": { cost: 0 },
@@ -495,7 +498,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Onko sovellus yrityksen sisäiseen käyttöön vai julkiseen käyttöön?",
+        title: "Käyttö",
         question: "Onko sovellus yrityksen sisäiseen käyttöön vai julkiseen käyttöön?",
         answers: {
             "Sisäiseen": { cost: 0 },
@@ -503,7 +506,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Onko sovellus monikielinen?",
+        title: "Kielisyys",
         question: "Onko sovellus monikielinen?",
         answers: {
             "Ei": { cost: 0 },
@@ -511,7 +514,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Tarvitseeko sovellus viestintä/chat -ominaisuuden?",
+        title: "Viestintä",
         question: "Tarvitseeko sovellus viestintä/chat -ominaisuuden?",
         answers: {
             "Ei": { cost: 0 },
@@ -519,7 +522,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Mihin alustoihin tämä julkaistaan?",
+        title: "Alustat",
         question: "Mihin alustoihin tämä julkaistaan?",
         answers: {
             "Kyseessä on ladattava sovellu": { coefficient: 1.2 },
@@ -528,7 +531,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Vaatiiko sovellus identtisen nettisivun (WebAppin) mobiilisovelluksen rinnalle?",
+        title: "Identtinen nettisivu",
         question: "Vaatiiko sovellus identtisen nettisivun (WebAppin) mobiilisovelluksen rinnalle?",
         answers: {
             "Ei": { insta_coef: 1 },
@@ -536,7 +539,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Onko tarvetta sille, että kirjoitamme käyttöehdot, jne?",
+        title: "Käyttöehdot",
         question: "Onko tarvetta sille, että kirjoitamme käyttöehdot, jne?",
         answers: {
             "Ei": { cost: 0 },
@@ -544,7 +547,7 @@ let tietokonesovellusData = [
         },
     },
     {
-        title: "Mikä on projektin aikataulu?",
+        title: "Aikataulu",
         question: "Mikä on projektin aikataulu?",
         answers: {
             "2-3 kuukautta": { coefficient: 2 },
@@ -582,7 +585,7 @@ let tietokonesovellusData = [
 
 let tekoalyData = [
     {
-        title: "Mille alustalle tekoälyohjelma pitää kehittää?",
+        title: "Alustat",
         question: "Mille alustalle tekoälyohjelma pitää kehittää?",
         answers: {
             "Mobiili": { cost: 10 },
@@ -592,7 +595,7 @@ let tekoalyData = [
         },
     },
     {
-        title: "Mihin tarkoituksiin tekoäly tarvitaan?",
+        title: "Tarkoitus",
         question: "Mihin tarkoituksiin tekoäly tarvitaan?",
         answers: {
             "Asiakaspalvelu": { cost: 1 },
@@ -605,9 +608,12 @@ let tekoalyData = [
             "Laitteiston hallinnointi (esim. Led valot tai tehdas laitteisto)": { cost: 4 },
             "Äänen / musiikin tuottaminen": { cost: 10 },
         },
+        settings: {
+            multipleChoice: true,
+        }
     },
     {
-        title: "Pitääkö tekoälyn pystyä lukea internettiä?",
+        title: "Internetti",
         question: "Pitääkö tekoälyn pystyä lukea internettiä?",
         answers: {
             "Kyllä": { cost: 10 },
@@ -615,7 +621,7 @@ let tekoalyData = [
         },
     },
     {
-        title: "Mikä on projektin aikataulu?",
+        title: "Aikataulu",
         question: "Mikä on projektin aikataulu?",
         answers: {
             "2-3 kk": { coefficient: 2 },
