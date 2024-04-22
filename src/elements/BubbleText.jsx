@@ -43,7 +43,7 @@ export default function BubbleText() {
     }, []);
   
     return (
-      <h2 className="hover-text text-start text-5xl font-semibold text-white">
+      <h2 className="text-4xl font-bold text-white md:text-5xl hover-text text-start">
         <Text>Ratkaisuja, joihin luotat.</Text>
       </h2>
     );

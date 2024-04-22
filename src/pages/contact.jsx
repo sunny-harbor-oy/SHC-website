@@ -101,7 +101,7 @@ export default function ContactPage() {
           ></textarea>
           <button
             ref={btnRef}
-            className=" bg-card2 md:w-[8vw] md:px-[1vw] px-[2.5vw] md:py-[0.5vw] py-[1vw] md:text-lg text-[5vw] text-white rounded-lg hover:cursor-pointer transition-all duration-[500ms] hover:scale-110 hover:bg-[#FCA311] mb-5"
+             className="relative z-[3] sm:text-xl text-base text-secondary  text-left py-[1.5vh] px-[2vh] shadow-md bg-card2 transition duration-500 hover:scale-225 hover:text-white hover:bg-secondary rounded-lg"
           >
             Lähetä <i className="fa fa-angle-right"></i>
           </button>

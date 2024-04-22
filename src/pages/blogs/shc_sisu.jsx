@@ -28,7 +28,7 @@ export default function SHC_Sisu() {
                 <img src={talkImg} className='md:h-[50vh] object-cover'/>
             </Image>
             <DescWithTitle>
-            <h1>Kuinka ohjelmointi tuli kuvioihin?</h1>
+            <h1>Kuinka Sunny Harbor Oy syntyi?</h1>
             <p>
             13-vuotiaana olin käynyt kahdella ohjelmoinnin peruskurssilla, mutta ShapeVisor merkitsi ensimmäistä kunnollista syventymistä alaan. ShapeVisorin päätyttyä jatkoin normaalisti Asuntosatama LKV:llä töissä, kunnes toimitusjohtaja Erkki Murto-Koivisto tarjosi mahdollisuuden minulle ja Victorille toimia Korjausvelkalaskurin kehittäjinä. Tietysti ilmoitin asiasta heti Leonille, sillä projekti olisi ollut meille kaksin liian suuri haaste. Aiomme kirjoittaa Korjausvelkalaskurista kokonaan erillisen tarinan, joten kerron vain sen verran, että projekti saatiin suoritettua kunnialla. 
             </p>

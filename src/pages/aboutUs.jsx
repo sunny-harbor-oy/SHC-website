@@ -12,13 +12,13 @@ function AboutUs() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
+    delayed: { opacity: 0, transition: { delay: 2 } }, // Add a delay of 2 seconds
     visible: { opacity: 1, transition: { duration: 3 } },
   };
 
-  
-
   const imageVariants = {
     hidden: { x: "100vw" },
+    delayed: { x: "100vw", transition: { delay: 2 } }, // Add a delay of 2 seconds
     visible: {
       x: 0,
       transition: { type: "spring", damping: 60, stiffness: 80 },
@@ -26,36 +26,28 @@ function AboutUs() {
   };
 
   return (
+    <div className="pt-5">
     <motion.div
-      className="relative w-screen h-screen mb-24"
+      className="relative w-screen mb-20 md:mb-0"
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       ref={ref}
     >
-      <div className="relative flex flex-col-reverse w-screen h-full pb-20 font-semibold text-white md:pb-0 md:flex-row font-poppins bg-primary">
+      <div className="relative flex flex-col-reverse w-screen mt-10 font-semibold text-white md:mt-0 md:flex-row font-poppins bg-primary">
         <motion.div
-          className="px-[5vw] py-7 h-4/5 md:h-screen  flex flex-col justify-center w-full md:w-1/2 relative z-[2]"
+          className="px-[5vw]  h-4/5 md:h-screen  flex flex-col justify-center w-full md:w-1/2 relative z-[2]"
           variants={containerVariants}
         >
           <BubbleText />
-       {/*    <h1 className="sm:text-h1-sm text-h1  leading-[8vh] sm:leading-[8vw] lg:leading-[7.2vh] xl:leading-[7.2vh]">
-            Ratkaisuja,
-            <br />
-            joihin luotat.
-            <br />
-          </h1> */}
-        
-<h2 className="sm:w-[75vh] sm:text-h2-sm mb-10 md:mb-5 text-h2 sm:h-[20vh] h-[37vh] pt-[3vh] font-medium">
-            Olemme luotettavin valinta IT-ratkaisuissasi, jotka vievät liiketoimintasi seuraavalle tasolle. Voimme
-            tehostaa toimintaasi ja luoda yrityksellesi ainutlaatuisen
-            kilpailuedun!
+          <h2 className="sm:w-[75vh] mb-10 md:mb-5 text-xl md:text-2xl font-thin mt-2">
+            Tavoitteenamme on tarjota alan läpinäkyvin ja luotettavin apu asiakkaamme IT-ratkaisuille! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu.
           </h2> 
-          <div className="relative sm:mt-[20vh] mt-[5vh] transition hover:cursor-pointer duration-500 hover:scale-105 hover:text-ilmoCardColor hover:font-semibold ">
+          <div className="relative sm:mt-[10vh] transition hover:cursor-pointer duration-500 hover:scale-105 hover:text-ilmoCardColor hover:font-semibold ">
             <div className="absolute hidden z-[1] bg-secondary filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
             <Link
               to={"./price-estimate"}
-              className="relative z-[3] sm:text-[2.43vh] text-[4.6vw] text-left py-[1.5vh] px-[2vh]  bg-card2 transition duration-500 hover:scale-225 hover:bg-secondary rounded-lg"
+              className="relative z-[3] sm:text-xl text-base text-secondary  text-left py-[1.5vh] px-[2vh] shadow-md bg-card2 transition duration-500 hover:scale-225 hover:text-white hover:bg-secondary rounded-lg"
             >
               Kustannusarvio sekunneissa! &rarr;
             </Link>
@@ -66,13 +58,14 @@ function AboutUs() {
           variants={imageVariants}
         >
           <motion.img
-            className="transition-opacity duration-500 rounded-sm"
+            className="transition-opacity duration-500 rounded-md shadow-sm"
             src={teamImg}
             alt="Team Image"
           />
         </motion.div>
       </div>
     </motion.div>
+    </div>
   );
 }
 
