@@ -5,7 +5,7 @@ function TextSection() {
   return (
     <div className="grid grid-cols-1 mx-6 md:mx-20 gap-y-4 md:gap-y-10 md:grid-cols-5 mb-36">
       <div className="flex items-center justify-center h-full col-span-3 text-white">
-        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white md:h-[450px] ">
+        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white md:h-[450px] 2xl:h-[350px]">
           <div class="relative aspect-square md:h-full w-full md:w-2/5 m-0 overflow-hidden bg-white rounded-b-none md:rounded-l-lg md:rounded-r-none bg-clip-border rounded-lg shrink-0">
             <img
               src={socialImage}
@@ -59,7 +59,7 @@ function TextSection() {
       <div></div>
       <div></div>
       <div className="flex items-center justify-center h-full col-span-3 text-white">
-        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white md:h-[450px] ">
+        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white md:h-[450px] 2xl:h-[370px]">
           <div class="relative aspect-square md:h-full w-full md:w-2/5 m-0 overflow-hidden bg-white rounded-b-none md:rounded-l-lg md:rounded-r-none bg-clip-border rounded-lg shrink-0">
             <img
               src={office}
@@ -108,7 +108,7 @@ function TextSection() {
         </div>
       </div>
       <div className="flex items-center justify-center h-full col-span-3 text-white">
-        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white md:h-[450px] ">
+        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white md:h-[450px] 2xl:h-[370px]">
           <div class="relative aspect-square md:h-full w-full md:w-2/5 m-0 overflow-hidden bg-white rounded-b-none md:rounded-l-lg md:rounded-r-none bg-clip-border rounded-lg shrink-0">
             <img
               src={office}
@@ -129,7 +129,7 @@ function TextSection() {
               jolla on kuukausimaksu ja sillä saa käyttöön ohjelmiston, josta
               voit katsoa elokuvia. SaaS-palveluja myydään kuitenkin eniten
               yrityksille. Ne ovat yleensä tehotyökaluja esimerkiksi
-              myynnin ja markkinoinnin tehostamiseksi. Kuitenkin SaaS-mallissa on omia
+              myynnin ja markkinoinnin tehostamis. Kuitenkin SaaS-mallissa on omia
               ongelmia. Jos yritys tarvitsee erittäin omalaatuisia
               ominaisuuksia, SaaS kehittäjiltä on vaikea pyytää sitä. 
             </p>

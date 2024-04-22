@@ -1,12 +1,15 @@
 import React from "react";
+import syke from "../assets/syke.png";
+import moon from "../assets/moonlogo.png";
+import kvl from "../assets/velka.webp";
 
 function References() {
   return (
     <section class="bg-primary w-full">
       <div class="py-12 px-20">
-      <h2 className="text-4xl font-bold text-white hover-text text-start">
-        Ratkaisuja, joihin luotat.
-      </h2>
+        <h2 className="text-4xl font-bold text-white hover-text text-start">
+          Referenssejä
+        </h2>
 
         <div class="mt-8 lg:flex">
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
@@ -51,6 +54,25 @@ function References() {
                 Mockups
               </p>
             </div>
+          </div>
+        </div>
+        <div className="mt-24">
+          <h2 className="text-4xl font-bold text-white hover-text text-start">
+            Asiakkaamme
+          </h2>
+        </div>
+        <div className="flex flex-row my-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 w-full justify-items-center h-46">
+            <div className="h-36 w-full">
+              <img src={syke} alt="logo" class="  h-full  p-8" />
+            </div>
+            <div className="h-36 w-full">
+              <img src={kvl} alt="logo" class=" h-full  p-8" />
+            </div>
+            <div className="h-36 w-full">
+              <img src={moon} alt="logo" class="h-full   p-8" />
+            </div>
+            <div></div>
           </div>
         </div>
       </div>
