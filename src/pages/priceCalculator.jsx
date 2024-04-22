@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {renderToString} from "react-dom/server";
 
 const decaultSettings = {
@@ -19,10 +19,17 @@ const attributeCost = {
     käyttäjät: 0,
     integraatio: 0,
     ylläpito: 0,
+    test_1: 0,
 }
 
 export default function PriceEstimation() {
-const cardData = [  
+
+
+let [cardData, setCardData] = useState([]);
+
+/*
+
+
 {
     title: "Alustat",
     question: "Millä alustoilla ohjelmiston pitäisi toimia?",
@@ -112,6 +119,516 @@ const cardData = [
     "Ei": {coefficient: 1.05, ylläpito: 0},
     }
 }
+]
+*/
+
+let kotisivutData = [
+    {
+        title: "Ulkonäkö",
+        question: "Vaatiiko sivut graafisen suunnittelun?",
+        answers: {
+            "Ei, se on jo tehty": { cost: 0.5 },
+            "Kyllä": { cost: 1 },
+        },
+    },
+    {
+        title: "Monikielisyys",
+        question: "Onko kotisivu monikielinen?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 0.4 },
+        },
+    },
+    {
+        title: "Näkymien määrä",
+        question: "Kuinka monta näkymää sivulla pitäisi olla?",
+        answers: {
+            "1": { insta_coef: 0 },
+            "2-4": { insta_coef: 1.5 },
+            "5+": { insta_coef: 1.8 },
+        },
+    },
+    {
+        title: "Järjestelmät",
+        question: "Onko sivuilla tarve blogisysteemille tai muille samankaltaisille järjestelmille?",
+        answers: {
+            "Blogi järjestelmälle on tarvetta": { cost: 0.5 },
+            "Muulle järjestelmälle on tarvetta (kuten tämä hintalaskuri)": { cost: 1 },
+            "Ei ole tarvetta": { cost: 0 },
+        },
+    },
+    {
+        title: "Uutiskirje",
+        question: "Onko tarvetta uutiskirjeelle?",
+        answers: {
+            "Kyllä": { cost: 0.2 },
+            "Ei": { cost: 0 },
+        },
+    },
+    {
+        title: "Käyttöehdot ja muu",
+        question: "Onko tarvetta sille, että kirjoitamme eväsehdät, jne?",
+        answers: {
+            "Kyllä": { cost: 0.2 },
+            "Ei": { cost: 0 },
+        },
+    },
+    {
+        title: "Projektin aikataulu",
+        question: "Mikä on projektin aikataulu?",
+        answers: {
+            "2-4 viikkoa": { coefficient: 1.5 },
+            "5-8 viikkoa": { coefficient: 1.3 },
+            "9+ viikkoa": { coefficient: 1 },
+        },
+    },
+];
+
+let verkkokauppaData = [
+    {
+        title: "Ulkonäkö",
+        question: "Pitääkö verkkokaupalle suunnitella oma ulkonäkö/käyttöliittymä?",
+        answers: {
+            "Kyllä, pitää suunnitella": {cost: 2.5},
+            "EI, ulkonäkö on jo suunniteltu": {cost: 2},
+        }
+    },
+    {
+        title: "Tuotteet",
+        question: "Onko kyseessä digitaalinen vai fyysinen tuote?",
+        answers: {
+            "Digitaalinen": {cost: 0},
+            "Fyysinen": {cost: 1.5},
+            "Kumpaakin": {cost: 1.5},
+        }
+    },
+    {
+        title: "Monikielisyys",
+        question: "Ovatko sivut monikieliset?",
+        answers: {
+            "Vain yksi kieli": {cost: 0},
+            "Useampi kieli": {cost: 0.4},
+        }
+    },
+    {
+        title: "Tuotteiden räätälöinti",
+        question: "Voiko tuotteita/palveluja räätälöidä verkkokaupassa?",
+        answers: {
+            "Ei, tuotteita ei voi räätälöidä": {cost: 0},
+            "Kyllä, tuotteita voi räätälöidä": {cost: 1.5},
+        }
+    },
+    {
+        title: "Integraatio",
+        question: "Tuleeko tuotteiden tiedot toisesta verkkopalvelusta?",
+        answers: {
+            "Ei": {cost: 0},
+            "Osittain": {cost: 0.5},
+            "Kyllä": {cost: 0.3},
+        }
+    },
+    {
+        title: "Olemassa olevat nettisivut",
+        question: "Onko palvelusta tai tuotteesta olemassa jo omat nettisivut?",
+        answers: {
+            "Ei, joten nettisivut pitää luoda verkkokaupan yhteydessä": {cost: 1},
+            "On, joten vain verkkokaupalle on tarvetta": {cost: 0},
+        }
+    },
+    {
+        title: "Uutiskirje",
+        question: "Onko tarvetta uutiskirjeelle asiakkaalle?",
+        answers: {
+            "Kyllä": {cost: 0.2},
+            "Ei": {cost: 0},
+        }
+    },
+    {
+        title: "Käyttöehdot ja cookie policy",
+        question: "Onko tarvetta sillä, että kirjoitamme nettikaupalle käyttöehdot, cookie policy:n, jne?",
+        answers: {
+            "Kyllä": {cost: 0.4},
+            "Ei": {cost: 0},
+        }
+    },
+    {
+        title: "Tuotteiden hallinnointi",
+        question: "Pysyvätkö myytävät tuotteet/palvelut samoina?",
+        answers: {
+            "Ei, minun pitää pystyä muuttamaan niitä helposti": {cost: 0.1},
+            "Ei, ne muuttuvat aina välillä": {cost: 0.2},
+            "Kyllä": {cost: 0},
+        }
+    },
+    {
+        title: "Käyttäjäkirjautuminen",
+        question: "Pitääkö kuluttajien pystyä kirjautumaan verkkokauppaan?",
+        answers: {
+            "Kyllä": {cost: 1},
+            "Ei": {cost: 0},
+        }
+    },
+    {
+        title: "Projektin aikataulu",
+        question: "Projektin aikataulu on:",
+        answers: {
+            "3-4 viikkoa": {coefficient: 1.75},
+            "1-2 kk": {coefficient: 1.30},
+            "3+ kk": {coefficient: 1},
+        }
+    }
+]
+
+/*
+
+- Pitääkö sovellukselle suunnitella oma ulkonäkö/käyttöliittymä?
+    - Ei, ulkonäkö on jo suunniteltu
+    - Joo, ulkonäkö pitää suunnitella [+ 2 000€]
+- Vaatiiko sovellus seuraavia ominaisuuksia
+    - Kartan käyttö [+1 000€]
+    - Kameran käyttö [+1 500€]
+    - Bluetooth [+2 000€]
+    - AR [+5 000€]
+    - Integraatio sosiaalisen median alustan kanssa [+ 1 000€]
+    - Tarkka analytiikka sovelluksen käytöstä [+ 4 000 €]
+- Tarve käyttäjille / sisäänkirjautumiselle?
+    - Ei
+    - Kyllä [+ 4 000€]
+- Vaatiiko sovellus sovellusta hallitsevan nettisivun (hallintapaneelin)?
+    - Ei
+    - Kyllä [loppuun * 1,8]
+- Tarvitseeko sovellus ilmoituksia?
+    - Ei
+    - Kyllä [+ 3 000€]
+- Vaatiiko sovellus maksujärjestelmää?
+    - Ei
+    - Kyllä [+2 000€]
+- Onko sovellus yrityksen sisäiseen käyttöön vai julkiseen käyttöön?
+    - Sisäiseen
+    - Julkiseen [+ 2 000€]
+- Onko sovellus monikielinen?
+    - Ei
+    - Kyllä [+1 000€]
+- Tarvitseeko sovellus viestintä/chat -ominaisuuden?
+    - Ei
+    - Kyllä [+4 000€]
+- Mihin alustoihin tämä julkaistaan?
+    - iOS [+ 200 €]
+    - Android [+ 250 €]
+    - Molemmat [+ 400 €]
+- Vaatiiko sovellus identtisen nettisivun (WebAppin) mobiilisovelluksen rinnalle?
+    - Ei
+    - Kyllä [*1.8]
+- Onko tarvetta sille, että kirjoitamme käyttöehdot, jne?
+    - Ei
+    - Kyllä [+1 000€]
+- Mikä on projektin aikataulu?
+    - 2-3 kuukautta [* 2]
+    - 4-6 kuukautta [* 1.5]
+    - 6+ kuukautta [* 1]
+*/
+
+let mobiilisovellusData = [
+    {
+        title: "Ulkonäkö",
+        question: "Pitääkö sovellukselle suunnitella oma ulkonäkö/käyttöliittymä?",
+        answers: {
+            "Ei, ulkonäkö on jo suunniteltu": { cost: 5 },
+            "Joo, ulkonäkö pitää suunnitella": { cost: 7 },
+        },
+    },
+    {
+        title: "Ominaisuudet",
+        question: "Vaatiiko sovellus seuraavia ominaisuuksia?",
+        answers: {
+            "Kartan käyttö": { cost: 1 },
+            "Kameran käyttö": { cost: 1.5 },
+            "Bluetooth": { cost: 2 },
+            "AR": { cost: 5 },
+            "Integraatio sosiaalisen median alustan kanssa": { cost: 1 },
+            "Tarkka analytiikka sovelluksen käytöstä": { cost: 4 },
+        },
+        settings: {
+            multipleChoice: true,
+        },
+    },
+    {
+        title: "Käyttäjät",
+        question: "Onko tarve käyttäjille / sisäänkirjautumiselle?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 4 },
+        },
+    },
+    {
+        title: "Hallintapaneeli",
+        question: "Vaatiiko sovellus sovellusta hallitsevan nettisivun (hallintapaneelin)?",
+        answers: {
+            "Ei": { coefficient: 1 },
+            "Kyllä": { coefficient: 1.8 },
+        },
+    },
+    {
+        title: "Ilmoitukset",
+        question: "Tarvitseeko sovellus ilmoituksia?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 3 },
+        },
+    },
+    {
+        title: "Maksujärjestelmä",
+        question: "Vaatiiko sovellus maksujärjestelmää?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 2 },
+        },
+    },
+    {
+        title: "Käyttö",
+        question: "Onko sovellus yrityksen sisäiseen käyttöön vai julkiseen käyttöön?",
+        answers: {
+            "Sisäiseen": { cost: 0 },
+            "Julkiseen": { cost: 2 },
+        },
+    },
+    {
+        title: "Kielisyys",
+        question: "Onko sovellus monikielinen?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 1 },
+        },
+    },
+    {
+        title: "Viestintä",
+        question: "Tarvitseeko sovellus viestintä/chat -ominaisuuden?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 4 },
+        },
+    },
+    {
+        title: "Alustat",
+        question: "Mihin alustoihin tämä julkaistaan?",
+        answers: {
+            "iOS": { cost: 0.2 },
+            "Android": { cost: 0.250 },
+            "Molemmat": { cost: 0.4 },
+        },
+    },
+    {
+        title: "Identtinen nettisivu",
+        question: "Vaatiiko sovellus identtisen nettisivun (WebAppin) mobiilisovelluksen rinnalle?",
+        answers: {
+            "Ei": { insta_coef: 1 },
+            "Kyllä": { insta_coef: 1.8 },
+        },
+    },
+    {
+        title: "Käyttöehdot",
+        question: "Onko tarvetta sille, että kirjoitamme käyttöehdot, jne?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 1 },
+        },
+    },
+    {
+        title: "Aikataulu",
+        question: "Mikä on projektin aikataulu?",
+        answers: {
+            "2-3 kuukautta": { coefficient: 2 },
+            "4-6 kuukautta": { coefficient: 1.5 },
+            "6+ kuukautta": { coefficient: 1 },
+        },
+    },
+];
+
+let tietokonesovellusData = [
+    {
+        title: "Ulkonäkö",
+        question: "Pitääkö sovellukselle suunnitella oma ulkonäkö/käyttöliittymä?",
+        answers: {
+            "Ei, ulkonäkö on jo suunniteltu": { cost: 3.5 },
+            "Joo, ulkonäkö pitää suunnitella": { cost: 5.5 },
+        },
+    },
+    {
+        title: "Ominaisuudet",
+        question: "Vaatiiko sovellus seuraavia ominaisuuksia?",
+        answers: {
+            "Kartan käyttö": { cost: 1 },
+            "Kameran käyttö": { cost: 1.5 },
+            "Bluetooth": { cost: 2 },
+            "AR": { cost: 5 },
+            "Integraatio sosiaalisen median alustan kanssa": { cost: 1 },
+            "Tarkka analytiikka sovelluksen käytöstä": { cost: 4 },
+        },
+    },
+    {
+        title: "Käyttäjät",
+        question: "Onko tarve käyttäjille / sisäänkirjautumiselle?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 4 },
+        },
+    },
+    {
+        title: "Hallintapaneeli",
+        question: "Vaatiiko sovellus sovellusta hallitsevan nettisivun (hallintapaneelin)?",
+        answers: {
+            "Ei": { coefficient: 1 },
+            "Kyllä": { coefficient: 1.8 },
+        },
+    },
+    {
+        title: "Ilmoitukset",
+        question: "Tarvitseeko sovellus ilmoituksia?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 3 },
+        },
+    },
+    {
+        title: "Maksujärjestelmä",
+        question: "Vaatiiko sovellus maksujärjestelmää?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 2 },
+        },
+    },
+    {
+        title: "Käyttö",
+        question: "Onko sovellus yrityksen sisäiseen käyttöön vai julkiseen käyttöön?",
+        answers: {
+            "Sisäiseen": { cost: 0 },
+            "Julkiseen": { cost: 2 },
+        },
+    },
+    {
+        title: "Kielisyys",
+        question: "Onko sovellus monikielinen?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 1 },
+        },
+    },
+    {
+        title: "Viestintä",
+        question: "Tarvitseeko sovellus viestintä/chat -ominaisuuden?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 4 },
+        },
+    },
+    {
+        title: "Alustat",
+        question: "Mihin alustoihin tämä julkaistaan?",
+        answers: {
+            "Kyseessä on ladattava sovellu": { coefficient: 1.2 },
+            "Kyseessä on selaimella käytettävä": { coefficient: 1 },
+            "Kumpikin": { coefficient: 1.3 },
+        },
+    },
+    {
+        title: "Identtinen nettisivu",
+        question: "Vaatiiko sovellus identtisen nettisivun (WebAppin) mobiilisovelluksen rinnalle?",
+        answers: {
+            "Ei": { insta_coef: 1 },
+            "Kyllä": { insta_coef: 1.8 },
+        },
+    },
+    {
+        title: "Käyttöehdot",
+        question: "Onko tarvetta sille, että kirjoitamme käyttöehdot, jne?",
+        answers: {
+            "Ei": { cost: 0 },
+            "Kyllä": { cost: 1 },
+        },
+    },
+    {
+        title: "Aikataulu",
+        question: "Mikä on projektin aikataulu?",
+        answers: {
+            "2-3 kuukautta": { coefficient: 2 },
+            "4-6 kuukautta": { coefficient: 1.5 },
+            "6+ kuukautta": { coefficient: 1 },
+        },
+    },
+];
+
+/*
+- Tekoälyohjelma
+- Mille alustalle tekoälyohjelma pitää kehittää?
+    - Mobiili [+ 10 000 €]
+    - Nettisivu [+ 1 000€]
+    - Tietokonesovellus [+ 11 000 €]
+    - Liitetään valmiiseen ohjelmistoon [+ 2 500 €]
+- Mihin tarkoituksiin tekoäly tarvitaan?
+    - Asiakaspalvelu [+ 1000 €]
+    - Yleinen keskustelu [+ 1000 €]
+    - Digiassistenttina toimiminen (esim. Siri tai Alexa) [10 000 €]
+    - Kuvien/videoiden käsittely [5 000 €]
+    - Kuvien/videoiden lukeminen [5 000 €]
+    - Tekstin käsittely / kirjoittaminen [2 500€]
+    - Datan analysointi / ennustaminen [5 000€]
+    - Laitteiston hallinnointi (esim. Led valot tai tehdas laitteisto) [4 000€]
+    - Äänen / musiikin tuottaminen [10 000€]
+- Pitääkö tekoälyn pystyä lukea internettiä?
+    - Kyllä [10 000€]
+    - Ei
+- Mikä on projektin aikataulu?
+    - 2-3 kk [* 2]
+    - 4-6 kk [*1,5]
+    - 6+ kk [* 1]
+*/
+
+let tekoalyData = [
+    {
+        title: "Alustat",
+        question: "Mille alustalle tekoälyohjelma pitää kehittää?",
+        answers: {
+            "Mobiili": { cost: 10 },
+            "Nettisivu": { cost: 1 },
+            "Tietokonesovellus": { cost: 11 },
+            "Liitetään valmiiseen ohjelmistoon": { cost: 2.5 },
+        },
+    },
+    {
+        title: "Tarkoitus",
+        question: "Mihin tarkoituksiin tekoäly tarvitaan?",
+        answers: {
+            "Asiakaspalvelu": { cost: 1 },
+            "Yleinen keskustelu": { cost: 1 },
+            "Digiassistenttina toimiminen (esim. Siri tai Alexa)": { cost: 10 },
+            "Kuvien/videoiden käsittely": { cost: 5 },
+            "Kuvien/videoiden lukeminen": { cost: 5 },
+            "Tekstin käsittely / kirjoittaminen": { cost: 2.5 },
+            "Datan analysointi / ennustaminen": { cost: 5 },
+            "Laitteiston hallinnointi (esim. Led valot tai tehdas laitteisto)": { cost: 4 },
+            "Äänen / musiikin tuottaminen": { cost: 10 },
+        },
+        settings: {
+            multipleChoice: true,
+        }
+    },
+    {
+        title: "Internetti",
+        question: "Pitääkö tekoälyn pystyä lukea internettiä?",
+        answers: {
+            "Kyllä": { cost: 10 },
+            "Ei": { cost: 0 },
+        },
+    },
+    {
+        title: "Aikataulu",
+        question: "Mikä on projektin aikataulu?",
+        answers: {
+            "2-3 kk": { coefficient: 2 },
+            "4-6 kk": { coefficient: 1.5 },
+            "6+ kk": { coefficient: 1 },
+        },
+    },
 ];
 
 let index = 0;
@@ -125,12 +642,15 @@ const progressBar = cardData.map(() => {
 });
 
 let chosenOptions = [];
-let currentCard = -1;
+let [currentCard, setCurrentCard] = useState(-1);
 let currentCardObject = undefined;
 let lastOptionSelected = undefined;
 let tranition = false;
 let completedStages = {};
 let locked = false;
+
+let [pathSelected, setpathSelected] = useState(false);
+let [selectingPath, setSelectingPath] = useState(false);
 
 let isMobile = window.innerWidth < 640;
 
@@ -141,31 +661,10 @@ const mobileBtn = useRef(null);
 let writtenSummary = undefined;
 
 let cardId = -1;
-const FormElements = cardData.map((card) => {
-    cardId++;
-    let optionId = -1;
-    let getId = () => {
-        optionId++;
-        return optionId;
-    }
 
-    return (
-        <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] px-[2vw] md:pt-[1vw] pt-[3vw]">
-            <h1 className="text-[#FCA311] 2xl:text-[2.5vw] lg:text-[3vw] md:text-[3.3vw] sm:text-[8wv] text-[10vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
-            <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] sm:w-4/5 w-[90%] font-poppins my-0">{card.question}</h2>
-            <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
-                {Object.entries(card.answers).map(([option, value]) => (
-                    <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
-                        <h1 className="transition-all duration-200 font-poppins 2xl:text-[1.5vw] xl:text-[1.7vw] lg:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
-                            {option}
-                        </h1>
-                        <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] sm:rounded-sm rounded-full" />
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-});
+useEffect(() => {
+    changeCard(0);
+}, [cardData]);
 
 const mergeObjects = (obj1, obj2) => {
     let merged = {};
@@ -187,16 +686,39 @@ const getCardOption = (option, cardId = currentCard) => {
     return settings[option] ? settings[option] : false;
 }
 
-const finalPrice = () => {
+let answersObj = {};
+let finalPrice = 0;
+
+const finalPriceFunc = () => {
     const finalAttributes = {
         "coefficient": 1
     };
+
+    finalPrice = 0;
 
     chosenOptions.forEach((card, index) => {
         if (card == undefined) return;
 
         const cardAttributes = Object.values(card);
         cardAttributes.forEach((attribute) => {
+            if (attribute == undefined) return;
+
+            const attributeKeys = Object.keys(attribute);
+            attributeKeys.forEach((key) => {
+                if (finalAttributes[key] == undefined) finalAttributes[key] = 0;
+                
+                if (key == "coefficient") {
+                    finalAttributes[key] *= attribute[key];
+                } else if (key == "cost") {
+                    finalPrice += attribute[key];
+                } else if (key == "insta_coef") {
+                    finalPrice *= attribute[key];
+                    attribute[key] = 0;
+                }
+            });
+        });
+    });
+        /*cardAttributes.forEach((attribute) => {
             if (attribute == undefined) return;
 
             const attributeKeys = Object.keys(attribute);
@@ -209,19 +731,18 @@ const finalPrice = () => {
                 }
             });
         });
-    });
+    });*/
 
-    let finalPrice = 0;
-
+/*
     for (const [key, value] of Object.entries(finalAttributes)) {
         if (attributeCost[key] != undefined) {
             finalPrice += attributeCost[key] * value;
         }
-    }
+    }*/
 
     finalPrice *= finalAttributes["coefficient"];
 
-    let answersObj = {};
+    answersObj = {};
     let i = 0;
 
     console.log(finalAttributes);
@@ -269,13 +790,7 @@ const finalPrice = () => {
     });
 
     const writtenFeedback = <h2 className="md:text-[1.25vw] text-[4vw]">
-        {`Vastaamasi perusteella tuote olisi laajuudeltaan ${finalAttributes.laajuusAikataulu == 3 ? "erittäin laaja" : (finalAttributes.laajuusAikataulu == 2 ? "laaja" : "pieni")} ja sen kehitys ${finalAttributes.kiireellisyys == 1 ? "ei olisi kiireellistä" : (finalAttributes.kiireellisyys == 2 ? "olisi melko kiireellistä" : "olisi kiireellistä")}.
-        Se tulisi kehittää ${finalAttributes.laajuusAlustat > 1 ? "useimmalle alustalle" : "yhdelle alustalle"} ja sen ulkonäkö ${finalAttributes.räätälöityUlkonakö == 1 ? "räätälöity juuri sinulle" : "valmiin pohjan päältä tehty"}.`}<br/><br/>{`
-        Ominaisuuksia olisi ${finalAttributes.laajuusOminaisuudet > 1 ? (finalAttributes.laajuusOminaisuudet > 4 ? "erittäin kattavasti" : "useita") : "muutamia"} ja olisivat 
-        ${finalAttributes.räätälöityOminaisuudet == 1 ? "meidän kehittämiä sekä avoimen lähdekoodin tuotoksia" : "jo olemassa olevia avoimeen lähdekoodiin perustuvia"}.`}<br/><br/>{`
-        Tuote on suunnattu ${finalAttributes.käyttäjät == 0 ? "yksityishenkilöille" : (finalAttributes.käyttäjät == 1 ? "yrityksille" : "sekä yksityishenkilöille että yrityksille")}
-        ${finalAttributes.integraatio == 0 ? "eikä sitä tarvitse integroida olemassa oleviin järjestelmiin" : "ja tulisi integroida jo olemassa oleviin järjestelmiin"}.`}<br/><br/>{`
-        ${finalAttributes.ylläpito == 0 ? " Et nähnyt kehityksen jälkeistä ylläpitoa tarpeellisena." : "Tulisimme ylläpitämään tuotettasi kehityksen jälkeenkin."}`}
+        Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen mukaan. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!
     </h2>
 
     return (
@@ -289,16 +804,80 @@ const finalPrice = () => {
                 </div>
                 <div className="md:w-[34vw] w-[90vw] md:mt-0 mt-[6vw] mx-auto relative" id="writtenSummary">
                 <div className="md:w-[34vw] md:px-[5vw] w-[100%]">
-                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] mt-[1vw] md:font-normal font-semibold">Kirjallinen yhteenveto:</h1>
+                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] mt-[1vw] md:font-normal font-semibold">Kustannusarvio laskuri:</h1>
                     {writtenFeedback}
                     <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] md:mt-[1vw] mt-[4vw] md:font-normal font-semibold">Hinta:</h1>
-                    <h2 className="md:text-[1.25vw] text-[4vw] md:mb-0 mb-[3vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv 24%</h2>
+                    <h2 className="md:text-[1.25vw] text-[4vw] md:mb-0 mb-[3vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv</h2>
+                    <button className={`xl:text-[1.3vw] text-[1vw] font-semibold bg-[#FCA311] text-whit mt-[20px] px-[1vw] py-[0.25vw] rounded-lg font-poppins`}>Ota yhteyttä <i className="fa fa-angle-right"></i></button>
                 </div>
                 </div>
             </div>
             <h1 className="md:text-[1.5vw] text-[4vw] md:pt-[1vw] pt-[5vw] md:mb-0 mb-[10vw] text-center md:w-[75%] w-[100%] mx-auto">Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan!<br/><strong className="text-[#FCA311]">Ota yhteyttä!</strong></h1>
         </div>
     ); // Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan! Ota yhteyttä!
+}
+
+const choosePath = () => {
+    const pathMap = {
+        "Verkkokauppa": verkkokauppaData,
+        "Kotisivut": kotisivutData,
+        "Mobiilisovellus": mobiilisovellusData,
+        "Tietokonesovellus": tietokonesovellusData,
+        "Tekoälyohjelma": tekoalyData,
+    }
+
+    setSelectingPath(true);
+
+    slideDiv.current.innerHTML = "";
+
+    const onClickFunc = (mapId) => {
+        console.log(cardData)
+        setCardData(pathMap[mapId]);
+        setpathSelected(true);
+        setSelectingPath(false);
+        mobileBtn.current.click();
+    }
+
+    const elemRender = 
+    <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] px-[2vw] md:pt-[1vw] pt-[3vw]">
+        <h1 className="text-[#FCA311] 2xl:text-[2.5vw] lg:text-[3vw] md:text-[3.3vw] sm:text-[8wv] text-[10vw] w-4/5 font-poppins font-extrabold">Projektin tyyppi</h1>
+        <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] sm:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
+        <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
+            {Object.entries(pathMap).map(([option, value]) => (
+                <div id={option} className="flex justify-between min-w-[200px] w-[75%] hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
+                    <h1 className="transition-all duration-200 font-poppins 2xl:text-[1.5vw] xl:text-[1.7vw] lg:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+                        {option} 
+                    </h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="w-6 h-6 my-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </div>
+            ))}
+            <div className="flex justify-between min-w-[200px] w-[75%] hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
+                <h1 className="transition-all duration-200 font-poppins 2xl:text-[1.5vw] xl:text-[1.7vw] lg:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+                    Muu, mikä?
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    slideDiv.current.innerHTML = renderToString(elemRender);
+
+    const children = slideDiv.current.children[0].children[2].children
+    console.log(children)
+    for (let i = 0; i < children.length - 1; i++) {
+        console.log(i)
+        children[i].addEventListener("click", () => {
+            setCardData(pathMap[children[i].id]);
+            onClickFunc(children[i].id);
+        });
+    }
+
+    children[children.length - 1].addEventListener("click", () => {
+        window.location.href = "/contact";
+    });
+
+    console.log("path selected");
 }
 
 const updateStages = () => {
@@ -373,6 +952,36 @@ const chooseOption = (optionValues) => {
 }
 
 const renderCard = (cardId) => {
+    const cardIdBefore = cardId;
+
+    const FormElements = cardData.map((card) => {
+        cardId++;
+        let optionId = -1;
+        let getId = () => {
+            optionId++;
+            return optionId;
+        }
+    
+        return (
+            <div key={cardId} questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] px-[2vw] md:pt-[1vw] pt-[3vw]">
+                <h1 className="text-[#FCA311] 2xl:text-[2.5vw] lg:text-[3vw] md:text-[3.3vw] sm:text-[8wv] text-[10vw] w-4/5 font-poppins font-extrabold">{card.title}</h1>
+                <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] sm:w-4/5 w-[90%] font-poppins my-0">{card.question}</h2>
+                <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
+                    {Object.entries(card.answers).map(([option, value]) => (
+                        <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
+                            <h1 className="transition-all duration-200 font-poppins 2xl:text-[1.5vw] xl:text-[1.7vw] lg:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+                                {option}
+                            </h1>
+                            <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] sm:rounded-sm rounded-full" />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    });
+
+    cardId = cardIdBefore;
+    
     if (FormElements[cardId] == undefined) return;
 
     slideDiv.current.innerHTML = "";
@@ -416,7 +1025,9 @@ const changeCard = (change) => {
 
     currentCard += change;
 
-    if (currentCard < 0) currentCard = 0;
+    console.log("Current card: " + currentCard);
+
+    if (currentCard < 0) setCurrentCard(0);
 
     if (false) {
         slideDiv.current.parentElement.style.display = "none";
@@ -426,12 +1037,24 @@ const changeCard = (change) => {
         report.current.innerHTML = renderToString(finalPrice());
         report.current.style.display = "block";
 
+        report.current.children[0].children[2].children[1].children[0].children[4].addEventListener("click", () => {
+            const cookieData = {
+                "finalPrice": Math.ceil(finalPrice)*1000,
+                //"answers": answersObj,
+                "chosenOptions": chosenOptions,
+                "finalAttributes": finalAttributes,
+            }
+
+            document.cookie = `priceCalculator=${JSON.stringify(cookieData)}; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
+
+            window.location.href = "/contact";
+        });
+
         resizeUpdate();
         return;
     }
 
     if (currentCard == cardData.length) {
-
         for (let i = 0; i < cardData.length; i++) {
             if (chosenOptions[i] == undefined) {
                 currentCard = i;
@@ -448,13 +1071,28 @@ const changeCard = (change) => {
 
         barDiv.current.style.display = "none";
 
-        report.current.innerHTML = renderToString(finalPrice());
+        report.current.innerHTML = renderToString(finalPriceFunc());
         report.current.style.display = "block";
 
-        resizeUpdate();
+        report.current.children[0].children[2].children[1].children[0].children[4].addEventListener("click", () => {
+            const cookieData = {
+                "finalPrice": Math.ceil(finalPrice)*1000,
+                "answers": answersObj,
+                "chosenOptions": chosenOptions,
+                //"finalAttributes": finalAttributes,
+            }
 
-        return;
+            console.log(cookieData);
+
+            document.cookie = `priceCalculator=${JSON.stringify(cookieData)}; path=/`;
+
+            window.location.href = "/contact";
+        });
+
+        resizeUpdate();
     } else {
+        console.log("rendering");
+        console.log(currentCard);
         renderCard(currentCard);
         slideDiv.current.parentElement.style.display = "block";
         report.current.style.display = "none";
@@ -502,7 +1140,7 @@ const onScroll = () => {
         writtenSummaryTop = writtenSummary.getBoundingClientRect().top;
         writtenSummaryBottom = writtenSummary.getBoundingClientRect().bottom;
 
-        console.log(writtenSummaryBottom, writtenSummaryHeight, window.innerHeight*0.92);
+        //console.log(writtenSummaryBottom, writtenSummaryHeight, window.innerHeight*0.92);
 
         if (window.innerHeight*0.92 > writtenSummaryHeight) {
             if (writtenSummaryBottom - window.innerHeight*0.1 < writtenSummaryHeight) {
@@ -539,7 +1177,7 @@ return (
     <div className="flex flex-col justify-center w-screen min-h-screen bg-primary">
     <div className="2xl:w-[75vw] sm::w-[80vw] w-[90%] xl:pt-32 lg:pt-[10vh] sm:pt-32 pt-24 mx-auto">
         <div className="2xl:1/2 md:w-2/3 mx-auto pt-[2vw]">
-            <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${cardData.length < 9 ? cardData.length : 9}, minmax(0, 1fr))`}} ref={barDiv}>
+            <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${(cardData.length % 9 == 0 || cardData.length < 9) ? cardData.length : Math.ceil(cardData.length / 2) }, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
@@ -552,7 +1190,7 @@ return (
             </div> 
             <div className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto lg:block hidden">
                 <div className="sm:w-[85%] w-[95%] mx-auto 2xl:px-[4vw] px-[2vw]">
-                <button onClick={() => changeCard(1)} className="xl:text-[1.3vw] text-[2vw] font-semibold bg-[#FCA311] text-white px-[1vw] py-[0.25vw] rounded-lg font-poppins">Seuraava <i className="fa fa-angle-right"></i></button>
+                <button onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`xl:text-[1.3vw] text-[2vw] font-semibold bg-[#FCA311] text-white px-[1vw] py-[0.25vw] rounded-lg font-poppins ${selectingPath ? "hidden" : ""}`}>Seuraava <i className="fa fa-angle-right"></i></button>
                 </div>
             </div>
             <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
