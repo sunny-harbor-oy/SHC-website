@@ -1,4 +1,4 @@
-import socialImage from "../assets/blogCard1.jpg";
+import socialImage from "../assets/blogcard1.jpg";
 import office from "../assets/office.jpeg";
 
 function TextSection() {
