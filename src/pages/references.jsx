@@ -15,7 +15,7 @@ function References() {
           </h2>
         </div>
         <div className="p-8 mb-36">
-          <div className="grid justify-center w-full grid-cols-1 gap-20 md:gap-10 md:grid-cols-4">
+          <div className="grid justify-center w-full grid-cols-2 gap-20 md:gap-10 md:grid-cols-4">
             <div className="flex justify-center w-full">
               <img src={syke} alt="logo" className="object-contain transition duration-1000 h-14 hover:scale-125" />
             </div>
