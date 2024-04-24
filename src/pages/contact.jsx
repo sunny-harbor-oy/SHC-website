@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import emialjs from "@emailjs/browser";
+import leonImg from "../assets/founders/leon.jpg";
+import sisuImg from "../assets/founders/sisu.jpg";
+import victorImg from "../assets/founders/victorv2.jpg";
+import marcImg from "../assets/team/alexv3.jpg";
 
 export default function ContactPage() {
   const nameRef = useRef(null);
@@ -69,16 +73,16 @@ export default function ContactPage() {
 
   return (
     <div className="relative w-screen z-[0] bg-primary font-poppins">
-      <div className="md:pt-[16vh] pt-[12vh] w-[53vw] mx-auto">
+      <div className="md:pt-[16vh] pt-[12vh] mx-10 md:w-[53vw] md:mx-auto">
         <h1 className="text-[#FCA311] md:text-3xl text-[7vw] font-semibold">
           Ota yhteyttä!
         </h1>
-        <h2 className="text-white md:text-xl text-[4.5vw] font-light pb-[6vh] md:w-[70%] w-[80vw]">
+        <h2 className="text-white md:text-xl text-[4.5vw] items-center font-light pb-[6vh] md:w-[70%] w-[80vw]">
           Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee
           kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!
         </h2>
       </div>
-      <div className="lg:w-[90vw] md:w-[60vw] w-[80vw] mx-auto md:pb-[20vh] pb-[5vh]">
+      <div className="lg:w-[90vw] md:w-[60vw] w-[80vw] mx-auto md:pb-22 pb-[5vh]">
         <div className="md:min-w-[400px] h-full mx-auto overflow-hidden md:px-[2vw] md:w-[60%]">
           <h2 className="md:text-lg text-[5.5vw] text-[#FCA311] pb-1">
             Nimi
@@ -211,6 +215,65 @@ export default function ContactPage() {
           </Link>
         </div> */}
       </div>
+      <div
+        className="w-screen bg-primary font-poppins "
+        id="team"
+      >
+        <h1 className="md:text-[3vw] text-[9vw] left-0 font-semibold text-secondary text-center w-screen">
+          Tiimimme
+        </h1>
+        <div className="block md:grid grid-cols-4 gap-[2vw] w-[90vw] md:h-[43vw] py-[5vw] font-poppins font-bold mx-auto text-white">
+          <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
+            <img
+              src={sisuImg}
+              className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
+            ></img>
+            <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
+              Sisu Eriksson
+            </h1>
+            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
+              Toimitusjohtaja
+              
+            </h2>
+          </div>
+          <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
+            <img
+              src={leonImg}
+              className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
+            ></img>
+            <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
+              Leon Gustafsson
+            </h1>
+            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
+              Frontend kehittäjä
+            </h2>
+          </div>
+          <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
+            <img
+              src={victorImg}
+              className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
+            ></img>
+            <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
+              Victor Ocampo
+            </h1>
+            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 b-[3vw] pb-[3vw]">
+              Teknologiajohtaja ja Fullstack kehittäjä
+            </h2>
+          </div>
+          <div className="bg-card2 md:h-[full] h-auto relative rounded-lg overflow-hidden font-normal md:my-0 my-[5vh]">
+            <img
+              src={marcImg}
+              className="w-full mx-auto md:h-[26vw] h-[100vw] object-cover"
+            ></img>
+            <h1 className="text-center leading-snug md:text-[2vw] text-[7vw] md:pb-[-1vw] pb-[-2vw] md:pt-[0.5vw] pt-[1vw]">
+              Marc Smeds
+            </h1>
+            <h2 className="text-center md:text-[1vw] text-[4vw] my-0 md:pb-0 pb-[3vw]">
+              Fullstack kehittäjä
+            </h2>
+          </div>
+        </div>
+      </div> 
     </div>
   );
 }

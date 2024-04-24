@@ -41,7 +41,7 @@ function AboutUs() {
         >
           <BubbleText />
           <h2 className="sm:w-[75vh] mb-10 md:mb-5 text-xl md:text-2xl font-thin mt-2">
-            Tavoitteenamme on tarjota alan läpinäkyvin ja luotettavin apu asiakkaamme IT-ratkaisuille! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu.
+            Tavoitteenamme on tarjota alan läpinäkyvin ja luotettavin apu asiakkaidemme IT-ratkaisuille! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu.
           </h2> 
           <div className="relative sm:mt-[10vh] transition hover:cursor-pointer duration-500 hover:scale-105 hover:text-ilmoCardColor hover:font-semibold ">
             <div className="absolute hidden z-[1] bg-secondary filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
