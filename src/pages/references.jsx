@@ -4,12 +4,8 @@ import moon from "../assets/moonlogo.png";
 import kvl from "../assets/KVL-valkoinen-kaksirivinen.png";
 import kvlStore from "../assets/kvl-store-white.png";
 import kvlMockup from "../assets/kvl-mockup.png";
-<<<<<<< HEAD
 import moonMockup from "../assets/moon-app-mockup.png";
 import omasykeMockup from "../assets/omasyke-mockup.png";
-=======
-import { Link } from "react-router-dom";
->>>>>>> dc35535b7fee26faa3092f62c7348db15fdb3a6c
 
 function References() {
   return (
@@ -57,58 +53,15 @@ function References() {
             Referenssejä
           </h2>
 
-<<<<<<< HEAD
-        <div class="mt-8 lg:flex">
-          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 w-full">
-            <div className="">
-              <img
-                class="object-cover w-full rounded-lg h-96 transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md"
-                src={kvlMockup}
-                alt=""
-              />
-              <h2 class="mt-4 text-xl md:no-underline underline font-semibold text-white capitalize transition duration-500 hover:scale-105 hover:underline hover:cursor-pointer hover:shadow-md ">
-                Korjausvelkalaskuri
-              </h2>
-              <p class="mt-2 text-lg tracking-wider text-gray-400 uppercase transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md">
-                web-kehitys
-              </p>
-            </div>
-
-            <div>
-              <img
-                class="object-cover w-full rounded-lg h-96 transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md"
-                src={omasykeMockup}
-                alt=""
-              />
-              <h2 class="mt-4 text-xl md:no-underline underline  font-semibold text-white capitalize transition duration-500 hover:scale-105 hover:underline hover:cursor-pointer hover:shadow-md">
-                OmaSyke
-              </h2>
-              <p class="mt-2 text-lg tracking-wider text-gray-400 uppercase transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md">
-                Sovelluskehitys
-              </p>
-            </div>
-            <div>
-              <img
-                class="object-cover w-full rounded-lg h-96 transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md"
-                src={moonMockup}
-                alt=""
-              />
-              <h2 class="mt-4 text-xl md:no-underline underline font-semibold text-white capitalize transition duration-500 hover:scale-105 hover:underline hover:cursor-pointer hover:shadow-md">
-                Moon App
-              </h2>
-              <p class="mt-2 text-lg tracking-wider text-gray-400 uppercase transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md">
-                Sovelluskehitys
-              </p>
-=======
           <div class="mt-8 lg:flex">
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 w-full">
               <div className="">
                 <img
                   class="object-cover w-full rounded-lg h-96 transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md"
                   src={kvlMockup}
                   alt=""
                 />
-                <h2 class="mt-4 text-xl font-semibold underline md:no-underline text-white capitalize transition duration-500 hover:scale-105 hover:underline hover:cursor-pointer hover:shadow-md ">
+                <h2 class="mt-4 text-xl md:no-underline underline font-semibold text-white capitalize transition duration-500 hover:scale-105 hover:underline hover:cursor-pointer hover:shadow-md ">
                   Korjausvelkalaskuri
                 </h2>
                 <p class="mt-2 text-lg tracking-wider text-gray-400 uppercase transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md">
@@ -119,31 +72,29 @@ function References() {
               <div>
                 <img
                   class="object-cover w-full rounded-lg h-96 transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md"
-                  src="https://images.unsplash.com/photo-1621609764180-2ca554a9d6f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                  src={omasykeMockup}
                   alt=""
                 />
-                <h2 class="mt-4 text-xl font-semibold underline md:no-underline text-white capitalize transition duration-500 hover:scale-105 hover:underline hover:cursor-pointer hover:shadow-md">
+                <h2 class="mt-4 text-xl md:no-underline underline  font-semibold text-white capitalize transition duration-500 hover:scale-105 hover:underline hover:cursor-pointer hover:shadow-md">
                   OmaSyke
                 </h2>
                 <p class="mt-2 text-lg tracking-wider text-gray-400 uppercase transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md">
                   Sovelluskehitys
                 </p>
               </div>
-
               <div>
                 <img
                   class="object-cover w-full rounded-lg h-96 transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md"
-                  src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                  src={moonMockup}
                   alt=""
                 />
-                <h2 class="mt-4 text-xl font-semibold underline md:no-underline text-white capitalize transition duration-500 hover:scale-105 hover:underline hover:cursor-pointer hover:shadow-md">
+                <h2 class="mt-4 text-xl md:no-underline underline font-semibold text-white capitalize transition duration-500 hover:scale-105 hover:underline hover:cursor-pointer hover:shadow-md">
                   Moon App
                 </h2>
                 <p class="mt-2 text-lg tracking-wider text-gray-400 uppercase transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md">
                   Sovelluskehitys
                 </p>
               </div>
->>>>>>> dc35535b7fee26faa3092f62c7348db15fdb3a6c
             </div>
           </div>
         </div>
