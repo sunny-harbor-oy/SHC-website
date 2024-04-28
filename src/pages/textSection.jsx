@@ -5,7 +5,7 @@ function TextSection() {
   return (
     <div className="grid grid-cols-1 mx-6 md:mx-32 gap-y-4 md:gap-y-10 md:grid-cols-5 mb-36">
       <div className="flex items-center justify-center h-full col-span-3 text-white">
-        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white md:h-[450px] 2xl:h-[350px]">
+        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white h-full">
           <div class="relative aspect-square md:h-full w-full md:w-2/5 m-0 overflow-hidden bg-white rounded-b-none md:rounded-l-lg md:rounded-r-none bg-clip-border rounded-lg shrink-0">
             <img
               src={socialImage}
@@ -29,7 +29,7 @@ function TextSection() {
               valita toimija läpinäkyvyyden, suorasanaisuuden ja luotettavuuden
               perusteella.
             </p>
-            <a href="#" class="inline-block">
+            <a href="blogs/shc_transparency " class="inline-block">
               <button
                 className="relative z-[3] flex items-center gap-1 text-base text-white text-left py-[1.0vh] px-[1.6vh] shadow-md  bg-secondary transition duration-500 hover:scale-105 hover:bg-ilmoPrimaryColor rounded-lg hover:text-secondary"
                 type="button"
@@ -59,7 +59,7 @@ function TextSection() {
       <div></div>
       <div></div>
       <div className="flex items-center justify-center h-full col-span-3 text-white">
-        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white md:h-[450px] 2xl:h-[370px]">
+        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white h-full">
           <div class="relative aspect-square md:h-full w-full md:w-2/5 m-0 overflow-hidden bg-white rounded-b-none md:rounded-l-lg md:rounded-r-none bg-clip-border rounded-lg shrink-0">
             <img
               src={office}
@@ -108,7 +108,7 @@ function TextSection() {
         </div>
       </div>
       <div className="flex items-center justify-center h-full col-span-3 text-white">
-        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white md:h-[450px] 2xl:h-[370px]">
+        <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white h-full">
           <div class="relative aspect-square md:h-full w-full md:w-2/5 m-0 overflow-hidden bg-white rounded-b-none md:rounded-l-lg md:rounded-r-none bg-clip-border rounded-lg shrink-0">
             <img
               src={office}
