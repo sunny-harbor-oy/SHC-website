@@ -31,7 +31,7 @@ function TextSection() {
               valita toimija läpinäkyvyyden, suorasanaisuuden ja luotettavuuden
               perusteella.
             </p>
-            <a href="#" class="inline-block">
+            <a href="blogs/shc_transparency " class="inline-block">
               <button
                 className="relative z-[3] flex items-center gap-1 text-base text-white text-left py-[1.0vh] px-[1.6vh] shadow-md  bg-secondary transition duration-500 hover:scale-105 hover:bg-ilmoPrimaryColor rounded-lg hover:text-secondary"
                 type="button"
