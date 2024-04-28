@@ -136,7 +136,7 @@ export default function NavBar() {
               document.cookie = "scrollTo=true";
             }
           }}>Referenssejä</h1>
-          <Link to={"/blogs"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Blogit</h1></Link>
+          <Link to={"/blogs"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh] text-left">Blogit</h1></Link>
           <Link to={"/contact"} reloadDocument="true" className="md:hidden"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Ota yhteyttä</h1></Link>
         </div>
       </div>

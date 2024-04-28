@@ -43,14 +43,14 @@ export default function SHCFooter() {
       </div>
       <div className="md:flex md:justify-center hidden grid-cols-2 md:w-full w-[80%] mx-auto text-center gap-[1vw]">
         <Link to={"/price-estimate"} reloadDocument="true" className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary">Kustannusarvio</Link>
-        <p className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary" onClick={() => {
+   {/*      <p className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop);
             } else {
               window.location = "/#team";
               document.cookie = "scrollTo=true";
             }
-        }}>Tiimi</p>
+        }}>Tiimi</p> */}
         <p className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("homeWrapper").offsetTop);

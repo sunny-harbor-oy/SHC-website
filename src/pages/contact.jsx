@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import emialjs from "@emailjs/browser";
-import leonImg from "../assets/founders/leon.jpg";
-import sisuImg from "../assets/founders/sisu.jpg";
-import victorImg from "../assets/founders/victorv2.jpg";
-import marcImg from "../assets/team/alexv3.jpg";
+import leonImg from "../assets/founders/leon.webp";
+import sisuImg from "../assets/founders/sisu.webp";
+import victorImg from "../assets/founders/victor.webp";
+import marcImg from "../assets/team/alex.webp";
 
 export default function ContactPage() {
   const nameRef = useRef(null);

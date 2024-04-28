@@ -5,16 +5,16 @@ import TextSection from "../pages/textSection.jsx";
 import References from "./references";
 
 // The squad
-import leonImg from "../assets/founders/leon.jpg";
+/* import leonImg from "../assets/founders/leon.jpg";
 import sisuImg from "../assets/founders/sisu.jpg";
 import victorImg from "../assets/founders/victorv2.jpg";
-import marcImg from "../assets/team/alexv3.jpg";
+import marcImg from "../assets/team/alexv3.jpg"; */
 
 export default function HomePage(language = "fi") {
   return (
     <div id="homeWrapper" className="w-screen overflow-x-hidden bg-primary">
       <div className="relative w-screen h-screen font-semibold text-white font-poppins">
-        <video
+        <video  
           src={window.innerWidth < 762 ? backgroundForMobile : background}
           autoPlay
           loop
