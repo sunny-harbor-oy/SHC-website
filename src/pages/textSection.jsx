@@ -109,6 +109,10 @@ function TextSection() {
           </div>
         </div>
       </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
       <div className="flex items-center justify-center h-full col-span-3 text-white">
         <div class="relative flex bg-clip-border rounded-xl bg-card2 shadow-md w-full flex-col md:flex-row text-white h-full">
           <div class="relative aspect-square md:h-full w-full md:w-2/5 m-0 overflow-hidden bg-white rounded-b-none md:rounded-l-lg md:rounded-r-none bg-clip-border rounded-lg shrink-0">
