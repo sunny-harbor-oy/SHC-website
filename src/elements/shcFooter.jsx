@@ -51,14 +51,14 @@ export default function SHCFooter() {
               window.scrollTo(0, document.getElementById("team").offsetTop);
             }
         }}>Tiimi</p> */}
-        <p className="transition duration-500 hover:cursor-pointer hover:underline hover:text-secondary" onClick={() => {
+       {/*  <p className="transition duration-500 hover:cursor-pointer hover:underline hover:text-secondary" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("asiakkaamme").offsetTop);
             } else {
               window.location = "/#asiakkaamme";
               document.cookie = "scrollTo=true";
             }
-        }}>Asiakkaat</p>
+        }}>Asiakkaat</p> */}
         <Link to={"/contact"} reloadDocument="true" className="transition duration-500 hover:cursor-pointer hover:underline hover:text-secondary">Ota yhteyttä</Link>
       </div>
     </div>

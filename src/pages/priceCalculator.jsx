@@ -1338,7 +1338,7 @@ export default function PriceEstimation() {
           </div>
           <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
             <button
-              onClick={() => changeCard(2) }
+              onClick={() => window.innerWidth < 762 && choosePath() }
               ref={mobileBtn}
               className="lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-[2vw] sm:text-[3.5vw] text-[5vw] md:px-[0] px-[2vw] py-[1vw] rounded-lg md:w-[17vw] sm:w-[30vw] w-[35vw] left-0"
             >
