@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { renderToString } from "react-dom/server";
+import { Helmet } from "react-helmet";
 
 const decaultSettings = {
   multipleChoice: false,
@@ -1289,6 +1290,20 @@ export default function PriceEstimation() {
 
   return (
     <div className="flex flex-col justify-center w-screen min-h-screen bg-primary">
+          <Helmet>
+        <title>Kustannusarviolaskuri</title>
+        <meta
+          name="description"
+          content="Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi
+          sekä antaa sinulle välittömästi suuntaa-antava hinta-arvio tarjouksesta!"
+        />
+        <meta property="og:title" content="Kustannusarviolaskuri" />
+        <meta
+          property="og:description"
+          content="Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi
+          sekä antaa sinulle välittömästi suuntaa-antava hinta-arvio tarjouksesta!"
+        />
+      </Helmet>
       <div className="2xl:w-[75vw] sm:w-[80vw] w-[90%] mx-auto">
         <div className="mx-auto">
           <div className="w-[70vw] mx-auto">
@@ -1319,7 +1334,7 @@ export default function PriceEstimation() {
               <p className="text-white md:text-2xl sm:text-[4vw] text-[6vw] font-light">
                 Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi
                 sekä antaa sinulle välittömästi{" "}
-                <strong className="text-[#FCA311]">suuntaa antava</strong>{" "}
+                <strong className="text-[#FCA311]">suuntaa-antava</strong>{" "}
                 hinta-arvio tarjouksesta!
               </p>
             </div>
@@ -1329,7 +1344,7 @@ export default function PriceEstimation() {
               <button
                 onClick={() => (pathSelected ? changeCard(1) : choosePath())}
                 className={`text-xl mt-5 font-semibold bg-[#FCA311] text-white px-[1vw] py-[0.25vw] rounded-lg font-poppins ${
-                  selectingPath ? "hidden" : ""
+                  selectingPath ? "" : ""
                 }`}
               >
                 Seuraava <i className="fa fa-angle-right"></i>
@@ -1338,7 +1353,7 @@ export default function PriceEstimation() {
           </div>
           <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
             <button
-              onClick={() => window.innerWidth < 762 && choosePath() }
+              onClick={() => window.innerWidth < 762 && pathSelected ? changeCard(2) : choosePath() }
               ref={mobileBtn}
               className="lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-[2vw] sm:text-[3.5vw] text-[5vw] md:px-[0] px-[2vw] py-[1vw] rounded-lg md:w-[17vw] sm:w-[30vw] w-[35vw] left-0"
             >

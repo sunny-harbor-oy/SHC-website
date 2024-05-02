@@ -5,6 +5,7 @@ import leonImg from "../assets/founders/leon.webp";
 import sisuImg from "../assets/founders/sisu.webp";
 import victorImg from "../assets/founders/victor.webp";
 import marcImg from "../assets/team/alex.webp";
+import { Helmet } from "react-helmet";
 
 export default function ContactPage() {
   const nameRef = useRef(null);
@@ -73,6 +74,18 @@ export default function ContactPage() {
 
   return (
     <div className="relative w-screen z-[0] bg-primary font-poppins">
+        <Helmet>
+        <title>Ota yhteyttä</title>
+        <meta
+          name="description"
+          content="Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!"
+        />
+        <meta property="og:title" content="Ota yhteyttä" />
+        <meta
+          property="og:description"
+          content="Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!"
+        />
+      </Helmet>
       <div className="md:pt-[16vh] pt-[12vh] mx-10 md:w-[53vw] md:mx-auto">
         <h1 className="text-[#FCA311] md:text-3xl text-[7vw] font-semibold">
           Ota yhteyttä!
