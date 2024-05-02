@@ -74,7 +74,7 @@ function TextSection() {
               Sovelluskehitys
             </h6>
             <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-              Henkilöstön hallinnointi: Millon se kannattaa automatisoida?
+              Henkilöstönhallinnointi: Millon se kannattaa automatisoida?
             </h4>
             <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed">
               Tarpeellisuus työvuorojen jakamisen automatisoinnissa korostuu
