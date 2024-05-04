@@ -3,6 +3,7 @@ import backgroundForMobile from "../assets/MobileVideo.mp4";
 import AboutUs from "../pages/aboutUs.jsx";
 import TextSection from "../pages/textSection.jsx";
 import References from "./references";
+import Calendar from "../elements/calendar";
 
 // The squad
 /* import leonImg from "../assets/founders/leon.jpg";
@@ -26,6 +27,9 @@ export default function HomePage(language = "fi") {
       <AboutUs />
       <TextSection />
       <References />
+      <div id="calendar">
+      <Calendar/>
+      </div>
       {/* <div className="w-screen pb-[5vw] md:pb-[10vh] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
         <div className="transition duration-500 hover:scale-110 md:hover:scale-105 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
