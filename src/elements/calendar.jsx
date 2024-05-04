@@ -7,7 +7,7 @@ export default function Calendar() {
            <h2 className="text-4xl md:mb-0 mb-6 font-bold text-white hover-text text-start">
             Varaa tapaaminen
           </h2>
-        <InlineWidget url="https://calendly.com/sisu-x8nj" />
+        <InlineWidget url="https://calendly.com/sisu-x8nj?hide_gdpr_banner=1" />
     </div>
   )
 }
