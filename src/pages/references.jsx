@@ -54,7 +54,7 @@ function References() {
           </h2>
 
           <div class="mt-8 lg:flex">
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 w-full">
               <div className="">
                 <img
                   class="object-cover w-full rounded-lg h-96 transition duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-md"

@@ -40,7 +40,7 @@ function AboutUs() {
             variants={containerVariants}
           >
             <BubbleText />
-            <h2 className="sm:w-[75vh] mb-10 md:mb-5 text-xl md:text-2xl font-thin mt-2">
+            <h2 className="sm:w-[75vh] mb-10 md:mb-5 text-xl lg:text-2xl font-thin mt-2">
               Tavoitteemme on tarjota alan läpinäkyvin ja luotettavin apu
               asiakkaidemme IT-ratkaisuihin! Taidokkaasti suunnittelemamme
               mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos
@@ -50,14 +50,14 @@ function AboutUs() {
               <div className="absolute hidden z-[1] bg-secondary filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
               <Link
                 to={"./price-estimate"}
-                className="relative z-[3] sm:text-xl text-base text-secondary  text-left py-[1.5vh] px-[2vh] shadow-md bg-card2 transition duration-500 hover:scale-225 hover:text-white hover:bg-secondary rounded-lg"
+                className="relative z-[3] lg:text-xl text-base text-secondary  text-left py-[1.5vh] px-[2vh] shadow-md bg-card2 transition duration-500 hover:scale-225 hover:text-white hover:bg-secondary rounded-lg"
               >
                 Kustannusarvio sekunneissa! &rarr;
               </Link>
             </div>
           </motion.div>
           <motion.div
-            className="justify-center pt-[10vw] px-[5vw] md:py-0 md:pr-[5vw] items-center hidden md:flex"
+            className="justify-center pt-[10vw] px-[5vw] max-sm:py-0 max-sm:pr-[5vw] items-center hidden lg:flex"
             variants={imageVariants}
           >
             <motion.img
