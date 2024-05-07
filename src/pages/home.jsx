@@ -4,6 +4,7 @@ import AboutUs from "../pages/aboutUs.jsx";
 import TextSection from "../pages/textSection.jsx";
 import References from "./references";
 import Calendar from "../elements/calendar";
+import { Helmet } from "react-helmet";
 
 // The squad
 /* import leonImg from "../assets/founders/leon.jpg";
@@ -14,6 +15,18 @@ import marcImg from "../assets/team/alexv3.jpg"; */
 export default function HomePage(language = "fi") {
   return (
     <div id="homeWrapper" className="w-screen overflow-x-hidden bg-primary">
+      <Helmet>
+        <title>Sunny Harbor</title>
+        <meta
+          name="description"
+          content="Tavoitteemme on olla alan läpinäkyvin ja luotettavin vaihtoehto IT-ratkaisuillesi! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu."
+        />
+        <meta property="og:title" content="Sunny Harbor" />
+        <meta
+          property="og:description"
+          content="Tavoitteemme on olla alan läpinäkyvin ja luotettavin vaihtoehto IT-ratkaisuillesi! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu."
+        />
+      </Helmet>
       <div className="relative w-screen h-screen font-semibold text-white font-poppins">
         <video  
           src={window.innerWidth < 762 ? backgroundForMobile : background}

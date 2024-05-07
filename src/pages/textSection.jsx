@@ -23,9 +23,8 @@ function TextSection() {
               Läpinäkyvyyden merkitys ohjelmistokehityksessä
             </h4>
             <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed">
-              Läpinäkyvyys on meille tärkein asia asiakassuhteissa, mutta
-              valitettavasti monet toimijat kuitenkin unohtavat tämän usein.
-              Meidän tiimimme löysi sen arvokkuuden ennen oman yrityksen
+              Läpinäkyvyys on meille tärkein asia asiakassuhteissa.
+              Meidän tiimimme löysi sen arvokkuuden jo ennen oman yrityksen
               perustamista. Kun etsit yhteistyökumppania mihin tahansa
               tarpeeseen, varsinkin ulkopuoliselta ja IT-alan toimijalta, muista
               valita toimija läpinäkyvyyden, suorasanaisuuden ja luotettavuuden

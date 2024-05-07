@@ -41,8 +41,8 @@ function AboutUs() {
           >
             <BubbleText />
             <h2 className="sm:w-[75vh] mb-10 md:mb-5 text-xl lg:text-2xl font-thin mt-2">
-              Tavoitteemme on tarjota alan läpinäkyvin ja luotettavin apu
-              asiakkaidemme IT-ratkaisuihin! Taidokkaasti suunnittelemamme
+              Tavoitteemme on olla alan läpinäkyvin ja luotettavin vaihtoehto
+              IT-ratkaisuillesi! Taidokkaasti suunnittelemamme
               mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos
               tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu.
             </h2>

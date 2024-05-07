@@ -4,6 +4,7 @@ import Author from "../../elements/blogit/author.jsx";
 import Image from "../../elements/blogit/image.jsx";
 import talkImg from "../../assets/sisublogtalk.jpeg";
 import saas from "../../assets/saas-blog.jpeg";
+import { Helmet } from "react-helmet";
 
 export default function SHC_saas() {
   return (
@@ -11,9 +12,31 @@ export default function SHC_saas() {
       id="blog"
       className="bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen"
     >
+        <Helmet>
+        <title>SaaS vai täysin räätälöity ratkaisu?</title>
+        <meta
+          name="description"
+          content="   Toisaalta ohjelmistoa tarvitseva yritys voi itse kehittää, ostaa tai
+          teettää ohjelmiston, varsinkin jos yritys tarvitsee ohjelmistoa
+          pitkäksi aikaa. Ohjelmistoa hankkiessa yritykset/yrittäjät joutuvat
+          päättämään maksavatko ne SaaS-ohjelmistosta tai hankkivatko täysin
+          räätälöidyn ohjelmiston. Yleensä täysin räätälöity ohjelmisto pitää
+          teettää joltain ohjelmistokehitysyritykseltä (kuten Sunny Harborilta"
+        />
+        <meta property="og:title" content="SaaS vai täysin räätälöity ratkaisu?" />
+        <meta
+          property="og:description"
+          content="   Toisaalta ohjelmistoa tarvitseva yritys voi itse kehittää, ostaa tai
+          teettää ohjelmiston, varsinkin jos yritys tarvitsee ohjelmistoa
+          pitkäksi aikaa. Ohjelmistoa hankkiessa yritykset/yrittäjät joutuvat
+          päättämään maksavatko ne SaaS-ohjelmistosta tai hankkivatko täysin
+          räätälöidyn ohjelmiston. Yleensä täysin räätälöity ohjelmisto pitää
+          teettää joltain ohjelmistokehitysyritykseltä (kuten Sunny Harborilta"
+        />
+      </Helmet>
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">
         <Title>
-          <h1>SaaS vs täysin räätälöity ratkaisu</h1>
+          <h1>SaaS vai täysin räätälöity ratkaisu?</h1>
         </Title>
         <SubParagraph>
           SaaS eli “Software as a Service” on liikemalli monille ohjelmistoja
@@ -88,8 +111,9 @@ export default function SHC_saas() {
           </ul>
         </SubParagraph>
         <SubParagraph>
+          <br/> <br/>
           Toisaalta räätälöidyn digitaalisen työkalun teettäminen
-          ohjelmistokehitys yritykseltä voi olla hyvä päätös:
+          ohjelmstokehittäjältä voi olla hyvä päätös:
         </SubParagraph>
         <SubParagraph>
           <ul className="list-disc">

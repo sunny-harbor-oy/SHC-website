@@ -2,7 +2,7 @@ import SubParagraph from "../../elements/blogit/subParagraph.jsx";
 import Title from "../../elements/blogit/title.jsx";
 import Author from "../../elements/blogit/author.jsx";
 import Image from "../../elements/blogit/image.jsx";
-
+import { Helmet } from "react-helmet";
 import office from "../../assets/office.jpeg";
 
 export default function AutomatizationBlog() {
@@ -11,6 +11,18 @@ export default function AutomatizationBlog() {
       id="blog"
       className="bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen"
     >
+       <Helmet>
+        <title>Milloin henkilöstönhallinta kannattaa tehdä ohjelmiston avulla?</title>
+        <meta
+          name="description"
+          content="Tarpeellisuus työvuorojen jakamisen automatisoinnissa korostuu erityisesti suurissa organisaatioissa, missä manuaalinen koordinointi aiheuttaa tehottomuutta ja virheitä. Työvuorojen jakaminen ohjelmiston avulla tarjoaa tehokkaan tavan koordinoida eri työtehtäviä organisaatiossa. Lisäksi se mahdollistaa joustavan työvuorojen hallinnan ja parantaa työn tehokkuutta."
+        />
+        <meta property="og:title" content="Milloin henkilöstönhallinta kannattaa tehdä ohjelmiston avulla?" />
+        <meta
+          property="og:description"
+          content="Tarpeellisuus työvuorojen jakamisen automatisoinnissa korostuu erityisesti suurissa organisaatioissa, missä manuaalinen koordinointi aiheuttaa tehottomuutta ja virheitä. Työvuorojen jakaminen ohjelmiston avulla tarjoaa tehokkaan tavan koordinoida eri työtehtäviä organisaatiossa. Lisäksi se mahdollistaa joustavan työvuorojen hallinnan ja parantaa työn tehokkuutta."
+        />
+      </Helmet>
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">
         <Title>
           <h1>
@@ -25,6 +37,9 @@ export default function AutomatizationBlog() {
           ongelma tulee organisaatioissa, joissa pitää jakaa kymmenien, jos ei
           satojen, työntekijöiden välillä eri yksittäisiä työtehtäviä. <br />{" "}
           <br />
+          <Image>
+            <img src={office} className="md:h-[50vh] object-cover" />
+          </Image>
           Esimerkiksi siivousalan yrityksessä, jossa jokainen työntekijä tekee
           nollatunti sopimuksella siivoustöitä, voi olla aika vaikeaa
           koordinoida jokaisen työntekijän eri aikatauluja. Tämän monimutkaisuus
@@ -39,9 +54,7 @@ export default function AutomatizationBlog() {
           ikuisuudeksi. Kuitenkin tällaisen ohjelmiston hankinta on merkittävä
           kuluerä. Jos on vaikka vain 5 työntekijää niin kallis
           ohjelmistoratkaisu ei ole välttämättä sen arvoinen.
-          <Image>
-            <img src={office} className="md:h-[50vh] object-cover" />
-          </Image>
+   
         </SubParagraph>
         <SubParagraph>
          <h1 className="w-full text-[1.25rem] md:text-[1.2rem] mt-0 md:leading-[1.4rem] text-black font-roboto">
