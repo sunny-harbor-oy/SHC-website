@@ -33,18 +33,17 @@ export default function TransparencyBlog() {
         <Title>
           <h1>Läpinäkyvyyden merkitys ohjelmistokehityksessä</h1>
         </Title>
-
         <SubParagraph>
           Kun haluat ohjelmistokehitystä nettisivuja, sovellusta tai vaikkapa
           peliä varten, varsinkin ulkopuoliselta toimijalta, muista valita
-          toimija läpinäkyvyyden ja suorasanaisuuden perusteella. Paras toimija
+          toimija läpinäkyvyyden ja suorasanaisuuden perusteella.        <Image>
+            <img src={socialImage} className="md:h-[50vh] object-cover" />
+          </Image>Paras toimija
           on sellainen, joka kommunikoi rehellisesti, läpinäkyvästi ja useasti.
           Lisäksi parhaassa tapauksessa pääset suoraan kommunikoimaan
           ohjelmistokehittäjän kanssa etkä ylhäällä johtoportaissa olevien
           managereiden kanssa.
-          <Image>
-            <img src={socialImage} className="md:h-[50vh] object-cover" />
-          </Image>
+ 
         </SubParagraph>
 
         <SubParagraph>

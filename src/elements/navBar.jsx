@@ -74,7 +74,7 @@ export default function NavBar() {
     const onResize = () => {
       vhPx = window.innerHeight * 0.01;
       /* document.body.style.overflow = "scroll"; */ //this causes the overflow on ubuntu etc
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 770) {
         console.log("mobile");
         isMobile = true;
         navBar.style.background = "#111111";
@@ -92,11 +92,11 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav ref={navBarRef} id="navBar" className="fixed z-[11] h-[8vh] transition-all duration-[150ms] bg-primary flex justify-between w-screen px-[2vw] text-white text-center md:text-[1.75vh] font-poppins">
+    <nav ref={navBarRef} id="navBar" className="fixed z-[11] h-[8vh] transition-all duration-[150ms] bg-primary flex justify-between w-screen px-[2vw] text-white text-center lg:text-[1.75vh] font-poppins">
       <div className="flex">
-        <Link className="my-auto md:min-w-[100px] hover:cursor-pointer" reloadDocument="true" to={"/"}><img src={logo} className="h-[7vh] my-auto"></img></Link>
-        <div ref={navItemsRef} className="z-[10] md:bg-transparent bg-primary transition-all duration-[250ms] md:grid grid-cols-6 gap-4 md:my-auto md:text-center md:font-light font-semibold text-left md:text-[1.75vh] text-[3vh] md:px-[3vw] px-[5vw] md:relative fixed md:top-auto top-[8vh] left-0 md:h-auto h-[0vh] md:w-auto w-screen overflow-hidden">
-          <Link to={"/price-estimate"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105  md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Kustannusarvio</h1></Link>
+        <Link className="my-auto lg:min-w-[100px] hover:cursor-pointer" reloadDocument="true" to={"/"}><img src={logo} className="h-[7vh] my-auto"></img></Link>
+        <div ref={navItemsRef} className="z-[10] lg:bg-transparent bg-primary transition-all duration-[250ms] lg:grid grid-cols-6 gap-4 lg:my-auto lg:text-center lg:font-light font-semibold text-left lg:text-[1.75vh] text-[3vh] lg:px-[3vw] px-[5vw] lg:relative fixed lg:top-auto top-[8vh] left-0 lg:h-auto h-[0vh] lg:w-auto w-screen overflow-hidden">
+          <Link to={"/price-estimate"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105  lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]">Kustannusarvio</h1></Link>
           {/* <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
@@ -123,7 +123,7 @@ export default function NavBar() {
               document.cookie = "scrollTo=true";
             }
           }}>Asiakkaat</h1> */}
-          <h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
+          <h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("referensseja").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
               if (isMobile) {
@@ -136,9 +136,9 @@ export default function NavBar() {
               document.cookie = "scrollTo=true";
             }
           }}>Referenssejä</h1>
-          <Link to={"/blogs"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh] ">Blogit</h1></Link>
-          <Link to={"/contact"} reloadDocument="true" className="md:hidden"><h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]">Ota yhteyttä</h1></Link>
-          <h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
+          <Link to={"/blogs"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh] ">Blogit</h1></Link>
+          <Link to={"/contact"} reloadDocument="true" className="lg:hidden"><h1 className="hover:cursor-pointer lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]">Ota yhteyttä</h1></Link>
+          <h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("calendar").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
               if (isMobile) {
@@ -153,7 +153,7 @@ export default function NavBar() {
           }}>Tapaaminen</h1>
         </div>
       </div>
-      <div className="border-solid transition duration-500 hover:scale-110  hover:shadow-md hover:border-secondary  border-[#FFFFFF] border-2 w-[15vh] my-auto md:block hidden">
+      <div className="border-solid transition duration-500 hover:scale-110  hover:shadow-md hover:border-secondary  border-[#FFFFFF] border-2 w-[15vh] my-auto lg:block hidden">
         <Link reloadDocument="true" to={"/contact"}>
           <h1 className="text-[#FFFFFF] hover:text-secondary hover:font-extrabold font-semibold hover:cursor-pointer transition-all duration-[250ms] my-auto py-[0.5vw] w-full h-full">
             Ota yhteyttä!
@@ -166,7 +166,7 @@ export default function NavBar() {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="#FFFFFF"
-        className="w-[5vh] h-[5vh] my-auto md:hidden block"
+        className="w-[5vh] h-[5vh] my-auto lg:hidden block"
         onClick={(e) => {
           if (navItems.getBoundingClientRect().height < 10) {
             navItems.style.height = "92vh";

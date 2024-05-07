@@ -38,22 +38,22 @@ export default function BlogitPage() {
           reloadDocument="true"
           className="w-[80%] md:w-full max-md:mx-auto min-h-[70vh] md:h-full relative bg-card2 md:aspect-[5/7] rounded-lg overflow-hidden transition hover:cursor-pointer duration-500  hover:scale-105 md:hover:scale-105 "
         >
-          <img src={saas} className="w-full h-[50%] object-cover" />
+          <img src={saas} className="w-full h-[45%] object-cover" />
           <div className="mt-[4%] px-[5%] w-full h-full">
             <h2 className="text-secondary font-semibold text-left border-l-secondary border-l-[3px] pl-[3%] max-md:text-[100%] max-xl:text-[1.65vw] xl:text-[100%] hover:underline">
               Saas vai täysin räätälöity ratkaisu?
             </h2>
-            <p className="text-white mt-[3%] max-sm:text-[0.9rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.6rem] 2xl:text-[0.95rem]">
+            <p className="text-white mt-[3%] max-sm:text-[0.7rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.7rem] 2xl:text-[0.95rem]">
               SaaS, eli "Software as a Service", on usein käytetty
               liiketoimintamalli ohjelmistojen myyjille. Netflix on hyvä
               esimerkki: sillä on kuukausimaksu, jolla pääsee katsomaan
               elokuvia.
             </p>
             <div className="absolute bottom-[2%] left-0 px-[5%] flex justify-between w-full">
-              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">
+              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.7rem] xl:text-[1rem] 2xl:text-[1rem]">
                 Victor Ocampo
               </p>
-              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">
+              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.7rem] xl:text-[1rem] 2xl:text-[1rem]">
                 02.05.2024
               </p>
             </div>
@@ -64,26 +64,24 @@ export default function BlogitPage() {
           reloadDocument="true"
           className="w-[80%] md:w-full max-md:mx-auto min-h-[70vh] md:h-full relative bg-card2 md:aspect-[5/7] rounded-lg overflow-hidden transition hover:cursor-pointer duration-500 hover:scale-105 md:hover:scale-105 "
         >
-          <div className="w-full overflow-hidden h-[50%]">
+          <div className="w-full overflow-hidden h-[45%]">
             <img src={office} className="object-cover w-full" />
           </div>
           <div className="mt-[4%] px-[5%] w-full h-full">
             <h2 className="text-secondary font-semibold text-left border-l-secondary border-l-[3px] pl-[3%] max-md:text-[100%] max-xl:text-[1.65vw] xl:text-[100%] hover:underline">
               Milloin henkilöstönhallinta kannattaa tehdä ohjelmiston avulla?
             </h2>
-            <p className="text-white mt-[3%] max-sm:text-[0.9rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.6rem] 2xl:text-[0.95rem]">
+            <p className="text-white mt-[3%] max-sm:text-[0.7rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.7rem] 2xl:text-[0.95rem]">
               {" "}
-              Tarpeellisuus työvuorojen jakamisen automatisoinnissa korostuu
+              Tarpeellisuus henkilöstönhallinnan automatisoinnissa korostuu
               erityisesti suurissa organisaatioissa, missä manuaalinen
-              koordinointi aiheuttaa tehottomuutta ja virheitä. Työvuorojen
-              jakaminen ohjelmiston avulla tarjoaa tehokkaan tavan koordinoida
-              eri työtehtäviä organisaatiossa.
+              koordinointi aiheuttaa tehottomuutta ja virheitä. 
             </p>
             <div className="absolute bottom-[2%] left-0 px-[5%] flex justify-between w-full">
-              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">
+              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.7rem] xl:text-[1rem] 2xl:text-[1rem]">
                 Victor Ocampo
               </p>
-              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">
+              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.7rem] xl:text-[1rem] 2xl:text-[1rem]">
                 01.05.2024
               </p>
             </div>
@@ -94,26 +92,25 @@ export default function BlogitPage() {
           reloadDocument="true"
           className="w-[80%] md:w-full max-md:mx-auto min-h-[70vh] md:h-full relative bg-card2 md:aspect-[5/7] rounded-lg overflow-hidden transition hover:cursor-pointer duration-500 hover:scale-105 md:hover:scale-105 "
         >
-          <div className="w-full overflow-hidden h-[50%]">
+          <div className="w-full overflow-hidden h-[45%]">
             <img src={socialImage} className="object-cover w-full" />
           </div>
           <div className="mt-[4%] px-[5%] w-full h-full">
             <h2 className="text-secondary font-semibold text-left border-l-secondary border-l-[3px] pl-[3%] max-md:text-[100%] max-xl:text-[1.65vw] xl:text-[100%] hover:underline">
               Läpinäkyvyyden merkitys ohjelmistokehityksessä
             </h2>
-            <p className="text-white mt-[3%] max-sm:text-[0.9rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.6rem] 2xl:text-[0.95rem]">
+            <p className="text-white mt-[3%] max-sm:text-[0.7rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.7rem] 2xl:text-[0.95rem]">
               {" "}
-              Läpinäkyvyys on meille tärkein asia asiakassuhteissa, mutta
-              valitettavasti monet toimijat kuitenkin unohtavat tämän usein. Kun
+              Läpinäkyvyys on meille tärkein asia asiakassuhteissa! Kun
               etsit yhteistyökumppania mihin tahansa tarpeeseen, varsinkin
               ulkopuoliselta ja IT-alan toimijalta, muista valita toimija
               läpinäkyvyyden ja luotettavuuden perusteella.
             </p>
             <div className="absolute bottom-[2%] left-0 px-[5%] flex justify-between w-full">
-              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">
+              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.7rem] xl:text-[1rem] 2xl:text-[1rem]">
                 Victor Ocampo
               </p>
-              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">
+              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.7rem] xl:text-[1rem] 2xl:text-[1rem]">
                 29.04.2024
               </p>
             </div>
@@ -124,23 +121,23 @@ export default function BlogitPage() {
           reloadDocument="true"
           className="w-[80%] md:w-full max-md:mx-auto min-h-[70vh] md:h-full relative bg-card2 md:aspect-[5/7] rounded-lg overflow-hidden transition hover:cursor-pointer duration-500 hover:scale-105 md:hover:scale-105 "
         >
-          <div className="w-full overflow-hidden h-[50%]">
+          <div className="w-full overflow-hidden h-[45%]">
             <img src={sisuImg} className="object-cover w-full" />
           </div>
           <div className="mt-[4%] px-[5%] w-full h-full">
             <h2 className="text-secondary font-semibold text-left border-l-secondary border-l-[3px] pl-[3%] max-md:text-[100%] max-xl:text-[1.65vw] xl:text-[100%] hover:underline">
               SHC tiimi: Sisu Eriksson
             </h2>
-            <p className="text-white mt-[3%] max-sm:text-[0.9rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.6rem] 2xl:text-[0.95rem]">
+            <p className="text-white mt-[3%] max-sm:text-[0.7rem] max-md:text-[4vw] max-xl:text-[1.2vw] xl:text-[0.7rem] 2xl:text-[0.95rem]">
               Sisu Eriksson SHC:n toimitusjohtaja. Hän yksi Sunny Harbor Oy:n
               perustajista ja jo nuoresta lähtien nähnyt yrittäjyyden unelmana.
               Tutustu tähän kiinnostavaan tarinaan blogitekstistä.
             </p>
             <div className="absolute bottom-[2%] left-0 px-[5%] flex justify-between w-full">
-              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">
+              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.7rem] xl:text-[1rem] 2xl:text-[1rem]">
                 Sisu Eriksson
               </p>
-              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.9rem] xl:text-[1rem] 2xl:text-[1rem]">
+              <p className="text-gray-300 max-md:text-[2vh] md:text-[0.7rem] xl:text-[1rem] 2xl:text-[1rem]">
                 18.01.2024
               </p>
             </div>
