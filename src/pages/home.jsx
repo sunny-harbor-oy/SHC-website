@@ -17,6 +17,9 @@ export default function HomePage(language = "fi") {
     <div id="homeWrapper" className="w-screen overflow-x-hidden bg-primary">
       <Helmet>
         <title>Sunny Harbor</title>
+        <title>Sunny Harbor Consulting</title>
+        <title>sunnyharbor</title>
+        <title>Sunny Harbour</title>
         <meta
           name="description"
           content="Tavoitteemme on olla alan läpinäkyvin ja luotettavin vaihtoehto IT-ratkaisuillesi! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu."
