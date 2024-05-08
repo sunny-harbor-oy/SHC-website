@@ -22,6 +22,12 @@ export default function AutomatizationBlog() {
           property="og:description"
           content="Tarpeellisuus työvuorojen jakamisen automatisoinnissa korostuu erityisesti suurissa organisaatioissa, missä manuaalinen koordinointi aiheuttaa tehottomuutta ja virheitä. Työvuorojen jakaminen ohjelmiston avulla tarjoaa tehokkaan tavan koordinoida eri työtehtäviä organisaatiossa. Lisäksi se mahdollistaa joustavan työvuorojen hallinnan ja parantaa työn tehokkuutta."
         />
+          <meta name="keywords" content="henkilöstönhallinta, ohjelmiston avulla, työvuorojen jakaminen, automatisointi, organisaatio, työntekijät, työtehtävät, ohjelmisto, työvuorot, koordinointi, viestintä, haastavuus, työntekijöiden välillä, inhimilliset virheet, kommunikaatio" />
+
+          <meta property="og:image" content={office} />
+          <meta property="og:url" content="https://sunnyharbor.fi/blogs/shc_automatization" />
+          <meta name="author" content="Victor Ocampo" />
+          <link rel="canonical" href="https://sunnyharbor.fi/blogs/shc_automatization" />
       </Helmet>
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">
         <Title>

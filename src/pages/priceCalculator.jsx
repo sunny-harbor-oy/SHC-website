@@ -852,10 +852,8 @@ export default function PriceEstimation() {
               <h1 className="text-[#FCA311] md:text-2xl text-[6vw] mt-[1vw] md:font-normal font-semibold">
                 Kustannusarvio laskuri:
               </h1>
-            <text className="md:text-xl text-[2vw]">
-                {writtenFeedback}
-            </text>
-              
+              <text className="md:text-xl text-[2vw]">{writtenFeedback}</text>
+
               <h1 className="text-[#FCA311] md:text-2xl text-[6vw] md:mt-[1vw] mt-[4vw] md:font-normal font-semibold">
                 Hinta:
               </h1>
@@ -1290,7 +1288,7 @@ export default function PriceEstimation() {
 
   return (
     <div className="flex flex-col justify-center w-screen min-h-screen bg-primary">
-          <Helmet>
+      <Helmet>
         <title>Kustannusarviolaskuri</title>
         <meta
           name="description"
@@ -1303,6 +1301,15 @@ export default function PriceEstimation() {
           content="Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi
           sekä antaa sinulle välittömästi suuntaa-antava hinta-arvio tarjouksesta!"
         />
+        <meta
+          name="keywords"
+          content="nettisivut, ohjelmointi, sovellus, applikaatio, ohjelmistokehitys, työnohjaus, automatisointi, järjestelmä, ohjelmisto, kehityskustannukset, budjetti, arviointi, kustannusarvio, tuntihinta, projektin laajuus, kustannustehokkuus, lisäkustannukset, muutokset, palvelupaketit, ylläpitokustannukset, konsultointi, räätälöinti, integrointikustannukset, käyttöönottokustannukset, jatkokehitys, maksuehdot, tarjous, kilpailutus, hinnoittelu"
+        />
+        <meta
+          property="og:url"
+          content="https://sunnyharbor.fi/price-estimate"
+        />
+        <link rel="canonical" href="https://sunnyharbor.fi/price-estimate" />
       </Helmet>
       <div className="2xl:w-[75vw] sm:w-[80vw] w-[90%] mx-auto">
         <div className="mx-auto">
@@ -1328,9 +1335,7 @@ export default function PriceEstimation() {
             className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto font-poppins"
           >
             <div className="lg:w-[51vw] mx-auto text-[#FCA311] md:b-[3vw]">
-              <h1 className="text-4xl font-semibold">
-                Kustannusarvio laskuri
-              </h1>
+              <h1 className="text-4xl font-semibold">Kustannusarvio laskuri</h1>
               <p className="text-white md:text-2xl sm:text-[4vw] text-[6vw] font-light">
                 Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi
                 sekä antaa sinulle välittömästi{" "}
@@ -1353,7 +1358,11 @@ export default function PriceEstimation() {
           </div>
           <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
             <button
-              onClick={() => window.innerWidth < 762 && pathSelected ? changeCard(2) : choosePath() }
+              onClick={() =>
+                window.innerWidth < 762 && pathSelected
+                  ? changeCard(2)
+                  : choosePath()
+              }
               ref={mobileBtn}
               className="lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-[2vw] sm:text-[3.5vw] text-[5vw] md:px-[0] px-[2vw] py-[1vw] rounded-lg md:w-[17vw] sm:w-[30vw] w-[35vw] left-0"
             >

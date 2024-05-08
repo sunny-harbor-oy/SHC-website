@@ -4,8 +4,9 @@ import SubParagraph from "../../elements/blogit/subParagraph.jsx";
 import Title from "../../elements/blogit/title.jsx";
 import Author from "../../elements/blogit/author.jsx";
 import Image from "../../elements/blogit/image.jsx";
+import { Helmet } from "react-helmet";
 
-import sisuImg from "../../assets/founders/sisu_blogv2.png";
+import sisuImg from "../../assets/founders/sisu_blogv2.png"
 import talkImg from "../../assets/sisublogtalk.jpeg";
 
 export default function SHC_Sisu() {
@@ -31,6 +32,17 @@ export default function SHC_Sisu() {
           nuorena aloin toimimaan samalla periaatteella - yritän kunnes
           onnistun ja yritettyä on myös tullut."
         />
+          <meta property="og:image" content={sisuImg} />
+          <meta
+    name="keywords"
+    content="Sisu Eriksson, SHC Tiimi, Toimitusjohtaja, Ohjelmistokehitys, Koronan aika, Sovellus, Ulkosalit, Treeniohjelma, ShapeVisor, Sunny Harbor Oy, Projekti, Osakeyhtiö, Ohjelmistokehittäjä, Persoona, Arvot, Vuosi 2024"
+  />
+        <meta
+          property="og:url"
+          content="https://sunnyharbor.fi/blogs/shc_sisu"
+        />
+        <meta name="author" content="Sisu Eriksson" />
+        <link rel="canonical" href="https://sunnyharbor.fi/blogs/shc_sisu" />
       </Helmet>
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">
         <Title>

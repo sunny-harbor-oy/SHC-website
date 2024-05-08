@@ -24,6 +24,20 @@ export default function BlogitPage() {
           content="Blogi tekstimme tarjoavat oivan mahdollisuuden tutustua teknologian
           maailmaan ja sen kiperiin kysymyksiin."
         />
+         <meta property="og:image" content={office} />
+        <meta
+          name="keywords"
+          content="läpinäkyvyys, ohjelmistokehitys, nettisivut, sovellus, peli, ulkopuolinen toimija, kommunikaatio, sopimukset, ominaisuudet, hinta, ylläpito, jatkokehitys, projektin toteutus, suunnittelu, immateriaalioikeudet, rehellisyys, suora kommunikaatio, ohjelmistokehittäjät, suunnittelijat"
+        />
+        <meta
+          property="og:url"
+          content="https://sunnyharbor.fi/blogs"
+        />
+        <meta name="author" content="Sisu Eriksson" />
+        <link
+          rel="canonical"
+          href="https://sunnyharbor.fi/blogs"
+        />
       </Helmet>
       <h1 className="text-center pt-[4vh] text-[5vh] text-secondary font-semibold">
         Blogit

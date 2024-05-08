@@ -26,6 +26,20 @@ export default function HomePage(language = "fi") {
           property="og:description"
           content="Tavoitteemme on olla alan läpinäkyvin ja luotettavin vaihtoehto IT-ratkaisuillesi! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu."
         />
+          <meta property="og:image" content={background} />
+          <meta
+          name="keywords"
+          content="läpinäkyvyys, ohjelmistokehitys, nettisivut, sovellus, peli, ulkopuolinen toimija, kommunikaatio, sopimukset, ominaisuudet, hinta, ylläpito, jatkokehitys, projektin toteutus, suunnittelu, immateriaalioikeudet, rehellisyys, suora kommunikaatio, ohjelmistokehittäjät, suunnittelijat"
+        />
+        <meta
+          property="og:url"
+          content="https://sunnyharbor.fi"
+        />
+        <meta name="author" content="Sisu Eriksson" />
+        <link
+          rel="canonical"
+          href="https://sunnyharbor.fi"
+        />
       </Helmet>
       <div className="relative w-screen h-screen font-semibold text-white font-poppins">
         <video  

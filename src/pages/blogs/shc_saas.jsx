@@ -12,7 +12,7 @@ export default function SHC_saas() {
       id="blog"
       className="bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen"
     >
-        <Helmet>
+      <Helmet>
         <title>SaaS vai täysin räätälöity ratkaisu?</title>
         <meta
           name="description"
@@ -23,7 +23,10 @@ export default function SHC_saas() {
           räätälöidyn ohjelmiston. Yleensä täysin räätälöity ohjelmisto pitää
           teettää joltain ohjelmistokehitysyritykseltä (kuten Sunny Harborilta"
         />
-        <meta property="og:title" content="SaaS vai täysin räätälöity ratkaisu?" />
+        <meta
+          property="og:title"
+          content="SaaS vai täysin räätälöity ratkaisu?"
+        />
         <meta
           property="og:description"
           content="   Toisaalta ohjelmistoa tarvitseva yritys voi itse kehittää, ostaa tai
@@ -33,6 +36,17 @@ export default function SHC_saas() {
           räätälöidyn ohjelmiston. Yleensä täysin räätälöity ohjelmisto pitää
           teettää joltain ohjelmistokehitysyritykseltä (kuten Sunny Harborilta"
         />
+        <meta property="og:image" content={saas} />
+        <meta
+          name="keywords"
+          content="SaaS, räätälöity ratkaisu, ohjelmistokehitys, yritys, ohjelmisto, kehittäminen, ostaminen, teettäminen, liikemalli, kuukausimaksu, Netflix, tehotyökalu, myynti, markkinointi, käyttöönotto, kustannustehokkuus, päivitykset, asiakkaan hallinnassa"
+        />
+        <meta
+          property="og:url"
+          content="https://sunnyharbor.fi/blogs/shc_saas"
+        />
+        <meta name="author" content="Victor Ocampo" />
+        <link rel="canonical" href="https://sunnyharbor.fi/blogs/shc_saas" />
       </Helmet>
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">
         <Title>
@@ -111,7 +125,7 @@ export default function SHC_saas() {
           </ul>
         </SubParagraph>
         <SubParagraph>
-          <br/> <br/>
+          <br /> <br />
           Toisaalta räätälöidyn digitaalisen työkalun teettäminen
           ohjelmstokehittäjältä voi olla hyvä päätös:
         </SubParagraph>

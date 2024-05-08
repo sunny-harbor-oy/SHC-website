@@ -13,7 +13,7 @@ export default function TransparencyBlog() {
       id="blog"
       className="bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen"
     >
-           <Helmet>
+      <Helmet>
         <title>Läpinäkyvyyden merkitys ohjelmistokehityksessä</title>
         <meta
           name="description"
@@ -21,12 +21,29 @@ export default function TransparencyBlog() {
           peliä varten, varsinkin ulkopuoliselta toimijalta, muista valita
           toimija läpinäkyvyyden ja suorasanaisuuden perusteella."
         />
-        <meta property="og:title" content="Läpinäkyvyyden merkitys ohjelmistokehityksessä" />
+        <meta
+          property="og:title"
+          content="Läpinäkyvyyden merkitys ohjelmistokehityksessä"
+        />
         <meta
           property="og:description"
           content="Kun haluat ohjelmistokehitystä nettisivuja, sovellusta tai vaikkapa
           peliä varten, varsinkin ulkopuoliselta toimijalta, muista valita
           toimija läpinäkyvyyden ja suorasanaisuuden perusteella."
+        />
+        <meta property="og:image" content={socialImage} />
+        <meta
+          name="keywords"
+          content="läpinäkyvyys, ohjelmistokehitys, nettisivut, sovellus, peli, ulkopuolinen toimija, kommunikaatio, sopimukset, ominaisuudet, hinta, ylläpito, jatkokehitys, projektin toteutus, suunnittelu, immateriaalioikeudet, rehellisyys, suora kommunikaatio, ohjelmistokehittäjät, suunnittelijat"
+        />
+        <meta
+          property="og:url"
+          content="https://sunnyharbor.fi/blogs/shc_transparency"
+        />
+        <meta name="author" content="Victor Ocampo" />
+        <link
+          rel="canonical"
+          href="https://sunnyharbor.fi/blogs/shc_transparency"
         />
       </Helmet>
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">
@@ -36,14 +53,14 @@ export default function TransparencyBlog() {
         <SubParagraph>
           Kun haluat ohjelmistokehitystä nettisivuja, sovellusta tai vaikkapa
           peliä varten, varsinkin ulkopuoliselta toimijalta, muista valita
-          toimija läpinäkyvyyden ja suorasanaisuuden perusteella.        <Image>
+          toimija läpinäkyvyyden ja suorasanaisuuden perusteella.{" "}
+          <Image>
             <img src={socialImage} className="md:h-[50vh] object-cover" />
-          </Image>Paras toimija
-          on sellainen, joka kommunikoi rehellisesti, läpinäkyvästi ja useasti.
-          Lisäksi parhaassa tapauksessa pääset suoraan kommunikoimaan
-          ohjelmistokehittäjän kanssa etkä ylhäällä johtoportaissa olevien
-          managereiden kanssa.
- 
+          </Image>
+          Paras toimija on sellainen, joka kommunikoi rehellisesti,
+          läpinäkyvästi ja useasti. Lisäksi parhaassa tapauksessa pääset suoraan
+          kommunikoimaan ohjelmistokehittäjän kanssa etkä ylhäällä
+          johtoportaissa olevien managereiden kanssa.
         </SubParagraph>
 
         <SubParagraph>
@@ -61,8 +78,8 @@ export default function TransparencyBlog() {
           Käytännössä siis omistukset ohjelmasta.
           <br /> <br />
           Yritämme aina olla rehellisyyden A-luokassa. Olemme pieni tiimi
-          (ainakin toistaiseksi), joten meillä joka kokouksessa pääset puhumaan suoraan
-          ohjelmistokehittäjille ja suunnittelijoille.
+          (ainakin toistaiseksi), joten meillä joka kokouksessa pääset puhumaan
+          suoraan ohjelmistokehittäjille ja suunnittelijoille.
         </SubParagraph>
 
         <Author>
