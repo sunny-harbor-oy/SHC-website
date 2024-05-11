@@ -14,7 +14,7 @@ export default function TransparencyBlog() {
       className="bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen"
     >
       <Helmet>
-        <title>Läpinäkyvyyden merkitys ohjelmistokehityksessä</title>
+        <title>Läpinäkyvyyden merkitys ohjelmistokehityksessä | Sunny Harbor</title>
         <meta
           name="description"
           content="Kun haluat ohjelmistokehitystä nettisivuja, sovellusta tai vaikkapa

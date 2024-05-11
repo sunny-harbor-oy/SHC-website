@@ -16,7 +16,7 @@ export default function SHC_Sisu() {
       className="bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen"
     >
         <Helmet>
-        <title>SHC Tiimi: Sisu Eriksson</title>
+        <title>SHC Tiimi: Sisu Eriksson | Sunny Harbor</title>
         <meta
           name="description"
           content="“I have not failed. I’ve just found 10,000 ways that won’t work.”
