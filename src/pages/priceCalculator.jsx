@@ -1289,7 +1289,7 @@ export default function PriceEstimation() {
   return (
     <div className="flex flex-col justify-center w-screen min-h-screen bg-primary">
       <Helmet>
-        <title>Kustannusarviolaskuri</title>
+        <title>Kustannusarviolaskuri | Sunny Harbor</title>
         <meta
           name="description"
           content="Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi

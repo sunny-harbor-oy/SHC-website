@@ -15,7 +15,7 @@ export default function SHC_Victor() {
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">
         <Title>
           <h1>SHC tiimi: Victor</h1>
-          <p>Victor, SHC:n teknologia johtaja</p>
+          <p>Victor, SHC:n teknologia johtaja | Sunny Harbor</p>
         </Title>
         <DescWithImage kuvaTeksti="Fella pitämässä pussia avaruudessa.">
           <h1>Tarinani</h1>

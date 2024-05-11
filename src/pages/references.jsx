@@ -7,6 +7,7 @@ import kvlMockup from "../assets/kvl-mockup.png";
 import moonMockup from "../assets/moon-app-mockup.png";
 import omasykeMockup from "../assets/omasyke-mockup.png";
 
+
 function References() {
   return (
     <section id="asiakkaamme" class="bg-primary w-full mb-36">
@@ -49,9 +50,9 @@ function References() {
           </div>
         </div> */}
         <div id="referensseja">
-          <h2 className="text-4xl font-bold text-white hover-text text-start">
+          <h1 className="text-4xl font-bold text-white hover-text text-start">
             Referenssejä
-          </h2>
+          </h1>
 
           <div class="mt-8 lg:flex">
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 w-full">

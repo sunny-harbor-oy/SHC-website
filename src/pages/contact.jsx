@@ -76,12 +76,6 @@ export default function ContactPage() {
   return (
     <div className="relative w-screen z-[0] bg-primary font-poppins">
         <Helmet>
-        <title>Ota yhteyttä</title>
-        <meta
-          name="description"
-          content="Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!"
-        />
-        <meta property="og:title" content="Ota yhteyttä" />
         <meta
           property="og:description"
           content="Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!"

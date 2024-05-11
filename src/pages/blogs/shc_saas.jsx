@@ -13,7 +13,7 @@ export default function SHC_saas() {
       className="bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen"
     >
       <Helmet>
-        <title>SaaS vai täysin räätälöity ratkaisu?</title>
+        <title>SaaS vai täysin räätälöity ratkaisu? | Sunny Harbor</title>
         <meta
           name="description"
           content="   Toisaalta ohjelmistoa tarvitseva yritys voi itse kehittää, ostaa tai

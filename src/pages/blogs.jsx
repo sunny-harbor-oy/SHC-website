@@ -12,7 +12,7 @@ export default function BlogitPage() {
   return (
     <div className="min-h-screen mt-[8vh] bg-primary w-screen font-poppins ">
       <Helmet>
-        <title>Blogimme</title>
+        <title>Blogimme | Sunny Harbor</title>
         <meta
           name="description"
           content="Blogi tekstimme tarjoavat oivan mahdollisuuden tutustua teknologian
