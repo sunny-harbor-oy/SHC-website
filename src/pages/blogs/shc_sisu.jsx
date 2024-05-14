@@ -15,7 +15,7 @@ export default function SHC_Sisu() {
       id="blog"
       className="bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen"
     >
-        <Helmet>
+       {/*  <Helmet>
         <title>SHC Tiimi: Sisu Eriksson | Sunny Harbor</title>
         <meta
           name="description"
@@ -43,7 +43,7 @@ export default function SHC_Sisu() {
         />
         <meta name="author" content="Sisu Eriksson" />
         <link rel="canonical" href="https://sunnyharbor.fi/blogs/shc_sisu" />
-      </Helmet>
+      </Helmet> */}
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">
         <Title>
           <h1>SHC Tiimi: Sisu Eriksson</h1>
