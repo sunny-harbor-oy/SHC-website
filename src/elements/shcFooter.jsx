@@ -41,25 +41,25 @@ export default function SHCFooter() {
         <h2 className="mx-[0] my-auto text-md">sisu@sunnyharbor.fi</h2>
       </div>
       </div>
-      <div className="md:flex md:justify-center hidden grid-cols-2 md:w-full w-[80%] mx-auto text-center gap-[1vw]">
-        <Link to={"/price-estimate"} reloadDocument="true" className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary">Kustannusarvio</Link>
-        <p className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary" onClick={() => {
+      <div className="md:flex md:justify-center pb-5 md:pb-0  grid-cols-2 md:w-full w-[80%] mx-auto text-center gap-[1vw]">
+        <Link to={"/price-estimate"} reloadDocument="true" className="transition duration-500 hover:cursor-pointer hover:underline md:no-underline underline hover:text-secondary">Kustannusarvio</Link>
+   {/*      <p className="transition duration-500 hover:cursor-pointer hover:underline hover:text-secondary" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop);
             } else {
-              window.location = "/#team";
-              document.cookie = "scrollTo=true";
+              window.location = "/";
+              window.scrollTo(0, document.getElementById("team").offsetTop);
             }
-        }}>Tiimi</p>
-        <p className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary" onClick={() => {
+        }}>Tiimi</p> */}
+       {/*  <p className="transition duration-500 hover:cursor-pointer hover:underline hover:text-secondary" onClick={() => {
             if (window.location.pathname == "/") {
-              window.scrollTo(0, document.getElementById("homeWrapper").offsetTop);
+              window.scrollTo(0, document.getElementById("asiakkaamme").offsetTop);
             } else {
-              window.location = "/#homeWrapper";
+              window.location = "/#asiakkaamme";
               document.cookie = "scrollTo=true";
             }
-        }}>Asiakkaat</p>
-        <Link to={"/contact"} reloadDocument="true" className="hover:cursor-pointer transition duration-500 hover:underline hover:text-secondary">Ota yhteyttä</Link>
+        }}>Asiakkaat</p> */}
+        <Link to={"/contact"} reloadDocument="true" className="transition md:flex hidden duration-500 hover:cursor-pointer hover:underline hover:text-secondary">Ota yhteyttä</Link>
       </div>
     </div>
     </div>

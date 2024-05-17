@@ -1,18 +1,48 @@
 import background from "../assets/WebVideo.webm";
 import backgroundForMobile from "../assets/MobileVideo.mp4";
 import AboutUs from "../pages/aboutUs.jsx";
+import TextSection from "../pages/textSection.jsx";
+import References from "./references";
+import Calendar from "../elements/calendar";
+import { Helmet } from "react-helmet";
 
 // The squad
-import leonImg from "../assets/founders/leon.jpg";
+/* import leonImg from "../assets/founders/leon.jpg";
 import sisuImg from "../assets/founders/sisu.jpg";
 import victorImg from "../assets/founders/victorv2.jpg";
-import marcImg from "../assets/team/alexv3.jpg";
+import marcImg from "../assets/team/alexv3.jpg"; */
 
 export default function HomePage(language = "fi") {
   return (
     <div id="homeWrapper" className="w-screen overflow-x-hidden bg-primary">
+      <Helmet>
+      <title>Sunny Harbor Oy: Mobiili- sekä Websovellukset</title>
+        <meta
+          name="description"
+          content="Tavoitteemme on olla alan läpinäkyvin ja luotettavin vaihtoehto IT-ratkaisuillesi! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu."
+        />
+        <meta property="og:title" content="Sunny Harbor" />
+        <meta
+          property="og:description"
+          content="Tavoitteemme on olla alan läpinäkyvin ja luotettavin vaihtoehto IT-ratkaisuillesi! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu."
+        />
+          <meta property="og:image" content={background} />
+          <meta
+          name="keywords"
+          content="läpinäkyvyys, ohjelmistokehitys, nettisivut, sovellus, peli, ulkopuolinen toimija, kommunikaatio, sopimukset, ominaisuudet, hinta, ylläpito, jatkokehitys, projektin toteutus, suunnittelu, immateriaalioikeudet, rehellisyys, suora kommunikaatio, ohjelmistokehittäjät, suunnittelijat"
+        />
+        <meta
+          property="og:url"
+          content="https://sunnyharbor.fi"
+        />
+        <meta name="author" content="Sisu Eriksson" />
+        <link
+          rel="canonical"
+          href="https://sunnyharbor.fi"
+        />
+      </Helmet>
       <div className="relative w-screen h-screen font-semibold text-white font-poppins">
-        <video
+        <video  
           src={window.innerWidth < 762 ? backgroundForMobile : background}
           autoPlay
           loop
@@ -22,8 +52,13 @@ export default function HomePage(language = "fi") {
         />
       </div>
       <AboutUs />
-      <div className="w-screen pb-[5vw] md:pb-[10vh] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
-        <div className="transition duration-500 hover:scale-110 md:hover:scale-125 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
+      <TextSection />
+      <References />
+      <div id="calendar" className="mx-6">
+      <Calendar />
+      </div>
+      {/* <div className="w-screen pb-[5vw] md:pb-[10vh] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
+        <div className="transition duration-500 hover:scale-110 md:hover:scale-105 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -38,11 +73,11 @@ export default function HomePage(language = "fi") {
               d="M14.25 7.756a4.5 4.5 0 100 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <h3 className="sm:text-h3-sm text-h3 md:font-medium font-semibold w-[90%] mx-auto sm:pt-[2vw]">
-            Kustannustehokkaat ratkaisut
+          <h3 className="sm:text-2xl text-lg md:font-normal font-semibold w-[90%] mx-auto sm:pt-[2vw]">
+            Kilpailukykyiset ratkaisut
           </h3>
         </div>
-        <div className="transition duration-500 hover:scale-110 md:hover:scale-125 hover:bg-ilmoPrimaryColor  shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
+        <div className="transition duration-500 hover:scale-110 md:hover:scale-105 hover:bg-ilmoPrimaryColor  shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -57,11 +92,11 @@ export default function HomePage(language = "fi") {
               d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
             />
           </svg>
-          <h3 className="sm:text-h3-sm text-h3 md:font-medium font-semibold w-[90%] mx-auto sm:pt-[2vw]">
+          <h3 className="sm:text-2xl text-lg md:font-normal font-semibold w-[90%] mx-auto sm:pt-[2vw]">
             Aktiivinen ja erehtymätön tuki
           </h3>
         </div>
-        <div className="transition duration-500 hover:scale-110 md:hover:scale-125 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
+        <div className="transition duration-500 hover:scale-110 md:hover:scale-105 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -76,11 +111,11 @@ export default function HomePage(language = "fi") {
               d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
             />
           </svg>
-          <h3 className="sm:text-h3-sm text-h3 md:font-medium font-semibold w-[90%] mx-auto sm:pt-[2vw]">
+          <h3 className="sm:text-2xl text-lg md:font-normal font-semibold w-[90%] mx-auto sm:pt-[2vw]">
             Täysin räätälöidyt ratkaisut
           </h3>
         </div>
-      </div>
+      </div> */}
       {/* <div
         className="w-screen bg-primary font-poppins pt-[17vh] md:pt-[20vh]"
         id="team"
