@@ -15,6 +15,9 @@ export default function TransparencyBlog() {
     >
       <Helmet>
         <title>Läpinäkyvyyden merkitys ohjelmistokehityksessä | Sunny Harbor</title>
+        <description>Kun haluat ohjelmistokehitystä nettisivuja, sovellusta tai vaikkapa
+          peliä varten, varsinkin ulkopuoliselta toimijalta, muista valita
+          toimija läpinäkyvyyden ja suorasanaisuuden perusteella.</description>
         <meta
           name="description"
           content="Kun haluat ohjelmistokehitystä nettisivuja, sovellusta tai vaikkapa
