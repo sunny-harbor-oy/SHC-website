@@ -1172,47 +1172,12 @@ useEffect(() => {
     }
 });
 
-  return (
-    <div className="flex flex-col justify-center w-screen min-h-screen bg-primary">
-      <Helmet>
-        <title>Kustannusarviolaskuri | Sunny Harbor</title>
-        <meta
-          name="description"
-          content="Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi
-          sekä antaa sinulle välittömästi suuntaa-antava hinta-arvio tarjouksesta!"
-        />
-        <meta property="og:title" content="Kustannusarviolaskuri" />
-        <meta
-          property="og:description"
-          content="Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi
-          sekä antaa sinulle välittömästi suuntaa-antava hinta-arvio tarjouksesta!"
-        />
-        <meta
-          name="keywords"
-          content="nettisivut, ohjelmointi, sovellus, applikaatio, ohjelmistokehitys, työnohjaus, automatisointi, järjestelmä, ohjelmisto, kehityskustannukset, budjetti, arviointi, kustannusarvio, tuntihinta, projektin laajuus, kustannustehokkuus, lisäkustannukset, muutokset, palvelupaketit, ylläpitokustannukset, konsultointi, räätälöinti, integrointikustannukset, käyttöönottokustannukset, jatkokehitys, maksuehdot, tarjous, kilpailutus, hinnoittelu"
-        />
-        <meta
-          property="og:url"
-          content="https://sunnyharbor.fi/price-estimate"
-        />
-        <link rel="canonical" href="https://sunnyharbor.fi/price-estimate" />
-      </Helmet>
-      <div className="2xl:w-[75vw] sm:w-[80vw] w-[90%] mx-auto">
-        <div className="mx-auto">
-          <div className="w-[70vw] mx-auto">
-            <div
-              className={`grid sm:gap-4 gap-1 mx-auto w-[85%] 2xl:px-[4vw] mt-28`}
-              style={{
-                placeItems: "center",
-                gridTemplateColumns: `repeat(${
-                  cardData.length % 9 == 0 || cardData.length < 9
-                    ? cardData.length
-                    : Math.ceil(cardData.length / 2)
-                }, minmax(0, 1fr))`,
-              }}
-              ref={barDiv}
-            >
-              {progressBar}
+return (
+    <div className="flex flex-col justify-center w-screen min-h-[85vh] bg-primary">
+    <div className="2xl:w-[75vw] md:w-[80vw] w-[95%] xl:pt-32 lg:pt-[10vh] md:pt-24 mx-auto">
+        <div className="2xl:1/2 md:w-2/3 mx-auto md:pt-[2vw]">
+            <div className={`grid sm:gap-4 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${(cardData.length % 9 == 0 || cardData.length < 9) ? cardData.length : Math.ceil(cardData.length / 2) }, minmax(0, 1fr))`}} ref={barDiv}>
+                {progressBar}
             </div>
         </div>
         <div className="w-[100%] min-h-[40vw] mx-auto">
