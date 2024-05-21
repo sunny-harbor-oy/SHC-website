@@ -464,6 +464,9 @@ let tietokonesovellusData = [
             "Integraatio sosiaalisen median alustan kanssa": { cost: 1 },
             "Tarkka analytiikka sovelluksen käytöstä": { cost: 4 },
         },
+        settings: {
+            multipleChoice: true,
+        },
     },
     {
         title: "Käyttäjät",
@@ -790,7 +793,7 @@ const finalPriceFunc = () => {
     });
 
     const writtenFeedback = <h2 className="md:text-[1.25vw] text-[4vw]">
-        Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen mukaan. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!
+        Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!
     </h2>
 
     return (
@@ -833,8 +836,8 @@ const choosePath = () => {
     const onClickFunc = (mapId) => {
         console.log(cardData)
         setCardData(pathMap[mapId]);
-        setpathSelected(true);
         setSelectingPath(false);
+        setpathSelected(true);
         mobileBtn.current.click();
     }
 
@@ -868,6 +871,7 @@ const choosePath = () => {
     for (let i = 0; i < children.length - 1; i++) {
         console.log(i)
         children[i].addEventListener("click", () => {
+            window.dispatchEvent(new Event("test"));
             setCardData(pathMap[children[i].id]);
             onClickFunc(children[i].id);
         });
@@ -876,8 +880,6 @@ const choosePath = () => {
     children[children.length - 1].addEventListener("click", () => {
         window.location.href = "/contact";
     });
-
-    console.log("path selected");
 }
 
 const updateStages = () => {
@@ -1189,11 +1191,11 @@ return (
             </div> 
             <div className="lg:w-[70vw] md:w-[75vw] w-[90vw] mx-auto lg:block hidden">
                 <div className="sm:w-[85%] w-[95%] mx-auto 2xl:px-[4vw] px-[2vw]">
-                <button onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`xl:text-[1.3vw] text-[2vw] font-semibold bg-[#FCA311] text-white px-[1vw] py-[0.25vw] rounded-lg font-poppins ${selectingPath ? "hidden" : ""}`}>Seuraava <i className="fa fa-angle-right"></i></button>
+                <button onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`xl:text-[1.3vw] text-[2vw] font-semibold bg-[#FCA311] text-white px-[1vw] py-[0.25vw] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
                 </div>
             </div>
             <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
-                <button onClick={() => pathSelected ? changeCard(1) : choosePath()} ref={mobileBtn} className="lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-[2vw] sm:text-[3.5vw] text-[5vw] md:px-[0] px-[2vw] py-[1vw] rounded-lg md:w-[17vw] sm:w-[30vw] w-[35vw] left-0">Seuraava</button>
+                <button onClick={() => pathSelected ? changeCard(1) : choosePath()} ref={mobileBtn} className={`lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-[2vw] sm:text-[3.5vw] text-[5vw] md:px-[0] px-[2vw] py-[1vw] rounded-lg md:w-[17vw] sm:w-[30vw] w-[35vw] left-0`}>Seuraava</button>
             </div>
         </div>
         <div ref={report} className="hidden w-[100%] min-h-[40vw] mx-auto pb-[4vw]">
