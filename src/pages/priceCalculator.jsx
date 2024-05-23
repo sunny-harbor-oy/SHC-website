@@ -969,12 +969,12 @@ const renderCard = (cardId) => {
     
         return (
             <div key={cardId} questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] w-[90%] mt-[20px]">
-                <h1 className="text-[#FCA311] lg:text-5xl md:text-4xl sm:text-3xl text-[7vw] sm:w-4/5 font-poppins font-extrabold">{card.title}</h1>
-                <h2 className="lg:text-4xl md:text-2xl sm:text-lg text-[6vw] md:w-4/5 w-[100%] font-poppins my-0">{card.question}</h2>
+                <h1 className="text-[#FCA311] lg:text-4xl md:text-3xl sm:text-2xl text-[7vw] sm:w-4/5 font-poppins font-extrabold">{card.title}</h1>
+                <h2 className="lg:text-3xl md:text-2xl sm:text-lg text-[6vw] md:w-4/5 w-[100%] font-poppins my-0">{card.question}</h2>
                 <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[10px] w-full">
                     {Object.entries(card.answers).map(([option, value]) => (
                         <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[2%] py-[2vw] md:px-[2vw] sm:px-[3%] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
-                            <h1 className="transition-all duration-200 font-poppins lg:text-4xl md:text-2xl sm:text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+                            <h1 className="transition-all duration-200 font-poppins lg:text-2xl md:text-xl sm:text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                                 {option}
                             </h1>
                             <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] sm:rounded-sm rounded-full" />
