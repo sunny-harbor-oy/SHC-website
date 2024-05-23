@@ -13,7 +13,7 @@ export default function AutomatizationBlog() {
     >
       <Helmet>
         <title>
-          Milloin henkilöstönhallinta kannattaa tehdä ohjelmiston avulla?
+          Milloin henkilöstönhallinta kannattaa tehdä ohjelmistolla?
         </title>
         <meta
           name="description"
@@ -21,7 +21,7 @@ export default function AutomatizationBlog() {
         />
         <meta
           property="og:title"
-          content="Milloin henkilöstönhallinta kannattaa tehdä ohjelmiston avulla?"
+          content="Milloin henkilöstönhallinta kannattaa tehdä ohjelmistolla?"
         />
         <meta
           property="og:description"

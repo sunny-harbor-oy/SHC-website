@@ -13,7 +13,7 @@ export default function SHC_saas() {
       className="bg-white pt-[8vh] md:pt-[18vh] md:pb-[10vh] w-screen"
     >
       <Helmet>
-        <title>SaaS vai täysin räätälöity ratkaisu? | Sunny Harbor</title>
+        <title>SaaS vai oma ohjelmisto? | Sunny Harbor</title>
         <meta
           name="description"
           content="   Toisaalta ohjelmistoa tarvitseva yritys voi itse kehittää, ostaa tai
@@ -25,7 +25,7 @@ export default function SHC_saas() {
         />
         <meta
           property="og:title"
-          content="SaaS vai täysin räätälöity ratkaisu?"
+          content="SaaS vai oma ohjelmisto?"
         />
         <meta
           property="og:description"
