@@ -18,8 +18,8 @@ import SHCFooter from "./elements/shcFooter.jsx";
 import BlogV1 from "./pages/templates/blogs/blogv1.jsx";
 import SHC_Victor from "./pages/blogs/shc_victor.jsx";
 import SHC_Sisu from "./pages/blogs/shc_sisu.jsx";
-import TransparencyBlog from "./pages/blogs/shc_transparency";
-import AutomatizationBlog from "./pages/blogs/milloin-henkilöstönhallinnointi-kannattaa-tehdä-ohjelmistolla";
+import TransparencyBlog from "./pages/blogs/lapinakyvyys-ohjelmistokehityksessa";
+import AutomatizationBlog from "./pages/blogs/milloin-henkilostonhallinnointi-kannattaa-tehda-ohjelmistolla";
 import SHC_saas from "./pages/blogs/saas-vai-oma-ohjelmisto";
 //import AlertManager from "./elements/alertManager";
 
@@ -54,15 +54,15 @@ function App() {
         <Route path="/blogs/shc_victor" element={<SHC_Victor />}></Route>
         <Route path="/blogs/shc_sisu" element={<SHC_Sisu />}></Route>
         <Route
-          path="/blogs/shc_transparency"
+          path="/blogs/lapinakyvyys-ohjelmistokehityksessa"
           element={<TransparencyBlog />}
         ></Route>
         <Route
-          path="/blogs/shc_automatization"
+          path="/blogs/milloin-henkilostonhallinnointi-kannattaa-tehda-ohjelmistolla"
           element={<AutomatizationBlog />}
         ></Route>
         <Route
-          path="/blogs/shc_saas"
+          path="/blogs/saas-vai-oma-ohjelmisto"
           element={<SHC_saas />}
         ></Route>
       </Routes>

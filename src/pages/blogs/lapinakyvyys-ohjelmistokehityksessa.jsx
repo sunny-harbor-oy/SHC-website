@@ -41,12 +41,12 @@ export default function TransparencyBlog() {
         />
         <meta
           property="og:url"
-          content="https://sunnyharbor.fi/blogs/shc_transparency"
+          content="https://sunnyharbor.fi/blogs/lapinakyvyys-ohjelmistokehityksessa"
         />
         <meta name="author" content="Victor Ocampo" />
         <link
           rel="canonical"
-          href="https://sunnyharbor.fi/blogs/shc_transparency"
+          href="https://sunnyharbor.fi/blogs/lapinakyvyys-ohjelmistokehityksessa"
         />
       </Helmet>
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">

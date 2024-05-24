@@ -48,7 +48,7 @@ export default function BlogitPage() {
       </h2>
       <div className="grid min-h-[60vh] gap-20 md:gap-10 mt-[5vh] max-md:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 md:px-[10vw] pb-[5vh]">
         <Link
-          to={"/blogs/shc_saas"}
+          to={"/blogs/saas-vai-oma-ohjelmisto"}
           reloadDocument="true"
           className="w-[80%] md:w-full max-md:mx-auto min-h-[70vh] md:h-full relative bg-card2 md:aspect-[5/7] rounded-lg overflow-hidden transition hover:cursor-pointer duration-500  hover:scale-105 md:hover:scale-105 "
         >
@@ -74,7 +74,7 @@ export default function BlogitPage() {
           </div>
         </Link>
         <Link
-          to={"/blogs/shc_automatization"}
+          to={"/blogs/milloin-henkilostonhallinnointi-kannattaa-tehda-ohjelmistolla"}
           reloadDocument="true"
           className="w-[80%] md:w-full max-md:mx-auto min-h-[70vh] md:h-full relative bg-card2 md:aspect-[5/7] rounded-lg overflow-hidden transition hover:cursor-pointer duration-500 hover:scale-105 md:hover:scale-105 "
         >
@@ -102,7 +102,7 @@ export default function BlogitPage() {
           </div>
         </Link>
         <Link
-          to={"/blogs/shc_transparency"}
+          to={"/blogs/lapinakyvyys-ohjelmistokehityksessa"}
           reloadDocument="true"
           className="w-[80%] md:w-full max-md:mx-auto min-h-[70vh] md:h-full relative bg-card2 md:aspect-[5/7] rounded-lg overflow-hidden transition hover:cursor-pointer duration-500 hover:scale-105 md:hover:scale-105 "
         >

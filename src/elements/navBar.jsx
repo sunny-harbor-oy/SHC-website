@@ -125,7 +125,7 @@ export default function NavBar() {
           }}>Asiakkaat</h1> */}
           <h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
-              window.scrollTo(0, document.getElementById("referensseja").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
+              window.scrollTo(0, document.getElementById("#referensseja").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
               if (isMobile) {
                 navItems.style.height = "0vh";
                 navItems.style.borderTop = "0px solid #FCA311";

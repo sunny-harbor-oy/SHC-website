@@ -34,12 +34,12 @@ export default function AutomatizationBlog() {
         />
         <meta
           property="og:url"
-          content="https://sunnyharbor.fi/blogs/shc_automatization"
+          content="https://sunnyharbor.fi/blogs/milloin-henkilostonhallinnointi-kannattaa-tehda-ohjelmistolla"
         />
         <meta name="author" content="Victor Ocampo" />
         <link
           rel="canonical"
-          href="https://sunnyharbor.fi/blogs/shc_automatization"
+          href="https://sunnyharbor.fi/blogs/milloin-henkilostonhallinnointi-kannattaa-tehda-ohjelmistolla"
         />
       </Helmet>
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">

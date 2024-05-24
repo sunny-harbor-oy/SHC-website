@@ -30,7 +30,7 @@ function TextSection() {
               valita toimija läpinäkyvyyden, suorasanaisuuden ja luotettavuuden
               perusteella.
             </p>
-            <a href="blogs/shc_transparency " class="inline-block">
+            <a href="blogs/lapinakyvyys-ohjelmistokehityksessa" class="inline-block">
               <button
                 className="relative z-[3] flex items-center gap-1 text-base text-white text-left py-[1.0vh] px-[1.6vh] shadow-md  bg-secondary transition duration-500 hover:scale-105 hover:bg-ilmoPrimaryColor rounded-lg hover:text-secondary"
                 type="button"
@@ -83,7 +83,7 @@ function TextSection() {
               eri työtehtäviä organisaatiossa. Lisäksi se mahdollistaa joustavan
               työvuorojen hallinnan ja parantaa työn tehokkuutta.
             </p>
-            <a href="blogs/shc_automatization" class="inline-block">
+            <a href="blogs/milloin-henkilostonhallinnointi-kannattaa-tehda-ohjelmistolla" class="inline-block">
               <button
                 className="relative z-[3] flex items-center gap-1 text-base text-white text-left py-[1.0vh] px-[1.6vh] shadow-md  bg-secondary transition duration-500 hover:scale-105 hover:bg-ilmoPrimaryColor rounded-lg hover:text-secondary"
                 type="button"
@@ -138,7 +138,7 @@ function TextSection() {
               ongelmia. Jos yritys tarvitsee erittäin omalaatuisia
               ominaisuuksia, SaaS kehittäjiltä on vaikea pyytää sitä. 
             </p>
-            <a href="blogs/shc_saas" class="inline-block">
+            <a href="blogs/saas-vai-oma-ohjelmisto" class="inline-block">
               <button
                 className="relative z-[3] flex items-center gap-1 text-base text-white text-left py-[1.0vh] px-[1.6vh] shadow-md  bg-secondary transition duration-500 hover:scale-105 hover:bg-ilmoPrimaryColor rounded-lg hover:text-secondary"
                 type="button"
