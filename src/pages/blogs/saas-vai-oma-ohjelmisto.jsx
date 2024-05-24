@@ -16,7 +16,7 @@ export default function SHC_saas() {
         <title>SaaS vai oma ohjelmisto? | Sunny Harbor</title>
         <meta
           name="description"
-          content="   Toisaalta ohjelmistoa tarvitseva yritys voi itse kehittää, ostaa tai
+          content="Toisaalta ohjelmistoa tarvitseva yritys voi itse kehittää, ostaa tai
           teettää ohjelmiston, varsinkin jos yritys tarvitsee ohjelmistoa
           pitkäksi aikaa. Ohjelmistoa hankkiessa yritykset/yrittäjät joutuvat
           päättämään maksavatko ne SaaS-ohjelmistosta tai hankkivatko täysin

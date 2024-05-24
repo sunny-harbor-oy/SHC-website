@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./style/global.css";
 import HomePage from "./pages/home.jsx";
-import ContactPage from "./pages/contact.jsx";
-import PriceEstimation from "./pages/priceCalculator.jsx";
+import ContactPage from "./pages/ota-yhteytta.jsx";
+import PriceEstimation from "./pages/kustannusarviolaskuri.jsx";
 import IlmoPage from "./pages/ilmo.jsx";
 import BlogsPage from "./pages/blogs.jsx";
 
@@ -19,8 +19,8 @@ import BlogV1 from "./pages/templates/blogs/blogv1.jsx";
 import SHC_Victor from "./pages/blogs/shc_victor.jsx";
 import SHC_Sisu from "./pages/blogs/shc_sisu.jsx";
 import TransparencyBlog from "./pages/blogs/shc_transparency";
-import AutomatizationBlog from "./pages/blogs/shc_automatization";
-import SHC_saas from "./pages/blogs/shc_saas";
+import AutomatizationBlog from "./pages/blogs/milloin-henkilöstönhallinnointi-kannattaa-tehdä-ohjelmistolla";
+import SHC_saas from "./pages/blogs/saas-vai-oma-ohjelmisto";
 //import AlertManager from "./elements/alertManager";
 
 import { useEffect } from "react";
@@ -41,11 +41,11 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/price-estimate" element={<PriceEstimation />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/kustannusarviolaskuri" element={<PriceEstimation />} />
+        <Route path="/ota-yhteytta" element={<ContactPage />} />
         <Route path="/ilmo" element={<IlmoPage />} />
-        <Route path="/contact/ok" element={<OkPage />}></Route>
-        <Route path="/contact/failed" element={<FailedPage />}></Route>
+        <Route path="/ota-yhteytta/ok" element={<OkPage />}></Route>
+        <Route path="/ota-yhteytta/failed" element={<FailedPage />}></Route>
         <Route path="/blogs" element={<BlogsPage />}></Route>
         <Route path="*" element={<HomePage />} />
 
