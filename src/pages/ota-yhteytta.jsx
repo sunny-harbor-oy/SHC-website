@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+
 import emialjs from "@emailjs/browser";
 import leonImg from "../assets/founders/leon.webp";
 import sisuImg from "../assets/founders/sisu.webp";
@@ -162,7 +162,7 @@ export default function ContactPage() {
 
           </p> :           
           <p className="md:text-base md:w-auto w-[70%] text-[4vw] md:leading-normal leading-[4.2vw] text-white font-light mb-2 md:mb-0">
-            Syöte ei ole saatavilla.<a href="./price-estimate" className="text-[#FCA311] ml-[1vw] font-semibold">{">"}Käy täyttämässä laskuri tästä{"<"}</a>
+            Syöte ei ole saatavilla.<a href="./kustannusarviolaskuri" className="text-[#FCA311] ml-[1vw] font-semibold">{">"}Käy täyttämässä laskuri tästä{"<"}</a>
           </p>
           }
           </div>

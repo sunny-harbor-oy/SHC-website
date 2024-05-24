@@ -42,7 +42,7 @@ export default function SHCFooter() {
       </div>
       </div>
       <div className="md:flex md:justify-center pb-5 md:pb-0  grid-cols-2 md:w-full w-[80%] mx-auto text-center gap-[1vw]">
-        <Link to={"/price-estimate"} reloadDocument="true" className="transition duration-500 hover:cursor-pointer hover:underline md:no-underline underline hover:text-secondary">Kustannusarvio</Link>
+        <Link to={"/kustannusarviolaskuri"} reloadDocument="true" className="transition duration-500 hover:cursor-pointer hover:underline md:no-underline underline hover:text-secondary">Kustannusarvio</Link>
    {/*      <p className="transition duration-500 hover:cursor-pointer hover:underline hover:text-secondary" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop);

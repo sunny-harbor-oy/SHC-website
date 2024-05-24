@@ -49,7 +49,7 @@ function AboutUs() {
             <div className="relative sm:mt-[10vh] transition hover:cursor-pointer duration-500 hover:scale-105 hover:text-ilmoCardColor hover:font-semibold ">
               <div className="absolute hidden z-[1] bg-secondary filter blur-md w-[23.4vw] h-[4.3vw] px-[1vw] py-[2vw]"></div>
               <Link
-                to={"./price-estimate"}
+                to={"./kustannusarviolaskuri"}
                 className="relative z-[3] lg:text-xl text-base text-secondary  text-left py-[1.5vh] px-[2vh] shadow-md bg-card2 transition duration-500 hover:scale-225 hover:text-white hover:bg-secondary rounded-lg"
               >
                 Kustannusarvio sekunneissa! &rarr;
