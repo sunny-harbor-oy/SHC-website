@@ -96,7 +96,7 @@ export default function NavBar() {
       <div className="flex">
         <Link className="my-auto lg:min-w-[100px] hover:cursor-pointer" reloadDocument="true" to={"/"}><img src={logo} className="h-[7vh] my-auto"></img></Link>
         <div ref={navItemsRef} className="z-[10] lg:bg-transparent bg-primary transition-all duration-[250ms] lg:grid grid-cols-6 gap-4 lg:my-auto lg:text-center lg:font-light font-semibold text-left lg:text-[1.75vh] text-[3vh] lg:px-[3vw] px-[5vw] lg:relative fixed lg:top-auto top-[8vh] left-0 lg:h-auto h-[0vh] lg:w-auto w-screen overflow-hidden">
-          <Link to={"/price-estimate"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105  lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]">Kustannusarvio</h1></Link>
+          <Link to={"/kustannusarviolaskuri"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105  lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]">Kustannusarvio</h1></Link>
           {/* <h1 className="hover:cursor-pointer md:px-[0] px-[2vw] md:border-l-0 border-l-4 border-white md:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("team").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
@@ -137,7 +137,7 @@ export default function NavBar() {
             }
           }}>Referenssejä</h1>
           <Link to={"/blogs"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh] ">Blogit</h1></Link>
-          <Link to={"/contact"} reloadDocument="true" className="lg:hidden"><h1 className="hover:cursor-pointer lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]">Ota yhteyttä</h1></Link>
+          <Link to={"/ota-yhteytta"} reloadDocument="true" className="lg:hidden"><h1 className="hover:cursor-pointer lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]">Ota yhteyttä</h1></Link>
           <h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("calendar").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
@@ -154,7 +154,7 @@ export default function NavBar() {
         </div>
       </div>
       <div className="border-solid transition duration-500 hover:scale-110  hover:shadow-md hover:border-secondary  border-[#FFFFFF] border-2 w-[15vh] my-auto lg:block hidden">
-        <Link reloadDocument="true" to={"/contact"}>
+        <Link reloadDocument="true" to={"/ota-yhteytta"}>
           <h1 className="text-[#FFFFFF] hover:text-secondary hover:font-extrabold font-semibold hover:cursor-pointer transition-all duration-[250ms] my-auto py-[0.5vw] w-full h-full">
             Ota yhteyttä!
           </h1>
