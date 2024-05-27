@@ -842,13 +842,13 @@ const choosePath = () => {
     }
 
     const elemRender = 
-    <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] md:px-[2vw]">
-        <h1 className="text-[#FCA311] 2xl:text-[2.5vw] lg:text-[3vw] md:text-[3.3vw] sm:text-[8wv] text-[10vw] md:w-4/5 font-poppins font-extrabold">Projektin tyyppi</h1>
-        <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] md:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
-        <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
+    <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] lg:w-[85%] 2xl:px-[4vw] md:px-[2vw]">
+        <h1 className="text-[#FCA311] 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl sm:w-4/5 font-poppins font-extrabold">Projektin tyyppi</h1>
+        <h2 className="xl:mt-[10px] 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg text-lg sm:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
+        <div className="flex flex-col mt-[10px] w-full">
             {Object.entries(pathMap).map(([option, value]) => (
-                <div id={option} className="flex justify-between min-w-[200px] lg:w-full md:w-[75%] hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
-                    <h1 className="transition-all duration-200 font-poppins 2xl:text-[1.5vw] xl:text-[1.7vw] lg:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+                <div id={option} className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
+                    <h1 className="transition-all duration-200 font-poppins 2xl:text-2xl xl:text-xl lg:text-lg md:text-lg sm:text-lg text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                         {option} 
                     </h1>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="w-6 h-6 my-auto">
@@ -856,8 +856,8 @@ const choosePath = () => {
                     </svg>
                 </div>
             ))}
-            <div className="flex justify-between min-w-[200px] lg:w-full md:w-[75%] hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
-                <h1 className="transition-all duration-200 font-poppins 2xl:text-[1.5vw] xl:text-[1.7vw] lg:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+            <div className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
+                <h1 className="transition-all duration-200 font-poppins 2xl:text-2xl xl:text-xl lg:text-lg md:text-lg sm:text-lg text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                     Muu, mikä?
                 </h1>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="w-6 h-6 my-auto">
@@ -881,7 +881,7 @@ const choosePath = () => {
     }
 
     children[children.length - 1].addEventListener("click", () => {
-        window.location.href = "/contact";
+        window.location.href = "/ota-yhteytta";
     });
 }
 
@@ -1018,6 +1018,14 @@ const renderCard = (cardId) => {
 
             self.children[1].style["background-color"] = state ? "#1eb82a" : "#c6d0d8";
             lastOptionSelected = state ? {questionId: ownId, self} : undefined;
+
+            if (cardData[cardId]['settings'] && state) {
+                if (cardData[cardId]['settings']['multipleChoice'] == false && lastOptionSelected != undefined) {
+                    changeCard(1);
+                }
+            } else if (state) {
+                changeCard(1);
+            }
         });        
     }
 
@@ -1102,6 +1110,8 @@ const changeCard = (change) => {
         report.current.style.display = "none";
     }
     
+    // Reset scroll
+    window.scrollTo(0, 0);
 }
 
 let writtenSummaryHeight = 0;
@@ -1178,19 +1188,19 @@ useEffect(() => {
 });
 
 return (
-    <div className="flex justify-center w-screen min-h-[85vh] bg-primary pt-[13vh]">
-    <div className="lg:w-[1000px] md:w-[750px] sm:w-[640px] w-[95%]">
+    <div className="flex justify-center w-screen min-h-[85vh] bg-primary md:pt-[13vh] pt-[9vh]">
+    <div className="2xl:w-[1500px] lg:w-[1000px] md:w-[750px] sm:w-[640px] w-[95%]">
         <div className="w-[90%] mx-auto md:pt-[2vw]">
             <div className={`grid md:gap-4 sm:gap-3 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${(cardData.length % 9 == 0 || cardData.length < 9) ? cardData.length : Math.ceil(cardData.length / 2) }, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
         <div className="min-h-[40vw] mx-auto w-full">
-            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[50vh] flex justify-center mx-auto">
-                <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw]">
-                    <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-[10vw] font-semibold">Kustannusarvio laskuri</h1>
-                    <p className="text-white lg:text-4xl md:text-2xl sm:text-lg text-[6vw] font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
-                    <button hidden={pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`lg:text-xl md:mt-[30px] font-semibold bg-[#FCA311] text-white px-[3%] py-[0.75%] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
+            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[60vh] flex justify-center mx-auto">
+                <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw] max-md:px-[20px]">
+                    <h1 className="xl:text-5xl lg:text-4xl md:text-4xl text-2xl font-semibold">Kustannusarvio laskuri</h1>
+                    <p className="text-white xl:text-3xl lg:text-2xl md:text-2xl text-xl font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
+                    <button hidden={pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`lg:text-xl md:mt-[50px] font-semibold bg-[#FCA311] text-white px-[3%] py-[0.75%] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
                 </div>
             </div> 
             <div className="lg:w-[1000px] md:w-[750px] w-[90vw] mx-auto lg:block hidden">
@@ -1199,7 +1209,7 @@ return (
                 </div>
             </div>
             <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
-                <button onClick={() => pathSelected ? changeCard(1) : choosePath()} ref={mobileBtn} className={`lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-[2vw] sm:text-xl text-xl px-[20px] py-[5px] rounded-lg left-0`}>Seuraava</button>
+                <button hidden={selectingPath ? !pathSelected : false} onClick={() => pathSelected ? changeCard(1) : choosePath()} ref={mobileBtn} className={`lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-2xl sm:text-xl text-xl px-[20px] py-[5px] rounded-lg left-0`}>Seuraava</button>
             </div>
         </div>
         <div ref={report} className="hidden w-[100%] min-h-[40vw] mx-auto pb-[4vw]">
