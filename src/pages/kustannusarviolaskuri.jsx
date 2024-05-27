@@ -847,7 +847,7 @@ const choosePath = () => {
         <h2 className="xl:mt-[10px] 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg text-lg sm:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
         <div className="flex flex-col mt-[10px] w-full">
             {Object.entries(pathMap).map(([option, value]) => (
-                <div id={option} className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
+                <div id={option} className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] md:hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
                     <h1 className="transition-all duration-200 font-poppins 2xl:text-2xl xl:text-xl lg:text-lg md:text-lg sm:text-lg text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                         {option} 
                     </h1>
@@ -856,7 +856,7 @@ const choosePath = () => {
                     </svg>
                 </div>
             ))}
-            <div className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
+            <div className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] md:hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
                 <h1 className="transition-all duration-200 font-poppins 2xl:text-2xl xl:text-xl lg:text-lg md:text-lg sm:text-lg text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                     Muu, mikä?
                 </h1>
@@ -973,7 +973,7 @@ const renderCard = (cardId) => {
                 <h2 className="lg:text-3xl md:text-2xl sm:text-lg text-[6vw] md:w-4/5 w-[100%] font-poppins my-0">{card.question}</h2>
                 <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[10px] w-full">
                     {Object.entries(card.answers).map(([option, value]) => (
-                        <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[2%] py-[2vw] md:px-[2vw] sm:px-[3%] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
+                        <div className="flex justify-between w-full md:hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[2%] py-[2vw] md:px-[2vw] sm:px-[3%] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
                             <h1 className="transition-all duration-200 font-poppins lg:text-2xl md:text-xl sm:text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                                 {option}
                             </h1>
