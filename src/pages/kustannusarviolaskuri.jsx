@@ -655,7 +655,7 @@ let locked = false;
 let [pathSelected, setpathSelected] = useState(false);
 let [selectingPath, setSelectingPath] = useState(false);
 
-let isMobile = window.innerWidth < 640;
+let isMobile = window.innerWidth < 768;
 
 const slideDiv = useRef(null);
 const barDiv = useRef(null);
@@ -774,15 +774,15 @@ const finalPriceFunc = () => {
     const answerElements = Object.entries(answersObj).map(([option, value]) => {
         i++;
         return (
-            <div className="flex flex-col mx-auto w-[95%] bg-card2 rounded-lg md:px-[1vw] px-[3vw] md:my-[1.5vw] my-[3vw] md:pb-[1vw] pb-[2vw]">
-                <h1 className="text-[#FCA311] md:text-[1.75vw] text-[5vw] mt-[1vw] mb-0">{option}:</h1>
-                <div className="w-[95%] mx-auto">{Object.entries(value).map(([option, value]) => {
+            <div className="flex flex-col xl:mx-auto bg-card2 rounded-lg xl:my-5 lg:my-3 my-3 xl:py-5 lg:py-3 py-2 xl:px-5 lg:px-3 px-3 max-lg:w-[90%] max-sm:w-full">
+                <h1 className="text-[#FCA311] xl:text-xl lg:text-lg max-sm:text-lg font-bold">{option}:</h1>
+                <div className="">{Object.entries(value).map(([option, value]) => {
                     return (
-                        <div className="flex flex-col md:mb-[0.5vw] mb-[2vw]">
-                            <h1 className="text-card md:text-[1.25vw] text-[3.75vw] w-[100%] font-semibold">{option}</h1>
+                        <div className="px-3">
+                            <h1 className="text-card xl:text-lg lg:text-base w-[85%] font-semibold">{option}</h1>
                             {Object.entries(value).map(([option, value]) => {
                                 return (
-                                    <h2 className="md:text-[1vw] text-[3.5vw] w-[75%]">- {value}</h2>
+                                    <h2 className="xl:text-lg lg:text-sm w-[85%]">- {value}</h2>
                                 );
                             })}
                         </div>
@@ -792,30 +792,30 @@ const finalPriceFunc = () => {
         );
     });
 
-    const writtenFeedback = <h2 className="md:text-[1.25vw] text-[4vw]">
+    const writtenFeedback = <h2 className="xl:text-xl xl:w-[380px] lg:w-[300px] max-md:w-[90%]">
         Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!
     </h2>
 
     return (
-        <div className="text-white font-poppins mx-auto md:w-[70vw] w-[90vw]">
-            <h1 className="text-[#FCA311] md:text-[3vw] text-[7vw] font-extrabold">Kustannusarvion yhteenveto:</h1>
-            <h2 className="md:text-[1.5vw] text-[4vw] w-[75%] md:mb-[1vw] mb-[5vw]">Hinta-arvio on suuntaa-antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
-            <div className="md:flex w-[100%]">
-                <div className="md:w-[32.5vw] w-[100%]" id="choicesSummary">
-                    <h1 className="text-[#FCA311] md:text-[2vw] md:font-normal font-semibold text-[6vw] mt-[1vw]">Valintasi:</h1>
-                    <div className="mx-auto md:w-auto w-[80vw]">{answerElements}</div>
+        <div className="text-white font-poppins mx-auto">
+            <h1 className="text-[#FCA311] xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl text-xl font-extrabold">Kustannusarvion yhteenveto:</h1>
+            <h2 className="xl:text-2xl lg:text-xl md:text-lg xl:w-[800px] lg:w-[750px]">Hinta-arvio on suuntaa-antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
+            <div className="md:flex w-[100%] lg:mt-5 mt-3">
+                <div className="md:w-[50%] w-[100%]" id="choicesSummary">
+                    <h1 className="text-[#FCA311] xl:text-3xl lg:text-2xl md:text-xl sm:text-xl text-xl font-bold">Valintasi:</h1>
+                    <div className="mx-auto">{answerElements}</div>
                 </div>
-                <div className="md:w-[34vw] w-[90vw] md:mt-0 mt-[6vw] mx-auto relative" id="writtenSummary">
-                <div className="md:w-[34vw] md:px-[5vw] w-[100%]">
-                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] mt-[1vw] md:font-normal font-semibold">Kustannusarvio laskuri:</h1>
+                <div className="md:w-[34%] sm:w-[90vw] mx-auto relative" id="writtenSummary">
+                <div className="w-full mx-auto">
+                    <h1 className="text-[#FCA311] xl:text-3xl lg:text-2xl md:text-xl sm:text-xl text-xl font-bold max-sm:mt-5">Kustannusarvio laskuri:</h1>
                     {writtenFeedback}
-                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] md:mt-[1vw] mt-[4vw] md:font-normal font-semibold">Hinta:</h1>
-                    <h2 className="md:text-[1.25vw] text-[4vw] md:mb-0 mb-[3vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv</h2>
-                    <button className={`xl:text-[1.3vw] md:text-[1vw] max-md:w-[40vw] text-lg font-semibold bg-[#FCA311] mt-[20px] max-md:mb-[10vh] px-[1vw] py-[0.25vw] rounded-lg font-poppins`}>Ota yhteyttä <i className="fa fa-angle-right"></i></button>
+                    <h1 className="text-[#FCA311] xl:text-2xl lg:text-xl sm:text-xl text-xl mt-5 font-semibold">Hinta:</h1>
+                    <h2 className="xl:text-xl">alk. <span className="text-[#FCA311] font-semibold">{Math.ceil(finalPrice)*1000}€</span> + alv</h2>
+                    <button className={`xl:text-lg max-md:text-sm lg:mt-5 md:mt-3 my-3 xl:px-3 lg:px-2 md:px-3 px-3 py-1 max-md:mx-auto font-semibold bg-[#FCA311] lg:rounded-lg rounded font-poppins`}>Ota yhteyttä <i className="fa fa-angle-right"></i></button>
                 </div>
                 </div>
             </div>
-            <h1 className="md:text-[1.5vw] text-[4vw] md:pt-[1vw] pt-[5vw] md:mb-0 mb-[10vw] text-center md:w-[75%] w-[100%] mx-auto">Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan!<br/><strong className="text-[#FCA311]">Ota yhteyttä!</strong></h1>
+            <h1 className="text-center md:w-[75%] w-[100%] mx-auto">Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan!<br/><strong className="text-[#FCA311] max-md:hidden">Ota yhteyttä!</strong></h1>
         </div>
     ); // Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan! Ota yhteyttä!
 }
@@ -1059,7 +1059,7 @@ const changeCard = (change) => {
 
             document.cookie = `priceCalculator=${JSON.stringify(cookieData)}; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
 
-            window.location.href = "/contact";
+            window.location.href = "/ota-yhteytta";
         });
 
         resizeUpdate();
@@ -1098,7 +1098,7 @@ const changeCard = (change) => {
 
             document.cookie = `priceCalculator=${JSON.stringify(cookieData)}; path=/`;
 
-            window.location.href = "/contact";
+            window.location.href = "/ota-yhteytta";
         });
 
         resizeUpdate();
@@ -1120,7 +1120,7 @@ let writtenSummaryBottom = 0;
 let choicesSummaryHeight = 0;
 
 const resizeUpdate = () => {
-    isMobile = window.innerWidth < 640;
+    isMobile = window.innerWidth < 768;
 
     writtenSummary = document.getElementById("writtenSummary");
     console.log("updated");
@@ -1207,7 +1207,7 @@ return (
                 <button hidden={!pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`xl:text-xl lg:text-lg font-semibold bg-[#FCA311] text-white px-4 py-1 rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
             </div>
             <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
-                <button hidden={selectingPath ? !pathSelected : false} onClick={() => pathSelected ? changeCard(1) : choosePath()} ref={mobileBtn} className={`lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-2xl sm:text-xl text-xl px-[20px] py-[5px] rounded-lg left-0`}>Seuraava</button>
+                <button hidden={selectingPath ? !pathSelected : false} onClick={() => pathSelected ? changeCard(1) : choosePath()} ref={mobileBtn} className={`lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-xl sm:text-lg text-lg px-[20px] py-[3px] rounded-lg left-0`}>Seuraava</button>
             </div>
         </div>
         <div ref={report} className="hidden w-[100%] min-h-[40vw] mx-auto pb-[4vw]">
