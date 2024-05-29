@@ -641,7 +641,7 @@ const progressBar = cardData.map(() => {
     return <div onClick={() => {
         currentCard = i;
         changeCard(0);
-    }} className="hover:cursor-pointer lg:h-[17px] md:h-[15px] sm:h-[15px] h-[3vw] w-full rounded-lg transition-all duration-[250ms]"></div>;
+    }} className="hover:cursor-pointer lg:h-[17px] md:h-[15px] sm:h-[15px] h-3 w-full rounded-lg transition-all duration-[250ms]"></div>;
 });
 
 let chosenOptions = [];
@@ -968,16 +968,16 @@ const renderCard = (cardId) => {
         }
     
         return (
-            <div key={cardId} questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] w-[90%] mt-[20px]">
-                <h1 className="text-[#FCA311] lg:text-4xl md:text-3xl sm:text-2xl text-[7vw] sm:w-4/5 font-poppins font-extrabold">{card.title}</h1>
-                <h2 className="lg:text-3xl md:text-2xl sm:text-lg text-[6vw] md:w-4/5 w-[100%] font-poppins my-0">{card.question}</h2>
+            <div key={cardId} questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] 2xl:w-[65%] w-[90%] mt-[20px]">
+                <h1 className="text-[#FCA311] lg:text-4xl md:text-3xl sm:text-2xl text-xl sm:w-4/5 font-poppins font-extrabold">{card.title}</h1>
+                <h2 className="lg:text-2xl md:text-xl sm:text-lg text-lg md:w-4/5 w-[100%] font-poppins my-0">{card.question}</h2>
                 <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[10px] w-full">
                     {Object.entries(card.answers).map(([option, value]) => (
-                        <div className="flex justify-between w-full md:hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[2%] py-[2vw] md:px-[2vw] sm:px-[3%] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
-                            <h1 className="transition-all duration-200 font-poppins lg:text-2xl md:text-xl sm:text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+                        <div className="flex justify-between w-full md:hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none lg:py-3 py-2 px-5 mt-3">
+                            <h1 className="transition-all duration-200 font-poppins lg:text-xl md:text-lg sm:text-lg text-base sm:font-normal md:text-left md:w-auto w-full">
                                 {option}
                             </h1>
-                            <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] sm:rounded-sm rounded-full" />
+                            <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] rounded-sm" />
                         </div>
                     ))}
                 </div>
@@ -1190,23 +1190,21 @@ useEffect(() => {
 return (
     <div className="flex justify-center w-screen min-h-[85vh] bg-primary md:pt-[13vh] pt-[9vh]">
     <div className="2xl:w-[1500px] lg:w-[1000px] md:w-[750px] sm:w-[640px] w-[95%]">
-        <div className="w-[90%] mx-auto md:pt-[2vw]">
-            <div className={`grid md:gap-4 sm:gap-3 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${(cardData.length % 9 == 0 || cardData.length < 9) ? cardData.length : Math.ceil(cardData.length / 2) }, minmax(0, 1fr))`}} ref={barDiv}>
+        <div className="2xl:w-[1000px] lg:w-[900px] md:w-[690px] sm:w-[600px] mx-auto">
+            <div className={`grid gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${(cardData.length % 9 == 0 || cardData.length < 9) ? cardData.length : Math.ceil(cardData.length / 2) }, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
         <div className="min-h-[40vw] mx-auto w-full">
-            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[60vh] flex justify-center mx-auto">
+            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[35vh] flex justify-center mx-auto">
                 <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw] max-md:px-[20px]">
                     <h1 className="xl:text-5xl lg:text-4xl md:text-4xl text-2xl font-semibold">Kustannusarvio laskuri</h1>
                     <p className="text-white xl:text-3xl lg:text-2xl md:text-2xl text-xl md:font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
                     <button hidden={pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`lg:text-xl md:mt-[50px] font-semibold bg-[#FCA311] text-white px-[3%] py-[0.75%] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
                 </div>
             </div> 
-            <div className="lg:w-[1000px] md:w-[750px] w-[90vw] mx-auto lg:block hidden">
-                <div className="w-[90%] mx-auto">
-                <button hidden={!pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`xl:text-[1.3vw] text-[2vw] font-semibold bg-[#FCA311] text-white px-[1vw] py-[0.25vw] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
-                </div>
+            <div className="2xl:w-[980px] lg:w-[900px] mx-auto lg:block hidde mt-5">
+                <button hidden={!pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`xl:text-xl lg:text-lg font-semibold bg-[#FCA311] text-white px-4 py-1 rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
             </div>
             <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
                 <button hidden={selectingPath ? !pathSelected : false} onClick={() => pathSelected ? changeCard(1) : choosePath()} ref={mobileBtn} className={`lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-2xl sm:text-xl text-xl px-[20px] py-[5px] rounded-lg left-0`}>Seuraava</button>
