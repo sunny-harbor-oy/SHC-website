@@ -1189,6 +1189,25 @@ useEffect(() => {
 
 return (
     <div className="flex justify-center w-screen min-h-[85vh] bg-primary md:pt-[13vh] pt-[9vh]">
+          <Helmet>
+          <title>Kustannusarviolaskuri</title>
+          <meta 
+          property="og:title"
+          content="Kustannusarviolaskuri"
+          />
+        <meta
+          property="og:description"
+          content="Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!"
+        />
+               <meta property="og:image" content={teamImg} />
+               <meta name="keywords" content="nettisivut, ohjelmointi, sovellus, applikaatio, ohjelmistokehitys, työnohjaus, automatisointi, järjestelmä, ohjelmisto"/>
+        <meta
+          property="og:url"
+          content="https://sunnyharbor.fi/kustannusarviolaskuri"
+        />
+        <meta name="author" content="Sisu Eriksson" />
+        <link rel="canonical" href="https://sunnyharbor.fi/kustannusarviolaskuri" />
+      </Helmet>
     <div className="2xl:w-[1500px] lg:w-[1000px] md:w-[750px] sm:w-[640px] w-[95%]">
         <div className="2xl:w-[1000px] lg:w-[900px] md:w-[690px] sm:w-[600px] mx-auto">
             <div className={`grid gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${(cardData.length % 9 == 0 || cardData.length < 9) ? cardData.length : Math.ceil(cardData.length / 2) }, minmax(0, 1fr))`}} ref={barDiv}>
