@@ -874,7 +874,7 @@ const choosePath = () => {
     }
 
     children[children.length - 1].addEventListener("click", () => {
-        window.location.href = "/contact";
+        window.location.href = "/ota-yhteytta";
     });
 
     console.log("path selected");
@@ -1046,7 +1046,7 @@ const changeCard = (change) => {
 
             document.cookie = `priceCalculator=${JSON.stringify(cookieData)}; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
 
-            window.location.href = "/contact";
+            window.location.href = "/ota-yhteytta";
         });
 
         resizeUpdate();
@@ -1085,7 +1085,7 @@ const changeCard = (change) => {
 
             document.cookie = `priceCalculator=${JSON.stringify(cookieData)}; path=/`;
 
-            window.location.href = "/contact";
+            window.location.href = "/ota-yhteytta";
         });
 
         resizeUpdate();
