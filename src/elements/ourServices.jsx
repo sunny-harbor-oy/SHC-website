@@ -2,13 +2,13 @@ import React from "react";
 
 function ourServices() {
   return (
-    <div className="w-screen px-5 py-12 mb-20 overflow-x-hidden md:px-28 lg:px-36 bg-card2">
+    <div className="w-screen px-5 py-12 mb-20 overflow-x-hidden md:px-28 lg:px-36">
       <h2 className="items-center justify-center w-full mb-6 text-4xl font-bold text-white md:mb-0 hover-text text-start">
         Meidän palvelut
       </h2>
       <br />
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 2xl:grid-cols-4">
-        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2">
+        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
           <h2 className="text-xl font-bold text-white uppercase">
             Web- ja sovellusekehitys
           </h2>
@@ -35,7 +35,7 @@ function ourServices() {
             </svg>
           </div>
         </div>
-        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2">
+        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
           <h2 className="text-xl font-bold text-white uppercase">
             Nettisivujen teko
           </h2>
@@ -62,7 +62,7 @@ function ourServices() {
             </svg>
           </div>
         </div>
-        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2">
+        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
           <h2 className="text-xl font-bold text-white uppercase">
             Markkinointi
           </h2>
@@ -89,7 +89,7 @@ function ourServices() {
             </svg>
           </div>
         </div>
-        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2">
+        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
           <h2 className="text-xl font-bold text-white uppercase">
             Konsultointi
           </h2>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {renderToString} from "react-dom/server";
+import { Helmet } from "react-helmet"
 
 const decaultSettings = {
     multipleChoice: false,
