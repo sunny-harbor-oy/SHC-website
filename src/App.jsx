@@ -7,6 +7,7 @@ import ContactPage from "./pages/ota-yhteytta.jsx";
 import PriceEstimation from "./pages/kustannusarviolaskuri.jsx";
 import IlmoPage from "./pages/ilmo.jsx";
 import BlogsPage from "./pages/blogs.jsx";
+import Services from "./pages/services.jsx"
 
 import OkPage from "./pages/thanks.jsx";
 import FailedPage from "./pages/failed.jsx";
@@ -47,6 +48,7 @@ function App() {
         <Route path="/ota-yhteytta/ok" element={<OkPage />}></Route>
         <Route path="/ota-yhteytta/failed" element={<FailedPage />}></Route>
         <Route path="/blogs" element={<BlogsPage />}></Route>
+        <Route path="/palvelut" element={<Services />}></Route>
         <Route path="*" element={<HomePage />} />
 
         {/* BLOGIT */}

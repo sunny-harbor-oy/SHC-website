@@ -3,6 +3,7 @@ import backgroundForMobile from "../assets/MobileVideo.mp4";
 import AboutUs from "../pages/aboutUs.jsx";
 import TextSection from "../pages/textSection.jsx";
 import References from "./references";
+import Services from "../elements/ourServices.jsx";
 import Calendar from "../elements/calendar";
 import { Helmet } from "react-helmet";
 
@@ -16,7 +17,7 @@ export default function HomePage(language = "fi") {
   return (
     <div id="homeWrapper" className="w-screen overflow-x-hidden bg-primary">
       <Helmet>
-      <title>Sunny Harbor Oy: Mobiili- ja Websovellukset</title>
+        <title>Sunny Harbor Oy: Mobiili- ja Websovellukset</title>
         <meta
           name="description"
           content="Tavoitteemme on olla alan läpinäkyvin ja luotettavin vaihtoehto IT-ratkaisuillesi! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu."
@@ -26,23 +27,17 @@ export default function HomePage(language = "fi") {
           property="og:description"
           content="Tavoitteemme on olla alan läpinäkyvin ja luotettavin vaihtoehto IT-ratkaisuillesi! Taidokkaasti suunnittelemamme mobiili- ja verkkosovellukset on tarkoitettu juuri sinulle, jos tavoitteesi on luoda yrityksellesi ainutlaatuinen kilpailuetu."
         />
-          <meta property="og:image" content={background} />
-          <meta
+        <meta property="og:image" content={background} />
+        <meta
           name="keywords"
           content="läpinäkyvyys, ohjelmistokehitys, nettisivut, sovellus, peli, ulkopuolinen toimija, kommunikaatio, sopimukset, ominaisuudet, hinta, ylläpito, jatkokehitys, projektin toteutus, suunnittelu, immateriaalioikeudet, rehellisyys, suora kommunikaatio, ohjelmistokehittäjät, suunnittelijat"
         />
-        <meta
-          property="og:url"
-          content="https://sunnyharbor.fi"
-        />
+        <meta property="og:url" content="https://sunnyharbor.fi" />
         <meta name="author" content="Sisu Eriksson" />
-        <link
-          rel="canonical"
-          href="https://sunnyharbor.fi"
-        />
+        <link rel="canonical" href="https://sunnyharbor.fi" />
       </Helmet>
       <div className="relative w-screen h-screen font-semibold text-white font-poppins">
-        <video  
+        <video
           src={window.innerWidth < 762 ? backgroundForMobile : background}
           autoPlay
           loop
@@ -54,8 +49,9 @@ export default function HomePage(language = "fi") {
       <AboutUs />
       <TextSection />
       <References />
+      <Services />
       <div id="calendar" className="mx-6">
-      <Calendar />
+        <Calendar />
       </div>
       {/* <div className="w-screen pb-[5vw] md:pb-[10vh] px-[10vw] sm:grid grid-cols-3 gap-[10vw] block bg-primary">
         <div className="transition duration-500 hover:scale-110 md:hover:scale-105 hover:bg-ilmoPrimaryColor shadow-lg border-solid bg-card2 sm:h-[19vw] sm:w-[19vw] w-[70vw] mx-auto sm:my-0 my-[4vh] sm:py-0 py-[12vw] rounded-lg text-center text-white font-poppins">

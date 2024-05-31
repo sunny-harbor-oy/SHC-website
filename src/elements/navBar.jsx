@@ -138,6 +138,7 @@ export default function NavBar() {
           }}>Referenssejä</h1>
           <Link to={"/blogs"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh] ">Blogit</h1></Link>
           <Link to={"/ota-yhteytta"} reloadDocument="true" className="lg:hidden"><h1 className="hover:cursor-pointer lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]">Ota yhteyttä</h1></Link>
+          <Link to={"/palvelut"} reloadDocument="true"><h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh] ">Palvelut</h1></Link>
           <h1 className="hover:cursor-pointer transition duration-500 hover:text-secondary hover:scale-105 lg:px-[0] px-[2vw] lg:border-l-0 border-l-4 border-white lg:my-auto my-[3vh]" onClick={() => {
             if (window.location.pathname == "/") {
               window.scrollTo(0, document.getElementById("calendar").offsetTop - document.getElementById("navBar").getBoundingClientRect().height);
