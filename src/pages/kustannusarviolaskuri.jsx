@@ -641,7 +641,7 @@ const progressBar = cardData.map(() => {
     return <div onClick={() => {
         currentCard = i;
         changeCard(0);
-    }} className="hover:cursor-pointer lg:h-[17px] md:h-[15px] sm:h-[15px] h-[3vw] w-full rounded-lg transition-all duration-[250ms]"></div>;
+    }} className="hover:cursor-pointer lg:h-[17px] md:h-[15px] sm:h-[15px] h-3 w-full rounded-lg transition-all duration-[250ms]"></div>;
 });
 
 let chosenOptions = [];
@@ -655,7 +655,7 @@ let locked = false;
 let [pathSelected, setpathSelected] = useState(false);
 let [selectingPath, setSelectingPath] = useState(false);
 
-let isMobile = window.innerWidth < 640;
+let isMobile = window.innerWidth < 768;
 
 const slideDiv = useRef(null);
 const barDiv = useRef(null);
@@ -774,15 +774,15 @@ const finalPriceFunc = () => {
     const answerElements = Object.entries(answersObj).map(([option, value]) => {
         i++;
         return (
-            <div className="flex flex-col mx-auto w-[95%] bg-card2 rounded-lg md:px-[1vw] px-[3vw] md:my-[1.5vw] my-[3vw] md:pb-[1vw] pb-[2vw]">
-                <h1 className="text-[#FCA311] md:text-[1.75vw] text-[5vw] mt-[1vw] mb-0">{option}:</h1>
-                <div className="w-[95%] mx-auto">{Object.entries(value).map(([option, value]) => {
+            <div className="flex flex-col xl:mx-auto bg-card2 rounded-lg xl:my-5 lg:my-3 my-3 xl:py-5 lg:py-3 py-2 xl:px-5 lg:px-3 px-3 max-lg:w-[90%] max-sm:w-full">
+                <h1 className="text-[#FCA311] xl:text-xl lg:text-lg max-sm:text-lg font-bold">{option}:</h1>
+                <div className="">{Object.entries(value).map(([option, value]) => {
                     return (
-                        <div className="flex flex-col md:mb-[0.5vw] mb-[2vw]">
-                            <h1 className="text-card md:text-[1.25vw] text-[3.75vw] w-[100%] font-semibold">{option}</h1>
+                        <div className="px-3">
+                            <h1 className="text-card xl:text-lg lg:text-base w-[85%] font-semibold">{option}</h1>
                             {Object.entries(value).map(([option, value]) => {
                                 return (
-                                    <h2 className="md:text-[1vw] text-[3.5vw] w-[75%]">- {value}</h2>
+                                    <h2 className="xl:text-lg lg:text-sm w-[85%]">- {value}</h2>
                                 );
                             })}
                         </div>
@@ -792,30 +792,30 @@ const finalPriceFunc = () => {
         );
     });
 
-    const writtenFeedback = <h2 className="md:text-[1.25vw] text-[4vw]">
+    const writtenFeedback = <h2 className="xl:text-xl xl:w-[380px] lg:w-[300px] max-md:w-[90%]">
         Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!
     </h2>
 
     return (
-        <div className="text-white font-poppins mx-auto md:w-[70vw] w-[90vw]">
-            <h1 className="text-[#FCA311] md:text-[3vw] text-[7vw] font-extrabold">Kustannusarvion yhteenveto:</h1>
-            <h2 className="md:text-[1.5vw] text-[4vw] w-[75%] md:mb-[1vw] mb-[5vw]">Hinta-arvio on suuntaa-antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
-            <div className="md:flex w-[100%]">
-                <div className="md:w-[32.5vw] w-[100%]" id="choicesSummary">
-                    <h1 className="text-[#FCA311] md:text-[2vw] md:font-normal font-semibold text-[6vw] mt-[1vw]">Valintasi:</h1>
-                    <div className="mx-auto md:w-auto w-[80vw]">{answerElements}</div>
+        <div className="text-white font-poppins mx-auto">
+            <h1 className="text-[#FCA311] xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl text-xl font-extrabold">Kustannusarvion yhteenveto:</h1>
+            <h2 className="xl:text-2xl lg:text-xl md:text-lg xl:w-[800px] lg:w-[750px]">Hinta-arvio on suuntaa-antava ja lopullinen hinta määräytyy projektin vaativuuden mukaan.</h2>
+            <div className="md:flex w-[100%] lg:mt-5 mt-3">
+                <div className="md:w-[50%] w-[100%]" id="choicesSummary">
+                    <h1 className="text-[#FCA311] xl:text-3xl lg:text-2xl md:text-xl sm:text-xl text-xl font-bold">Valintasi:</h1>
+                    <div className="mx-auto">{answerElements}</div>
                 </div>
-                <div className="md:w-[34vw] w-[90vw] md:mt-0 mt-[6vw] mx-auto relative" id="writtenSummary">
-                <div className="md:w-[34vw] md:px-[5vw] w-[100%]">
-                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] mt-[1vw] md:font-normal font-semibold">Kustannusarvio laskuri:</h1>
+                <div className="md:w-[34%] sm:w-[90vw] mx-auto relative" id="writtenSummary">
+                <div className="w-full mx-auto">
+                    <h1 className="text-[#FCA311] xl:text-3xl lg:text-2xl md:text-xl sm:text-xl text-xl font-bold max-sm:mt-5">Kustannusarvio laskuri:</h1>
                     {writtenFeedback}
-                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] md:mt-[1vw] mt-[4vw] md:font-normal font-semibold">Hinta:</h1>
-                    <h2 className="md:text-[1.25vw] text-[4vw] md:mb-0 mb-[3vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv</h2>
-                    <button className={`xl:text-[1.3vw] md:text-[1vw] max-md:w-[40vw] text-lg font-semibold bg-[#FCA311] mt-[20px] max-md:mb-[10vh] px-[1vw] py-[0.25vw] rounded-lg font-poppins`}>Ota yhteyttä <i className="fa fa-angle-right"></i></button>
+                    <h1 className="text-[#FCA311] xl:text-2xl lg:text-xl sm:text-xl text-xl mt-5 font-semibold">Hinta:</h1>
+                    <h2 className="xl:text-xl">alk. <span className="text-[#FCA311] font-semibold">{Math.ceil(finalPrice)*1000}€</span> + alv</h2>
+                    <button className={`xl:text-lg max-md:text-sm lg:mt-5 md:mt-3 my-3 xl:px-3 lg:px-2 md:px-3 px-3 py-1 max-md:mx-auto font-semibold bg-[#FCA311] lg:rounded-lg rounded font-poppins`}>Ota yhteyttä <i className="fa fa-angle-right"></i></button>
                 </div>
                 </div>
             </div>
-            <h1 className="md:text-[1.5vw] text-[4vw] md:pt-[1vw] pt-[5vw] md:mb-0 mb-[10vw] text-center md:w-[75%] w-[100%] mx-auto">Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan!<br/><strong className="text-[#FCA311]">Ota yhteyttä!</strong></h1>
+            <h1 className="text-center md:w-[75%] w-[100%] mx-auto">Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan!<br/><strong className="text-[#FCA311] max-md:hidden">Ota yhteyttä!</strong></h1>
         </div>
     ); // Eikö hinta ollut mitä ajattelit? Ei hätää, neuvotellaan! Ota yhteyttä!
 }
@@ -842,13 +842,13 @@ const choosePath = () => {
     }
 
     const elemRender = 
-    <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] sm:w-[85%] w-[95%] 2xl:px-[4vw] md:px-[2vw]">
-        <h1 className="text-[#FCA311] 2xl:text-[2.5vw] lg:text-[3vw] md:text-[3.3vw] sm:text-[8wv] text-[10vw] md:w-4/5 font-poppins font-extrabold">Projektin tyyppi</h1>
-        <h2 className="2xl:text-[1.5vw] md:text-[2vw] sm:text-[4vw] text-[5vw] md:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
-        <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[5vw] w-full">
+    <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] lg:w-[85%] 2xl:px-[4vw] md:px-[2vw]">
+        <h1 className="text-[#FCA311] 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl sm:w-4/5 font-poppins font-extrabold">Projektin tyyppi</h1>
+        <h2 className="xl:mt-[10px] 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg text-lg sm:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
+        <div className="flex flex-col mt-[10px] w-full">
             {Object.entries(pathMap).map(([option, value]) => (
-                <div id={option} className="flex justify-between min-w-[200px] lg:w-full md:w-[75%] hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
-                    <h1 className="transition-all duration-200 font-poppins 2xl:text-[1.5vw] xl:text-[1.7vw] lg:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+                <div id={option} className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] md:hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
+                    <h1 className="transition-all duration-200 font-poppins 2xl:text-2xl xl:text-xl lg:text-lg md:text-lg sm:text-lg text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                         {option} 
                     </h1>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="w-6 h-6 my-auto">
@@ -856,8 +856,8 @@ const choosePath = () => {
                     </svg>
                 </div>
             ))}
-            <div className="flex justify-between min-w-[200px] lg:w-full md:w-[75%] hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[1.5vw] py-[2vw] md:px-[2vw] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
-                <h1 className="transition-all duration-200 font-poppins 2xl:text-[1.5vw] xl:text-[1.7vw] lg:text-[2vw] md:text-[2.5vw] sm:text-[4vw] sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+            <div className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] md:hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
+                <h1 className="transition-all duration-200 font-poppins 2xl:text-2xl xl:text-xl lg:text-lg md:text-lg sm:text-lg text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
                     Muu, mikä?
                 </h1>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="w-6 h-6 my-auto">
@@ -881,7 +881,7 @@ const choosePath = () => {
     }
 
     children[children.length - 1].addEventListener("click", () => {
-        window.location.href = "/contact";
+        window.location.href = "/ota-yhteytta";
     });
 }
 
@@ -968,16 +968,16 @@ const renderCard = (cardId) => {
         }
     
         return (
-            <div key={cardId} questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] w-[90%] mt-[20px]">
-                <h1 className="text-[#FCA311] lg:text-4xl md:text-3xl sm:text-2xl text-[7vw] sm:w-4/5 font-poppins font-extrabold">{card.title}</h1>
-                <h2 className="lg:text-3xl md:text-2xl sm:text-lg text-[6vw] md:w-4/5 w-[100%] font-poppins my-0">{card.question}</h2>
+            <div key={cardId} questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] 2xl:w-[65%] w-[90%] mt-[20px]">
+                <h1 className="text-[#FCA311] lg:text-4xl md:text-3xl sm:text-2xl text-xl sm:w-4/5 font-poppins font-extrabold">{card.title}</h1>
+                <h2 className="lg:text-2xl md:text-xl sm:text-lg text-lg md:w-4/5 w-[100%] font-poppins my-0">{card.question}</h2>
                 <div className="flex flex-col md:py-[1vw] md:mt-[0] mt-[10px] w-full">
                     {Object.entries(card.answers).map(([option, value]) => (
-                        <div className="flex justify-between w-full hover:text-[#FCA311] sm:my-[1vw] my-[3vw] md:py-[0.75vw] sm:py-[2%] py-[2vw] md:px-[2vw] sm:px-[3%] px-[5vw] bg-card2 rounded-lg hover:cursor-pointer select-none">
-                            <h1 className="transition-all duration-200 font-poppins lg:text-2xl md:text-xl sm:text-lg sm:font-normal md:text-left md:w-auto w-full text-[5vw]">
+                        <div className="flex justify-between w-full md:hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none lg:py-3 py-2 px-5 mt-3">
+                            <h1 className="transition-all duration-200 font-poppins lg:text-xl md:text-lg sm:text-lg text-base sm:font-normal md:text-left md:w-auto w-full">
                                 {option}
                             </h1>
-                            <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] sm:rounded-sm rounded-full" />
+                            <div className="bg-white md:w-[1.25vw] sm:w-[2vw] w-[3vw] md:h-[1.25vw] sm:h-[2vw] h-[3vw] my-auto transition-all duration-[250ms] rounded-sm" />
                         </div>
                     ))}
                 </div>
@@ -1018,6 +1018,14 @@ const renderCard = (cardId) => {
 
             self.children[1].style["background-color"] = state ? "#1eb82a" : "#c6d0d8";
             lastOptionSelected = state ? {questionId: ownId, self} : undefined;
+
+            if (cardData[cardId]['settings'] && state) {
+                if (cardData[cardId]['settings']['multipleChoice'] == false && lastOptionSelected != undefined) {
+                    changeCard(1);
+                }
+            } else if (state) {
+                changeCard(1);
+            }
         });        
     }
 
@@ -1051,7 +1059,7 @@ const changeCard = (change) => {
 
             document.cookie = `priceCalculator=${JSON.stringify(cookieData)}; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
 
-            window.location.href = "/contact";
+            window.location.href = "/ota-yhteytta";
         });
 
         resizeUpdate();
@@ -1090,7 +1098,7 @@ const changeCard = (change) => {
 
             document.cookie = `priceCalculator=${JSON.stringify(cookieData)}; path=/`;
 
-            window.location.href = "/contact";
+            window.location.href = "/ota-yhteytta";
         });
 
         resizeUpdate();
@@ -1102,6 +1110,8 @@ const changeCard = (change) => {
         report.current.style.display = "none";
     }
     
+    // Reset scroll
+    window.scrollTo(0, 0);
 }
 
 let writtenSummaryHeight = 0;
@@ -1110,7 +1120,7 @@ let writtenSummaryBottom = 0;
 let choicesSummaryHeight = 0;
 
 const resizeUpdate = () => {
-    isMobile = window.innerWidth < 640;
+    isMobile = window.innerWidth < 768;
 
     writtenSummary = document.getElementById("writtenSummary");
     console.log("updated");
@@ -1178,28 +1188,45 @@ useEffect(() => {
 });
 
 return (
-    <div className="flex justify-center w-screen min-h-[85vh] bg-primary pt-[13vh]">
-    <div className="lg:w-[1000px] md:w-[750px] sm:w-[640px] w-[95%]">
-        <div className="w-[90%] mx-auto md:pt-[2vw]">
-            <div className={`grid md:gap-4 sm:gap-3 gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${(cardData.length % 9 == 0 || cardData.length < 9) ? cardData.length : Math.ceil(cardData.length / 2) }, minmax(0, 1fr))`}} ref={barDiv}>
+    <div className="flex justify-center w-screen min-h-[85vh] bg-primary md:pt-[13vh] pt-[9vh]">
+          <Helmet>
+          <title>Kustannusarviolaskuri</title>
+          <meta 
+          property="og:title"
+          content="Kustannusarviolaskuri"
+          />
+        <meta
+          property="og:description"
+          content="Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!"
+        />
+               <meta property="og:image" content={teamImg} />
+               <meta name="keywords" content="nettisivut, ohjelmointi, sovellus, applikaatio, ohjelmistokehitys, työnohjaus, automatisointi, järjestelmä, ohjelmisto"/>
+        <meta
+          property="og:url"
+          content="https://sunnyharbor.fi/kustannusarviolaskuri"
+        />
+        <meta name="author" content="Sisu Eriksson" />
+        <link rel="canonical" href="https://sunnyharbor.fi/kustannusarviolaskuri" />
+      </Helmet>
+    <div className="2xl:w-[1500px] lg:w-[1000px] md:w-[750px] sm:w-[640px] w-[95%]">
+        <div className="2xl:w-[1000px] lg:w-[900px] md:w-[690px] sm:w-[600px] mx-auto">
+            <div className={`grid gap-1 mx-auto w-full`} style={{ placeItems: 'center', gridTemplateColumns: `repeat(${(cardData.length % 9 == 0 || cardData.length < 9) ? cardData.length : Math.ceil(cardData.length / 2) }, minmax(0, 1fr))`}} ref={barDiv}>
                 {progressBar}
             </div>
         </div>
         <div className="min-h-[40vw] mx-auto w-full">
-            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[50vh] flex justify-center mx-auto">
-                <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw]">
-                    <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-[10vw] font-semibold">Kustannusarvio laskuri</h1>
-                    <p className="text-white lg:text-4xl md:text-2xl sm:text-lg text-[6vw] font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
-                    <button hidden={pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`lg:text-xl md:mt-[30px] font-semibold bg-[#FCA311] text-white px-[3%] py-[0.75%] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
+            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[35vh] flex justify-center mx-auto">
+                <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw] max-md:px-[20px]">
+                    <h1 className="xl:text-5xl lg:text-4xl md:text-4xl text-2xl font-semibold">Kustannusarvio laskuri</h1>
+                    <p className="text-white xl:text-3xl lg:text-2xl md:text-2xl text-xl md:font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
+                    <button hidden={pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`lg:text-xl md:mt-[50px] font-semibold bg-[#FCA311] text-white px-[3%] py-[0.75%] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
                 </div>
             </div> 
-            <div className="lg:w-[1000px] md:w-[750px] w-[90vw] mx-auto lg:block hidden">
-                <div className="w-[90%] mx-auto">
-                <button hidden={!pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`xl:text-[1.3vw] text-[2vw] font-semibold bg-[#FCA311] text-white px-[1vw] py-[0.25vw] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
-                </div>
+            <div className="2xl:w-[980px] lg:w-[900px] mx-auto lg:block hidde mt-5">
+                <button hidden={!pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`xl:text-xl lg:text-lg font-semibold bg-[#FCA311] text-white px-4 py-1 rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
             </div>
             <div className="w-full flex justify-center pt-[2vh] pb-[3vh]">
-                <button onClick={() => pathSelected ? changeCard(1) : choosePath()} ref={mobileBtn} className={`lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-[2vw] sm:text-xl text-xl px-[20px] py-[5px] rounded-lg left-0`}>Seuraava</button>
+                <button hidden={selectingPath ? !pathSelected : false} onClick={() => pathSelected ? changeCard(1) : choosePath()} ref={mobileBtn} className={`lg:hidden relative top-0 transition-colors duration-[250ms] bg-[#FCA311] text-white font-poppins font-bold md:text-xl sm:text-lg text-lg px-[20px] py-[3px] rounded-lg left-0`}>Seuraava</button>
             </div>
         </div>
         <div ref={report} className="hidden w-[100%] min-h-[40vw] mx-auto pb-[4vw]">

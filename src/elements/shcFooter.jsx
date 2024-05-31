@@ -59,7 +59,7 @@ export default function SHCFooter() {
               document.cookie = "scrollTo=true";
             }
         }}>Asiakkaat</p> */}
-        <Link to={"/contact"} reloadDocument="true" className="transition md:flex hidden duration-500 hover:cursor-pointer hover:underline hover:text-secondary">Ota yhteyttä</Link>
+        <Link to={"/ota-yhteytta"} reloadDocument="true" className="transition md:flex hidden duration-500 hover:cursor-pointer hover:underline hover:text-secondary">Ota yhteyttä</Link>
       </div>
     </div>
     </div>

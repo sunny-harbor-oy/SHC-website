@@ -36,11 +36,11 @@ export default function ContactPage() {
     emialjs.send(service_id, template_id, template_params, public_key).then(
       function (response) {
         console.log("SUCCESS!", response.status, response.text);
-        window.location = "/contact/ok";
+        window.location = "/ota-yhteytta/ok";
       },
       function (error) {
         console.log("FAILED...", error);
-        window.location = "/contact/failed";
+        window.location = "/ota-yhteytta/failed";
       }
     );
   };
@@ -89,10 +89,10 @@ export default function ContactPage() {
                <meta name="keywords" content="nettisivut, ohjelmointi, sovellus, applikaatio, ohjelmistokehitys, työnohjaus, automatisointi, järjestelmä, ohjelmisto"/>
         <meta
           property="og:url"
-          content="https://sunnyharbor.fi/contact"
+          content="https://sunnyharbor.fi/ota-yhteytta"
         />
         <meta name="author" content="Sisu Eriksson" />
-        <link rel="canonical" href="https://sunnyharbor.fi/contact" />
+        <link rel="canonical" href="https://sunnyharbor.fi/ota-yhteytta" />
       </Helmet>
       <div className="md:pt-[16vh] pt-[12vh] mx-10 md:w-[53vw] md:mx-auto">
         <h1 className="text-[#FCA311] md:text-3xl text-[7vw] font-semibold">

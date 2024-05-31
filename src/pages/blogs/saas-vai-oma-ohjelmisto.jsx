@@ -43,14 +43,14 @@ export default function SHC_saas() {
         />
         <meta
           property="og:url"
-          content="https://sunnyharbor.fi/blogs/shc_saas"
+          content="https://sunnyharbor.fi/blogs/saas-vai-oma-ohjelmisto"
         />
         <meta name="author" content="Victor Ocampo" />
-        <link rel="canonical" href="https://sunnyharbor.fi/blogs/shc_saas" />
+        <link rel="canonical" href="https://sunnyharbor.fi/blogs/saas-vai-oma-ohjelmisto" />
       </Helmet>
       <div className="w-[100vw] md:w-[80vw] mx-auto max-w-[900px] md:mt-[1v] py-[4vh] px-[4vh] rounded-lg bg-white">
         <Title>
-          <h1>SaaS vai täysin räätälöity ratkaisu?</h1>
+          <h1>SaaS vai oma ohjelmisto?</h1>
         </Title>
         <SubParagraph>
           SaaS eli “Software as a Service” on liikemalli monille ohjelmistoja

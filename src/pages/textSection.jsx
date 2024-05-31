@@ -126,7 +126,7 @@ function TextSection() {
               Analyysi
             </h6>
             <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-              Saas vai täysin räätälöity ratkaisu?
+              Saas vai oma ohjelmisto?
             </h4>
             <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed">
               SaaS eli “Software as a Service” on liikemalli monille
