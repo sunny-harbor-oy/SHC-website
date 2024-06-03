@@ -1216,12 +1216,14 @@ return (
                 {progressBar}
             </div>
         </div>
-        <div className="min-h-[40vw] mx-auto w-full">
-            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[35vh] flex justify-center mx-auto">
+        <div className="min-h- mx-auto w-full">
+            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[50vh] flex justify-center mx-auto md:items-end max-md:py-20">
+                <div className="h-full flex justify-center">
                 <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw] max-md:px-[20px]">
                     <h1 className="xl:text-5xl lg:text-4xl md:text-4xl text-2xl font-semibold">Kustannusarvio laskuri</h1>
                     <p className="text-white xl:text-3xl lg:text-2xl md:text-2xl text-xl md:font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
                     <button hidden={pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`lg:text-xl md:mt-[50px] font-semibold bg-[#FCA311] text-white px-[3%] py-[0.75%] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
+                </div>
                 </div>
             </div> 
             <div className="2xl:w-[980px] lg:w-[900px] mx-auto lg:block hidde mt-5">
