@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {renderToString} from "react-dom/server";
+import teamImg from "../assets/team/team.webp";
 import { Helmet } from "react-helmet"
 
 const decaultSettings = {
