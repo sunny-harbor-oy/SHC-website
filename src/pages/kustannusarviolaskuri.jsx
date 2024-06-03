@@ -1217,7 +1217,7 @@ return (
             </div>
         </div>
         <div className="min-h- mx-auto w-full">
-            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[50vh] flex justify-center mx-auto md:items-end max-md:py-20">
+            <div ref={slideDiv} className={`w-full font-poppins md:min-h-auto min-h-[50vh] flex justify-center mx-auto ${pathSelected ? "" :  "md:items-end"} max-md:py-20`}>
                 <div className="h-full flex justify-center">
                 <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw] max-md:px-[20px]">
                     <h1 className="xl:text-5xl lg:text-4xl md:text-4xl text-2xl font-semibold">Kustannusarvio laskuri</h1>
