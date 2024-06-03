@@ -13,10 +13,10 @@ function ourServices() {
             Web- ja sovellusekehitys
           </h2>
           <p className="text-white text-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus esse error, molestiae, nostrum sapiente earum
-            adipisci iure placeat nulla dicta aspernatur, sunt blanditiis quasi
-            fuga reiciendis maiores omnis soluta quo.
+            Meillä on vankka kokemus skaalautuvien mobiili- ja web sovelluksien
+            tekemisestä. Erityisosaamisemme on monialustakehityksessä, mikä
+            mahdollistaa saman koodin hyödyntämisen sekä iOS- että
+            Android-alustoilla. Näin kehitys on nopeaa ja mutkatonta.
           </p>
           <div className="flex justify-end w-full">
             <svg
@@ -36,14 +36,13 @@ function ourServices() {
           </div>
         </div>
         <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
-          <h2 className="text-xl font-bold text-white uppercase">
-            Nettisivujen teko
-          </h2>
+          <h2 className="text-xl font-bold text-white uppercase">Nettisivut</h2>
           <p className="text-white text-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus esse error, molestiae, nostrum sapiente earum
-            adipisci iure placeat nulla dicta aspernatur, sunt blanditiis quasi
-            fuga reiciendis maiores omnis soluta quo.
+            Nykyään nettisivut on yrityksen käyntikortti verkossa ja usein
+            ensimmäinen kosketuspiste potentiaalisten asiakkaiden kanssa. Siksi
+            on tärkeää, että nettisivut ovat sekä visuaalisesti houkuttelevat
+            että helppokäyttöiset. Meidän tiimimme on erikoistunut luomaan juuri
+            tällaisia kokonaisuuksia.
           </p>
           <div className="flex justify-end w-full">
             <svg
@@ -66,12 +65,7 @@ function ourServices() {
           <h2 className="text-xl font-bold text-white uppercase">
             Markkinointi
           </h2>
-          <p className="text-white text-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus esse error, molestiae, nostrum sapiente earum
-            adipisci iure placeat nulla dicta aspernatur, sunt blanditiis quasi
-            fuga reiciendis maiores omnis soluta quo.
-          </p>
+          <p className="text-white text-md"></p>
           <div className="flex justify-end w-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,13 +85,14 @@ function ourServices() {
         </div>
         <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
           <h2 className="text-xl font-bold text-white uppercase">
-            Konsultointi
+            Käyttöliittymä suunnittelu
           </h2>
           <p className="text-white text-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus esse error, molestiae, nostrum sapiente earum
-            adipisci iure placeat nulla dicta aspernatur, sunt blanditiis quasi
-            fuga reiciendis maiores omnis soluta quo.
+            Käyttöliittymämme on suunniteltu helpottamaan palvelun käyttöä
+            kaikille. Pyrimme selkeään ja intuitiiviseen navigointiin, jotta
+            kaikki löytäisivät tarvitsemansa tiedon vaivatta. Tavoitteenamme on
+            tarjota yksinkertainen ja miellyttävä käyttökokemus kaikille
+            käyttäjille.
           </p>
           <div className="flex justify-end w-full">
             <svg

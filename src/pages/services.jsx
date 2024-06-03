@@ -37,7 +37,7 @@ function ourServices() {
         <div></div>
         <div>
           <h2 className="text-2xl font-bold text-white pb-1 uppercase">
-            Nettisivujen teko
+            Nettisivut
           </h2>
           <div className="w-[250px] bg-secondary h-1 rounded-full" />
           <br />
