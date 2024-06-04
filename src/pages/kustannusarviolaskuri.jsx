@@ -845,8 +845,8 @@ const choosePath = () => {
 
     const elemRender = 
     <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] lg:w-[85%] 2xl:px-[4vw] md:px-[2vw]">
-        <h1 className="text-[#FCA311] 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl sm:w-4/5 font-poppins font-extrabold">Projektin tyyppi</h1>
-        <h2 className="xl:mt-[10px] 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg text-lg sm:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
+        <h1 className="text-[#FCA311] lg:text-4xl md:text-3xl sm:text-2xl text-xl sm:w-4/5 font-poppins font-extrabold">Projektin tyyppi</h1>
+        <h2 className="xl:mt-[10px] lg:text-2xl md:text-xl sm:text-lg text-lg sm:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
         <div className="flex flex-col mt-[10px] w-full">
             {Object.entries(pathMap).map(([option, value]) => (
                 <div id={option} className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] md:hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
