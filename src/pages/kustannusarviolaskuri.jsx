@@ -845,8 +845,8 @@ const choosePath = () => {
 
     const elemRender = 
     <div questionid={cardId} className="text-white min-h-full mx-auto transition-all duration-[500ms] lg:w-[85%] 2xl:px-[4vw] md:px-[2vw]">
-        <h1 className="text-[#FCA311] 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl sm:w-4/5 font-poppins font-extrabold">Projektin tyyppi</h1>
-        <h2 className="xl:mt-[10px] 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg text-lg sm:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
+        <h1 className="text-[#FCA311] lg:text-4xl md:text-3xl sm:text-2xl text-xl sm:w-4/5 font-poppins font-extrabold">Projektin tyyppi</h1>
+        <h2 className="xl:mt-[10px] lg:text-2xl md:text-xl sm:text-lg text-lg sm:w-4/5 w-[90%] font-poppins my-0">Valitse alla olevista vaihtoehdoista se, joka parhaiten kuvaa tarpeitasi.</h2>
         <div className="flex flex-col mt-[10px] w-full">
             {Object.entries(pathMap).map(([option, value]) => (
                 <div id={option} className="flex justify-between min-w-[200px] lg:w-full 2xl:py-[20px] xl:py-[12.5px] lg:py-[10px] md:py-[7px] py-[5px] 2xl:px-[20px] xl:px-[15px] lg:px-[10px] md:px-[10px] px-[10px] 2xl:my-[10px] xl:my-[10px] lg:my-[7.5px] md:my-[5px] my-[5px] md:hover:text-[#FCA311] bg-card2 rounded-lg hover:cursor-pointer select-none">
@@ -1216,12 +1216,14 @@ return (
                 {progressBar}
             </div>
         </div>
-        <div className="min-h-[40vw] mx-auto w-full">
-            <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[35vh] flex justify-center mx-auto">
+        <div className="min-h- mx-auto w-full">
+            <div ref={slideDiv} className={`w-full font-poppins md:min-h-auto min-h-[50vh] flex justify-center mx-auto ${pathSelected ? "" :  "md:items-end"} max-md:py-20`}>
+                <div className="h-full flex justify-center">
                 <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw] max-md:px-[20px]">
                     <h1 className="xl:text-5xl lg:text-4xl md:text-4xl text-2xl font-semibold">Kustannusarviolaskuri</h1>
                     <p className="text-white xl:text-3xl lg:text-2xl md:text-2xl text-xl md:font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
                     <button hidden={pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`lg:text-xl md:mt-[50px] font-semibold bg-[#FCA311] text-white px-[3%] py-[0.75%] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
+                </div>
                 </div>
             </div> 
             <div className="2xl:w-[980px] lg:w-[900px] mx-auto lg:block hidde mt-5">
