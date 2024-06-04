@@ -83,7 +83,7 @@ export default function ContactPage() {
           />
         <meta
           property="og:description"
-          content="Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!"
+          content="Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee kustannusarviolaskurillamme, niin vastaamme mahdollisimman pian!"
         />
                <meta property="og:image" content={teamImg} />
                <meta name="keywords" content="nettisivut, ohjelmointi, sovellus, applikaatio, ohjelmistokehitys, työnohjaus, automatisointi, järjestelmä, ohjelmisto"/>
@@ -100,7 +100,7 @@ export default function ContactPage() {
         </h1>
         <h2 className="text-white md:text-xl text-[4.5vw] items-center font-light pb-[6vh] md:w-[70%] w-[80vw]">
           Ota meihin yhteyttä käyttämällä alla olevaa lomaketta tai tee
-          kustannusarvio laskurillamme, niin vastaamme mahdollisimman pian!
+          kustannusarviolaskurillamme, niin vastaamme mahdollisimman pian!
         </h2>
       </div>
       <div className="lg:w-[90vw] md:w-[60vw] w-[80vw] mx-auto md:pb-22 pb-[5vh]">
@@ -148,7 +148,7 @@ export default function ContactPage() {
           ></textarea>
           <div className="mb-[5vh]">
           <h2 className="md:text-lg text-[5.5vw] text-[#FCA311]">
-            Kustannusarvio laskuri syöte:
+            Kustannusarviolaskuri syöte:
           </h2>
           {
             getCookie('priceCalculator') ?          

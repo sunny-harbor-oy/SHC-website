@@ -793,7 +793,7 @@ const finalPriceFunc = () => {
     });
 
     const writtenFeedback = <h2 className="md:text-[1.25vw] text-[4vw]">
-        Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!
+        Kustannusarviolaskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!
     </h2>
 
     return (
@@ -807,7 +807,7 @@ const finalPriceFunc = () => {
                 </div>
                 <div className="md:w-[34vw] w-[90vw] md:mt-0 mt-[6vw] mx-auto relative" id="writtenSummary">
                 <div className="md:w-[34vw] md:px-[5vw] w-[100%]">
-                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] mt-[1vw] md:font-normal font-semibold">Kustannusarvio laskuri:</h1>
+                    <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] mt-[1vw] md:font-normal font-semibold">Kustannusarviolaskuri:</h1>
                     {writtenFeedback}
                     <h1 className="text-[#FCA311] md:text-[1.75vw] text-[6vw] md:mt-[1vw] mt-[4vw] md:font-normal font-semibold">Hinta:</h1>
                     <h2 className="md:text-[1.25vw] text-[4vw] md:mb-0 mb-[3vw]">alk. {Math.ceil(finalPrice)*1000}€ + alv</h2>
@@ -1188,7 +1188,7 @@ return (
         <div className="min-h-[40vw] mx-auto w-full">
             <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[50vh] flex justify-center mx-auto">
                 <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw]">
-                    <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-[10vw] font-semibold">Kustannusarvio laskuri</h1>
+                    <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-[10vw] font-semibold">Kustannusarviolaskuri</h1>
                     <p className="text-white lg:text-4xl md:text-2xl sm:text-lg text-[6vw] font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
                     <button hidden={pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`lg:text-xl md:mt-[30px] font-semibold bg-[#FCA311] text-white px-[3%] py-[0.75%] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
                 </div>

@@ -795,7 +795,7 @@ const finalPriceFunc = () => {
     });
 
     const writtenFeedback = <h2 className="xl:text-xl xl:w-[380px] lg:w-[300px] max-md:w-[90%]">
-        Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!
+        Kustannusarviolaskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!
     </h2>
 
     return (
@@ -809,7 +809,7 @@ const finalPriceFunc = () => {
                 </div>
                 <div className="md:w-[34%] sm:w-[90vw] mx-auto relative" id="writtenSummary">
                 <div className="w-full mx-auto">
-                    <h1 className="text-[#FCA311] xl:text-3xl lg:text-2xl md:text-xl sm:text-xl text-xl font-bold max-sm:mt-5">Kustannusarvio laskuri:</h1>
+                    <h1 className="text-[#FCA311] xl:text-3xl lg:text-2xl md:text-xl sm:text-xl text-xl font-bold max-sm:mt-5">Kustannusarviolaskuri:</h1>
                     {writtenFeedback}
                     <h1 className="text-[#FCA311] xl:text-2xl lg:text-xl sm:text-xl text-xl mt-5 font-semibold">Hinta:</h1>
                     <h2 className="xl:text-xl">alk. <span className="text-[#FCA311] font-semibold">{Math.ceil(finalPrice)*1000}€</span> + alv</h2>
@@ -1199,7 +1199,7 @@ return (
           />
         <meta
           property="og:description"
-          content="Kustannusarvio laskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!"
+          content="Kustannusarviolaskuri pyrkii antamaan mahdollisimman hyvän kuvan projektin vaativuudesta ja hinnasta. Kuitenkin lopullinen hinta määräytyy yksityiskohtien ja lisätietojen selkeentyessä. Jos hinta-arvio ei vastaa odotuksiasi, ota yhteyttä ja neuvotellaan!"
         />
                <meta property="og:image" content={teamImg} />
                <meta name="keywords" content="nettisivut, ohjelmointi, sovellus, applikaatio, ohjelmistokehitys, työnohjaus, automatisointi, järjestelmä, ohjelmisto"/>
@@ -1219,7 +1219,7 @@ return (
         <div className="min-h-[40vw] mx-auto w-full">
             <div ref={slideDiv} className="w-full font-poppins md:min-h-auto min-h-[35vh] flex justify-center mx-auto">
                 <div className="lg:max-w-[700px] md:max-w-[525px] sm:max-w-[450px] text-[#FCA311] md:b-[3vw] max-md:px-[20px]">
-                    <h1 className="xl:text-5xl lg:text-4xl md:text-4xl text-2xl font-semibold">Kustannusarvio laskuri</h1>
+                    <h1 className="xl:text-5xl lg:text-4xl md:text-4xl text-2xl font-semibold">Kustannusarviolaskuri</h1>
                     <p className="text-white xl:text-3xl lg:text-2xl md:text-2xl text-xl md:font-light">Täytä Kustannusarvio kysely, jotta voimme kartoittaa tarpeesi sekä antaa sinulle välittömästi <strong className="text-[#FCA311]">suuntaa antava</strong> hinta-arvio tarjouksesta!</p>
                     <button hidden={pathSelected} onClick={() => pathSelected ? changeCard(1) : choosePath()} className={`lg:text-xl md:mt-[50px] font-semibold bg-[#FCA311] text-white px-[3%] py-[0.75%] rounded-lg font-poppins max-lg:hidden`}>Seuraava <i className="fa fa-angle-right"></i></button>
                 </div>
