@@ -3,11 +3,14 @@ import React from "react";
 import kvlMockup from "../assets/kvl-mockup.png";
 import moonMockup from "../assets/moon-app-mockup.png";
 import kvlStore from "../assets/kvlstore.png";
+import omasykeMockup from "../assets/omasyke-mockup.png";
 
 function ourServices() {
   return (
     <div className="w-screen overflow-x-hidden 2xl:p-36 xl:p-16 lg:p-16 max-lg:px-28 max-md:px-14 max-sm:px-2 max-lg:py-10 bg-primary">
-      <h1 className="font-semibold font-poppins text-4xl text-secondary max-lg:mt-[8vh] w-full text-center">Palvelumme</h1>
+      <h1 className="font-semibold font-poppins text-4xl text-secondary max-lg:mt-[8vh] w-full text-center">
+        Palvelumme
+      </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:gap-5 mt-8 lg:mb-12 max-w-[1700px] mx-auto">
         <div>
           <h2 className="lg:text-2xl md:text-xl sm:text-xl text-lg font-bold text-white pb-1 uppercase">
@@ -16,65 +19,63 @@ function ourServices() {
           <div className="sm:w-[340px] w-[280px] bg-secondary h-1 rounded-full" />
           <br className="max-lg:hidden" />
           <p className="text-white xl:text-base max-lg:mt-2">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi
-            voluptate tenetur velit placeat, cupiditate accusantium? Expedita
-            sequi veniam laboriosam quae blanditiis accusamus, mollitia sed
-            voluptatem, ea, recusandae molestiae debitis. Sint. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Excepturi voluptate
-            tenetur velit placeat, cupiditate accusantium? Expedita sequi veniam
-            laboriosam quae blanditiis accusamus, mollitia sed voluptatem, ea,
-            recusandae molestiae debitis. Sint. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Excepturi voluptate tenetur velit
-            placeat, cupiditate accusantium? Expedita sequi veniam laboriosam
-            quae blanditiis accusamus, mollitia sed voluptatem, ea, recusandae
-            molestiae debitis. Sint. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Excepturi voluptate tenetur velit placeat,
-            cupiditate accusantium? Expedita sequi veniam laboriosam quae
-            blanditiis accusamus, mollitia sed voluptatem, ea, recusandae
-            molestiae debitis. Sint. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Excepturi voluptate tenetur velit placeat,
-            cupiditate accusantium? Expedita sequi veniam laboriosam quae
-            blanditiis accusamus, mollitia sed voluptatem, ea, recusandae
-            molestiae debitis. Sint.
+            Meillä on vankka kokemus skaalautuvien mobiili- ja web-sovellusten
+            kehittämisestä. Vuosien varrella olemme työskennelleet lukuisten
+            asiakkaiden ja projektien parissa, mikä on antanut meille syvällisen
+            ymmärryksen erilaisten digitaalisten ratkaisujen suunnittelusta ja
+            toteutuksesta. <br />
+            <br />
+            Erityisosaamisemme on monialustakehityksessä, mikä mahdollistaa
+            saman koodin hyödyntämisen sekä iOS- että Android-alustoilla. Tämä
+            lähestymistapa ei ainoastaan nopeuta kehitysprosessia, vaan myös
+            vähentää merkittävästi kustannuksia ja varmistaa, että sovellukset
+            toimivat saumattomasti kaikilla laitteilla. Monialustakehitys tekee
+            sovelluskehityksestä nopeaa ja mutkatonta. Käytämme moderneja
+            teknologioita ja parhaita käytäntöjä varmistaaksemme, että
+            lopputuotteet ovat korkealaatuisia, turvallisia ja
+            käyttäjäystävällisiä. Pyrimme aina ylittämään asiakkaidemme
+            odotukset tarjoamalla innovatiivisia ratkaisuja, jotka vastaavat
+            heidän liiketoimintatarpeitaan. <br />
+            <br />
+            Kokemuksemme ja asiantuntemuksemme ansiosta pystymme auttamaan
+            asiakkaitamme saavuttamaan heidän tavoitteensa tehokkaasti ja
+            luotettavasti. Olemme sitoutuneet jatkuvaan oppimiseen ja
+            kehittymiseen, mikä takaa, että pysymme aina teknologian kehityksen
+            kärjessä ja voimme tarjota ajantasaisimmat ratkaisut kaikissa
+            projekteissamme.
           </p>
-          <br/>
-          <div className="w-[450px] bg-secondary h-1 max-lg:hidden rounded-full" />
-          <div className="col-span-2 justify-start flex flex-col w-full items-start gap-5">
-          <text className="text-white xl:text-lg lg:text-base max-lg:hidden font-light text-start mt-2">
-          Laske alustava tarjous <a className="text-secondary cursor-pointer font-semibold hover:underline" href="/kustannusarviolaskuri"> kustannusarviolaskurilla</a>
-        </text>
-      </div>
+          <br />
         </div>
-        <div className="grid xl:grid-cols-2 lg:grid-cols-1 grid-cols-2 2xl:w-3/4 xl:w-[550px] lg:w-auto md:w-[700px] max-sm:w-[350px] max-xl:h-[500px] max-lg:h-[300px] max-lg:pb-10 my-auto mx-auto items-center justify-center sm:gap-5">
-        <div className="overflow-hidden max-sm:hidden xl:w-full max-xl:h-full max-lg:mx-auto lg:aspect-square rounded-lg max-lg:bg-white max-lg:w-full lg:hover:scale-[1.10] transition-all duration-[350ms]">
-        <img
-              class="lg:object-cover object-contain overflow-hidden scale-[1.3] lg:w-full max-lg:h-full max-lg:mx-auto aspect-square transition duration-500"
+        <div className="grid xl:grid-cols-2 lg:grid-cols-1 max-xl:lg:px-8 sm:grid-cols-2 grid-cols-1 lg:w-full md:w-[700px] w-[90%] xl:h-[250px] lg:h-[550px] max-lg:h-[300px] max-lg:pb-10 my-auto mx-auto items-center justify-center sm:gap-5">
+          <div className="overflow-hidden xl:w-full h-full max-lg:mx-auto rounded-lg bg-white max-lg:w-full lg:hover:scale-[1.10] transition-all duration-[350ms]">
+            <img
+              class="object-contain overflow-hidden md:scale-[1.3] scale-[1.5] h-full mx-auto max-lg:aspect-square rounded-lg transition duration-500"
               src={kvlMockup}
               alt=""
-          />
+            />
           </div>
-          <div className="overflow-hidden max-sm:col-span-2 xl:w-full max-xl:h-full max-lg:mx-auto lg:aspect-square rounded-lg max-lg:bg-white max-lg:w-full lg:hover:scale-[1.10] transition-all duration-[350ms]">
-          <img
-              class="lg:object-cover object-contain overflow-hidden scale-[1.3] lg:w-full max-lg:h-full max-lg:mx-auto aspect-square transition duration-500"
-              src={moonMockup}
+          <div className="overflow-hidden max-sm:hidden xl:w-full h-full max-lg:mx-auto rounded-lg bg-white max-lg:w-full lg:hover:scale-[1.10] transition-all duration-[350ms]">
+            <img
+              class="object-contain overflow-hidden scale-[1.3] h-full mx-auto max-lg:aspect-square rounded-lg transition duration-500"
+              src={omasykeMockup}
               alt=""
-          />
+            />
           </div>
           <div className="hidden overflow-hidden xl:w-full max-xl:h-full max-lg:mx-auto col-span-2 rounded-lg lg:hover:scale-[1.10] transition-all duration-[350ms]">
-          <img
+            <img
               class="object-cover overflow-hidden scale-[1.39] w-full aspect-square transition duration-500 "
               src={kvlStore}
               alt=""
-          />
+            />
           </div>
         </div>
         <div className="my-auto max-lg:hidden">
-          <div className="overflow-hidden 2xl:w-[600px] xl:w-[550px] lg:w-[425px] xl:mx-auto rounded-lg lg:hover:scale-[1.10] transition-all duration-[350ms]">
-          <img
+          <div className="overflow-hidden lg:w-[94%] lg:max-w-[700px] rounded-lg lg:hover:scale-[1.10] transition-all duration-[350ms]">
+            <img
               class="object-cover overflow-hidden my-auto w-full transition duration-500"
               src={kvlStore}
               alt=""
-          />
+            />
           </div>
         </div>
         <div>
@@ -84,84 +85,89 @@ function ourServices() {
           <div className="w-[250px] bg-secondary h-1 rounded-full" />
           <br className="max-lg:hidden" />
           <p className="text-white xl:text-base max-lg:mt-2">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi
-            voluptate tenetur velit placeat, cupiditate accusantium? Expedita
-            sequi veniam laboriosam quae blanditiis accusamus, mollitia sed
-            voluptatem, ea, recusandae molestiae debitis. Sint. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Excepturi voluptate
-            tenetur velit placeat, cupiditate accusantium? Expedita sequi veniam
-            laboriosam quae blanditiis accusamus, mollitia sed voluptatem, ea,
-            recusandae molestiae debitis. Sint. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Excepturi voluptate tenetur velit
-            placeat, cupiditate accusantium? Expedita sequi veniam laboriosam
-            quae blanditiis accusamus, mollitia sed voluptatem, ea, recusandae
-            molestiae debitis. Sint. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Excepturi voluptate tenetur velit placeat,
-            cupiditate accusantium? Expedita sequi veniam laboriosam quae
-            blanditiis accusamus, mollitia sed voluptatem, ea, recusandae
-            molestiae debitis. Sint. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Excepturi voluptate tenetur velit placeat,
-            cupiditate accusantium? Expedita sequi veniam laboriosam quae
-            blanditiis accusamus, mollitia sed voluptatem, ea, recusandae
-            molestiae debitis. Sint.
+            Nykyään nettisivut ovat yrityksen käyntikortti verkossa ja usein
+            ensimmäinen kosketuspiste potentiaalisten asiakkaiden kanssa. Tämä
+            tekee niistä kriittisen tärkeän osan yrityksen brändiä ja
+            markkinointistrategiaa. Hyvin suunnitellut ja toteutetut nettisivut
+            voivat merkittävästi vaikuttaa siihen, millaisen ensivaikutelman
+            yritys jättää vierailijoihin, sekä siihen, kuinka helposti asiakkaat
+            löytävät tarvitsemansa tiedot ja palvelut. <br />
+            <br />
+            Siksi on tärkeää, että nettisivut ovat sekä visuaalisesti
+            houkuttelevat että helppokäyttöiset. Visuaalisesti houkutteleva
+            sivusto herättää kiinnostusta ja luo ammattimaisen kuvan
+            yrityksestä, kun taas helppokäyttöisyys varmistaa, että vierailijat
+            löytävät vaivattomasti etsimänsä tiedot ja voivat navigoida
+            sivustolla sujuvasti. Tämä yhdistelmä parantaa asiakaskokemusta ja
+            lisää todennäköisyyttä, että vierailijat palaavat sivustolle
+            uudelleen. <br />
+            <br />
+            Meidän tiimimme on erikoistunut luomaan juuri tällaisia
+            kokonaisuuksia. Olemme sitoutuneet ymmärtämään asiakkaidemme
+            liiketoimintaa ja heidän kohderyhmäänsä, jotta voimme luoda
+            räätälöityjä ratkaisuja, jotka vastaavat heidän erityistarpeitaan.
+            Käytämme moderneja teknologioita ja parhaita käytäntöjä
+            varmistaaksemme, että lopputuloksena on korkealaatuinen,
+            responsiivinen ja käyttäjäystävällinen verkkosivusto.
           </p>
-          <br/>
-          <div className="w-[450px] max-lg:hidden bg-secondary h-1 rounded-full" />
-          <div className="col-span-2 justify-start flex flex-col w-full items-start gap-5">
-        <text className="text-white xl:text-lg lg:text-base max-lg:hidden font-light text-start mt-2">
-        Laske alustava tarjous <a className="text-secondary cursor-pointer font-semibold hover:underline" href="/kustannusarviolaskuri"> kustannusarviolaskurilla</a>
-        </text>
-      </div>
-      <div className="my-auto lg:hidden pb-10">
-          <div className="overflow-hidden mx-auto rounded-lg md:w-[600px] sm:w-[500px]">
-          <img
-              class="object-cover overflow-hidden my-auto w-full transition duration-500"
-              src={kvlStore}
-              alt=""
-          />
+          <br />
+          <div className="my-auto lg:hidden pb-10">
+            <div className="overflow-hidden mx-auto rounded-lg md:w-[600px] sm:w-[500px]">
+              <img
+                class="object-cover overflow-hidden my-auto w-full transition duration-500"
+                src={kvlStore}
+                alt=""
+              />
+            </div>
           </div>
         </div>
-        </div>
-        <div>
+        <div className="lg:col-span-2">
           <h2 className="lg:text-2xl md:text-xl sm:text-xl text-lg font-bold text-white pb-1 uppercase">
-            3. Konsultointi
+            3. Käyttöliittymän suunnittelu
           </h2>
-          <div className="w-[190px] bg-secondary h-1 rounded-full" />
+          <div className="w-[420px] bg-secondary h-1 rounded-full" />
           <br className="max-lg:hidden" />
           <p className="text-white xl:text-base max-lg:mt-2">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi
-            voluptate tenetur velit placeat, cupiditate accusantium? Expedita
-            sequi veniam laboriosam quae blanditiis accusamus, mollitia sed
-            voluptatem, ea, recusandae molestiae debitis. Sint. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Excepturi voluptate
-            tenetur velit placeat, cupiditate accusantium? Expedita sequi veniam
-            laboriosam quae blanditiis accusamus, mollitia sed voluptatem, ea,
-            recusandae molestiae debitis. Sint. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Excepturi voluptate tenetur velit
-            placeat, cupiditate accusantium? Expedita sequi veniam laboriosam
-            quae blanditiis accusamus, mollitia sed voluptatem, ea, recusandae
-            molestiae debitis. Sint. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Excepturi voluptate tenetur velit placeat,
-            cupiditate accusantium? Expedita sequi veniam laboriosam quae
-            blanditiis accusamus, mollitia sed voluptatem, ea, recusandae
-            molestiae debitis. Sint. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Excepturi voluptate tenetur velit placeat,
-            cupiditate accusantium? Expedita sequi veniam laboriosam quae
-            blanditiis accusamus, mollitia sed voluptatem, ea, recusandae
-            molestiae debitis. Sint.
+            Käyttöliittymämme on suunniteltu helpottamaan palvelun käyttöä
+            kaikille käyttäjille. Meille on ensiarvoisen tärkeää, että
+            käyttökokemus on mahdollisimman sujuva ja miellyttävä, riippumatta
+            siitä, kuka palvelua käyttää. Olemme panostaneet merkittävästi
+            käyttöliittymän selkeyteen ja intuitiivisuuteen, jotta kaikki
+            käyttäjät, olivatpa he sitten kokeneita teknologian käyttäjiä tai
+            vasta-alkajia, löytäisivät tarvitsemansa tiedot ja toiminnot
+            vaivatta. <br /><br />Pyrimme selkeään ja intuitiiviseen navigointiin, joka
+            ohjaa käyttäjää loogisesti läpi palvelun eri osioiden.
+            Käyttöliittymän suunnittelussa olemme hyödyntäneet
+            käyttäjäkokemuksen parhaita käytäntöjä ja modernia designia, jotta
+            navigointi on sujuvaa ja johdonmukaista. Tämä tarkoittaa muun muassa
+            selkeitä valikoita, yksinkertaisia painikkeita ja visuaalisesti
+            erottuvia toimintoja, jotka tekevät palvelun käytöstä vaivatonta. <br /><br />
+            Tavoitteenamme on tarjota yksinkertainen ja miellyttävä
+            käyttökokemus kaikille käyttäjille. Tämä tarkoittaa, että otamme
+            huomioon erilaiset käyttäjäprofiilit ja -tarpeet, ja pyrimme
+            tekemään palvelusta mahdollisimman saavutettavan kaikille. Uskomme,
+            että käyttäjäystävällinen käyttöliittymä ei ainoastaan paranna
+            käyttäjätyytyväisyyttä, vaan myös lisää palvelun tehokkuutta ja
+            käyttöönoton sujuvuutta. Haluamme, että jokainen palvelumme käyttäjä
+            kokee sen käytön miellyttäväksi ja löytää tarvitsemansa tiedot ja
+            toiminnot helposti.
           </p>
         </div>
-        <div>
-        </div>
+        <div></div>
       </div>
       <br />
       <div className="col-span-2 flex justify-center">
-      <div className="h-1 w-5/6 bg-secondary rounded-full" />
+        <div className="h-1 w-5/6 bg-secondary rounded-full" />
       </div>
       <br />
       <div className="col-span-2 justify-center flex flex-col w-full items-center gap-5">
-        <a className="text-white text-xl max-sm:text-lg font-semibold text-center md:w-[1000px] cursor-pointer" href="/kustannusarviolaskuri">
-          Kiinnostuitko? Laske alustava <span className="text-secondary hover:underline">hinta-arvio</span> laskurilla ja ole yhteydessä meihin!
+        <a
+          className="text-white text-xl max-sm:text-lg font-semibold text-center md:w-[1000px] cursor-pointer"
+          href="/kustannusarviolaskuri"
+        >
+          Kiinnostuitko? Laske alustava{" "}
+          <span className="text-secondary hover:underline">hinta-arvio</span>{" "}
+          laskurilla ja ole yhteydessä meihin!
         </a>
       </div>
     </div>

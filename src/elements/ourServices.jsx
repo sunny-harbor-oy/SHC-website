@@ -13,7 +13,8 @@ function ourServices() {
             Web- ja sovellusekehitys
           </h2>
           <p className="text-white text-md">
-            Mobiili- ja webratkaisut voivat voimaannuttaa liiketoimintasi statosfääreihin. Erityisosaamisemme on monialustakehityksessä, mikä
+            Meillä on vankka kokemus skaalautuvien mobiili- ja web sovelluksien
+            tekemisestä. Erityisosaamisemme on monialustakehityksessä, mikä
             mahdollistaa saman koodin hyödyntämisen sekä iOS- että
             Android-alustoilla. Näin kehitys on nopeaa ja mutkatonta.
           </p>
@@ -60,7 +61,7 @@ function ourServices() {
             </svg>
           </div>
         </div>
-  {/*       <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
+        {/*       <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
           <h2 className="text-xl font-bold text-white uppercase">
             Markkinointi
           </h2>
