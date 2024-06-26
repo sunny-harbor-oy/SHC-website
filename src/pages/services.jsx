@@ -157,7 +157,7 @@ function ourServices() {
           </p>
         </div>
         <div className="lg:my-auto grid grid-cols-3 grid-rows-4 lg:grid-rows-3 h-[400px] sm:h-[400px] md:h-[500px] lg:h-[500px] w-full px-6 xl:px-12 xl:mx-auto">
-          <div className="col-span-3 flex h-[60%] mt-auto mb-5 max-lg:mx-auto">
+          <div className="col-span-3 max-sm:row-span-1 flex h-[60%] mt-auto md:mb-5 max-lg:mx-auto">
           <img
             className="object-contain transition duration-500 h-[80%] my-auto mr-4"
             src={figmaSvg}
@@ -169,7 +169,7 @@ function ourServices() {
             alt=""
           />
           </div>
-          <div className="overflow-hidden row-span-3 lg:row-span-2 col-span-3 rounded-lg h-[80%] transition-all duration-[350ms] max-lg:mx-auto">
+          <div className="overflow-hidden row-span-3 max-sm:mb-auto lg:row-span-2 col-span-3 rounded-lg h-[80%] transition-all duration-[350ms] max-lg:mx-auto">
             <img
               class="object-contain xl:object-cover overflow-hidden mb-auto h-full transition duration-500"
               src={figma}
