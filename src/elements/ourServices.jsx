@@ -7,8 +7,14 @@ function ourServices() {
         Meidän palvelut
       </h2>
       <br />
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 2xl:grid-cols-4">
-        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
+      <div className="hover:cursor-pointer grid grid-cols-1 gap-5 md:grid-cols-2 2xl:grid-cols-4">
+        <div 
+          className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary"
+          onClick={() => {
+            document.cookie = "scrollTo=true";
+            window.location = "/palvelut#app";
+          }}
+        >
           <h2 className="text-xl font-bold text-white uppercase">
             Web- ja sovellusekehitys
           </h2>
@@ -35,7 +41,13 @@ function ourServices() {
             </svg>
           </div>
         </div>
-        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
+        <div 
+          className="hover:cursor-pointer h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary"
+          onClick={() => {
+            document.cookie = "scrollTo=true";
+            window.location = "/palvelut#web";
+          }}
+        >
           <h2 className="text-xl font-bold text-white uppercase">Nettisivut</h2>
           <p className="text-white text-md">
             Nykyään nettisivut on yrityksen käyntikortti verkossa ja usein
@@ -85,7 +97,13 @@ function ourServices() {
             </svg>
           </div>
         </div> */}
-        <div className="h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary">
+        <div 
+          className="hover:cursor-pointer h-[380px] rounded-2xl p-7 flex flex-col justify-between hover:bg-card2 shadow-[1px_2px_5px_0px_rgba(0,0,0,1)] shadow-secondary"
+          onClick={() => {
+            document.cookie = "scrollTo=true";
+            window.location = "/palvelut#ui";
+          }}
+        >
           <h2 className="text-xl font-bold text-white uppercase">
             Käyttöliittymä suunnittelu
           </h2>

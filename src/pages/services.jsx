@@ -4,14 +4,17 @@ import kvlMockup from "../assets/kvl-mockup.png";
 import moonMockup from "../assets/moon-app-mockup.png";
 import kvlStore from "../assets/kvlstore.png";
 import omasykeMockup from "../assets/omasyke-mockup.png";
+import figma from "../assets/figma.png";
+import figmaSvg from "../assets/Figma-Icon.svg";
+import FigmaWord from "../assets/Figma-Wordmark.svg";
 
 function ourServices() {
   return (
     <div className="w-screen overflow-x-hidden 2xl:p-36 xl:p-16 lg:p-16 max-lg:px-28 max-md:px-14 max-sm:px-2 max-lg:py-10 bg-primary">
-      <h1 className="font-semibold font-poppins text-4xl text-secondary max-lg:mt-[8vh] w-full text-center">
+      <h1 className="font-semibold font-poppins text-4xl text-secondary max-lg:mt-[10vh] w-full text-center">
         Palvelumme
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:gap-5 mt-8 lg:mb-12 max-w-[1700px] mx-auto">
+      <div id="app" className="grid grid-cols-1 lg:grid-cols-2 xl:gap-5 mt-8 lg:mb-12 max-w-[1700px] mx-auto">
         <div>
           <h2 className="lg:text-2xl md:text-xl sm:text-xl text-lg font-bold text-white pb-1 uppercase">
             1. Web- ja sovelluskehitys
@@ -78,9 +81,9 @@ function ourServices() {
             />
           </div>
         </div>
-        <div>
-          <h2 className="lg:text-2xl md:text-xl sm:text-xl text-lg font-bold text-white pb-1 uppercase">
-            2. Nettisivut
+        <div id="web">
+         <h2 className="lg:text-2xl md:text-xl sm:text-xl text-lg font-bold text-white pb-1 uppercase">
+          2. Nettisivut
           </h2>
           <div className="w-[250px] bg-secondary h-1 rounded-full" />
           <br className="max-lg:hidden" />
@@ -121,11 +124,11 @@ function ourServices() {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-2">
-          <h2 className="lg:text-2xl md:text-xl sm:text-xl text-lg font-bold text-white pb-1 uppercase">
+      <div id="ui">
+        <h2 className="lg:text-2xl md:text-xl sm:text-xl text-lg font-bold text-white pb-1 uppercase">
             3. Käyttöliittymän suunnittelu
           </h2>
-          <div className="w-[420px] bg-secondary h-1 rounded-full" />
+          <div className="w-[250px] bg-secondary h-1 rounded-full" />
           <br className="max-lg:hidden" />
           <p className="text-white xl:text-base max-lg:mt-2">
             Käyttöliittymämme on suunniteltu helpottamaan palvelun käyttöä
@@ -153,9 +156,29 @@ function ourServices() {
             toiminnot helposti.
           </p>
         </div>
-        <div></div>
+        <div className="lg:my-auto grid grid-cols-3 grid-rows-4 lg:grid-rows-3 h-[400px] sm:h-[400px] md:h-[500px] lg:h-[500px] w-full px-6 xl:px-12 xl:mx-auto">
+          <div className="col-span-3 flex h-[60%] mt-auto mb-5 max-lg:mx-auto">
+          <img
+            className="object-contain transition duration-500 h-[80%] my-auto mr-4"
+            src={figmaSvg}
+            alt=""
+          />
+          <img
+            className="object-contain overflow-hidden h-[70%] my-auto transition duration-500"
+            src={FigmaWord}
+            alt=""
+          />
+          </div>
+          <div className="overflow-hidden row-span-3 lg:row-span-2 col-span-3 rounded-lg h-[80%] transition-all duration-[350ms] max-lg:mx-auto">
+            <img
+              class="object-contain xl:object-cover overflow-hidden mb-auto h-full transition duration-500"
+              src={figma}
+              alt=""
+            />
+          </div>
+        </div>
       </div>
-      <br />
+      <br className="max-lg:hidden" />
       <div className="col-span-2 flex justify-center">
         <div className="h-1 w-5/6 bg-secondary rounded-full" />
       </div>
