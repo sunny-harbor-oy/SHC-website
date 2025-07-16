@@ -38,7 +38,7 @@ export default function SHCFooter() {
           <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
           </svg>
         </div>
-        <h2 className="mx-[0] my-auto text-md">sisu@sunnyharbor.fi</h2>
+        <h2 className="mx-[0] my-auto text-md">sisu@sceneagency.fi</h2>
       </div>
       </div>
       <div className="md:flex md:justify-center pb-5 md:pb-0  grid-cols-2 md:w-full w-[80%] mx-auto text-center gap-[1vw]">
